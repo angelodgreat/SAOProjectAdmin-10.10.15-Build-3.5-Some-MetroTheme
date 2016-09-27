@@ -6,7 +6,7 @@
       <Value Profile="(Default)">2015-2016</Value>
     </Setting>
     <Setting Name="Server" Type="System.String" Scope="User">
-      <Value Profile="(Default)">AngeloUmaliPC</Value>
+      <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="Database" Type="System.String" Scope="User">
       <Value Profile="(Default)">saoinfo</Value>
@@ -15,10 +15,10 @@
       <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="SUsername" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">dbuser</Value>
     </Setting>
     <Setting Name="SPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">dbpass</Value>
     </Setting>
   </Settings>
 </SettingsFile>
