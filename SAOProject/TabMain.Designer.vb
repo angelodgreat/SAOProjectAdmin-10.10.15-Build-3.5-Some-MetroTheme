@@ -83,6 +83,8 @@ Partial Class TabMain
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.DataGridView2 = New MetroFramework.Controls.MetroGrid()
         Me.GroupBoxEvent = New System.Windows.Forms.GroupBox()
+        Me.time_picker_to = New System.Windows.Forms.ComboBox()
+        Me.time_picker_from = New System.Windows.Forms.ComboBox()
         Me.cb_remarks = New System.Windows.Forms.ComboBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.cb_noa = New System.Windows.Forms.ComboBox()
@@ -97,11 +99,9 @@ Partial Class TabMain
         Me.btn_recordsreset = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btn_update = New System.Windows.Forms.Button()
-        Me.time_picker_to = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.time_picker_from = New System.Windows.Forms.DateTimePicker()
         Me.tb_location = New System.Windows.Forms.ComboBox()
         Me.btn_submitrecords = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -113,31 +113,7 @@ Partial Class TabMain
         Me.TP_User = New System.Windows.Forms.TabPage()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.lb_showuser = New System.Windows.Forms.ListBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.reg_cb_usertype = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.reg_lname = New System.Windows.Forms.TextBox()
-        Me.reg_mname = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.reg_fname = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.reg_cb_college = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.btn_reset_records = New System.Windows.Forms.Button()
-        Me.btn_delete_records = New System.Windows.Forms.Button()
-        Me.btn_update_records = New System.Windows.Forms.Button()
-        Me.btn_register = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.Timer_TabMain = New System.Windows.Forms.Timer(Me.components)
@@ -154,11 +130,36 @@ Partial Class TabMain
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
-        Me.reg_id = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.Panel_Accounts = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.cb_userlist_reg = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.reg_username = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.reg_password = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.lb_showuser = New System.Windows.Forms.ListBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.reg_Retype_password = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.reg_password = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.reg_username = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.reg_id = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.reg_cb_usertype = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.reg_lname = New System.Windows.Forms.TextBox()
+        Me.reg_mname = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.reg_fname = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.reg_cb_college = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btn_reset_records = New System.Windows.Forms.Button()
+        Me.btn_delete_records = New System.Windows.Forms.Button()
+        Me.btn_update_records = New System.Windows.Forms.Button()
+        Me.btn_register = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TP_Home.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -184,12 +185,13 @@ Partial Class TabMain
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP_User.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Accounts.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -335,9 +337,9 @@ Partial Class TabMain
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
         Me.Label25.Location = New System.Drawing.Point(476, 3)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(374, 99)
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
         Me.Label25.TabIndex = 28
-        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        Mendiola, Manila"
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
         '
         'Label24
         '
@@ -685,9 +687,9 @@ Partial Class TabMain
         Me.Label29.ForeColor = System.Drawing.Color.DimGray
         Me.Label29.Location = New System.Drawing.Point(476, 3)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(374, 99)
+        Me.Label29.Size = New System.Drawing.Size(374, 66)
         Me.Label29.TabIndex = 29
-        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        Mendiola, Manila"
+        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label27
         '
@@ -766,9 +768,9 @@ Partial Class TabMain
         Me.Label26.ForeColor = System.Drawing.Color.DimGray
         Me.Label26.Location = New System.Drawing.Point(476, 3)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(374, 99)
+        Me.Label26.Size = New System.Drawing.Size(374, 66)
         Me.Label26.TabIndex = 31
-        Me.Label26.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        Mendiola, Manila"
+        Me.Label26.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label22
         '
@@ -898,6 +900,8 @@ Partial Class TabMain
         'GroupBoxEvent
         '
         Me.GroupBoxEvent.BackColor = System.Drawing.Color.LightBlue
+        Me.GroupBoxEvent.Controls.Add(Me.time_picker_to)
+        Me.GroupBoxEvent.Controls.Add(Me.time_picker_from)
         Me.GroupBoxEvent.Controls.Add(Me.cb_remarks)
         Me.GroupBoxEvent.Controls.Add(Me.Label30)
         Me.GroupBoxEvent.Controls.Add(Me.cb_noa)
@@ -912,11 +916,9 @@ Partial Class TabMain
         Me.GroupBoxEvent.Controls.Add(Me.btn_recordsreset)
         Me.GroupBoxEvent.Controls.Add(Me.Label15)
         Me.GroupBoxEvent.Controls.Add(Me.btn_update)
-        Me.GroupBoxEvent.Controls.Add(Me.time_picker_to)
         Me.GroupBoxEvent.Controls.Add(Me.Label14)
         Me.GroupBoxEvent.Controls.Add(Me.Label13)
         Me.GroupBoxEvent.Controls.Add(Me.Label12)
-        Me.GroupBoxEvent.Controls.Add(Me.time_picker_from)
         Me.GroupBoxEvent.Controls.Add(Me.tb_location)
         Me.GroupBoxEvent.Controls.Add(Me.btn_submitrecords)
         Me.GroupBoxEvent.Controls.Add(Me.Label3)
@@ -933,6 +935,22 @@ Partial Class TabMain
         Me.GroupBoxEvent.TabIndex = 9
         Me.GroupBoxEvent.TabStop = False
         Me.GroupBoxEvent.Text = "Event Details"
+        '
+        'time_picker_to
+        '
+        Me.time_picker_to.FormattingEnabled = True
+        Me.time_picker_to.Location = New System.Drawing.Point(351, 69)
+        Me.time_picker_to.Name = "time_picker_to"
+        Me.time_picker_to.Size = New System.Drawing.Size(121, 23)
+        Me.time_picker_to.TabIndex = 41
+        '
+        'time_picker_from
+        '
+        Me.time_picker_from.FormattingEnabled = True
+        Me.time_picker_from.Location = New System.Drawing.Point(200, 72)
+        Me.time_picker_from.Name = "time_picker_from"
+        Me.time_picker_from.Size = New System.Drawing.Size(121, 23)
+        Me.time_picker_from.TabIndex = 40
         '
         'cb_remarks
         '
@@ -1098,20 +1116,6 @@ Partial Class TabMain
         Me.btn_update.Text = "Update"
         Me.btn_update.UseVisualStyleBackColor = True
         '
-        'time_picker_to
-        '
-        Me.time_picker_to.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.time_picker_to.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
-        Me.time_picker_to.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.time_picker_to.CustomFormat = "hh:mm tt"
-        Me.time_picker_to.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.time_picker_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.time_picker_to.Location = New System.Drawing.Point(354, 71)
-        Me.time_picker_to.Name = "time_picker_to"
-        Me.time_picker_to.ShowUpDown = True
-        Me.time_picker_to.Size = New System.Drawing.Size(115, 23)
-        Me.time_picker_to.TabIndex = 4
-        '
         'Label14
         '
         Me.Label14.AutoSize = True
@@ -1144,20 +1148,6 @@ Partial Class TabMain
         Me.Label12.Size = New System.Drawing.Size(38, 15)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "Time:"
-        '
-        'time_picker_from
-        '
-        Me.time_picker_from.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.time_picker_from.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
-        Me.time_picker_from.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.time_picker_from.CustomFormat = "hh:mm tt"
-        Me.time_picker_from.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.time_picker_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.time_picker_from.Location = New System.Drawing.Point(202, 71)
-        Me.time_picker_from.Name = "time_picker_from"
-        Me.time_picker_from.ShowUpDown = True
-        Me.time_picker_from.Size = New System.Drawing.Size(114, 23)
-        Me.time_picker_from.TabIndex = 3
         '
         'tb_location
         '
@@ -1251,18 +1241,10 @@ Partial Class TabMain
         'TP_User
         '
         Me.TP_User.BackColor = System.Drawing.Color.LightPink
-        Me.TP_User.Controls.Add(Me.cb_userlist_reg)
+        Me.TP_User.Controls.Add(Me.Panel_Accounts)
         Me.TP_User.Controls.Add(Me.PictureBox6)
         Me.TP_User.Controls.Add(Me.Label28)
-        Me.TP_User.Controls.Add(Me.GroupBox10)
         Me.TP_User.Controls.Add(Me.Label23)
-        Me.TP_User.Controls.Add(Me.GroupBox4)
-        Me.TP_User.Controls.Add(Me.GroupBox3)
-        Me.TP_User.Controls.Add(Me.Label11)
-        Me.TP_User.Controls.Add(Me.btn_reset_records)
-        Me.TP_User.Controls.Add(Me.btn_delete_records)
-        Me.TP_User.Controls.Add(Me.btn_update_records)
-        Me.TP_User.Controls.Add(Me.btn_register)
         Me.TP_User.Controls.Add(Me.PictureBox2)
         Me.TP_User.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TP_User.Location = New System.Drawing.Point(4, 24)
@@ -1288,9 +1270,161 @@ Partial Class TabMain
         Me.Label28.ForeColor = System.Drawing.Color.DimGray
         Me.Label28.Location = New System.Drawing.Point(476, 3)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(374, 99)
+        Me.Label28.Size = New System.Drawing.Size(374, 66)
         Me.Label28.TabIndex = 77
-        Me.Label28.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        Mendiola, Manila"
+        Me.Label28.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label23.Location = New System.Drawing.Point(143, 663)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(944, 15)
+        Me.Label23.TabIndex = 75
+        Me.Label23.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
+    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
+    "colar University  "
+        '
+        'PrintDocument1
+        '
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Document = Me.PrintDocument1
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'Timer_TabMain
+        '
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.LightPink
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStrip1.Size = New System.Drawing.Size(1237, 24)
+        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'DatabaseToolStripMenuItem
+        '
+        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupToolStripMenuItem, Me.RestoreToolStripMenuItem})
+        Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.DatabaseToolStripMenuItem.Text = "Database"
+        '
+        'BackupToolStripMenuItem
+        '
+        Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
+        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.BackupToolStripMenuItem.Text = "Backup"
+        '
+        'RestoreToolStripMenuItem
+        '
+        Me.RestoreToolStripMenuItem.Name = "RestoreToolStripMenuItem"
+        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.RestoreToolStripMenuItem.Text = "Restore"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.LogoutToolStripMenuItem.Text = "Log-out"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'lbl_time
+        '
+        Me.lbl_time.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_time.AutoSize = True
+        Me.lbl_time.BackColor = System.Drawing.Color.LightPink
+        Me.lbl_time.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_time.Location = New System.Drawing.Point(951, 6)
+        Me.lbl_time.Name = "lbl_time"
+        Me.lbl_time.Size = New System.Drawing.Size(35, 15)
+        Me.lbl_time.TabIndex = 6
+        Me.lbl_time.Text = "Time"
+        '
+        'welcomeadmin
+        '
+        Me.welcomeadmin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.welcomeadmin.AutoSize = True
+        Me.welcomeadmin.BackColor = System.Drawing.Color.LightPink
+        Me.welcomeadmin.Font = New System.Drawing.Font("Trajan Pro 3", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.welcomeadmin.ForeColor = System.Drawing.Color.Navy
+        Me.welcomeadmin.Location = New System.Drawing.Point(393, -1)
+        Me.welcomeadmin.Name = "welcomeadmin"
+        Me.welcomeadmin.Size = New System.Drawing.Size(167, 25)
+        Me.welcomeadmin.TabIndex = 7
+        Me.welcomeadmin.Text = "Welcome Admin"
+        '
+        'opd
+        '
+        Me.opd.FileName = "OpenFileDialog1"
+        '
+        'Panel_Accounts
+        '
+        Me.Panel_Accounts.Controls.Add(Me.GroupBox10)
+        Me.Panel_Accounts.Controls.Add(Me.GroupBox4)
+        Me.Panel_Accounts.Controls.Add(Me.GroupBox3)
+        Me.Panel_Accounts.Controls.Add(Me.Label11)
+        Me.Panel_Accounts.Controls.Add(Me.btn_reset_records)
+        Me.Panel_Accounts.Controls.Add(Me.btn_delete_records)
+        Me.Panel_Accounts.Controls.Add(Me.btn_update_records)
+        Me.Panel_Accounts.Controls.Add(Me.btn_register)
+        Me.Panel_Accounts.Location = New System.Drawing.Point(74, 122)
+        Me.Panel_Accounts.Name = "Panel_Accounts"
+        Me.Panel_Accounts.Size = New System.Drawing.Size(1114, 526)
+        Me.Panel_Accounts.TabIndex = 80
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
+        Me.PictureBox2.Location = New System.Drawing.Point(370, 6)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox2.TabIndex = 74
+        Me.PictureBox2.TabStop = False
+        '
+        'cb_userlist_reg
+        '
+        '
+        '
+        '
+        Me.cb_userlist_reg.Border.Class = "TextBoxBorder"
+        Me.cb_userlist_reg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.cb_userlist_reg.Location = New System.Drawing.Point(933, 128)
+        Me.cb_userlist_reg.Name = "cb_userlist_reg"
+        Me.cb_userlist_reg.PreventEnterBeep = True
+        Me.cb_userlist_reg.Size = New System.Drawing.Size(200, 22)
+        Me.cb_userlist_reg.TabIndex = 79
+        Me.cb_userlist_reg.WatermarkText = "00-00000"
         '
         'GroupBox10
         '
@@ -1298,10 +1432,10 @@ Partial Class TabMain
         Me.GroupBox10.Controls.Add(Me.lb_showuser)
         Me.GroupBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.GroupBox10.Location = New System.Drawing.Point(203, 155)
+        Me.GroupBox10.Location = New System.Drawing.Point(92, 37)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(157, 279)
-        Me.GroupBox10.TabIndex = 76
+        Me.GroupBox10.TabIndex = 84
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "User List"
         '
@@ -1316,18 +1450,6 @@ Partial Class TabMain
         Me.lb_showuser.Size = New System.Drawing.Size(145, 244)
         Me.lb_showuser.TabIndex = 0
         '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label23.Location = New System.Drawing.Point(143, 663)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(944, 15)
-        Me.Label23.TabIndex = 75
-        Me.Label23.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
-    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
-    "colar University  "
-        '
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.LightBlue
@@ -1340,12 +1462,56 @@ Partial Class TabMain
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.GroupBox4.Location = New System.Drawing.Point(378, 440)
+        Me.GroupBox4.Location = New System.Drawing.Point(267, 322)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(755, 147)
-        Me.GroupBox4.TabIndex = 71
+        Me.GroupBox4.TabIndex = 83
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Account Details"
+        '
+        'reg_Retype_password
+        '
+        '
+        '
+        '
+        Me.reg_Retype_password.Border.Class = "TextBoxBorder"
+        Me.reg_Retype_password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.reg_Retype_password.Location = New System.Drawing.Point(163, 109)
+        Me.reg_Retype_password.Name = "reg_Retype_password"
+        Me.reg_Retype_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.reg_Retype_password.PreventEnterBeep = True
+        Me.reg_Retype_password.Size = New System.Drawing.Size(586, 23)
+        Me.reg_Retype_password.TabIndex = 78
+        Me.reg_Retype_password.WatermarkText = "Password"
+        '
+        'reg_password
+        '
+        '
+        '
+        '
+        Me.reg_password.Border.Class = "TextBoxBorder"
+        Me.reg_password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.reg_password.Location = New System.Drawing.Point(163, 70)
+        Me.reg_password.Name = "reg_password"
+        Me.reg_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.reg_password.PreventEnterBeep = True
+        Me.reg_password.Size = New System.Drawing.Size(586, 23)
+        Me.reg_password.TabIndex = 77
+        Me.reg_password.WatermarkText = "Password"
+        '
+        'reg_username
+        '
+        '
+        '
+        '
+        Me.reg_username.Border.Class = "TextBoxBorder"
+        Me.reg_username.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.reg_username.Location = New System.Drawing.Point(163, 28)
+        Me.reg_username.Name = "reg_username"
+        Me.reg_username.PreventEnterBeep = True
+        Me.reg_username.Size = New System.Drawing.Size(586, 23)
+        Me.reg_username.TabIndex = 76
+        Me.reg_username.WatermarkText = "Username"
         '
         'Label20
         '
@@ -1398,12 +1564,26 @@ Partial Class TabMain
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(378, 155)
+        Me.GroupBox3.Location = New System.Drawing.Point(267, 37)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(755, 279)
-        Me.GroupBox3.TabIndex = 70
+        Me.GroupBox3.TabIndex = 82
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "User Details"
+        '
+        'reg_id
+        '
+        '
+        '
+        '
+        Me.reg_id.Border.Class = "TextBoxBorder"
+        Me.reg_id.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.reg_id.Location = New System.Drawing.Point(163, 30)
+        Me.reg_id.Name = "reg_id"
+        Me.reg_id.PreventEnterBeep = True
+        Me.reg_id.Size = New System.Drawing.Size(200, 23)
+        Me.reg_id.TabIndex = 84
+        Me.reg_id.WatermarkText = "00-00000"
         '
         'Label21
         '
@@ -1526,10 +1706,10 @@ Partial Class TabMain
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(840, 135)
+        Me.Label11.Location = New System.Drawing.Point(729, 17)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(87, 15)
-        Me.Label11.TabIndex = 67
+        Me.Label11.TabIndex = 81
         Me.Label11.Text = "Search by ID#:"
         '
         'btn_reset_records
@@ -1537,10 +1717,10 @@ Partial Class TabMain
         Me.btn_reset_records.FlatAppearance.BorderSize = 2
         Me.btn_reset_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_reset_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_reset_records.Location = New System.Drawing.Point(860, 591)
+        Me.btn_reset_records.Location = New System.Drawing.Point(749, 473)
         Me.btn_reset_records.Name = "btn_reset_records"
         Me.btn_reset_records.Size = New System.Drawing.Size(87, 34)
-        Me.btn_reset_records.TabIndex = 14
+        Me.btn_reset_records.TabIndex = 80
         Me.btn_reset_records.Text = "Clear"
         Me.btn_reset_records.UseVisualStyleBackColor = True
         '
@@ -1549,10 +1729,10 @@ Partial Class TabMain
         Me.btn_delete_records.FlatAppearance.BorderSize = 2
         Me.btn_delete_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_delete_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_delete_records.Location = New System.Drawing.Point(950, 591)
+        Me.btn_delete_records.Location = New System.Drawing.Point(839, 473)
         Me.btn_delete_records.Name = "btn_delete_records"
         Me.btn_delete_records.Size = New System.Drawing.Size(87, 36)
-        Me.btn_delete_records.TabIndex = 13
+        Me.btn_delete_records.TabIndex = 79
         Me.btn_delete_records.Text = "Delete"
         Me.btn_delete_records.UseVisualStyleBackColor = True
         '
@@ -1561,10 +1741,10 @@ Partial Class TabMain
         Me.btn_update_records.FlatAppearance.BorderSize = 2
         Me.btn_update_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_update_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_update_records.Location = New System.Drawing.Point(1046, 591)
+        Me.btn_update_records.Location = New System.Drawing.Point(935, 473)
         Me.btn_update_records.Name = "btn_update_records"
         Me.btn_update_records.Size = New System.Drawing.Size(87, 36)
-        Me.btn_update_records.TabIndex = 12
+        Me.btn_update_records.TabIndex = 78
         Me.btn_update_records.Text = "Update"
         Me.btn_update_records.UseVisualStyleBackColor = True
         '
@@ -1573,195 +1753,12 @@ Partial Class TabMain
         Me.btn_register.FlatAppearance.BorderSize = 2
         Me.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_register.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_register.Location = New System.Drawing.Point(378, 593)
+        Me.btn_register.Location = New System.Drawing.Point(267, 475)
         Me.btn_register.Name = "btn_register"
         Me.btn_register.Size = New System.Drawing.Size(87, 34)
-        Me.btn_register.TabIndex = 11
+        Me.btn_register.TabIndex = 77
         Me.btn_register.Text = "Save"
         Me.btn_register.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
-        Me.PictureBox2.Location = New System.Drawing.Point(370, 6)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox2.TabIndex = 74
-        Me.PictureBox2.TabStop = False
-        '
-        'PrintDocument1
-        '
-        '
-        'PrintPreviewDialog1
-        '
-        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
-        Me.PrintPreviewDialog1.Document = Me.PrintDocument1
-        Me.PrintPreviewDialog1.Enabled = True
-        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
-        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
-        Me.PrintPreviewDialog1.Visible = False
-        '
-        'Timer_TabMain
-        '
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.LightPink
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AboutToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(1237, 24)
-        Me.MenuStrip1.TabIndex = 5
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        Me.FileToolStripMenuItem.Text = "File"
-        '
-        'DatabaseToolStripMenuItem
-        '
-        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupToolStripMenuItem, Me.RestoreToolStripMenuItem})
-        Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.DatabaseToolStripMenuItem.Text = "Database"
-        '
-        'BackupToolStripMenuItem
-        '
-        Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
-        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.BackupToolStripMenuItem.Text = "Backup"
-        '
-        'RestoreToolStripMenuItem
-        '
-        Me.RestoreToolStripMenuItem.Name = "RestoreToolStripMenuItem"
-        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.RestoreToolStripMenuItem.Text = "Restore"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.LogoutToolStripMenuItem.Text = "Log-out"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
-        'lbl_time
-        '
-        Me.lbl_time.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_time.AutoSize = True
-        Me.lbl_time.BackColor = System.Drawing.Color.LightPink
-        Me.lbl_time.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_time.Location = New System.Drawing.Point(951, 6)
-        Me.lbl_time.Name = "lbl_time"
-        Me.lbl_time.Size = New System.Drawing.Size(35, 15)
-        Me.lbl_time.TabIndex = 6
-        Me.lbl_time.Text = "Time"
-        '
-        'welcomeadmin
-        '
-        Me.welcomeadmin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.welcomeadmin.AutoSize = True
-        Me.welcomeadmin.BackColor = System.Drawing.Color.LightPink
-        Me.welcomeadmin.Font = New System.Drawing.Font("Trajan Pro 3", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.welcomeadmin.ForeColor = System.Drawing.Color.Navy
-        Me.welcomeadmin.Location = New System.Drawing.Point(393, -1)
-        Me.welcomeadmin.Name = "welcomeadmin"
-        Me.welcomeadmin.Size = New System.Drawing.Size(167, 25)
-        Me.welcomeadmin.TabIndex = 7
-        Me.welcomeadmin.Text = "Welcome Admin"
-        '
-        'opd
-        '
-        Me.opd.FileName = "OpenFileDialog1"
-        '
-        'reg_id
-        '
-        '
-        '
-        '
-        Me.reg_id.Border.Class = "TextBoxBorder"
-        Me.reg_id.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.reg_id.Location = New System.Drawing.Point(163, 30)
-        Me.reg_id.Name = "reg_id"
-        Me.reg_id.PreventEnterBeep = True
-        Me.reg_id.Size = New System.Drawing.Size(200, 23)
-        Me.reg_id.TabIndex = 84
-        Me.reg_id.WatermarkText = "00-00000"
-        '
-        'cb_userlist_reg
-        '
-        '
-        '
-        '
-        Me.cb_userlist_reg.Border.Class = "TextBoxBorder"
-        Me.cb_userlist_reg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.cb_userlist_reg.Location = New System.Drawing.Point(933, 128)
-        Me.cb_userlist_reg.Name = "cb_userlist_reg"
-        Me.cb_userlist_reg.PreventEnterBeep = True
-        Me.cb_userlist_reg.Size = New System.Drawing.Size(200, 22)
-        Me.cb_userlist_reg.TabIndex = 79
-        Me.cb_userlist_reg.WatermarkText = "00-00000"
-        '
-        'reg_username
-        '
-        '
-        '
-        '
-        Me.reg_username.Border.Class = "TextBoxBorder"
-        Me.reg_username.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.reg_username.Location = New System.Drawing.Point(163, 28)
-        Me.reg_username.Name = "reg_username"
-        Me.reg_username.PreventEnterBeep = True
-        Me.reg_username.Size = New System.Drawing.Size(586, 23)
-        Me.reg_username.TabIndex = 76
-        Me.reg_username.WatermarkText = "Username"
-        '
-        'reg_password
-        '
-        '
-        '
-        '
-        Me.reg_password.Border.Class = "TextBoxBorder"
-        Me.reg_password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.reg_password.Location = New System.Drawing.Point(163, 70)
-        Me.reg_password.Name = "reg_password"
-        Me.reg_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.reg_password.PreventEnterBeep = True
-        Me.reg_password.Size = New System.Drawing.Size(586, 23)
-        Me.reg_password.TabIndex = 77
-        Me.reg_password.WatermarkText = "Password"
-        '
-        'reg_Retype_password
-        '
-        '
-        '
-        '
-        Me.reg_Retype_password.Border.Class = "TextBoxBorder"
-        Me.reg_Retype_password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.reg_Retype_password.Location = New System.Drawing.Point(163, 109)
-        Me.reg_Retype_password.Name = "reg_Retype_password"
-        Me.reg_Retype_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.reg_Retype_password.PreventEnterBeep = True
-        Me.reg_Retype_password.Size = New System.Drawing.Size(586, 23)
-        Me.reg_Retype_password.TabIndex = 78
-        Me.reg_Retype_password.WatermarkText = "Password"
         '
         'TabMain
         '
@@ -1815,15 +1812,17 @@ Partial Class TabMain
         Me.TP_User.ResumeLayout(False)
         Me.TP_User.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Accounts.ResumeLayout(False)
+        Me.Panel_Accounts.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1837,11 +1836,6 @@ Partial Class TabMain
     Friend WithEvents btn_submitrecords As Button
     Friend WithEvents btn_update As Button
     Friend WithEvents btn_deletedata As Button
-    Friend WithEvents btn_reset_records As Button
-    Friend WithEvents btn_delete_records As Button
-    Friend WithEvents btn_update_records As Button
-    Friend WithEvents btn_register As Button
-    Friend WithEvents Label11 As Label
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents TP_Home As TabPage
@@ -1850,25 +1844,8 @@ Partial Class TabMain
     Friend WithEvents Label18 As Label
     Friend WithEvents load_schedule As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label21 As Label
-    Friend WithEvents reg_cb_usertype As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents reg_lname As TextBox
-    Friend WithEvents reg_mname As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents reg_fname As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents reg_cb_college As ComboBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents GroupBoxEvent As GroupBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents time_picker_from As DateTimePicker
     Friend WithEvents tb_location As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tb_input_event As RichTextBox
@@ -1877,7 +1854,6 @@ Partial Class TabMain
     Friend WithEvents event_datetimepicker As DateTimePicker
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents time_picker_to As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents Timer_TabMain As Timer
     Friend WithEvents GroupBox7 As GroupBox
@@ -1886,7 +1862,6 @@ Partial Class TabMain
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents BindingSource1 As BindingSource
@@ -1897,8 +1872,6 @@ Partial Class TabMain
     Friend WithEvents Label27 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label32 As Label
-    Friend WithEvents lb_showuser As ListBox
-    Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label29 As Label
     Friend WithEvents Label28 As Label
@@ -1950,9 +1923,36 @@ Partial Class TabMain
     Friend WithEvents sfd As SaveFileDialog
     Friend WithEvents cb_remarks As ComboBox
     Friend WithEvents Label30 As Label
-    Friend WithEvents cb_userlist_reg As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents reg_Retype_password As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents reg_password As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents reg_username As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents reg_id As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents time_picker_to As ComboBox
+    Friend WithEvents time_picker_from As ComboBox
+    Friend WithEvents Panel_Accounts As Panel
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents lb_showuser As ListBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Private WithEvents reg_Retype_password As DevComponents.DotNetBar.Controls.TextBoxX
+    Private WithEvents reg_password As DevComponents.DotNetBar.Controls.TextBoxX
+    Private WithEvents reg_username As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Private WithEvents reg_id As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents Label21 As Label
+    Friend WithEvents reg_cb_usertype As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents reg_lname As TextBox
+    Friend WithEvents reg_mname As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents reg_fname As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents reg_cb_college As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents btn_reset_records As Button
+    Friend WithEvents btn_delete_records As Button
+    Friend WithEvents btn_update_records As Button
+    Friend WithEvents btn_register As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Private WithEvents cb_userlist_reg As DevComponents.DotNetBar.Controls.TextBoxX
 End Class

@@ -39,8 +39,11 @@ Public Class TabMain
             'TO BE EDITTED BECAUSE OF LOCATION PROBLEM
 
             'query = "select * from saoinfo.saoevent where  ('" & Format(CDate(time_picker_from.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) OR (' " & Format(CDate(time_picker_to.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) and date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "' "
-            query = "select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Value), "hh:mm:00") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
-            ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Value), "hh:mm:00") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
+
+
+
+            query = "Select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "hh:mm:01") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
+            ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
 
 
             Command = New MySqlCommand(query, mysqlconn)
@@ -57,7 +60,7 @@ Public Class TabMain
 
 
             If count = 1 Then
-                MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Value), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
 
@@ -70,7 +73,7 @@ Public Class TabMain
 
                     mysqlconn.Open()
 
-                    query = "insert into `saoevent" & My.Settings.schoolyear & "` (Date,location,events,TimeFrom,TimeTo,eventid,school,kpi,noa,remarks) values ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "','" & tb_location.Text & "','" & tb_input_event.Text & "','" & Format(CDate(time_picker_from.Value), "hh:mm ") & "','" & Format(CDate(time_picker_to.Value), "hh:mm") & "','" & tb_eventid.Text & "','" & cb_eventschool.Text & "','" & cb_kpi.Text & "','" & cb_noa.Text & "','" & cb_remarks.Text & "')"
+                    query = "insert into `saoevent" & My.Settings.schoolyear & "` (Date,location,events,TimeFrom,TimeTo,eventid,school,kpi,noa,remarks) values ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "','" & tb_location.Text & "','" & tb_input_event.Text & "','" & Format(CDate(time_picker_from.Text), "hh:mm") & "','" & Format(CDate(time_picker_to.Text), "hh:mm") & "','" & tb_eventid.Text & "','" & cb_eventschool.Text & "','" & cb_kpi.Text & "','" & cb_noa.Text & "','" & cb_remarks.Text & "')"
                     Command = New MySqlCommand(query, mysqlconn)
                     reader = Command.ExecuteReader
 
@@ -159,8 +162,8 @@ Public Class TabMain
 
                     'query = "select * from saoinfo.saoevent where  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "  " & Format(CDate(time_picker_from.Value), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Value), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto))"
 
-                    query = "select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Value), "hh:mm:00") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
-                  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Value), "hh:mm:00") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
+                    query = "select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "hh:mm:01") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
+                  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
 
                     Command = New MySqlCommand(query, MysqlConn)
                     reader = Command.ExecuteReader
@@ -174,7 +177,7 @@ Public Class TabMain
 
                     If count = 1 Then
 
-                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Value), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
                     Else
@@ -185,7 +188,7 @@ Public Class TabMain
 
                             MysqlConn.Open()
 
-                            query = "update `saoevent" & My.Settings.schoolyear & "` set date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "',location='" & tb_location.Text & "',TimeFrom='" & Format(CDate(time_picker_from.Value), "hh:mm") & "',TimeTo='" & Format(CDate(time_picker_to.Value), "hh:mm") & "',Events='" & tb_input_event.Text & "' ,eventid='" & tb_eventid.Text & "' ,school= '" & cb_eventschool.Text & "',
+                            query = "update `saoevent" & My.Settings.schoolyear & "` set date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "',location='" & tb_location.Text & "',TimeFrom='" & Format(CDate(time_picker_from.Text), "hh:mm") & "',TimeTo='" & Format(CDate(time_picker_to.Text), "hh:mm") & "',Events='" & tb_input_event.Text & "' ,eventid='" & tb_eventid.Text & "' ,school= '" & cb_eventschool.Text & "',
                             kpi='" & cb_kpi.Text & "',noa='" & cb_noa.Text & "',remarks='" & cb_remarks.Text & "'  where eventid='" & tb_eventid.Text & "'"
 
                             Command = New MySqlCommand(query, MysqlConn)
@@ -361,7 +364,7 @@ Public Class TabMain
 
     End Sub
 
-    Private Sub btn_register_Click_1(sender As Object, e As EventArgs) Handles btn_register.Click
+    Private Sub btn_register_Click_1(sender As Object, e As EventArgs)
         'REGISTERING ACCOUNTS IN REGISTER FORM
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -370,10 +373,10 @@ Public Class TabMain
 
 
         Try
-            mysqlconn.Open()
+            MysqlConn.Open()
             Dim query As String
             query = "Select * from saoinfo.saouserinfo where id='" & reg_id.Text & "' or UName='" & reg_username.Text & "' "
-            Command = New MySqlCommand(query, mysqlconn)
+            Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
             Dim count As Integer
 
@@ -396,9 +399,9 @@ Public Class TabMain
                 Else
                     MysqlConn.Close()
 
-                    mysqlconn.Open()
+                    MysqlConn.Open()
                     query = "insert into saoinfo.saouserinfo (id,college,FName,MName,LName,UName,Password,usertype) values ('" & reg_id.Text & "','" & reg_cb_college.Text & "','" & reg_fname.Text & "','" & reg_mname.Text & "','" & reg_lname.Text & "','" & reg_username.Text & "','" & reg_Retype_password.Text & "','" & reg_cb_usertype.Text & "')"
-                    Command = New MySqlCommand(query, mysqlconn)
+                    Command = New MySqlCommand(query, MysqlConn)
                     Dim tempuser As String
 
                     If reg_password.Text <> reg_Retype_password.Text Then
@@ -422,7 +425,7 @@ Public Class TabMain
             MessageBox.Show(ex.Message)
 
         Finally
-            mysqlconn.Dispose()
+            MysqlConn.Dispose()
 
         End Try
 
@@ -430,7 +433,7 @@ Public Class TabMain
     End Sub
 
 
-    Private Sub btn_update_records_Click(sender As Object, e As EventArgs) Handles btn_update_records.Click
+    Private Sub btn_update_records_Click(sender As Object, e As EventArgs)
         'UPDATING ACCOUNTS IN REGISTER FORM
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -509,7 +512,7 @@ Public Class TabMain
     End Sub
 
 
-    Private Sub btn_delete_records_Click(sender As Object, e As EventArgs) Handles btn_delete_records.Click
+    Private Sub btn_delete_records_Click(sender As Object, e As EventArgs)
         'DELETING ACCOUNTS IN REGISTER FORM
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -578,7 +581,7 @@ Public Class TabMain
 
 
 
-    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs) Handles btn_reset_records.Click
+    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs)
         'RESETTING FIELDS IN REGISTER FORM
         cb_userlist_reg.Text = ""
         reg_cb_usertype.Text = "-"
@@ -603,10 +606,10 @@ Public Class TabMain
         Dim reader As MySqlDataReader
 
         Try
-            mysqlconn.Open()
+            MysqlConn.Open()
             Dim query As String
             query = "SELECT * from `saoevent" & My.Settings.schoolyear & "` where date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "'"
-            Command = New MySqlCommand(query, mysqlconn)
+            Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
             While reader.Read
                 tb_input_event.Text = reader.GetString("saoevent")
@@ -614,19 +617,19 @@ Public Class TabMain
 
             End While
 
-            mysqlconn.Close()
+            MysqlConn.Close()
 
 
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
 
         Finally
-            mysqlconn.Dispose()
+            MysqlConn.Dispose()
 
         End Try
     End Sub
 
-    Private Sub cb_userlist_reg_TextChanged(sender As Object, e As EventArgs) 
+    Private Sub cb_userlist_reg_TextChanged(sender As Object, e As EventArgs)
         'Showing TAB USERLIST'
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -673,7 +676,7 @@ Public Class TabMain
         End Try
     End Sub
 
-    Private Sub lb_showuser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lb_showuser.SelectedIndexChanged
+    Private Sub lb_showuser_SelectedIndexChanged(sender As Object, e As EventArgs)
         'Showing list of users in listbox
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring

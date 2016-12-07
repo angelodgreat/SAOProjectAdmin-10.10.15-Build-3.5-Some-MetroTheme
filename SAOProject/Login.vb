@@ -53,17 +53,8 @@ Public Class Login
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
 
-        If tb_password.Text = "a00000" And tb_username.Text = "a00000" Then
-            Me.Hide()
-            MsgBox("Entering as secret account...")
-            TabMain.Show()
-            tb_password.Text = ""
-            tb_username.Text = ""
-
-        End If
-
         mysqlconn = New MySqlConnection
-            mysqlconn.ConnectionString = connstring
+        mysqlconn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
         Dim attempt As Integer
@@ -79,6 +70,7 @@ Public Class Login
 
                 Dim count As Integer
                 count = 0
+
                 While reader.Read
                     count = count + 1
                 End While
@@ -109,6 +101,29 @@ Public Class Login
                         TabMain.GroupBoxEvent.Visible = False
 
 
+                        TabMain.Panel_Accounts.Enabled = False
+
+
+                    ElseIf reader.GetString("usertype") = "SuperAdmin" Then
+
+                        Me.Hide()
+                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        TabMain.welcomeadmin.Text = "Welcome Super Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
+
+                        TabMain.Show()
+                        tb_password.Text = ""
+                        tb_username.Text = ""
+
+                        'Conditions
+
+                        TabMain.cb_eventschool.Text = "-"
+                        TabMain.reg_cb_college.Text = "-"
+                        TabMain.reg_cb_usertype.Text = "-"
+                        TabMain.cb_kpi.Text = "-"
+                        TabMain.cb_noa.Text = "-"
+                        TabMain.tb_location.Text = "-"
+                        TabMain.GroupBoxEvent.Visible = False
 
                     Else
 
@@ -132,12 +147,6 @@ Public Class Login
 
                     End If
 
-                ElseIf tb_password.Text = "a00000" And tb_username.Text = "a00000"
-                    Me.Hide()
-                    MsgBox("Entering as secret account...")
-                    TabMain.Show()
-                    tb_password.Text = ""
-                    tb_username.Text = ""
 
 
 
