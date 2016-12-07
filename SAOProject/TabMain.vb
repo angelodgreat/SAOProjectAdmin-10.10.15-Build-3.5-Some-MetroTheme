@@ -1178,21 +1178,6 @@ Public Class TabMain
         End If
     End Sub
 
-    Private Sub btn_change_Click(sender As Object, e As EventArgs) Handles btn_change.Click
-        Dim a As Integer
-
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If a = vbYes Then
-            ChangeSemester.Show()
-            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
-        Else
-
-            Exit Sub
-        End If
-    End Sub
-
-
 
     Private Sub DataGridView3_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentDoubleClick
         Dim a As Integer
@@ -1463,5 +1448,9 @@ Public Class TabMain
 
         End If
 
+    End Sub
+
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+        SettingsForm.Show()
     End Sub
 End Class
