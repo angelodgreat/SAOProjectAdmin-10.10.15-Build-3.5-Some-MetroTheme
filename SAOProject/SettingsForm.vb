@@ -15,6 +15,7 @@ Public Class SettingsForm
     Private Sub SettingsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_organizations()
         load_location()
+        load_kpi()
         auto_generate_id()
     End Sub
     Public Sub auto_generate_id()
@@ -91,6 +92,37 @@ Public Class SettingsForm
             columndrugname.Width = 100
         End Try
     End Sub
+
+    Public Sub load_kpi()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            Dim SDA As New MySqlDataAdapter
+            Dim bsource As New BindingSource
+            Dim dbdataset As New DataTable
+
+            MysqlConn.Open()
+            query = "SELECT kpi_id as 'ID',kpi as 'KPI' FROM tbl_kpi"
+            Command = New MySqlCommand(query, MysqlConn)
+            SDA.SelectCommand = Command
+            SDA.Fill(dbdataset)
+            bsource.DataSource = dbdataset
+            mg_kpi.DataSource = bsource
+            SDA.Update(dbdataset)
+
+            MysqlConn.Close()
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+            Dim columndrugname = mg_kpi.Columns(0)
+            columndrugname.Width = 100
+        End Try
+    End Sub
+
 
     Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
         Dim a As Integer
@@ -414,6 +446,159 @@ Public Class SettingsForm
 
             tb_location.Text = row.Cells("Location/s").Value.ToString
             ran_loc.Text = row.Cells("ID").Value.ToString
+        End If
+    End Sub
+
+    Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs) Handles mbtn_savekpi.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If (MysqlConn.State = ConnectionState.Open) Then
+                MysqlConn.Close()
+            End If
+
+            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If (question = DialogResult.Yes) Then
+
+                MysqlConn.Open()
+
+                query = "SELECT * FROM tbl_kpi WHERE kpi=@kpi"
+                Command = New MySqlCommand(query, MysqlConn)
+                Command.Parameters.AddWithValue("kpi", tb_kpi.Text)
+                reader = Command.ExecuteReader
+
+                Dim count As Integer
+                count = 0
+
+                While reader.Read
+                    count += 1
+
+                End While
+
+                If count >= 1 Then
+                    MetroMessageBox.Show(Me, "The KPI " & tb_kpi.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                Else
+
+                    MysqlConn.Close()
+                    MysqlConn.Open()
+                    query = "INSERT INTO tbl_kpi VALUES (@kpi,@kpi_id)"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("kpi", tb_kpi.Text)
+                    Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
+                    reader = Command.ExecuteReader
+
+                    MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                End If
+
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            load_kpi()
+            auto_generate_id()
+        End Try
+    End Sub
+
+    Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs) Handles mbtn_updatekpi.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+
+            If (tb_kpi.Text = "") Then
+                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+
+                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If (question = DialogResult.Yes) Then
+
+
+                    MysqlConn.Open()
+                    query = "UPDATE tbl_kpi SET kpi=@kpi WHERE kpi_id=@kpi_id"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("kpi", tb_kpi.Text)
+                    Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
+                    reader = Command.ExecuteReader
+
+                    MetroMessageBox.Show(Me, "Successfully Updated!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+            End If
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            load_kpi()
+            auto_generate_id()
+        End Try
+    End Sub
+
+    Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs) Handles mbtn_deletekpi.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+
+            If (tb_kpi.Text = "") Then
+                MetroMessageBox.Show(Me, "Please choose from the table.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+
+                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If (question = DialogResult.Yes) Then
+
+
+                    MysqlConn.Open()
+                    query = "DELETE FROM tbl_kpi WHERE kpi=@kpi AND kpi_id=@kpi_id"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("kpi", tb_kpi.Text)
+                    Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
+                    reader = Command.ExecuteReader
+
+                    MetroMessageBox.Show(Me, "Successfully Deleted!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            tb_kpi.Clear()
+            auto_generate_id()
+            load_kpi()
+        End Try
+    End Sub
+
+    Private Sub mbtn_clearkpi_Click(sender As Object, e As EventArgs) Handles mbtn_clearkpi.Click
+        auto_generate_id()
+        tb_kpi.Clear()
+    End Sub
+
+    Private Sub mg_kpi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_kpi.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = Me.mg_kpi.Rows(e.RowIndex)
+
+            tb_kpi.Text = row.Cells("KPI").Value.ToString
+            ran_kpi.Text = row.Cells("ID").Value.ToString
         End If
     End Sub
 End Class
