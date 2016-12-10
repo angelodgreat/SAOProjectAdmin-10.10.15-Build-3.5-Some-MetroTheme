@@ -204,5 +204,9 @@ Public Class Login
 
     End Sub
 
+    Private Sub mbtn_bypass_Click(sender As Object, e As EventArgs) Handles mbtn_bypass.Click
+        TabMain.Show()
+        Me.Hide()
 
+    End Sub
 End Class

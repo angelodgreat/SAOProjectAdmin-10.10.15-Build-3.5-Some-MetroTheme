@@ -33,6 +33,8 @@ Partial Class SettingsForm
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.mt_schoolyear = New MetroFramework.Controls.MetroTile()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.mbtn_clearloc = New MetroFramework.Controls.MetroButton()
+        Me.mbtn_clearorg = New MetroFramework.Controls.MetroButton()
         Me.mbtn_deletelocations = New MetroFramework.Controls.MetroButton()
         Me.mbtn_delete = New MetroFramework.Controls.MetroButton()
         Me.mbtn_updatelocations = New MetroFramework.Controls.MetroButton()
@@ -48,6 +50,7 @@ Partial Class SettingsForm
         Me.tb_location = New System.Windows.Forms.TextBox()
         Me.tb_organization = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.mbtn_clearkpi = New MetroFramework.Controls.MetroButton()
         Me.mbtn_deletekpi = New MetroFramework.Controls.MetroButton()
         Me.mbtn_updatekpi = New MetroFramework.Controls.MetroButton()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -55,9 +58,9 @@ Partial Class SettingsForm
         Me.mbtn_savekpi = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.tb_kpi = New System.Windows.Forms.TextBox()
-        Me.mbtn_clearorg = New MetroFramework.Controls.MetroButton()
-        Me.mbtn_clearloc = New MetroFramework.Controls.MetroButton()
-        Me.mbtn_clearkpi = New MetroFramework.Controls.MetroButton()
+        Me.ran_org = New System.Windows.Forms.Label()
+        Me.ran_loc = New System.Windows.Forms.Label()
+        Me.ran_kpi = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.mg_locations, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +103,24 @@ Partial Class SettingsForm
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "&Settings"
+        '
+        'mbtn_clearloc
+        '
+        Me.mbtn_clearloc.Location = New System.Drawing.Point(167, 395)
+        Me.mbtn_clearloc.Name = "mbtn_clearloc"
+        Me.mbtn_clearloc.Size = New System.Drawing.Size(75, 23)
+        Me.mbtn_clearloc.TabIndex = 13
+        Me.mbtn_clearloc.Text = "Clear"
+        Me.mbtn_clearloc.UseSelectable = True
+        '
+        'mbtn_clearorg
+        '
+        Me.mbtn_clearorg.Location = New System.Drawing.Point(167, 187)
+        Me.mbtn_clearorg.Name = "mbtn_clearorg"
+        Me.mbtn_clearorg.Size = New System.Drawing.Size(75, 23)
+        Me.mbtn_clearorg.TabIndex = 12
+        Me.mbtn_clearorg.Text = "Clear"
+        Me.mbtn_clearorg.UseSelectable = True
         '
         'mbtn_deletelocations
         '
@@ -200,6 +221,7 @@ Partial Class SettingsForm
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.mg_locations.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.mg_locations.RowHeadersVisible = False
         Me.mg_locations.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.mg_locations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.mg_locations.Size = New System.Drawing.Size(575, 117)
@@ -260,6 +282,7 @@ Partial Class SettingsForm
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.mg_organizations.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.mg_organizations.RowHeadersVisible = False
         Me.mg_organizations.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.mg_organizations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.mg_organizations.Size = New System.Drawing.Size(575, 117)
@@ -322,6 +345,15 @@ Partial Class SettingsForm
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "&Settings"
+        '
+        'mbtn_clearkpi
+        '
+        Me.mbtn_clearkpi.Location = New System.Drawing.Point(167, 187)
+        Me.mbtn_clearkpi.Name = "mbtn_clearkpi"
+        Me.mbtn_clearkpi.Size = New System.Drawing.Size(75, 23)
+        Me.mbtn_clearkpi.TabIndex = 14
+        Me.mbtn_clearkpi.Text = "Clear"
+        Me.mbtn_clearkpi.UseSelectable = True
         '
         'mbtn_deletekpi
         '
@@ -395,6 +427,7 @@ Partial Class SettingsForm
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.mg_kpi.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.mg_kpi.RowHeadersVisible = False
         Me.mg_kpi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.mg_kpi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.mg_kpi.Size = New System.Drawing.Size(575, 117)
@@ -426,38 +459,41 @@ Partial Class SettingsForm
         Me.tb_kpi.Size = New System.Drawing.Size(318, 20)
         Me.tb_kpi.TabIndex = 6
         '
-        'mbtn_clearorg
+        'ran_org
         '
-        Me.mbtn_clearorg.Location = New System.Drawing.Point(167, 187)
-        Me.mbtn_clearorg.Name = "mbtn_clearorg"
-        Me.mbtn_clearorg.Size = New System.Drawing.Size(75, 23)
-        Me.mbtn_clearorg.TabIndex = 12
-        Me.mbtn_clearorg.Text = "Clear"
-        Me.mbtn_clearorg.UseSelectable = True
+        Me.ran_org.AutoSize = True
+        Me.ran_org.Location = New System.Drawing.Point(154, 28)
+        Me.ran_org.Name = "ran_org"
+        Me.ran_org.Size = New System.Drawing.Size(39, 13)
+        Me.ran_org.TabIndex = 3
+        Me.ran_org.Text = "Label1"
         '
-        'mbtn_clearloc
+        'ran_loc
         '
-        Me.mbtn_clearloc.Location = New System.Drawing.Point(167, 395)
-        Me.mbtn_clearloc.Name = "mbtn_clearloc"
-        Me.mbtn_clearloc.Size = New System.Drawing.Size(75, 23)
-        Me.mbtn_clearloc.TabIndex = 13
-        Me.mbtn_clearloc.Text = "Clear"
-        Me.mbtn_clearloc.UseSelectable = True
+        Me.ran_loc.AutoSize = True
+        Me.ran_loc.Location = New System.Drawing.Point(154, 49)
+        Me.ran_loc.Name = "ran_loc"
+        Me.ran_loc.Size = New System.Drawing.Size(39, 13)
+        Me.ran_loc.TabIndex = 4
+        Me.ran_loc.Text = "Label2"
         '
-        'mbtn_clearkpi
+        'ran_kpi
         '
-        Me.mbtn_clearkpi.Location = New System.Drawing.Point(167, 187)
-        Me.mbtn_clearkpi.Name = "mbtn_clearkpi"
-        Me.mbtn_clearkpi.Size = New System.Drawing.Size(75, 23)
-        Me.mbtn_clearkpi.TabIndex = 14
-        Me.mbtn_clearkpi.Text = "Clear"
-        Me.mbtn_clearkpi.UseSelectable = True
+        Me.ran_kpi.AutoSize = True
+        Me.ran_kpi.Location = New System.Drawing.Point(154, 71)
+        Me.ran_kpi.Name = "ran_kpi"
+        Me.ran_kpi.Size = New System.Drawing.Size(39, 13)
+        Me.ran_kpi.TabIndex = 5
+        Me.ran_kpi.Text = "Label3"
         '
         'SettingsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 610)
+        Me.Controls.Add(Me.ran_kpi)
+        Me.Controls.Add(Me.ran_loc)
+        Me.Controls.Add(Me.ran_org)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.mt_schoolyear)
@@ -474,6 +510,7 @@ Partial Class SettingsForm
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.mg_kpi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -504,4 +541,7 @@ Partial Class SettingsForm
     Friend WithEvents mbtn_clearloc As MetroFramework.Controls.MetroButton
     Friend WithEvents mbtn_clearorg As MetroFramework.Controls.MetroButton
     Friend WithEvents mbtn_clearkpi As MetroFramework.Controls.MetroButton
+    Friend WithEvents ran_org As Label
+    Friend WithEvents ran_loc As Label
+    Friend WithEvents ran_kpi As Label
 End Class

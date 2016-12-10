@@ -38,6 +38,7 @@ Partial Class Login
         Me.ml_minimize = New MetroFramework.Controls.MetroLink()
         Me.ml_exit = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
+        Me.mbtn_bypass = New MetroFramework.Controls.MetroButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,6 +55,7 @@ Partial Class Login
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.mbtn_bypass)
         Me.GroupBox1.Controls.Add(Me.tb_password)
         Me.GroupBox1.Controls.Add(Me.tb_username)
         Me.GroupBox1.Controls.Add(Me.MetroButton1)
@@ -195,6 +197,15 @@ Partial Class Login
         Me.MetroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MetroLink1.UseSelectable = True
         '
+        'mbtn_bypass
+        '
+        Me.mbtn_bypass.Location = New System.Drawing.Point(64, 156)
+        Me.mbtn_bypass.Name = "mbtn_bypass"
+        Me.mbtn_bypass.Size = New System.Drawing.Size(75, 23)
+        Me.mbtn_bypass.TabIndex = 12
+        Me.mbtn_bypass.Text = "Bypass"
+        Me.mbtn_bypass.UseSelectable = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -235,6 +246,7 @@ Partial Class Login
     Friend WithEvents ml_minimize As MetroFramework.Controls.MetroLink
     Friend WithEvents ml_exit As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroLink1 As MetroFramework.Controls.MetroLink
-    Friend WithEvents tb_password As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents tb_username As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents mbtn_bypass As MetroFramework.Controls.MetroButton
+    Private WithEvents tb_password As DevComponents.DotNetBar.Controls.TextBoxX
+    Private WithEvents tb_username As DevComponents.DotNetBar.Controls.TextBoxX
 End Class
