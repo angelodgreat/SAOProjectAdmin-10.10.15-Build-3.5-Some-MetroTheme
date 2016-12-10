@@ -12,81 +12,6 @@ Public Class SettingsForm
         load_location()
     End Sub
 
-    Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
-        Dim a As Integer
-
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If a = vbYes Then
-            ChangeSemester.Show()
-            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
-        Else
-
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs) Handles mbtn_saveorganization.Click
-        Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
-
-            If (MysqlConn.State = ConnectionState.Open) Then
-                MysqlConn.Close()
-            End If
-
-            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-            If (question = DialogResult.Yes) Then
-
-
-
-                MysqlConn.Open()
-
-                query = "SELECT * FROM tbl_organizations_school WHERE school=@school"
-                Command = New MySqlCommand(query, MysqlConn)
-                Command.Parameters.AddWithValue("school", tb_organization.Text)
-                reader = Command.ExecuteReader
-
-                Dim count As Integer
-                count = 0
-
-                While reader.Read
-                    count += 1
-
-                End While
-
-                If count >= 1 Then
-                    MetroMessageBox.Show(Me, "The School/Organization " & tb_organization.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-                Else
-                    If (tb_organization.Text = "") Then
-                        MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        MysqlConn.Close()
-                        MysqlConn.Open()
-                        query = "INSERT INTO tbl_organizations_school VALUES (@school)"
-                        Command = New MySqlCommand(query, MysqlConn)
-                        Command.Parameters.AddWithValue("school", tb_organization.Text)
-                        reader = Command.ExecuteReader
-
-                        MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-
-
-                End If
-            End If
-
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
-
-        Finally
-            MysqlConn.Dispose()
-            load_organizations()
-        End Try
-
-    End Sub
-
     Public Sub load_organizations()
         Try
             MysqlConn = New MySqlConnection
@@ -124,7 +49,7 @@ Public Class SettingsForm
             Dim dbdataset As New DataTable
 
             MysqlConn.Open()
-            query = "SELECT location as Location/s FROM tbl_locations"
+            query = "SELECT location as 'Location/s' FROM tbl_locations"
             Command = New MySqlCommand(query, MysqlConn)
             SDA.SelectCommand = Command
             SDA.Fill(dbdataset)
@@ -139,6 +64,180 @@ Public Class SettingsForm
         Finally
             MysqlConn.Dispose()
         End Try
+    End Sub
+
+    Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
+        Dim a As Integer
+
+        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If a = vbYes Then
+            ChangeSemester.Show()
+            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
+        Else
+
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs) Handles mbtn_saveorganization.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If (MysqlConn.State = ConnectionState.Open) Then
+                MysqlConn.Close()
+            End If
+
+            If (tb_organization.Text = "") Then
+                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+
+
+                question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If (question = DialogResult.Yes) Then
+
+                    MysqlConn.Open()
+                    query = "SELECT * FROM tbl_organizations_school WHERE school=@school"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("school", tb_organization.Text)
+                    reader = Command.ExecuteReader
+
+                    Dim count As Integer
+                    count = 0
+
+                    While reader.Read
+                        count += 1
+
+                    End While
+
+                    If count >= 1 Then
+                        MetroMessageBox.Show(Me, "The School/Organization " & tb_organization.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                    Else
+                        MysqlConn.Close()
+                        MysqlConn.Open()
+                        query = "INSERT INTO tbl_organizations_school VALUES (@school)"
+                            Command = New MySqlCommand(query, MysqlConn)
+                            Command.Parameters.AddWithValue("school", tb_organization.Text)
+                            reader = Command.ExecuteReader
+
+                            MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+
+                    End If
+
+
+            End If
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            load_organizations()
+        End Try
+
+    End Sub
+
+    Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs) Handles mbtn_updateorganizations.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+
+            If (tb_organization.Text = "") Then
+                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+
+                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If (question = DialogResult.Yes) Then
+
+
+                    MysqlConn.Open()
+                    query = "UPDATE tbl_organizations_school SET school=@school"
+                    Command = New MySqlCommand(query, MysqlConn)
+                            Command.Parameters.AddWithValue("school", tb_organization.Text)
+                            reader = Command.ExecuteReader
+
+                    MetroMessageBox.Show(Me, "Successfully Updated!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+                    End If
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            load_organizations()
+        End Try
+
+
+
+    End Sub
+
+    Private Sub mbtn_delete_Click(sender As Object, e As EventArgs) Handles mbtn_delete.Click
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+
+            If (tb_organization.Text = "") Then
+                MetroMessageBox.Show(Me, "Please choose from the table.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+
+                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If (question = DialogResult.Yes) Then
+
+
+                    MysqlConn.Open()
+                    query = "DELETE FROM tbl_organizations_school WHERE school=@school"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("school", tb_organization.Text)
+                    reader = Command.ExecuteReader
+
+                    MetroMessageBox.Show(Me, "Successfully Deleted!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+            End If
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+            tb_organization.Clear()
+            load_organizations()
+        End Try
+    End Sub
+    Private Sub mbtn_clearorg_Click(sender As Object, e As EventArgs) Handles mbtn_clearorg.Click
+        tb_organization.Clear()
+
+    End Sub
+
+    Private Sub mg_organizations_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_organizations.CellContentClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = Me.mg_organizations.Rows(e.RowIndex)
+
+            tb_organization.Text = row.Cells("School/Organization").Value.ToString
+
+        End If
     End Sub
 
     Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs) Handles mbtn_locationsave.Click
@@ -198,4 +297,6 @@ Public Class SettingsForm
             load_location()
         End Try
     End Sub
+
+
 End Class
