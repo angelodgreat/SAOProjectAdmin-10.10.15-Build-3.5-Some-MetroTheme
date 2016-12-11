@@ -601,4 +601,5 @@ Public Class SettingsForm
             ran_kpi.Text = row.Cells("ID").Value.ToString
         End If
     End Sub
+
 End Class

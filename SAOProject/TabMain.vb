@@ -748,7 +748,9 @@ Public Class TabMain
         End Try
 
         load_table()
-
+        load_kpi()
+        load_locs()
+        load_orgANDschool()
 
         'Timer
         Timer_TabMain.Enabled = True
@@ -1452,5 +1454,114 @@ Public Class TabMain
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
         SettingsForm.Show()
+    End Sub
+
+    Public Sub load_kpi()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            cb_kpi.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT KPI FROM tbl_kpi ORDER BY KPI ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            cb_kpi.Items.Clear()
+
+
+            While reader.Read
+                cb_kpi.Items.Add(reader.GetString("KPI"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+    End Sub
+
+    Public Sub load_orgANDschool()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            cb_eventschool.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT school FROM tbl_organizations_school ORDER BY school ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            cb_eventschool.Items.Clear()
+
+
+            While reader.Read
+                cb_eventschool.Items.Add(reader.GetString("school"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+
+    End Sub
+
+    Public Sub load_locs()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            tb_location.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT Location FROM tbl_locations ORDER BY Location ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            tb_location.Items.Clear()
+
+
+            While reader.Read
+                tb_location.Items.Add(reader.GetString("Location"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
     End Sub
 End Class

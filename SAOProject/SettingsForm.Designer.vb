@@ -467,6 +467,7 @@ Partial Class SettingsForm
         Me.ran_org.Size = New System.Drawing.Size(39, 13)
         Me.ran_org.TabIndex = 3
         Me.ran_org.Text = "Label1"
+        Me.ran_org.Visible = False
         '
         'ran_loc
         '
@@ -476,6 +477,7 @@ Partial Class SettingsForm
         Me.ran_loc.Size = New System.Drawing.Size(39, 13)
         Me.ran_loc.TabIndex = 4
         Me.ran_loc.Text = "Label2"
+        Me.ran_loc.Visible = False
         '
         'ran_kpi
         '
@@ -485,6 +487,7 @@ Partial Class SettingsForm
         Me.ran_kpi.Size = New System.Drawing.Size(39, 13)
         Me.ran_kpi.TabIndex = 5
         Me.ran_kpi.Text = "Label3"
+        Me.ran_kpi.Visible = False
         '
         'SettingsForm
         '

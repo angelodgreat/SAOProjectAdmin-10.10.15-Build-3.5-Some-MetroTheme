@@ -151,13 +151,13 @@ Partial Class TabMain
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbl_time = New System.Windows.Forms.Label()
         Me.welcomeadmin = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.opd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
         Me.cb_userlist_reg = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbl_showsem = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TP_Home.SuspendLayout()
@@ -903,6 +903,7 @@ Partial Class TabMain
         'time_picker_to
         '
         Me.time_picker_to.FormattingEnabled = True
+        Me.time_picker_to.Items.AddRange(New Object() {"06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30", "24:00"})
         Me.time_picker_to.Location = New System.Drawing.Point(351, 69)
         Me.time_picker_to.Name = "time_picker_to"
         Me.time_picker_to.Size = New System.Drawing.Size(121, 23)
@@ -911,6 +912,7 @@ Partial Class TabMain
         'time_picker_from
         '
         Me.time_picker_from.FormattingEnabled = True
+        Me.time_picker_from.Items.AddRange(New Object() {"06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30", "24:00"})
         Me.time_picker_from.Location = New System.Drawing.Point(200, 72)
         Me.time_picker_from.Name = "time_picker_from"
         Me.time_picker_from.Size = New System.Drawing.Size(121, 23)
@@ -983,7 +985,6 @@ Partial Class TabMain
         Me.cb_kpi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cb_kpi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.cb_kpi.FormattingEnabled = True
-        Me.cb_kpi.Items.AddRange(New Object() {"IGA", "CSA", "LTS", "SDP", "SRA", "COA", "HWP", "-"})
         Me.cb_kpi.Location = New System.Drawing.Point(155, 101)
         Me.cb_kpi.Name = "cb_kpi"
         Me.cb_kpi.Size = New System.Drawing.Size(123, 23)
@@ -1018,7 +1019,6 @@ Partial Class TabMain
         Me.cb_eventschool.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cb_eventschool.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.cb_eventschool.FormattingEnabled = True
-        Me.cb_eventschool.Items.AddRange(New Object() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other", "-"})
         Me.cb_eventschool.Location = New System.Drawing.Point(155, 157)
         Me.cb_eventschool.Name = "cb_eventschool"
         Me.cb_eventschool.Size = New System.Drawing.Size(415, 23)
@@ -1121,7 +1121,6 @@ Partial Class TabMain
         Me.tb_location.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.tb_location.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.tb_location.FormattingEnabled = True
-        Me.tb_location.Items.AddRange(New Object() {"CARMEN DE LUNA (CDL)", "Multimedia Instructional Room (MIR)", "LIBRADA AVELINO HALL (LAH)", "Chapel/Adoration Chapel", "Executive Meeting Room (EMR)", "LAH Seminar Room #1", "LAH Seminar Room #2", "LAH Seminar Room #3", "GENEROSA DE LEON SCIENCE CENTER (GDLSC)", "Bulwagang Maestra Osang (BMO)", "SOFIA DE VEYRA HALL (SDVH)", "SDV Conference Room (SDVCR)", "SDV Lanai", "FELISA FRANCISCO HALL (FFH)", "Assembly Hall (3rd Flr)", "MARIA VILLACERAN HALL (MVH)", "LA Auditorium", "MVH Lanai", "DIONISIO C. TIONGCO (DCT)", "Student Activity Center (Ground flr)", "Student Activity Center (Second flr)", "PILAR HIDALGO LIM HALL (PHL)", "PHL Lanai", "TECHNOLOGY CENTER", "TechCenter Gym", "TechCenter Lanai with Lights", "FGH DENTRISTRY", "FGH Lanai", "INFORMATION SCIENCE CENTER", "Friends Cafe", "ISC Mezzanine #1", "ISC Mezzanine #2", "DentScience Lanai", "GYM (Classroom)", "North Quadrangle", "South Quadrangle"})
         Me.tb_location.Location = New System.Drawing.Point(155, 129)
         Me.tb_location.Name = "tb_location"
         Me.tb_location.Size = New System.Drawing.Size(415, 23)
@@ -1647,31 +1646,31 @@ Partial Class TabMain
         '
         Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupToolStripMenuItem, Me.RestoreToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.DatabaseToolStripMenuItem.Text = "Database"
         '
         'BackupToolStripMenuItem
         '
         Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
-        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.BackupToolStripMenuItem.Text = "Backup"
         '
         'RestoreToolStripMenuItem
         '
         Me.RestoreToolStripMenuItem.Name = "RestoreToolStripMenuItem"
-        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.RestoreToolStripMenuItem.Text = "Restore"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.LogoutToolStripMenuItem.Text = "Log-out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'AboutToolStripMenuItem
@@ -1679,6 +1678,12 @@ Partial Class TabMain
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'lbl_time
         '
@@ -1723,12 +1728,6 @@ Partial Class TabMain
         Me.cb_userlist_reg.Size = New System.Drawing.Size(200, 22)
         Me.cb_userlist_reg.TabIndex = 79
         Me.cb_userlist_reg.WatermarkText = "00-00000"
-        '
-        'SettingsToolStripMenuItem
-        '
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'lbl_showsem
         '
