@@ -17,9 +17,6 @@ Public Class SettingsForm
         load_location()
         load_kpi()
         auto_generate_id()
-        grp_kpi.Hide()
-        grp_loc.Hide()
-        grp_org.Hide()
     End Sub
     Public Sub auto_generate_id()
         identifier_rankpi = Now.ToString("mmddyyy" + "-")
@@ -605,23 +602,7 @@ Public Class SettingsForm
         End If
     End Sub
 
-    Private Sub mt_showorg_Click(sender As Object, e As EventArgs) Handles mt_showorg.Click
-        grp_org.Show()
-        grp_kpi.Hide()
-        grp_loc.Hide()
-    End Sub
-
-    Private Sub mt_showloc_Click(sender As Object, e As EventArgs) Handles mt_showloc.Click
-        grp_loc.Show()
-        grp_org.Hide()
-        grp_kpi.Hide()
-
-    End Sub
-
-    Private Sub mt_showkpi_Click(sender As Object, e As EventArgs) Handles mt_showkpi.Click
-        grp_kpi.Show()
-        grp_loc.Hide()
-        grp_org.Hide()
-
+    Private Sub SettingsForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
     End Sub
 End Class
