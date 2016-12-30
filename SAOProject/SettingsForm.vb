@@ -154,7 +154,7 @@ Public Class SettingsForm
 
                 question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If (question = DialogResult.Yes) Then
+                If (question = DialogResult.Yes) Then
 
                     MysqlConn.Open()
                     query = "SELECT * FROM tbl_organizations_school WHERE school=@school"
@@ -182,10 +182,10 @@ Public Class SettingsForm
                         Command.Parameters.AddWithValue("orgid", ran_org.Text)
                         reader = Command.ExecuteReader
 
-                            MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-
+                        MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
+
+                End If
 
 
             End If
@@ -330,14 +330,14 @@ Public Class SettingsForm
                 Else
 
                     MysqlConn.Close()
-                        MysqlConn.Open()
+                    MysqlConn.Open()
                     query = "INSERT INTO tbl_locations VALUES (@location,@loc_id)"
                     Command = New MySqlCommand(query, MysqlConn)
                     Command.Parameters.AddWithValue("location", tb_location.Text)
                     Command.Parameters.AddWithValue("loc_id", ran_loc.Text)
                     reader = Command.ExecuteReader
 
-                        MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 End If
 
