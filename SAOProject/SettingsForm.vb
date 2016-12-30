@@ -602,4 +602,7 @@ Public Class SettingsForm
         End If
     End Sub
 
+    Private Sub SettingsForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+    End Sub
 End Class
