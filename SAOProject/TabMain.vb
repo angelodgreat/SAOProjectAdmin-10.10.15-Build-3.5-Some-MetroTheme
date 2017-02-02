@@ -364,7 +364,7 @@ Public Class TabMain
 
     End Sub
 
-    Private Sub btn_register_Click_1(sender As Object, e As EventArgs)
+    Private Sub btn_register_Click(sender As Object, e As EventArgs) Handles btn_register.Click
         'REGISTERING ACCOUNTS IN REGISTER FORM
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -429,11 +429,94 @@ Public Class TabMain
 
         End Try
 
-
     End Sub
 
 
-    Private Sub btn_update_records_Click(sender As Object, e As EventArgs)
+    Private Sub btn_delete_records_Click(sender As Object, e As EventArgs) Handles btn_delete_records.Click
+        'DELETING ACCOUNTS IN REGISTER FORM
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+
+
+
+        Dim a As Integer
+
+
+        If reg_id.Text = "" Then
+            MetroMessageBox.Show(Me, "No selected user.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+
+        Else
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If a = vbYes Then
+                Command = New MySqlCommand
+                Dim reader As MySqlDataReader
+                Dim tempusername As String
+
+                Try
+                    MysqlConn.Open()
+                    Dim query As String
+                    query = "Delete from saoinfo.saouserinfo where id='" & reg_id.Text & "'"
+                    Command = New MySqlCommand(query, MysqlConn)
+                    reader = Command.ExecuteReader
+                    tempusername = lb_showuser.Text
+                    lb_showuser.Items.Remove(tempusername)
+
+                    reg_cb_college.Text = "-"
+                    reg_cb_usertype.Text = "-"
+                    reg_id.Text = ""
+                    reg_fname.Text = ""
+                    reg_mname.Text = ""
+                    reg_lname.Text = ""
+                    reg_username.Text = ""
+                    reg_password.Text = ""
+                    reg_Retype_password.Text = ""
+                    MetroMessageBox.Show(Me, "Account Deleted!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+
+
+                    MysqlConn.Close()
+
+
+                Catch ex As MySqlException
+                    MessageBox.Show(ex.Message)
+
+                Finally
+                    MysqlConn.Dispose()
+
+                End Try
+            Else
+
+
+
+            End If
+
+        End If
+    End Sub
+
+
+    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs) Handles btn_reset_records.Click
+        'RESETTING FIELDS IN REGISTER FORM
+        cb_userlist_reg.Text = ""
+        reg_cb_usertype.Text = "-"
+        reg_cb_college.Text = "-"
+
+        reg_id.Text = ""
+        reg_fname.Text = ""
+        reg_mname.Text = ""
+        reg_lname.Text = ""
+        reg_username.Text = ""
+        reg_id.Enabled = True
+        reg_username.Enabled = True
+        reg_password.Text = ""
+        reg_Retype_password.Text = ""
+    End Sub
+
+
+    Private Sub btn_update_records_Click(sender As Object, e As EventArgs) Handles btn_update_records.Click
+
         'UPDATING ACCOUNTS IN REGISTER FORM
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -508,94 +591,6 @@ Public Class TabMain
 
             End If
         End If
-
-    End Sub
-
-
-    Private Sub btn_delete_records_Click(sender As Object, e As EventArgs)
-        'DELETING ACCOUNTS IN REGISTER FORM
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
-
-
-
-        Dim a As Integer
-
-
-        If reg_id.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected user.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-
-        Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-            If a = vbYes Then
-                Command = New MySqlCommand
-                Dim reader As MySqlDataReader
-                Dim tempusername As String
-
-                Try
-                    MysqlConn.Open()
-                    Dim query As String
-                    query = "Delete from saoinfo.saouserinfo where id='" & reg_id.Text & "'"
-                    Command = New MySqlCommand(query, MysqlConn)
-                    reader = Command.ExecuteReader
-                    tempusername = lb_showuser.Text
-                    lb_showuser.Items.Remove(tempusername)
-
-                    reg_cb_college.Text = "-"
-                    reg_cb_usertype.Text = "-"
-                    reg_id.Text = ""
-                    reg_fname.Text = ""
-                    reg_mname.Text = ""
-                    reg_lname.Text = ""
-                    reg_username.Text = ""
-                    reg_password.Text = ""
-                    reg_Retype_password.Text = ""
-                    MetroMessageBox.Show(Me, "Account Deleted!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
-
-
-                    MysqlConn.Close()
-
-
-                Catch ex As MySqlException
-                    MessageBox.Show(ex.Message)
-
-                Finally
-                    MysqlConn.Dispose()
-
-                End Try
-            Else
-
-
-
-            End If
-
-        End If
-
-
-    End Sub
-
-
-
-
-    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs)
-        'RESETTING FIELDS IN REGISTER FORM
-        cb_userlist_reg.Text = ""
-        reg_cb_usertype.Text = "-"
-        reg_cb_college.Text = "-"
-
-        reg_id.Text = ""
-        reg_fname.Text = ""
-        reg_mname.Text = ""
-        reg_lname.Text = ""
-        reg_username.Text = ""
-        reg_id.Enabled = True
-        reg_username.Enabled = True
-        reg_password.Text = ""
-        reg_Retype_password.Text = ""
     End Sub
 
     Private Sub calendar_picker_ValueChanged(sender As Object, e As EventArgs)
@@ -672,11 +667,11 @@ Public Class TabMain
 
         Finally
             MysqlConn.Dispose()
-
         End Try
     End Sub
 
-    Private Sub lb_showuser_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    Private Sub lb_showuser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lb_showuser.SelectedIndexChanged
         'Showing list of users in listbox
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -714,7 +709,6 @@ Public Class TabMain
 
         End Try
     End Sub
-
 
 
     Private Sub TabMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -1273,7 +1267,7 @@ Public Class TabMain
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
         btn_deletedata.Visible = True
         btn_update.Visible = True
-        btn_submitrecords.Visible = False
+        btn_submitrecords.Visible = True
     End Sub
 
     Private Sub cb_filtersearchlocation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filtersearchlocation.SelectedIndexChanged
@@ -1564,4 +1558,6 @@ Public Class TabMain
 
         End Try
     End Sub
+
+
 End Class

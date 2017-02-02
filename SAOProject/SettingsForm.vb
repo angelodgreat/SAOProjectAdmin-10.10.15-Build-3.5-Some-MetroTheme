@@ -605,4 +605,22 @@ Public Class SettingsForm
     Private Sub SettingsForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.Hide()
     End Sub
+
+    Private Sub mt_showkpi_Click(sender As Object, e As EventArgs) Handles mt_showkpi.Click
+        grp_kpi.Show()
+        grp_loc.Hide()
+        grp_org.Hide()
+    End Sub
+
+    Private Sub mt_showloc_Click(sender As Object, e As EventArgs) Handles mt_showloc.Click
+        grp_loc.Show()
+        grp_kpi.Hide()
+        grp_org.Hide()
+    End Sub
+
+    Private Sub mt_showorg_Click(sender As Object, e As EventArgs) Handles mt_showorg.Click
+        grp_org.Show()
+        grp_loc.Hide()
+        grp_kpi.Hide()
+    End Sub
 End Class
