@@ -18,6 +18,56 @@ Public Class TabMain
     Dim dbdataset As New DataTable
     Dim reader As MySqlDataReader
 
+    Private Sub TabMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btn_deletedata.Visible = False
+        btn_update.Visible = False
+        GroupBoxEvent.Visible = False
+
+        event_datetimepicker.Text = ""
+        tb_location.Text = "-"
+        tb_input_event.Text = ""
+        cb_noa.Text = "-"
+        cb_kpi.Text = "-"
+        cb_eventschool.Text = "-"
+        cb_remarks.Text = ""
+
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+        Command = New MySqlCommand
+        Dim reader As MySqlDataReader
+
+        Try
+            MysqlConn.Open()
+            Dim query As String
+            query = "SELECT * from saoinfo.saouserinfo "
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+            While reader.Read
+                Dim sID = reader.GetString("id")
+                lb_showuser.Items.Add(sID)
+            End While
+
+            MysqlConn.Close()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+
+        load_table()
+        load_kpi()
+        load_locs()
+        load_orgANDschool()
+
+        'Timer
+        Timer_TabMain.Enabled = True
+
+    End Sub
+
 
     Private Sub btn_submitrecords_Click(sender As Object, e As EventArgs) Handles btn_submitrecords.Click
 
@@ -119,7 +169,7 @@ Public Class TabMain
         Try
             MysqlConn.Open()
 
-            query = "Select MAX(eventid) from `saoevent" & My.Settings.schoolyear & "`"
+            query = "Select count(eventid) from `saoevent" & My.Settings.schoolyear & "`"
             Dim reader As MySqlDataReader
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
@@ -346,7 +396,7 @@ Public Class TabMain
         Try
             MysqlConn.Open()
 
-            query = "Select MAX(eventid) from `saoevent" & My.Settings.schoolyear & "`"
+            query = "Select count(eventid) from `saoevent" & My.Settings.schoolyear & "`"
             Dim reader As MySqlDataReader
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
@@ -711,45 +761,6 @@ Public Class TabMain
     End Sub
 
 
-    Private Sub TabMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
-        Command = New MySqlCommand
-        Dim reader As MySqlDataReader
-
-        Try
-            MysqlConn.Open()
-            Dim query As String
-            query = "SELECT * from saoinfo.saouserinfo "
-            Command = New MySqlCommand(query, MysqlConn)
-            reader = Command.ExecuteReader
-            While reader.Read
-                Dim sID = reader.GetString("id")
-                lb_showuser.Items.Add(sID)
-            End While
-
-            MysqlConn.Close()
-
-
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
-
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-
-        load_table()
-        load_kpi()
-        load_locs()
-        load_orgANDschool()
-
-        'Timer
-        Timer_TabMain.Enabled = True
-
-    End Sub
 
     Public Sub load_table()
         'MAIN TABLE
@@ -969,7 +980,7 @@ Public Class TabMain
         Try
             MysqlConn.Open()
 
-            query = "Select MAX(eventid) from `saoevent" & My.Settings.schoolyear & "`"
+            query = "Select count(eventid) from `saoevent" & My.Settings.schoolyear & "`"
             Dim reader As MySqlDataReader
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
@@ -1116,31 +1127,6 @@ Public Class TabMain
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         Notes.Show()
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
-        Dim SDA As New MySqlDataAdapter
-        Dim dbdataset As New DataTable
-        Dim bsource As New BindingSource
-
-
-        Try
-            MysqlConn.Open()
-
-            query = "Select MAX(saonotenumber) from saoreminder"
-            Dim reader As MySqlDataReader
-            Command = New MySqlCommand(query, MysqlConn)
-            reader = Command.ExecuteReader
-
-            If reader.Read = True Then
-                Notes.tb_reminder.Text = reader.Item(0) + 1
-
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            MysqlConn.Dispose()
-        End Try
-
 
     End Sub
 

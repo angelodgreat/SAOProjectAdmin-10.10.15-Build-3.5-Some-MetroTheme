@@ -273,5 +273,32 @@ Public Class Notes
 
     End Sub
 
+    Private Sub Notes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+        Dim SDA As New MySqlDataAdapter
+        Dim dbdataset As New DataTable
+        Dim bsource As New BindingSource
+
+
+        Try
+            MysqlConn.Open()
+
+            query = "Select count(saonotenumber) from saoreminder"
+            Dim reader As MySqlDataReader
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+            If reader.Read = True Then
+                tb_reminder.Text = reader.Item(0) + 1
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+        End Try
+
+    End Sub
 End Class
