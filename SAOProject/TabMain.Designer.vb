@@ -65,14 +65,12 @@ Partial Class TabMain
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.DataGridView3 = New MetroFramework.Controls.MetroGrid()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TP_Event = New System.Windows.Forms.TabPage()
         Me.btn_showeventdetails = New System.Windows.Forms.Button()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -137,7 +135,6 @@ Partial Class TabMain
         Me.btn_register = New System.Windows.Forms.Button()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
@@ -158,6 +155,9 @@ Partial Class TabMain
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
         Me.cb_userlist_reg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.lbl_showsem = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TP_Home.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -308,13 +308,12 @@ Partial Class TabMain
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label24.Location = New System.Drawing.Point(143, 663)
+        Me.Label24.Location = New System.Drawing.Point(427, 663)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(944, 15)
+        Me.Label24.Size = New System.Drawing.Size(467, 15)
         Me.Label24.TabIndex = 27
-        Me.Label24.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
-    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
-    "colar University  "
+        Me.Label24.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
         '
         'GroupBox6
         '
@@ -507,12 +506,12 @@ Partial Class TabMain
         'TP_Note
         '
         Me.TP_Note.BackColor = System.Drawing.Color.LightPink
+        Me.TP_Note.Controls.Add(Me.Label11)
         Me.TP_Note.Controls.Add(Me.Button2)
         Me.TP_Note.Controls.Add(Me.GroupBox12)
         Me.TP_Note.Controls.Add(Me.GroupBox11)
         Me.TP_Note.Controls.Add(Me.GroupBox9)
         Me.TP_Note.Controls.Add(Me.Label29)
-        Me.TP_Note.Controls.Add(Me.Label27)
         Me.TP_Note.Controls.Add(Me.PictureBox9)
         Me.TP_Note.Controls.Add(Me.PictureBox4)
         Me.TP_Note.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -652,18 +651,6 @@ Partial Class TabMain
         Me.Label29.TabIndex = 29
         Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label27.Location = New System.Drawing.Point(143, 663)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(944, 15)
-        Me.Label27.TabIndex = 28
-        Me.Label27.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
-    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
-    "colar University  "
-        '
         'PictureBox9
         '
         Me.PictureBox9.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
@@ -685,10 +672,10 @@ Partial Class TabMain
         'TP_Event
         '
         Me.TP_Event.BackColor = System.Drawing.Color.LightPink
+        Me.TP_Event.Controls.Add(Me.Label22)
         Me.TP_Event.Controls.Add(Me.btn_showeventdetails)
         Me.TP_Event.Controls.Add(Me.PictureBox7)
         Me.TP_Event.Controls.Add(Me.Label26)
-        Me.TP_Event.Controls.Add(Me.Label22)
         Me.TP_Event.Controls.Add(Me.GroupBox8)
         Me.TP_Event.Controls.Add(Me.GroupBox7)
         Me.TP_Event.Controls.Add(Me.GroupBoxEvent)
@@ -732,18 +719,6 @@ Partial Class TabMain
         Me.Label26.Size = New System.Drawing.Size(374, 66)
         Me.Label26.TabIndex = 31
         Me.Label26.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label22.Location = New System.Drawing.Point(143, 663)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(944, 15)
-        Me.Label22.TabIndex = 28
-        Me.Label22.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
-    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
-    "colar University  "
         '
         'GroupBox8
         '
@@ -1201,10 +1176,10 @@ Partial Class TabMain
         'TP_User
         '
         Me.TP_User.BackColor = System.Drawing.Color.LightPink
+        Me.TP_User.Controls.Add(Me.Label23)
         Me.TP_User.Controls.Add(Me.Panel_Accounts)
         Me.TP_User.Controls.Add(Me.PictureBox6)
         Me.TP_User.Controls.Add(Me.Label28)
-        Me.TP_User.Controls.Add(Me.Label23)
         Me.TP_User.Controls.Add(Me.PictureBox2)
         Me.TP_User.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TP_User.Location = New System.Drawing.Point(4, 24)
@@ -1571,18 +1546,6 @@ Partial Class TabMain
         Me.Label28.TabIndex = 77
         Me.Label28.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
         '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label23.Location = New System.Drawing.Point(143, 663)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(944, 15)
-        Me.Label23.TabIndex = 75
-        Me.Label23.Text = "Adviser: Haidee M. Valin       Developers: Umali, Christian Angelo R.     Lumaque" &
-    " Demar S.    Tecson, Miguel Exequiel H.    Muñoz, Hadrian G            Centro Es" &
-    "colar University  "
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
@@ -1726,6 +1689,39 @@ Partial Class TabMain
         Me.lbl_showsem.TabIndex = 37
         Me.lbl_showsem.Text = "School Year "
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Location = New System.Drawing.Point(427, 663)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(467, 15)
+        Me.Label11.TabIndex = 40
+        Me.Label11.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label22.Location = New System.Drawing.Point(427, 663)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(467, 15)
+        Me.Label22.TabIndex = 38
+        Me.Label22.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label23.Location = New System.Drawing.Point(427, 663)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(467, 15)
+        Me.Label23.TabIndex = 85
+        Me.Label23.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
+        '
         'TabMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -1831,9 +1827,6 @@ Partial Class TabMain
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents Label24 As Label
     Friend WithEvents filter_dtp3 As DateTimePicker
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label27 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Button1 As Button
@@ -1917,4 +1910,7 @@ Partial Class TabMain
     Private WithEvents cb_userlist_reg As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbl_showsem As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
 End Class

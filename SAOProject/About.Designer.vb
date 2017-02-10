@@ -60,11 +60,11 @@ Partial Class About
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(128, 253)
+        Me.Label3.Location = New System.Drawing.Point(114, 249)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(171, 16)
+        Me.Label3.Size = New System.Drawing.Size(209, 16)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "All Rights Reserved 2015"
+        Me.Label3.Text = "All Rights Reserved 2015-2017"
         '
         'PictureBox1
         '

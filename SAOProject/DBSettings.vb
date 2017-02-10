@@ -32,14 +32,7 @@ Public Class DBSettings
     End Sub
 
     Private Sub DBSettings_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim dialog As DialogResult
-        dialog = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
-
-        If dialog = DialogResult.No Then
-            e.Cancel = True
-        Else
-            Application.ExitThread()
-        End If
+        Application.Exit()
     End Sub
 
 End Class
