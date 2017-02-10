@@ -117,7 +117,7 @@ Partial Class ReportViewer
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(876, 34)
-        Me.DateTimePicker2.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.DateTimePicker2.MinimumSize = New System.Drawing.Size(4, 29)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(228, 29)
         Me.DateTimePicker2.TabIndex = 4
@@ -137,7 +137,6 @@ Partial Class ReportViewer
         Me.cb_filterschool.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_filterschool.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.cb_filterschool.FormattingEnabled = True
-        Me.cb_filterschool.Items.AddRange(New Object() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other"})
         Me.cb_filterschool.Location = New System.Drawing.Point(308, 37)
         Me.cb_filterschool.Name = "cb_filterschool"
         Me.cb_filterschool.Size = New System.Drawing.Size(282, 22)
@@ -170,7 +169,9 @@ Partial Class ReportViewer
         Me.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "ReportViewer"
+        Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
         CType(Me.SAOEventBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()

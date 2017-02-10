@@ -24,11 +24,6 @@ Partial Class DBSettings
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DBSettings))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.tb_setpassword = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setusername = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.mb_savesettings = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
@@ -36,6 +31,11 @@ Partial Class DBSettings
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setusername = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setpassword = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,82 +54,12 @@ Partial Class DBSettings
         Me.GroupBox1.Controls.Add(Me.MetroLabel2)
         Me.GroupBox1.Controls.Add(Me.MetroLabel1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(25, 65)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 65)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(341, 280)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "&Database Settings"
-        '
-        'tb_setpassword
-        '
-        '
-        '
-        '
-        Me.tb_setpassword.Border.Class = "TextBoxBorder"
-        Me.tb_setpassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
-        Me.tb_setpassword.Name = "tb_setpassword"
-        Me.tb_setpassword.PreventEnterBeep = True
-        Me.tb_setpassword.Size = New System.Drawing.Size(204, 24)
-        Me.tb_setpassword.TabIndex = 27
-        Me.tb_setpassword.WatermarkText = "root"
-        '
-        'tb_setusername
-        '
-        '
-        '
-        '
-        Me.tb_setusername.Border.Class = "TextBoxBorder"
-        Me.tb_setusername.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setusername.Location = New System.Drawing.Point(107, 145)
-        Me.tb_setusername.Name = "tb_setusername"
-        Me.tb_setusername.PreventEnterBeep = True
-        Me.tb_setusername.Size = New System.Drawing.Size(204, 24)
-        Me.tb_setusername.TabIndex = 26
-        Me.tb_setusername.WatermarkText = "root"
-        '
-        'tb_setport
-        '
-        '
-        '
-        '
-        Me.tb_setport.Border.Class = "TextBoxBorder"
-        Me.tb_setport.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setport.Location = New System.Drawing.Point(107, 107)
-        Me.tb_setport.Name = "tb_setport"
-        Me.tb_setport.PreventEnterBeep = True
-        Me.tb_setport.Size = New System.Drawing.Size(204, 24)
-        Me.tb_setport.TabIndex = 25
-        Me.tb_setport.WatermarkText = "3306"
-        '
-        'tb_setDB
-        '
-        '
-        '
-        '
-        Me.tb_setDB.Border.Class = "TextBoxBorder"
-        Me.tb_setDB.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setDB.Location = New System.Drawing.Point(107, 70)
-        Me.tb_setDB.Name = "tb_setDB"
-        Me.tb_setDB.PreventEnterBeep = True
-        Me.tb_setDB.Size = New System.Drawing.Size(204, 24)
-        Me.tb_setDB.TabIndex = 24
-        Me.tb_setDB.WatermarkText = "saoinfo"
-        '
-        'tb_setserver
-        '
-        '
-        '
-        '
-        Me.tb_setserver.Border.Class = "TextBoxBorder"
-        Me.tb_setserver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setserver.Location = New System.Drawing.Point(107, 36)
-        Me.tb_setserver.Name = "tb_setserver"
-        Me.tb_setserver.PreventEnterBeep = True
-        Me.tb_setserver.Size = New System.Drawing.Size(204, 24)
-        Me.tb_setserver.TabIndex = 23
-        Me.tb_setserver.WatermarkText = "AngeloUmaliPC/192.1.1.1"
         '
         'MetroButton1
         '
@@ -194,6 +124,76 @@ Partial Class DBSettings
         Me.MetroLabel1.TabIndex = 16
         Me.MetroLabel1.Text = "&Server:"
         '
+        'tb_setserver
+        '
+        '
+        '
+        '
+        Me.tb_setserver.Border.Class = "TextBoxBorder"
+        Me.tb_setserver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setserver.Location = New System.Drawing.Point(108, 34)
+        Me.tb_setserver.Name = "tb_setserver"
+        Me.tb_setserver.PreventEnterBeep = True
+        Me.tb_setserver.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setserver.TabIndex = 23
+        Me.tb_setserver.WatermarkText = "localhost"
+        '
+        'tb_setDB
+        '
+        '
+        '
+        '
+        Me.tb_setDB.Border.Class = "TextBoxBorder"
+        Me.tb_setDB.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setDB.Location = New System.Drawing.Point(107, 70)
+        Me.tb_setDB.Name = "tb_setDB"
+        Me.tb_setDB.PreventEnterBeep = True
+        Me.tb_setDB.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setDB.TabIndex = 24
+        Me.tb_setDB.WatermarkText = "saoinfo"
+        '
+        'tb_setport
+        '
+        '
+        '
+        '
+        Me.tb_setport.Border.Class = "TextBoxBorder"
+        Me.tb_setport.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setport.Location = New System.Drawing.Point(107, 107)
+        Me.tb_setport.Name = "tb_setport"
+        Me.tb_setport.PreventEnterBeep = True
+        Me.tb_setport.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setport.TabIndex = 25
+        Me.tb_setport.WatermarkText = "3306"
+        '
+        'tb_setusername
+        '
+        '
+        '
+        '
+        Me.tb_setusername.Border.Class = "TextBoxBorder"
+        Me.tb_setusername.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setusername.Location = New System.Drawing.Point(107, 145)
+        Me.tb_setusername.Name = "tb_setusername"
+        Me.tb_setusername.PreventEnterBeep = True
+        Me.tb_setusername.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setusername.TabIndex = 26
+        Me.tb_setusername.WatermarkText = "username"
+        '
+        'tb_setpassword
+        '
+        '
+        '
+        '
+        Me.tb_setpassword.Border.Class = "TextBoxBorder"
+        Me.tb_setpassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
+        Me.tb_setpassword.Name = "tb_setpassword"
+        Me.tb_setpassword.PreventEnterBeep = True
+        Me.tb_setpassword.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setpassword.TabIndex = 27
+        Me.tb_setpassword.WatermarkText = "password"
+        '
         'DBSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,7 +203,9 @@ Partial Class DBSettings
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "DBSettings"
+        Me.Resizable = False
         Me.Text = "Settings"
+        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -218,9 +220,9 @@ Partial Class DBSettings
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents tb_setserver As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setpassword As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setusername As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setport As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setDB As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents tb_setserver As DevComponents.DotNetBar.Controls.TextBoxX
 End Class

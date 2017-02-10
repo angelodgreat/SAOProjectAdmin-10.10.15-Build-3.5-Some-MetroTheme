@@ -1496,7 +1496,7 @@ Public Class TabMain
 
             While reader.Read
                 cb_eventschool.Items.Add(reader.GetString("school"))
-
+                cb_filterschool.Items.Add(reader.GetString("school"))
             End While
             MysqlConn.Close()
 
@@ -1533,7 +1533,7 @@ Public Class TabMain
 
             While reader.Read
                 tb_location.Items.Add(reader.GetString("Location"))
-
+                cb_filtersearchlocation.Items.Add(reader.GetString("Location"))
             End While
             MysqlConn.Close()
 

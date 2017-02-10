@@ -109,4 +109,42 @@ Public Class ReportViewer
         ReportViewer1.DocumentMapCollapsed = True
         Me.ReportViewer1.RefreshReport()
     End Sub
+
+
+    Public Sub load_orgANDschool()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            cb_filterschool.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT school FROM tbl_organizations_school ORDER BY school ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            cb_filterschool.Items.Clear()
+
+
+            While reader.Read
+                cb_filterschool.Items.Add(reader.GetString("school"))
+
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+
+    End Sub
 End Class

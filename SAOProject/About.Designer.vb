@@ -101,6 +101,7 @@ Partial Class About
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "About"
+        Me.TopMost = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

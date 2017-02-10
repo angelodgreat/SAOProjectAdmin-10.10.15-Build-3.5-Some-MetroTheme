@@ -188,8 +188,12 @@ Partial Class Notes
         Me.Controls.Add(Me.Label30)
         Me.Controls.Add(Me.rtb_reminder)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Notes"
+        Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Green
+        Me.TopMost = True
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

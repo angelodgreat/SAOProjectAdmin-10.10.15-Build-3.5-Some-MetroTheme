@@ -86,7 +86,7 @@ Public Class Login
 
                         TabMain.welcomeadmin.Text = "Welcome Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
 
-                        TabMain.Show()
+                        frm_choose.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
 
@@ -111,7 +111,7 @@ Public Class Login
 
                         TabMain.welcomeadmin.Text = "Welcome Super Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
 
-                        TabMain.Show()
+                        frm_choose.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
 
@@ -205,7 +205,7 @@ Public Class Login
     End Sub
 
     Private Sub mbtn_bypass_Click(sender As Object, e As EventArgs) Handles mbtn_bypass.Click
-        TabMain.Show()
+        frm_choose.Show()
         Me.Hide()
 
     End Sub

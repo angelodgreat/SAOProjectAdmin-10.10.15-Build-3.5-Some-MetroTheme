@@ -97,8 +97,10 @@ Partial Class ChangeSemester
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ChangeSemester"
+        Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Teal
         Me.Text = "School Year"
+        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
