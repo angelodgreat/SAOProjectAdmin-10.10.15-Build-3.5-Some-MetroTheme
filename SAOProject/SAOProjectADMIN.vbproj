@@ -94,18 +94,20 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2, Version=12.1.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
-    <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dlls\MetroFramework.dll</HintPath>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\dlls\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dlls\MetroFramework.Design.dll</HintPath>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dlls\MetroFramework.Fonts.dll</HintPath>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -169,6 +171,18 @@
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
     <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfAddStudent.Designer.vb">
+      <DependentUpon>rfAddStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfAddStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfAdminHome.Designer.vb">
+      <DependentUpon>rfAdminHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfAdminHome.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -238,6 +252,54 @@
     <Compile Include="DBSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="rfAdminStudents.Designer.vb">
+      <DependentUpon>rfAdminStudents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfAdminStudents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfApproveForms.Designer.vb">
+      <DependentUpon>rfApproveForms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfApproveForms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfIndivPrint.Designer.vb">
+      <DependentUpon>rfIndivPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfIndivPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfPoints.Designer.vb">
+      <DependentUpon>rfPoints.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfPoints.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfPrints.Designer.vb">
+      <DependentUpon>rfPrints.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfPrints.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfRatingForms.Designer.vb">
+      <DependentUpon>rfRatingForms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfRatingForms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfUniColPrint.Designer.vb">
+      <DependentUpon>rfUniColPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfUniColPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rfViewForms.Designer.vb">
+      <DependentUpon>rfViewForms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rfViewForms.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SettingsForm.Designer.vb">
       <DependentUpon>SettingsForm.vb</DependentUpon>
     </Compile>
@@ -260,6 +322,12 @@
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfAddStudent.resx">
+      <DependentUpon>rfAddStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfAdminHome.resx">
+      <DependentUpon>rfAdminHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeSemester.resx">
       <DependentUpon>ChangeSemester.vb</DependentUpon>
@@ -290,6 +358,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DBSettings.resx">
       <DependentUpon>DBSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfAdminStudents.resx">
+      <DependentUpon>rfAdminStudents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfApproveForms.resx">
+      <DependentUpon>rfApproveForms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfIndivPrint.resx">
+      <DependentUpon>rfIndivPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfPoints.resx">
+      <DependentUpon>rfPoints.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfPrints.resx">
+      <DependentUpon>rfPrints.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfRatingForms.resx">
+      <DependentUpon>rfRatingForms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfUniColPrint.resx">
+      <DependentUpon>rfUniColPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rfViewForms.resx">
+      <DependentUpon>rfViewForms.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.vb</DependentUpon>
@@ -359,6 +451,28 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ceulogo %281%29.ico" />
+    <None Include="Resources\ceu.png" />
+    <None Include="Resources\ic_description_white_48dp_1x.png" />
+    <None Include="Resources\ic_arrow_back_white_48dp_1x.png" />
+    <None Include="Resources\ic_close_white_48dp_1x.png" />
+    <None Include="Resources\ic_person_add_white_48dp_1x.png" />
+    <None Include="Resources\file-multiple %281%29.png" />
+    <Content Include="Resources\file-multiple.png" />
+    <Content Include="Resources\ic_account_circle_white_48dp_1x.png" />
+    <Content Include="Resources\ic_clear_all_white_48dp_1x.png" />
+    <Content Include="Resources\ic_delete_sweep_white_48dp_1x.png" />
+    <Content Include="Resources\ic_exit_to_app_white_48dp_1x.png" />
+    <Content Include="Resources\ic_file_multiple.png" />
+    <Content Include="Resources\ic_home_white_48dp_1x.png" />
+    <Content Include="Resources\ic_note_add_white_48dp_1x.png" />
+    <Content Include="Resources\ic_people_outline_white_48dp_1x.png" />
+    <Content Include="Resources\ic_people_outline_white_48dp_1x1.png" />
+    <Content Include="Resources\ic_people_white_48dp_1x.png" />
+    <Content Include="Resources\ic_person_add_white_64dp_1x.png" />
+    <Content Include="Resources\ic_print_white_48dp_1x.png" />
+    <Content Include="Resources\ic_refresh_white_48dp_1x.png" />
+    <Content Include="Resources\ic_save_white_48dp_1x.png" />
+    <Content Include="Resources\ic_school_white_48dp_1x.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="packages.config" />

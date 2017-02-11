@@ -117,65 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ic_arrow_back_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_arrow_back_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="oie_14114115MwHcNs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\oie_14114115MwHcNs.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_close_white_48dp_1x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_close_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="file-multiple (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-multiple (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="oie_1411852htlPKYzi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\oie_1411852htlPKYzi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_save_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_save_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_school_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_school_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="oie_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\oie_transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="file-multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_clear_all_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_clear_all_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ceu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ceu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_home_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_home_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fff(CROP+RES)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fff(CROP+RES).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_note_add_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_note_add_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_description_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_description_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_close_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_close_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_description_white_48dp_1x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_description_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_file_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_file_multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_person_add_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_person_add_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_people_white_48dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_people_white_48dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tilStudents.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAmRJREFUaEPt
+        mVluFDEYhAMveYUDEG7AcgeWQ7DcAQF3QCx3YDtESO4QuAFwAHiFFxiqTCw5lep/bKdNptGU9Emj6r9t
+        t2a6/HfPzlZbbbXV/6nVanUDHBzDz/Rmx5pn5Cp4D36DLH5+B/aAO6cba3ZyGbwEP8GUeIw1rHVjNGPN
+        RnbBU/Ad1Iq1PIfnujGrsWYlF8FD8BX06gt4AC4AN8darFnBHfARzCWOxTHdXCHWDMjJMkrNiWVNg0uW
+        UWpKLGsW1CTLKFUlljVBT7KMUphYasyRLKNkE6tc/NzJMkonEqu8gNtgCReQdeoCCL8efk2b+BNS2QvI
+        8IZ5AjbhJv4GHv39eEJprbpwhRH2ApxHjP4Az8AlwLWo0hrLxUZwI+Pm8i82sl/gNbgCyjWokl8W1DC6
+        ldgH14CbW5V8Lapl7sQ6AreAmyujSr4WtTBHYn0G90BNO61KvhZFcIfmTq1+T2IxWR4D1x7kbkB9VfK1
+        KIL6BO4Cd7wmsZgsz0FOFoVjcw5Kj6mSr0URpaK+3SUWk+UNmGqRb4JDUEprVMnXoggVF8hnBC7Y1efE
+        +gCuH3tK9Jyhtarka1HElHreNLD2FYh+bnqOKvlaFLFONW8aeKz2OUPPVSVfiyJq5fr2nueMcm6iSr4W
+        RbQq9+29zxnr5k++FkUwRZgmo5UTy63hFNYMYJowVUaJvdBUYlmsWcF59EIWa1bCm/Q+4E3bK57LMWp6
+        IYs1G+nphVg71Qs1Yc1OanohHmNNy6YXYs0zMtULvQUb/QeHknuh5he2LVhzSVhzSVhzSVhzSVhzSVhz
+        Oax2/gDBJ3CmlhdKrAAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>
