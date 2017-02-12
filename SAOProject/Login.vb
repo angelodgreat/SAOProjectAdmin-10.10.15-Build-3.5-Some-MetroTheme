@@ -16,8 +16,7 @@ Public Class Login
         'Online/Offline Status
         a = New Boolean
         a = False
-        mysqlconn = New MySqlConnection
-        mysqlconn.ConnectionString = connstring
+        mysqlconn = ConnectToDatabase()
 
         Try
             mysqlconn.Open()
@@ -53,8 +52,7 @@ Public Class Login
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
 
-        mysqlconn = New MySqlConnection
-        mysqlconn.ConnectionString = connstring
+        mysqlconn = ConnectToDatabase()
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
         Dim attempt As Integer

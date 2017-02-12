@@ -94,7 +94,9 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2, Version=12.1.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\dlls\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\dlls\MetroFramework.dll</HintPath>
     </Reference>
@@ -168,6 +170,7 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="customFunction.vb" />
     <Compile Include="rfAddStudent.Designer.vb">
       <DependentUpon>rfAddStudent.vb</DependentUpon>
     </Compile>
@@ -201,7 +204,7 @@
     <Compile Include="frm_choose.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlobalVariableodule.vb" />
+    <Compile Include="DatabaseProcedures.vb" />
     <Compile Include="GuestOnly.Designer.vb">
       <DependentUpon>GuestOnly.vb</DependentUpon>
     </Compile>
@@ -277,6 +280,11 @@
     <Compile Include="rfPrints.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="rfPrint_tbl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+    </Compile>
     <Compile Include="rfRatingForms.Designer.vb">
       <DependentUpon>rfRatingForms.vb</DependentUpon>
     </Compile>
@@ -318,6 +326,8 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="rfAddStudent.resx">
       <DependentUpon>rfAddStudent.vb</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +423,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="rfPrint_tbl.xsc">
+      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+    </None>
+    <None Include="rfPrint_tbl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rfPrint_tbl.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="rfPrint_tbl.xss">
+      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

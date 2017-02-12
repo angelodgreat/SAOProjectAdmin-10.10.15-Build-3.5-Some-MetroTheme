@@ -125,6 +125,17 @@ Namespace My
                 Me("SPassword") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=root;database=ceuratingforms;persistsecuri"& _ 
+            "tyinfo=True;allowuservariables=True")>  _
+        Public ReadOnly Property ceuratingformsConnectionString() As String
+            Get
+                Return CType(Me("ceuratingformsConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

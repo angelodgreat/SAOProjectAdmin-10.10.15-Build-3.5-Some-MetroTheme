@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class rfAdminStudents
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class rfAdminStudents
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfAdminStudents))
         Me.tilAdd = New MetroFramework.Controls.MetroTile()
@@ -50,7 +50,6 @@ Partial Class rfAdminStudents
         Me.btnSearch = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
@@ -63,7 +62,7 @@ Partial Class rfAdminStudents
         'tilAdd
         '
         Me.tilAdd.ActiveControl = Nothing
-        Me.tilAdd.Location = New System.Drawing.Point(437, 206)
+        Me.tilAdd.Location = New System.Drawing.Point(437, 107)
         Me.tilAdd.Name = "tilAdd"
         Me.tilAdd.Size = New System.Drawing.Size(75, 75)
         Me.tilAdd.Style = MetroFramework.MetroColorStyle.Pink
@@ -84,7 +83,7 @@ Partial Class rfAdminStudents
         'MetroLabel11
         '
         Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel11.Location = New System.Drawing.Point(258, 623)
+        Me.MetroLabel11.Location = New System.Drawing.Point(266, 716)
         Me.MetroLabel11.Name = "MetroLabel11"
         Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel11.TabIndex = 45
@@ -415,7 +414,7 @@ Partial Class rfAdminStudents
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(169, 206)
+        Me.MetroPanel1.Location = New System.Drawing.Point(169, 107)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(251, 75)
         Me.MetroPanel1.TabIndex = 41
@@ -467,7 +466,7 @@ Partial Class rfAdminStudents
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(169, 287)
+        Me.MetroPanel2.Location = New System.Drawing.Point(169, 229)
         Me.MetroPanel2.Name = "MetroPanel2"
         Me.MetroPanel2.Size = New System.Drawing.Size(434, 317)
         Me.MetroPanel2.TabIndex = 42
@@ -475,21 +474,10 @@ Partial Class rfAdminStudents
         Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.VerticalScrollbarSize = 10
         '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(302, 139)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(172, 25)
-        Me.MetroLabel2.TabIndex = 40
-        Me.MetroLabel2.Text = "Student Affairs Office"
-        Me.MetroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(526, 102)
+        Me.PictureBox2.Location = New System.Drawing.Point(570, 10)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -499,7 +487,7 @@ Partial Class rfAdminStudents
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(176, 102)
+        Me.PictureBox1.Location = New System.Drawing.Point(107, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(75, 75)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -509,7 +497,7 @@ Partial Class rfAdminStudents
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
-        Me.tilHome.Location = New System.Drawing.Point(518, 206)
+        Me.tilHome.Location = New System.Drawing.Point(518, 107)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(75, 75)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -534,7 +522,6 @@ Partial Class rfAdminStudents
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
-        Me.Controls.Add(Me.MetroLabel2)
         Me.Name = "rfAdminStudents"
         Me.Text = "Student Affairs Office Rating Forms"
         Me.MetroPanel1.ResumeLayout(False)
@@ -544,7 +531,6 @@ Partial Class rfAdminStudents
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -578,5 +564,4 @@ Partial Class rfAdminStudents
     Friend WithEvents btnSearch As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroPanel2 As MetroFramework.Controls.MetroPanel
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
 End Class

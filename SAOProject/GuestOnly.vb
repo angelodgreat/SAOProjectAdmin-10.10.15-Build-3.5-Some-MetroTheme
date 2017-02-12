@@ -13,8 +13,7 @@ Public Class GuestOnly
         Timer1_guest.Enabled = True
 
 
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim bsource As New BindingSource
 
@@ -78,8 +77,7 @@ Public Class GuestOnly
         'DV.RowFilter = "date >='" & filter_dtp2.Value & "' and date <='" & filter_dtp3.Value & "' "
         'DataGridView1.DataSource = DV
 
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -106,8 +104,7 @@ Public Class GuestOnly
     End Sub
 
     Private Sub cb_filterschool_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filterschool.SelectedIndexChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -171,8 +168,7 @@ Public Class GuestOnly
     End Sub
 
     Private Sub load_schedule_Click(sender As Object, e As EventArgs) Handles load_schedule.Click
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -212,8 +208,7 @@ Public Class GuestOnly
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filterlocation.SelectedIndexChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -243,8 +238,7 @@ Public Class GuestOnly
     End Sub
 
     Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles cb_filterlocation.TextChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -274,8 +268,7 @@ Public Class GuestOnly
     End Sub
 
     Private Sub cb_filterschool_TextChanged(sender As Object, e As EventArgs) Handles cb_filterschool.TextChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource

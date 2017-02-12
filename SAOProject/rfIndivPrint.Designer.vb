@@ -22,14 +22,30 @@ Partial Class rfIndivPrint
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rfPrint_tbl = New SAOProject.rfPrint_tbl()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.tilBack = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.cmb_studentNames = New MetroFramework.Controls.MetroComboBox()
+        Me.allrfTableAdapter = New SAOProject.rfPrint_tblTableAdapters.allrfTableAdapter()
+        CType(Me.allrfBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rfPrint_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'allrfBindingSource
+        '
+        Me.allrfBindingSource.DataMember = "allrf"
+        Me.allrfBindingSource.DataSource = Me.rfPrint_tbl
+        '
+        'rfPrint_tbl
+        '
+        Me.rfPrint_tbl.DataSetName = "rfPrint_tbl"
+        Me.rfPrint_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MetroLabel1
         '
@@ -75,9 +91,9 @@ Partial Class rfIndivPrint
         '
         Me.ReportViewer1.DocumentMapWidth = 27
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Nothing
+        ReportDataSource1.Value = Me.allrfBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ceuratingforms.Report1.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(35, 76)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(681, 332)
@@ -104,6 +120,10 @@ Partial Class rfIndivPrint
         Me.cmb_studentNames.UseSelectable = True
         Me.cmb_studentNames.UseStyleColors = True
         '
+        'allrfTableAdapter
+        '
+        Me.allrfTableAdapter.ClearBeforeFill = True
+        '
         'rfIndivPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -117,6 +137,8 @@ Partial Class rfIndivPrint
         Me.Controls.Add(Me.cmb_studentNames)
         Me.Name = "rfIndivPrint"
         Me.Style = MetroFramework.MetroColorStyle.Pink
+        CType(Me.allrfBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rfPrint_tbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -128,4 +150,7 @@ Partial Class rfIndivPrint
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cmb_studentNames As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents allrfBindingSource As BindingSource
+    Friend WithEvents rfPrint_tbl As rfPrint_tbl
+    Friend WithEvents allrfTableAdapter As rfPrint_tblTableAdapters.allrfTableAdapter
 End Class

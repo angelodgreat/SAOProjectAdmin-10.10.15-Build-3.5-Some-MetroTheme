@@ -18,8 +18,7 @@ Public Class Notes
     Private Sub btn_delete_reminder_Click(sender As Object, e As EventArgs) Handles btn_delete_reminder.Click
 
         'DELETING EVENTS IN CALENDAR EVENT
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Command = New MySqlCommand
 
 
@@ -88,8 +87,7 @@ Public Class Notes
 
     Private Sub btn_update_reminder_Click(sender As Object, e As EventArgs) Handles btn_update_reminder.Click
         'UPDATING EVENTS IN CALENDAR EVENT
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Command = New MySqlCommand
         Dim a As Integer
 
@@ -184,8 +182,7 @@ Public Class Notes
 
     Private Sub btn_submit_reminder_Click(sender As Object, e As EventArgs) Handles btn_submit_reminder.Click
         'ADDING EVENTS IN CALENDAR EVENT
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -275,8 +272,7 @@ Public Class Notes
 
     Private Sub Notes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource

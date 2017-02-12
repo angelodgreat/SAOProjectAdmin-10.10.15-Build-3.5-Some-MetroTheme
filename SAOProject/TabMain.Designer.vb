@@ -505,10 +505,11 @@ Partial Class TabMain
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
+        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(370, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
@@ -1742,11 +1743,11 @@ Partial Class TabMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.welcomeadmin.AutoSize = True
         Me.welcomeadmin.BackColor = System.Drawing.Color.LightPink
-        Me.welcomeadmin.Font = New System.Drawing.Font("Trajan Pro 3", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.welcomeadmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.welcomeadmin.ForeColor = System.Drawing.Color.Navy
         Me.welcomeadmin.Location = New System.Drawing.Point(393, -1)
         Me.welcomeadmin.Name = "welcomeadmin"
-        Me.welcomeadmin.Size = New System.Drawing.Size(167, 25)
+        Me.welcomeadmin.Size = New System.Drawing.Size(137, 20)
         Me.welcomeadmin.TabIndex = 7
         Me.welcomeadmin.Text = "Welcome Admin"
         '

@@ -35,8 +35,7 @@ Public Class SettingsForm
 
     Public Sub load_organizations()
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             Dim SDA As New MySqlDataAdapter
             Dim bsource As New BindingSource
@@ -65,8 +64,7 @@ Public Class SettingsForm
 
     Public Sub load_location()
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             Dim SDA As New MySqlDataAdapter
             Dim bsource As New BindingSource
@@ -95,8 +93,7 @@ Public Class SettingsForm
 
     Public Sub load_kpi()
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             Dim SDA As New MySqlDataAdapter
             Dim bsource As New BindingSource
@@ -140,8 +137,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs) Handles mbtn_saveorganization.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If (MysqlConn.State = ConnectionState.Open) Then
                 MysqlConn.Close()
@@ -203,8 +199,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs) Handles mbtn_updateorganizations.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
@@ -244,8 +239,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_delete_Click(sender As Object, e As EventArgs) Handles mbtn_delete.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
@@ -298,8 +292,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs) Handles mbtn_locationsave.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If (MysqlConn.State = ConnectionState.Open) Then
                 MysqlConn.Close()
@@ -354,8 +347,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_updatelocations_Click(sender As Object, e As EventArgs) Handles mbtn_updatelocations.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
@@ -396,8 +388,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_deletelocations_Click(sender As Object, e As EventArgs) Handles mbtn_deletelocations.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
@@ -451,8 +442,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs) Handles mbtn_savekpi.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If (MysqlConn.State = ConnectionState.Open) Then
                 MysqlConn.Close()
@@ -507,8 +497,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs) Handles mbtn_updatekpi.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
@@ -549,8 +538,7 @@ Public Class SettingsForm
 
     Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs) Handles mbtn_deletekpi.Click
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()

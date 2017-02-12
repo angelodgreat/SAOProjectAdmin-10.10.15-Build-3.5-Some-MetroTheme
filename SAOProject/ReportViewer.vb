@@ -31,8 +31,7 @@ Public Class ReportViewer
 
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim ds As New DataSet1
 
@@ -56,8 +55,7 @@ Public Class ReportViewer
     End Sub
 
     Private Sub cb_filterschool_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filterschool.SelectedIndexChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim ds As New DataSet1
 
@@ -76,8 +74,7 @@ Public Class ReportViewer
     End Sub
 
     Private Sub cb_filterschool_TextChanged(sender As Object, e As EventArgs) Handles cb_filterschool.TextChanged
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
+        MysqlConn = ConnectToDatabase()
         Dim SDA As New MySqlDataAdapter
         Dim ds As New DataSet1
 
@@ -113,8 +110,7 @@ Public Class ReportViewer
 
     Public Sub load_orgANDschool()
         Try
-            MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = connstring
+            MysqlConn = ConnectToDatabase()
 
 
             cb_filterschool.Items.Clear()
