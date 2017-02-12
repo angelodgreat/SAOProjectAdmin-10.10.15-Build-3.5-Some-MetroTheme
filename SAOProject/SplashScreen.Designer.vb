@@ -26,11 +26,11 @@ Partial Class SplashScreen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashScreen))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.prgb = New MetroFramework.Controls.MetroProgressBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,12 +40,12 @@ Partial Class SplashScreen
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(24, 6)
+        Me.Label1.Location = New System.Drawing.Point(3, 13)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(367, 30)
+        Me.Label1.Size = New System.Drawing.Size(405, 30)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "CEU Consolidated Calendar (1.0.0.0)"
+        Me.Label1.Text = "Consolidated Calendar and Rating Form"
         '
         'GroupBox1
         '
@@ -57,6 +57,18 @@ Partial Class SplashScreen
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Developers"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(7, 28)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(172, 80)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Umali, Christian Angelo R." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mahealani Joy G. Remos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Haidee M. Valin"
         '
         'Label3
         '
@@ -71,7 +83,7 @@ Partial Class SplashScreen
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_14114115MwHcNs
+        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(23, 102)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(160, 160)
@@ -88,18 +100,6 @@ Partial Class SplashScreen
         '
         'Timer1
         '
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(7, 19)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(172, 64)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Umali, Christian Angelo R." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Haidee M. Valin"
         '
         'SplashScreen
         '

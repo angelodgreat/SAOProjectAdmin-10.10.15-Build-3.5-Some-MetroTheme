@@ -37,7 +37,7 @@ Partial Class frm_choose
         Me.btn_consoli.Name = "btn_consoli"
         Me.btn_consoli.Size = New System.Drawing.Size(165, 39)
         Me.btn_consoli.TabIndex = 0
-        Me.btn_consoli.Text = "CEU Consolidated Calendar"
+        Me.btn_consoli.Text = "Consolidated Calendar"
         Me.btn_consoli.UseSelectable = True
         '
         'btn_rating
@@ -46,7 +46,7 @@ Partial Class frm_choose
         Me.btn_rating.Name = "btn_rating"
         Me.btn_rating.Size = New System.Drawing.Size(165, 39)
         Me.btn_rating.TabIndex = 1
-        Me.btn_rating.Text = "Rating Form System"
+        Me.btn_rating.Text = "Rating Forrm"
         Me.btn_rating.UseSelectable = True
         '
         'PictureBox1

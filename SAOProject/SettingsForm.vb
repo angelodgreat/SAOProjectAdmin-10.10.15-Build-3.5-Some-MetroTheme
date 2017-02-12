@@ -603,7 +603,7 @@ Public Class SettingsForm
     End Sub
 
     Private Sub SettingsForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Me.Hide()
+        Hide()
     End Sub
 
     Private Sub mt_showkpi_Click(sender As Object, e As EventArgs) Handles mt_showkpi.Click

@@ -23,14 +23,14 @@ Partial Class DBSettings
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DBSettings))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.mb_savesettings = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.mb_savesettings = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -38,6 +38,69 @@ Partial Class DBSettings
         Me.tb_setpassword = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(50, 36)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel1.TabIndex = 16
+        Me.MetroLabel1.Text = "&Server:"
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(35, 75)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(66, 19)
+        Me.MetroLabel2.TabIndex = 17
+        Me.MetroLabel2.Text = "&Database:"
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.Location = New System.Drawing.Point(64, 112)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(37, 19)
+        Me.MetroLabel3.TabIndex = 18
+        Me.MetroLabel3.Text = "&Port:"
+        '
+        'MetroLabel4
+        '
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.Location = New System.Drawing.Point(30, 150)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(71, 19)
+        Me.MetroLabel4.TabIndex = 19
+        Me.MetroLabel4.Text = "&Username:"
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.Location = New System.Drawing.Point(35, 184)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(66, 19)
+        Me.MetroLabel5.TabIndex = 20
+        Me.MetroLabel5.Text = "&Password:"
+        '
+        'mb_savesettings
+        '
+        Me.mb_savesettings.Location = New System.Drawing.Point(98, 231)
+        Me.mb_savesettings.Name = "mb_savesettings"
+        Me.mb_savesettings.Size = New System.Drawing.Size(75, 23)
+        Me.mb_savesettings.TabIndex = 21
+        Me.mb_savesettings.Text = "Save"
+        Me.mb_savesettings.UseSelectable = True
+        '
+        'MetroButton1
+        '
+        Me.MetroButton1.Location = New System.Drawing.Point(203, 231)
+        Me.MetroButton1.Name = "MetroButton1"
+        Me.MetroButton1.Size = New System.Drawing.Size(108, 23)
+        Me.MetroButton1.TabIndex = 22
+        Me.MetroButton1.Text = "Continue to Login"
+        Me.MetroButton1.UseSelectable = True
         '
         'GroupBox1
         '
@@ -59,70 +122,6 @@ Partial Class DBSettings
         Me.GroupBox1.Size = New System.Drawing.Size(341, 280)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "&Database Settings"
-        '
-        'MetroButton1
-        '
-        Me.MetroButton1.Location = New System.Drawing.Point(203, 231)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(108, 23)
-        Me.MetroButton1.TabIndex = 22
-        Me.MetroButton1.Text = "Continue to Login"
-        Me.MetroButton1.UseSelectable = True
-        '
-        'mb_savesettings
-        '
-        Me.mb_savesettings.Location = New System.Drawing.Point(98, 231)
-        Me.mb_savesettings.Name = "mb_savesettings"
-        Me.mb_savesettings.Size = New System.Drawing.Size(75, 23)
-        Me.mb_savesettings.TabIndex = 21
-        Me.mb_savesettings.Text = "Save"
-        Me.mb_savesettings.UseSelectable = True
-        '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(35, 184)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(66, 19)
-        Me.MetroLabel5.TabIndex = 20
-        Me.MetroLabel5.Text = "&Password:"
-        '
-        'MetroLabel4
-        '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(30, 150)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(71, 19)
-        Me.MetroLabel4.TabIndex = 19
-        Me.MetroLabel4.Text = "&Username:"
-        '
-        'MetroLabel3
-        '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(64, 112)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(37, 19)
-        Me.MetroLabel3.TabIndex = 18
-        Me.MetroLabel3.Text = "&Port:"
-        '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(35, 75)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(66, 19)
-        Me.MetroLabel2.TabIndex = 17
-        Me.MetroLabel2.Text = "&Database:"
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(50, 36)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(51, 19)
-        Me.MetroLabel1.TabIndex = 16
-        Me.MetroLabel1.Text = "&Server:"
         '
         'tb_setserver
         '
@@ -131,10 +130,10 @@ Partial Class DBSettings
         '
         Me.tb_setserver.Border.Class = "TextBoxBorder"
         Me.tb_setserver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setserver.Location = New System.Drawing.Point(108, 34)
+        Me.tb_setserver.Location = New System.Drawing.Point(107, 31)
         Me.tb_setserver.Name = "tb_setserver"
         Me.tb_setserver.PreventEnterBeep = True
-        Me.tb_setserver.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setserver.Size = New System.Drawing.Size(228, 24)
         Me.tb_setserver.TabIndex = 23
         Me.tb_setserver.WatermarkText = "localhost"
         '
@@ -148,7 +147,7 @@ Partial Class DBSettings
         Me.tb_setDB.Location = New System.Drawing.Point(107, 70)
         Me.tb_setDB.Name = "tb_setDB"
         Me.tb_setDB.PreventEnterBeep = True
-        Me.tb_setDB.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setDB.Size = New System.Drawing.Size(228, 24)
         Me.tb_setDB.TabIndex = 24
         Me.tb_setDB.WatermarkText = "saoinfo"
         '
@@ -162,7 +161,7 @@ Partial Class DBSettings
         Me.tb_setport.Location = New System.Drawing.Point(107, 107)
         Me.tb_setport.Name = "tb_setport"
         Me.tb_setport.PreventEnterBeep = True
-        Me.tb_setport.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setport.Size = New System.Drawing.Size(228, 24)
         Me.tb_setport.TabIndex = 25
         Me.tb_setport.WatermarkText = "3306"
         '
@@ -176,9 +175,9 @@ Partial Class DBSettings
         Me.tb_setusername.Location = New System.Drawing.Point(107, 145)
         Me.tb_setusername.Name = "tb_setusername"
         Me.tb_setusername.PreventEnterBeep = True
-        Me.tb_setusername.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setusername.Size = New System.Drawing.Size(228, 24)
         Me.tb_setusername.TabIndex = 26
-        Me.tb_setusername.WatermarkText = "username"
+        Me.tb_setusername.WatermarkText = "dbusername"
         '
         'tb_setpassword
         '
@@ -190,9 +189,9 @@ Partial Class DBSettings
         Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
         Me.tb_setpassword.Name = "tb_setpassword"
         Me.tb_setpassword.PreventEnterBeep = True
-        Me.tb_setpassword.Size = New System.Drawing.Size(227, 24)
+        Me.tb_setpassword.Size = New System.Drawing.Size(228, 24)
         Me.tb_setpassword.TabIndex = 27
-        Me.tb_setpassword.WatermarkText = "password"
+        Me.tb_setpassword.WatermarkText = "dbpassword"
         '
         'DBSettings
         '
@@ -204,7 +203,7 @@ Partial Class DBSettings
         Me.MaximizeBox = False
         Me.Name = "DBSettings"
         Me.Resizable = False
-        Me.Text = "Settings"
+        Me.Text = "&Database Settings"
         Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -212,14 +211,14 @@ Partial Class DBSettings
 
     End Sub
 
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents mb_savesettings As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents mb_savesettings As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents tb_setpassword As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setusername As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setport As DevComponents.DotNetBar.Controls.TextBoxX

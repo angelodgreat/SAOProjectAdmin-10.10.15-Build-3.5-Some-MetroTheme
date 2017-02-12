@@ -147,6 +147,7 @@ Partial Class TabMain
         Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RestoreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RatingFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -314,12 +315,11 @@ Partial Class TabMain
         Me.Label24.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label24.Location = New System.Drawing.Point(427, 663)
+        Me.Label24.Location = New System.Drawing.Point(490, 661)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(467, 15)
+        Me.Label24.Size = New System.Drawing.Size(319, 15)
         Me.Label24.TabIndex = 27
-        Me.Label24.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
+        Me.Label24.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin "
         '
         'GroupBox6
         '
@@ -536,12 +536,11 @@ Partial Class TabMain
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(427, 663)
+        Me.Label11.Location = New System.Drawing.Point(490, 661)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(467, 15)
+        Me.Label11.Size = New System.Drawing.Size(319, 15)
         Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
+        Me.Label11.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin "
         '
         'Button2
         '
@@ -719,12 +718,11 @@ Partial Class TabMain
         Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label22.Location = New System.Drawing.Point(427, 663)
+        Me.Label22.Location = New System.Drawing.Point(490, 661)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(467, 15)
+        Me.Label22.Size = New System.Drawing.Size(319, 15)
         Me.Label22.TabIndex = 38
-        Me.Label22.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
+        Me.Label22.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin "
         '
         'btn_showeventdetails
         '
@@ -1256,12 +1254,11 @@ Partial Class TabMain
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label23.Location = New System.Drawing.Point(427, 663)
+        Me.Label23.Location = New System.Drawing.Point(490, 661)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(467, 15)
+        Me.Label23.Size = New System.Drawing.Size(319, 15)
         Me.Label23.TabIndex = 85
-        Me.Label23.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
+        Me.Label23.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin "
         '
         'Panel_Accounts
         '
@@ -1673,7 +1670,7 @@ Partial Class TabMain
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.RatingFormToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -1682,7 +1679,7 @@ Partial Class TabMain
         '
         Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackupToolStripMenuItem, Me.RestoreToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.DatabaseToolStripMenuItem.Text = "Database"
         '
         'BackupToolStripMenuItem
@@ -1697,16 +1694,22 @@ Partial Class TabMain
         Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.RestoreToolStripMenuItem.Text = "Restore"
         '
+        'RatingFormToolStripMenuItem
+        '
+        Me.RatingFormToolStripMenuItem.Name = "RatingFormToolStripMenuItem"
+        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.RatingFormToolStripMenuItem.Text = "Rating Form"
+        '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.LogoutToolStripMenuItem.Text = "Log-out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'AboutToolStripMenuItem
@@ -1793,6 +1796,7 @@ Partial Class TabMain
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "TabMain"
         Me.Text = "Student Affairs Office Consolidated Calendar"
+        Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TP_Home.ResumeLayout(False)
@@ -1968,4 +1972,5 @@ Partial Class TabMain
     Friend WithEvents Label11 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
+    Friend WithEvents RatingFormToolStripMenuItem As ToolStripMenuItem
 End Class

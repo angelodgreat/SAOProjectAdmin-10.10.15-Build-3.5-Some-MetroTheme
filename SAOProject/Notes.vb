@@ -301,4 +301,8 @@ Public Class Notes
         End Try
 
     End Sub
+
+    Private Sub Notes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Hide()
+    End Sub
 End Class

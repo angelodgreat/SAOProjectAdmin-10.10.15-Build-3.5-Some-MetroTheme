@@ -187,14 +187,14 @@ Public Class Login
     Private Sub ml_exit_Click(sender As Object, e As EventArgs) Handles ml_exit.Click
         'EXIT CONTROL
         Dim a As Integer
-
+        Me.TopMost = False
         a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Application.ExitThread()
 
         Else
-
+            Me.TopMost = True
 
         End If
     End Sub

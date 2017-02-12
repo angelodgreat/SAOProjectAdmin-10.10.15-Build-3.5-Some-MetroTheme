@@ -1545,5 +1545,8 @@ Public Class TabMain
         End Try
     End Sub
 
-
+    Private Sub RatingFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RatingFormToolStripMenuItem.Click
+        rfAdminHome.Show()
+        Hide()
+    End Sub
 End Class

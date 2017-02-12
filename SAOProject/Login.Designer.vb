@@ -26,6 +26,7 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.label_status = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.mbtn_bypass = New MetroFramework.Controls.MetroButton()
         Me.tb_password = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_username = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
@@ -38,7 +39,6 @@ Partial Class Login
         Me.ml_minimize = New MetroFramework.Controls.MetroLink()
         Me.ml_exit = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
-        Me.mbtn_bypass = New MetroFramework.Controls.MetroButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,7 +47,7 @@ Partial Class Login
         '
         Me.label_status.AutoSize = True
         Me.label_status.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label_status.Location = New System.Drawing.Point(459, 332)
+        Me.label_status.Location = New System.Drawing.Point(455, 326)
         Me.label_status.Name = "label_status"
         Me.label_status.Size = New System.Drawing.Size(42, 15)
         Me.label_status.TabIndex = 7
@@ -62,12 +62,21 @@ Partial Class Login
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(265, 106)
+        Me.GroupBox1.Location = New System.Drawing.Point(251, 106)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(228, 185)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Login"
+        '
+        'mbtn_bypass
+        '
+        Me.mbtn_bypass.Location = New System.Drawing.Point(64, 156)
+        Me.mbtn_bypass.Name = "mbtn_bypass"
+        Me.mbtn_bypass.Size = New System.Drawing.Size(75, 23)
+        Me.mbtn_bypass.TabIndex = 12
+        Me.mbtn_bypass.Text = "Bypass"
+        Me.mbtn_bypass.UseSelectable = True
         '
         'tb_password
         '
@@ -145,10 +154,11 @@ Partial Class Login
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_1411852htlPKYzi
-        Me.PictureBox1.Location = New System.Drawing.Point(28, 106)
+        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
+        Me.PictureBox1.Location = New System.Drawing.Point(23, 106)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
+        Me.PictureBox1.Size = New System.Drawing.Size(187, 185)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
@@ -157,7 +167,7 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Location = New System.Drawing.Point(35, 60)
+        Me.Label1.Location = New System.Drawing.Point(23, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(478, 25)
         Me.Label1.TabIndex = 11
@@ -197,15 +207,6 @@ Partial Class Login
         Me.MetroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.MetroLink1.UseSelectable = True
         '
-        'mbtn_bypass
-        '
-        Me.mbtn_bypass.Location = New System.Drawing.Point(64, 156)
-        Me.mbtn_bypass.Name = "mbtn_bypass"
-        Me.mbtn_bypass.Size = New System.Drawing.Size(75, 23)
-        Me.mbtn_bypass.TabIndex = 12
-        Me.mbtn_bypass.Text = "Bypass"
-        Me.mbtn_bypass.UseSelectable = True
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -227,6 +228,7 @@ Partial Class Login
         Me.Name = "Login"
         Me.Style = MetroFramework.MetroColorStyle.Orange
         Me.Theme = MetroFramework.MetroThemeStyle.[Default]
+        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -85,7 +85,7 @@ Partial Class SettingsForm
         Me.mt_schoolyear.Name = "mt_schoolyear"
         Me.mt_schoolyear.Size = New System.Drawing.Size(93, 94)
         Me.mt_schoolyear.TabIndex = 0
-        Me.mt_schoolyear.Text = "School Year" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Settings" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.mt_schoolyear.Text = "School Year"
         Me.mt_schoolyear.UseSelectable = True
         '
         'grp_loc
@@ -519,7 +519,7 @@ Partial Class SettingsForm
         Me.mt_showorg.ActiveControl = Nothing
         Me.mt_showorg.Location = New System.Drawing.Point(140, 31)
         Me.mt_showorg.Name = "mt_showorg"
-        Me.mt_showorg.Size = New System.Drawing.Size(93, 94)
+        Me.mt_showorg.Size = New System.Drawing.Size(113, 94)
         Me.mt_showorg.TabIndex = 7
         Me.mt_showorg.Text = "Organization"
         Me.mt_showorg.UseSelectable = True
@@ -527,7 +527,7 @@ Partial Class SettingsForm
         'mt_showloc
         '
         Me.mt_showloc.ActiveControl = Nothing
-        Me.mt_showloc.Location = New System.Drawing.Point(239, 31)
+        Me.mt_showloc.Location = New System.Drawing.Point(259, 31)
         Me.mt_showloc.Name = "mt_showloc"
         Me.mt_showloc.Size = New System.Drawing.Size(93, 94)
         Me.mt_showloc.TabIndex = 8
@@ -537,7 +537,7 @@ Partial Class SettingsForm
         'mt_showkpi
         '
         Me.mt_showkpi.ActiveControl = Nothing
-        Me.mt_showkpi.Location = New System.Drawing.Point(338, 31)
+        Me.mt_showkpi.Location = New System.Drawing.Point(358, 31)
         Me.mt_showkpi.Name = "mt_showkpi"
         Me.mt_showkpi.Size = New System.Drawing.Size(93, 94)
         Me.mt_showkpi.TabIndex = 9

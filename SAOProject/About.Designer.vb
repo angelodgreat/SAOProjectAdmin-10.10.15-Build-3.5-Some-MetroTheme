@@ -68,7 +68,7 @@ Partial Class About
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_14114115MwHcNs
+        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(13, 66)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(160, 160)

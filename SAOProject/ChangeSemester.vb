@@ -110,4 +110,9 @@ Public Class ChangeSemester
 
     End Sub
 
+    Private Sub ChangeSemester_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Hide()
+    End Sub
+
+
 End Class

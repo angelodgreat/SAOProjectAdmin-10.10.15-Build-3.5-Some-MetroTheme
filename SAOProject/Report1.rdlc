@@ -717,7 +717,6 @@
           <Source>Embedded</Source>
           <Value>CEULOGO</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0cm</Top>
           <Left>5.95288cm</Left>
           <Height>2.42314cm</Height>
           <Width>2.39958cm</Width>
@@ -768,7 +767,6 @@
           <Source>Embedded</Source>
           <Value>SAOLOGO</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0cm</Top>
           <Left>16.68219cm</Left>
           <Height>2.42314cm</Height>
           <Width>2.39958cm</Width>
