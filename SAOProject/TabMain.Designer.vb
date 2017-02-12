@@ -57,6 +57,7 @@ Partial Class TabMain
         Me.load_schedule = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TP_Note = New System.Windows.Forms.TabPage()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -68,6 +69,7 @@ Partial Class TabMain
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TP_Event = New System.Windows.Forms.TabPage()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.btn_showeventdetails = New System.Windows.Forms.Button()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -106,6 +108,7 @@ Partial Class TabMain
         Me.event_datetimepicker = New System.Windows.Forms.DateTimePicker()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TP_User = New System.Windows.Forms.TabPage()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel_Accounts = New System.Windows.Forms.Panel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.lb_showuser = New System.Windows.Forms.ListBox()
@@ -155,9 +158,6 @@ Partial Class TabMain
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
         Me.cb_userlist_reg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.lbl_showsem = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TP_Home.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,6 +230,7 @@ Partial Class TabMain
         '
         'btn_home_useradding
         '
+        Me.btn_home_useradding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_home_useradding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btn_home_useradding.Location = New System.Drawing.Point(912, 633)
         Me.btn_home_useradding.Name = "btn_home_useradding"
@@ -240,6 +241,7 @@ Partial Class TabMain
         '
         'btn_home_eventadding
         '
+        Me.btn_home_eventadding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_home_eventadding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btn_home_eventadding.Location = New System.Drawing.Point(1016, 633)
         Me.btn_home_eventadding.Name = "btn_home_eventadding"
@@ -250,6 +252,7 @@ Partial Class TabMain
         '
         'PictureBox8
         '
+        Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox8.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox8.Location = New System.Drawing.Point(856, 6)
         Me.PictureBox8.Name = "PictureBox8"
@@ -282,6 +285,7 @@ Partial Class TabMain
         '
         'btn_print
         '
+        Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_print.AutoSize = True
         Me.btn_print.FlatAppearance.BorderSize = 2
         Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -295,6 +299,7 @@ Partial Class TabMain
         '
         'Label25
         '
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
@@ -306,6 +311,7 @@ Partial Class TabMain
         '
         'Label24
         '
+        Me.Label24.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label24.Location = New System.Drawing.Point(427, 663)
@@ -317,6 +323,8 @@ Partial Class TabMain
         '
         'GroupBox6
         '
+        Me.GroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox6.AutoSize = True
         Me.GroupBox6.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBox6.Controls.Add(Me.DataGridView1)
@@ -496,6 +504,7 @@ Partial Class TabMain
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
         Me.PictureBox1.Location = New System.Drawing.Point(370, 6)
         Me.PictureBox1.Name = "PictureBox1"
@@ -521,6 +530,18 @@ Partial Class TabMain
         Me.TP_Note.Size = New System.Drawing.Size(1229, 681)
         Me.TP_Note.TabIndex = 3
         Me.TP_Note.Text = "Note"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Location = New System.Drawing.Point(427, 663)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(467, 15)
+        Me.Label11.TabIndex = 40
+        Me.Label11.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
         '
         'Button2
         '
@@ -580,6 +601,8 @@ Partial Class TabMain
         '
         'GroupBox9
         '
+        Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox9.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBox9.Controls.Add(Me.DataGridView3)
         Me.GroupBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -642,6 +665,7 @@ Partial Class TabMain
         '
         'Label29
         '
+        Me.Label29.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.DimGray
@@ -653,6 +677,7 @@ Partial Class TabMain
         '
         'PictureBox9
         '
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox9.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox9.Location = New System.Drawing.Point(856, 6)
         Me.PictureBox9.Name = "PictureBox9"
@@ -662,6 +687,7 @@ Partial Class TabMain
         '
         'PictureBox4
         '
+        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox4.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
         Me.PictureBox4.Location = New System.Drawing.Point(370, 6)
         Me.PictureBox4.Name = "PictureBox4"
@@ -688,6 +714,18 @@ Partial Class TabMain
         Me.TP_Event.TabIndex = 2
         Me.TP_Event.Text = "Event"
         '
+        'Label22
+        '
+        Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label22.Location = New System.Drawing.Point(427, 663)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(467, 15)
+        Me.Label22.TabIndex = 38
+        Me.Label22.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
+        '
         'btn_showeventdetails
         '
         Me.btn_showeventdetails.FlatAppearance.BorderSize = 2
@@ -702,6 +740,7 @@ Partial Class TabMain
         '
         'PictureBox7
         '
+        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox7.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox7.Location = New System.Drawing.Point(856, 6)
         Me.PictureBox7.Name = "PictureBox7"
@@ -711,6 +750,7 @@ Partial Class TabMain
         '
         'Label26
         '
+        Me.Label26.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.DimGray
@@ -772,6 +812,8 @@ Partial Class TabMain
         '
         'GroupBox7
         '
+        Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox7.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBox7.Controls.Add(Me.DataGridView2)
         Me.GroupBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -835,6 +877,9 @@ Partial Class TabMain
         '
         'GroupBoxEvent
         '
+        Me.GroupBoxEvent.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBoxEvent.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBoxEvent.Controls.Add(Me.time_picker_to)
         Me.GroupBoxEvent.Controls.Add(Me.time_picker_from)
@@ -892,6 +937,8 @@ Partial Class TabMain
         '
         'cb_remarks
         '
+        Me.cb_remarks.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_remarks.AutoCompleteCustomSource.AddRange(New String() {"Cancelled", "Moved Date", "Moved Location", "Finished"})
         Me.cb_remarks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_remarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
@@ -906,6 +953,8 @@ Partial Class TabMain
         '
         'Label30
         '
+        Me.Label30.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label30.Location = New System.Drawing.Point(606, 30)
@@ -940,6 +989,7 @@ Partial Class TabMain
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Button1.Location = New System.Drawing.Point(516, 273)
@@ -985,6 +1035,8 @@ Partial Class TabMain
         '
         'cb_eventschool
         '
+        Me.cb_eventschool.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cb_eventschool.AutoCompleteCustomSource.AddRange(New String() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other", "-School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other", "-"})
         Me.cb_eventschool.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_eventschool.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
@@ -998,6 +1050,7 @@ Partial Class TabMain
         '
         'btn_deletedata
         '
+        Me.btn_deletedata.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_deletedata.FlatAppearance.BorderSize = 2
         Me.btn_deletedata.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_deletedata.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1018,6 +1071,7 @@ Partial Class TabMain
         '
         'btn_recordsreset
         '
+        Me.btn_recordsreset.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_recordsreset.FlatAppearance.BorderSize = 2
         Me.btn_recordsreset.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_recordsreset.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1041,6 +1095,7 @@ Partial Class TabMain
         '
         'btn_update
         '
+        Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btn_update.FlatAppearance.BorderSize = 2
         Me.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -1087,6 +1142,8 @@ Partial Class TabMain
         '
         'tb_location
         '
+        Me.tb_location.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tb_location.AutoCompleteCustomSource.AddRange(New String() {"CARMEN DE LUNA (CDL)", "Multimedia Instructional Room (MIR)", "LIBRADA AVELINO HALL (LAH)", "Chapel/Adoration Chapel", "Executive Meeting Room (EMR)", "LAH Seminar Room #1", "LAH Seminar Room #2", "LAH Seminar Room #3", "GENEROSA DE LEON SCIENCE CENTER (GDLSC)", "Bulwagang Maestra Osang (BMO)", "SOFIA DE VEYRA HALL (SDVH)", "SDV Conference Room (SDVCR)", "SDV Lanai", "FELISA FRANCISCO HALL (FFH)", "Assembly Hall (3rd Flr)", "MARIA VILLACERAN HALL (MVH)", "LA Auditorium", "MVH Lanai", "DIONISIO C. TIONGCO (DCT)", "Student Activity Center (Ground flr)", "Student Activity Center (Second flr)", "PILAR HIDALGO LIM HALL (PHL)", "PHL Lanai", "TECHNOLOGY CENTER", "TechCenter Gym", "TechCenter Lanai with Lights", "FGH DENTRISTRY", "FGH Lanai", "INFORMATION SCIENCE CENTER", "Friends Cafe", "ISC Mezzanine #1", "ISC Mezzanine #2", "DentScience Lanai", "GYM (Classroom)", "North Quadrangle", "South Quadrangle"})
         Me.tb_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.tb_location.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
@@ -1100,6 +1157,7 @@ Partial Class TabMain
         '
         'btn_submitrecords
         '
+        Me.btn_submitrecords.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_submitrecords.FlatAppearance.BorderSize = 2
         Me.btn_submitrecords.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_submitrecords.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1123,6 +1181,9 @@ Partial Class TabMain
         '
         'tb_input_event
         '
+        Me.tb_input_event.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tb_input_event.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.tb_input_event.Location = New System.Drawing.Point(155, 185)
         Me.tb_input_event.Name = "tb_input_event"
@@ -1166,6 +1227,7 @@ Partial Class TabMain
         '
         'PictureBox3
         '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox3.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
         Me.PictureBox3.Location = New System.Drawing.Point(370, 6)
         Me.PictureBox3.Name = "PictureBox3"
@@ -1189,8 +1251,22 @@ Partial Class TabMain
         Me.TP_User.TabIndex = 1
         Me.TP_User.Text = "User Account"
         '
+        'Label23
+        '
+        Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label23.Location = New System.Drawing.Point(427, 663)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(467, 15)
+        Me.Label23.TabIndex = 85
+        Me.Label23.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
+    "ity  "
+        '
         'Panel_Accounts
         '
+        Me.Panel_Accounts.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel_Accounts.Controls.Add(Me.GroupBox10)
         Me.Panel_Accounts.Controls.Add(Me.GroupBox4)
         Me.Panel_Accounts.Controls.Add(Me.GroupBox3)
@@ -1229,6 +1305,9 @@ Partial Class TabMain
         '
         'GroupBox4
         '
+        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBox4.Controls.Add(Me.reg_Retype_password)
         Me.GroupBox4.Controls.Add(Me.reg_password)
@@ -1325,6 +1404,8 @@ Partial Class TabMain
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.BackColor = System.Drawing.Color.LightBlue
         Me.GroupBox3.Controls.Add(Me.reg_id)
         Me.GroupBox3.Controls.Add(Me.Label21)
@@ -1480,6 +1561,7 @@ Partial Class TabMain
         '
         'btn_reset_records
         '
+        Me.btn_reset_records.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_reset_records.FlatAppearance.BorderSize = 2
         Me.btn_reset_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_reset_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1492,6 +1574,7 @@ Partial Class TabMain
         '
         'btn_delete_records
         '
+        Me.btn_delete_records.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_delete_records.FlatAppearance.BorderSize = 2
         Me.btn_delete_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_delete_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1504,6 +1587,7 @@ Partial Class TabMain
         '
         'btn_update_records
         '
+        Me.btn_update_records.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update_records.FlatAppearance.BorderSize = 2
         Me.btn_update_records.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_update_records.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1516,6 +1600,7 @@ Partial Class TabMain
         '
         'btn_register
         '
+        Me.btn_register.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_register.FlatAppearance.BorderSize = 2
         Me.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_register.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
@@ -1528,6 +1613,7 @@ Partial Class TabMain
         '
         'PictureBox6
         '
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox6.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox6.Location = New System.Drawing.Point(856, 6)
         Me.PictureBox6.Name = "PictureBox6"
@@ -1537,6 +1623,7 @@ Partial Class TabMain
         '
         'Label28
         '
+        Me.Label28.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.DimGray
@@ -1548,6 +1635,7 @@ Partial Class TabMain
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
         Me.PictureBox2.Location = New System.Drawing.Point(370, 6)
         Me.PictureBox2.Name = "PictureBox2"
@@ -1689,39 +1777,6 @@ Partial Class TabMain
         Me.lbl_showsem.TabIndex = 37
         Me.lbl_showsem.Text = "School Year "
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(427, 663)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(467, 15)
-        Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label22.Location = New System.Drawing.Point(427, 663)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(467, 15)
-        Me.Label22.TabIndex = 38
-        Me.Label22.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label23.Location = New System.Drawing.Point(427, 663)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(467, 15)
-        Me.Label23.TabIndex = 85
-        Me.Label23.Text = "Developers: Umali, Christian Angelo R.    Haidee M. Valin  Centro Escolar Univers" &
-    "ity  "
-        '
         'TabMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -1736,9 +1791,9 @@ Partial Class TabMain
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximizeBox = False
         Me.Name = "TabMain"
         Me.Text = "Student Affairs Office Consolidated Calendar"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TP_Home.ResumeLayout(False)
         Me.TP_Home.PerformLayout()
