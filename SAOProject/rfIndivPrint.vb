@@ -287,7 +287,7 @@ Public Class rfIndivPrint
         adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
         adapter.Fill(ds.Tables(11))
         ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-        ReportViewer1.LocalReport.ReportPath = "C:\Users\Joy\Documents\SAOProject\SAOProject\Report3.rdlc"
+        ReportViewer1.LocalReport.ReportPath = "\Report3.rdlc"
         ReportViewer1.LocalReport.DataSources.Clear()
         ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(11)))
         ReportViewer1.LocalReport.SetParameters(par1)

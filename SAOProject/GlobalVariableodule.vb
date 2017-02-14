@@ -12,12 +12,18 @@ Module GlobalVariableodule
     Public dbdataset As New DataTable
     Public reader As MySqlDataReader
 
-    Public remozconnection As String = "server=" & DBSettings.tb_setserver.Text & "; port=" & DBSettings.tb_setport.Text & "; database=ceuratingforms; userid=" & DBSettings.tb_setusername.Text & "; password=" & DBSettings.tb_setpassword.Text & ""
+    Dim remoztrim As String = Trim(DBSettings.tb_setpassword.Text)
+
+    Public remozconnection As String = "server=" & DBSettings.tb_setserver.Text & "; port=" & DBSettings.tb_setport.Text & "; database=ceuratingforms; userid=" & DBSettings.tb_setusername.Text & "; password=" & remoztrim & ""
 
 
     'remoz codez
     Dim accountName As String
     Dim accountType As String
+
+    Public Function ConnectToDatabase() As MySqlConnection
+        Return New MySqlConnection(remozconnection)
+    End Function
 
     Public Sub SetAccount(ByVal name As String)
         accountName = name
@@ -33,10 +39,6 @@ Module GlobalVariableodule
 
     Public Function GetAccess() As String
         Return accountType
-    End Function
-
-    Public Function ConnectToDatabase() As MySqlConnection
-        Return New MySqlConnection(remozconnection)
     End Function
 
     Public Function ExecuteQuery(ByVal query As String) As Boolean

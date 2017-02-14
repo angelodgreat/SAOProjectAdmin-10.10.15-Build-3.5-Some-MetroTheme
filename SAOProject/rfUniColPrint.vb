@@ -43,7 +43,7 @@ Public Class rfUniColPrint
                 adapter.SelectCommand = New MySqlCommand(query, ConnectToDatabase())
                 adapter.Fill(ds.Tables(10))
                 ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-                ReportViewer2.LocalReport.ReportPath = "C:\Users\Joy\Documents\SAOProject\SAOProject\Report3.rdlc"
+                ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
                 ReportViewer2.LocalReport.DataSources.Clear()
                 ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(10)))
                 ReportViewer2.DocumentMapCollapsed = True
@@ -69,7 +69,7 @@ Public Class rfUniColPrint
         adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
         adapter.Fill(ds.Tables(10))
         ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-        ReportViewer2.LocalReport.ReportPath = "C:\Users\Joy\Documents\SAOProject\SAOProject\Report3.rdlc"
+        ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
         ReportViewer2.LocalReport.DataSources.Clear()
         ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(10)))
         ReportViewer2.DocumentMapCollapsed = True
