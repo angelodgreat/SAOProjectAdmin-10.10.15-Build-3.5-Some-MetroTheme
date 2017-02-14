@@ -36,7 +36,6 @@ Partial Class DBSettings
         Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.db_lblratingforms = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -194,21 +193,11 @@ Partial Class DBSettings
         Me.tb_setserver.TabIndex = 23
         Me.tb_setserver.WatermarkText = "localhost"
         '
-        'db_lblratingforms
-        '
-        Me.db_lblratingforms.AutoSize = True
-        Me.db_lblratingforms.Location = New System.Drawing.Point(260, 29)
-        Me.db_lblratingforms.Name = "db_lblratingforms"
-        Me.db_lblratingforms.Size = New System.Drawing.Size(76, 13)
-        Me.db_lblratingforms.TabIndex = 1
-        Me.db_lblratingforms.Text = "ceuratingforms"
-        '
         'DBSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(389, 368)
-        Me.Controls.Add(Me.db_lblratingforms)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -219,7 +208,6 @@ Partial Class DBSettings
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -236,5 +224,4 @@ Partial Class DBSettings
     Friend WithEvents tb_setport As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setDB As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setserver As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents db_lblratingforms As Label
 End Class
