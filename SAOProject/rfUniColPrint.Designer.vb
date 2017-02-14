@@ -24,6 +24,8 @@ Partial Class rfUniColPrint
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
         Me.ReportViewer2 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.tilBack = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
@@ -36,13 +38,21 @@ Partial Class rfUniColPrint
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
-        Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.studsumTableAdapter = New SAOProject.rfPrints_tblTableAdapters.studsumTableAdapter()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.studsumBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'studsumBindingSource
+        '
+        Me.studsumBindingSource.DataMember = "studsum"
+        Me.studsumBindingSource.DataSource = Me.rfPrints_tbl
+        '
+        'rfPrints_tbl
+        '
+        Me.rfPrints_tbl.DataSetName = "rfPrints_tbl"
+        Me.rfPrints_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer2
         '
@@ -50,7 +60,7 @@ Partial Class rfUniColPrint
         ReportDataSource1.Value = Me.studsumBindingSource
         Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer2.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
-        Me.ReportViewer2.Location = New System.Drawing.Point(322, 82)
+        Me.ReportViewer2.Location = New System.Drawing.Point(322, 78)
         Me.ReportViewer2.Name = "ReportViewer2"
         Me.ReportViewer2.Size = New System.Drawing.Size(769, 458)
         Me.ReportViewer2.TabIndex = 42
@@ -58,7 +68,7 @@ Partial Class rfUniColPrint
         'tilBack
         '
         Me.tilBack.ActiveControl = Nothing
-        Me.tilBack.Location = New System.Drawing.Point(935, 546)
+        Me.tilBack.Location = New System.Drawing.Point(935, 542)
         Me.tilBack.Name = "tilBack"
         Me.tilBack.Size = New System.Drawing.Size(75, 75)
         Me.tilBack.Style = MetroFramework.MetroColorStyle.Pink
@@ -73,7 +83,7 @@ Partial Class rfUniColPrint
         '
         Me.tilHome.ActiveControl = Nothing
         Me.tilHome.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.tilHome.Location = New System.Drawing.Point(1016, 546)
+        Me.tilHome.Location = New System.Drawing.Point(1016, 542)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(75, 75)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -162,10 +172,11 @@ Partial Class rfUniColPrint
         '
         Me.MetroLabel2.Location = New System.Drawing.Point(6, 33)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(237, 124)
+        Me.MetroLabel2.Size = New System.Drawing.Size(237, 166)
         Me.MetroLabel2.TabIndex = 0
-        Me.MetroLabel2.Text = "For College/School Filter: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please select the Year of Graduation " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "first befor" &
-    "e choosing a College/School." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.MetroLabel2.Text = "For University Filter:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please select a Year of Graduation first." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For Colleg" &
+    "e/School Filter: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please select a Year of Graduation " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "first before choosing " &
+    "a College/School." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'MetroLabel6
         '
@@ -177,16 +188,6 @@ Partial Class rfUniColPrint
         Me.MetroLabel6.TabIndex = 61
         Me.MetroLabel6.Text = "© Remos, Mahealani Joy G"
         Me.MetroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'rfPrints_tbl
-        '
-        Me.rfPrints_tbl.DataSetName = "rfPrints_tbl"
-        Me.rfPrints_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'studsumBindingSource
-        '
-        Me.studsumBindingSource.DataMember = "studsum"
-        Me.studsumBindingSource.DataSource = Me.rfPrints_tbl
         '
         'studsumTableAdapter
         '
@@ -211,9 +212,9 @@ Partial Class rfUniColPrint
         Me.Name = "rfUniColPrint"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
-        Me.GroupBox1.ResumeLayout(False)
-        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.studsumBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

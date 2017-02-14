@@ -5,7 +5,7 @@ Public Class rfUniColPrint
         Dim conn As MySqlConnection = ConnectToDatabase()
         conn.Open()
         'TODO: This line of code loads data into the 'rfPrint_tbl.studsum' table. You can move, or remove it, as needed.
-        Me.studsumTableAdapter.Fill(Me.rfPrints_tbl.studsum)
+        'Me.studsumTableAdapter.Fill(Me.rfPrints_tbl.studsum)
         Me.ReportViewer2.RefreshReport()
         conn.Close()
         Dim year As Integer = Integer.Parse(Date.Now.Year)
@@ -14,7 +14,7 @@ Public Class rfUniColPrint
         Next
     End Sub
 
-    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles tilBack.Click
+    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles tilHome.Click
         rfAdminHome.Show()
         Hide()
     End Sub
@@ -22,58 +22,6 @@ Public Class rfUniColPrint
     Private Sub tilBack_Click(sender As Object, e As EventArgs) Handles tilBack.Click
         rfPrints.Show()
         Hide()
-    End Sub
-
-    Private Sub LScmbFilter_SelectedIndexChanged(sender As Object, e As EventArgs)
-        Select Case LScmbFilter.SelectedIndex
-            Case 0
-                MetroLabel5.Visible = False
-                lstStudcmCS.Visible = False
-                ReportViewer2.Location = New Point(322, 82)
-                ActiveForm.Size = New Size(1121, 673)
-                tilBack.Location = New Point(1016, 546)
-                tilBack.Location = New Point(935, 546)
-                MetroLabel6.Location = New Point(427, 643)
-
-                updateReport()
-                Dim year As String = LScmbYG.SelectedItem.ToString()
-                Dim query As String = "Select * from ceuratingforms.studsum where YearGrad = '" & year & "' order by TotalPoints desc"
-                Dim adapter As New MySqlDataAdapter
-                Dim ds As New rfPrints_tbl
-                adapter.SelectCommand = New MySqlCommand(query, ConnectToDatabase())
-                adapter.Fill(ds.Tables(10))
-                ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-                ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
-                ReportViewer2.LocalReport.DataSources.Clear()
-                ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(10)))
-                ReportViewer2.DocumentMapCollapsed = True
-                Me.ReportViewer2.RefreshReport()
-
-            Case 1
-                MetroLabel5.Visible = True
-                lstStudcmCS.Visible = True
-                ReportViewer2.Location = New Point(322, 117)
-                tilBack.Location = New Point(1016, 581)
-                tilBack.Location = New Point(935, 581)
-                ActiveForm.Size = New Size(1121, 731)
-                MetroLabel6.Location = New Point(426, 697)
-        End Select
-    End Sub
-    Private Sub lstStudcmCS_SelectedIndexChanged(sender As Object, e As EventArgs)
-        updateReport()
-        Dim year As String = LScmbYG.SelectedItem.ToString()
-        Dim mysqlcon As MySqlConnection = ConnectToDatabase()
-        Dim query = "SELECT * FROM ceuratingforms.studsum where College_School = '" & lstStudcmCS.SelectedItem & "' and YearGrad = '" & year & "' order by TotalPoints desc"
-        Dim adapter As New MySqlDataAdapter
-        Dim ds As New rfPrints_tbl
-        adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
-        adapter.Fill(ds.Tables(10))
-        ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-        ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
-        ReportViewer2.LocalReport.DataSources.Clear()
-        ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(10)))
-        ReportViewer2.DocumentMapCollapsed = True
-        Me.ReportViewer2.RefreshReport()
     End Sub
     Private Sub updateReport()
         Dim ctr As Integer
@@ -116,5 +64,58 @@ Public Class rfUniColPrint
         End While
 
 
+    End Sub
+
+    Private Sub LScmbFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LScmbFilter.SelectedIndexChanged
+        Select Case LScmbFilter.SelectedIndex
+            Case 0
+                MetroLabel5.Visible = False
+                lstStudcmCS.Visible = False
+                ReportViewer2.Location = New Point(322, 82)
+                ActiveForm.Size = New Size(1121, 673)
+                tilHome.Location = New Point(1016, 546)
+                tilBack.Location = New Point(935, 546)
+                MetroLabel6.Location = New Point(427, 643)
+
+                updateReport()
+                Dim year As String = LScmbYG.SelectedItem.ToString()
+                Dim query As String = "Select * from ceuratingforms.studsum where YearGrad = '" & year & "' order by TotalPoints desc"
+                Dim adapter As New MySqlDataAdapter
+                Dim ds As New rfPrints_tbl
+                adapter.SelectCommand = New MySqlCommand(query, ConnectToDatabase())
+                adapter.Fill(ds.Tables(1))
+                ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                ReportViewer2.LocalReport.ReportPath = System.Environment.CurrentDirectory & "\Report2.rdlc"
+                ReportViewer2.LocalReport.DataSources.Clear()
+                ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(1)))
+                ReportViewer2.DocumentMapCollapsed = True
+                Me.ReportViewer2.RefreshReport()
+
+            Case 1
+                MetroLabel5.Visible = True
+                lstStudcmCS.Visible = True
+                ReportViewer2.Location = New Point(322, 117)
+                tilHome.Location = New Point(1016, 581)
+                tilBack.Location = New Point(935, 581)
+                ActiveForm.Size = New Size(1121, 731)
+                MetroLabel6.Location = New Point(426, 697)
+        End Select
+    End Sub
+
+    Private Sub lstStudcmCS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStudcmCS.SelectedIndexChanged
+        updateReport()
+        Dim year As String = LScmbYG.SelectedItem.ToString()
+        Dim mysqlcon As MySqlConnection = ConnectToDatabase()
+        Dim query = "SELECT * FROM ceuratingforms.studsum where College_School = '" & lstStudcmCS.SelectedItem & "' and YearGrad = '" & year & "' order by TotalPoints desc"
+        Dim adapter As New MySqlDataAdapter
+        Dim ds As New rfPrints_tbl
+        adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
+        adapter.Fill(ds.Tables(1))
+        ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+        ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
+        ReportViewer2.LocalReport.DataSources.Clear()
+        ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(1)))
+        ReportViewer2.DocumentMapCollapsed = True
+        Me.ReportViewer2.RefreshReport()
     End Sub
 End Class

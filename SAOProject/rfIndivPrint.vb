@@ -6,10 +6,11 @@ Public Class rfIndivPrint
         Dim con As MySqlConnection = ConnectToDatabase()
         con.Open()
         'TODO: This line of code loads data into the 'rfPrint_tbl.allrf' table. You can move, or remove it, as needed.
-        Me.allrfTableAdapter.Fill(Me.rfPrints_tbl.allrf)
+        'Me.allrfTableAdapter.Fill(Me.rfPrints_tbl.allrf)
         populateStudentNames()
-        con.Close()
         Me.ReportViewer1.RefreshReport()
+        con.Close()
+
     End Sub
     Private Sub populateStudentNames()
         Try
@@ -285,11 +286,11 @@ Public Class rfIndivPrint
         Dim adapter As New MySqlDataAdapter
         Dim ds As New rfPrints_tbl
         adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
-        adapter.Fill(ds.Tables(11))
+        adapter.Fill(ds.Tables(0))
         ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-        ReportViewer1.LocalReport.ReportPath = "\Report3.rdlc"
+        ReportViewer1.LocalReport.ReportPath = System.Environment.CurrentDirectory & "\Report3.rdlc"
         ReportViewer1.LocalReport.DataSources.Clear()
-        ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(11)))
+        ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(0)))
         ReportViewer1.LocalReport.SetParameters(par1)
         ReportViewer1.LocalReport.SetParameters(par2)
         ReportViewer1.DocumentMapCollapsed = True

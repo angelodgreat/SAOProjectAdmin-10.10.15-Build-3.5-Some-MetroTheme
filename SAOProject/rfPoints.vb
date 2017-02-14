@@ -63,7 +63,7 @@
             txtRemarks.Enabled = False
             txtPoints.PasswordChar = "•"
             txtRemarks.PasswordChar = "•"
-            tilVForms.Enabled = False
+            tilVForms.Visible = False
             tilAdd.Location = New Point(165, 101)
             tilHome.Location = New Point(246, 101)
         Else
