@@ -1,4 +1,6 @@
 ﻿Public Class rfRatingForms
+
+
     Dim previousForm As rfPoints
 
     Public Sub init(ByVal form As Form)
@@ -1460,7 +1462,7 @@
 
         Dim approve As Integer = 1
 
-        If GetAccess() <> "Administrator" Then
+        If GetAccess() <> "Admin" Then
             approve = 0
         End If
 
@@ -1487,19 +1489,19 @@
                     Dim rf1weight = Val(rf1txtWeight.Text)
                     Dim rf1total = Val(rf1txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
 
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform1 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "' , '" & pos & "'," & rf1point & ", " & rf1weight & ", " & rf1total & " , " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform1 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "' , '" & pos & "'," & rf1point & ", " & rf1weight & ", " & rf1total & " , " & approve & ")"
 
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 Dim totalPoints As Integer = previousForm.GetPoints() + rf1total
                                 Dim remarks = GetRemarks(totalPoints)
                                 MsgBox("Form Added!")
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
 
@@ -1537,11 +1539,11 @@
                     Dim rf2weight = Val(rf2txtWeight.Text)
                     Dim rf2total = Val(rf2txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "") Then
-                        Dim query As String = "INSERT INTO ratingform2 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf2point & ", " & rf2weight & ", " & rf2total & " , " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "") Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform2 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf2point & ", " & rf2weight & ", " & rf2total & " , " & approve & ")"
 
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
@@ -1549,7 +1551,7 @@
                                 Dim remarks = GetRemarks(totalPoints)
 
                                 MsgBox("Form Added!")
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
                                     Reset(tabForms.SelectedIndex)
@@ -1587,11 +1589,11 @@
                     Dim rf3weight = Val(rf3txtWeight.Text)
                     Dim rf3total = Val(rf3txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform3 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf3point & ", " & rf3weight & ", " & rf3total & " , " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform3 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf3point & ", " & rf3weight & ", " & rf3total & " , " & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 Dim totalPoints As Integer = previousForm.GetPoints() + rf3total
@@ -1599,7 +1601,7 @@
 
 
                                 MsgBox("Form Added!")
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
 
@@ -1637,16 +1639,16 @@
                     Dim rf4weight = Val(rf4txtWeight.Text)
                     Dim rf4total = Val(rf4txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform4 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf4point & ", " & rf4weight & ", " & rf4total & " , " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform4 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf4point & ", " & rf4weight & ", " & rf4total & " , " & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 Dim totalPoints As Integer = previousForm.GetPoints() + rf4total
                                 Dim remarks = GetRemarks(totalPoints)
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
 
@@ -1740,17 +1742,17 @@
                     Dim rf5total = Val(rf5txtTWP.Text)
                     Dim pos = rf5comRole.SelectedItem.ToString
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform5 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & pos & "', '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "' ," & rf5point & ", " & rf5total & "," & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform5 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & pos & "', '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "' ," & rf5point & ", " & rf5total & "," & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 Dim totalPoints As Integer = previousForm.GetPoints() + rf5total
                                 Dim remarks = GetRemarks(totalPoints)
                                 MsgBox("Form Added!")
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
 
@@ -1852,17 +1854,17 @@
                     Dim rf6weight = Val(rf6txtWeight.Text)
                     Dim rf6total = Val(rf6txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Adminr" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform6 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "', '" & lvl & "','" & org & "','" & pos & "'," & rf6point & "," & rf6weight & ", " & rf6total & ", " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform6 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "', '" & lvl & "','" & org & "','" & pos & "'," & rf6point & "," & rf6weight & ", " & rf6total & ", " & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 Dim totalPoints As Integer = previousForm.GetPoints() + rf6total
                                 Dim remarks = GetRemarks(totalPoints)
                                 MsgBox("Form Added!")
-                                query = "UPDATE pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
                                 If ExecuteQuery(query) Then
                                     MsgBox("Points Added!")
 
@@ -1960,11 +1962,11 @@
                     Dim rf7total = Val(rf7txtTWP.Text)
                     Dim inc As Integer = Val(rf7txtIP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Or "SuperAdmin" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
-                    If GetAccess() = "Admin" Or "SuperAdmin" Or answer = MsgBoxResult.Yes Then
-                        Dim query As String = "INSERT INTO ratingform7 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "','" & pos & "'," & rf7point & "," & rf7weight & ", " & inc & ", " & rf7total & ", " & approve & ")"
+                    If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
+                        Dim query As String = "INSERT INTO ceuratingforms.ratingform7 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "','" & pos & "'," & rf7point & "," & rf7weight & ", " & inc & ", " & rf7total & ", " & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
                                 MsgBox("Form Added!")
@@ -1986,4 +1988,6 @@
     Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
         txtTotal.Text = Val(txtPoints.Text) * Val(txtWeight.Text)
     End Sub
+
+
 End Class

@@ -31,7 +31,8 @@ Public Class TabMain
         cb_eventschool.Text = "-"
         cb_remarks.Text = ""
 
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
 
@@ -71,7 +72,8 @@ Public Class TabMain
     Private Sub btn_submitrecords_Click(sender As Object, e As EventArgs) Handles btn_submitrecords.Click
 
         'ADDING EVENTS IN CALENDAR EVENT
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -187,7 +189,8 @@ Public Class TabMain
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
 
         'UPDATING EVENTS IN CALENDAR EVENT
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim a As Integer
 
@@ -296,7 +299,8 @@ Public Class TabMain
     Private Sub btn_deletedata_Click(sender As Object, e As EventArgs) Handles btn_deletedata.Click
 
         'DELETING EVENTS IN CALENDAR EVENT
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim a As Integer
 
@@ -412,7 +416,8 @@ Public Class TabMain
 
     Private Sub btn_register_Click(sender As Object, e As EventArgs) Handles btn_register.Click
         'REGISTERING ACCOUNTS IN REGISTER FORM
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
 
@@ -479,7 +484,8 @@ Public Class TabMain
 
     Private Sub btn_delete_records_Click(sender As Object, e As EventArgs) Handles btn_delete_records.Click
         'DELETING ACCOUNTS IN REGISTER FORM
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
 
 
 
@@ -562,7 +568,8 @@ Public Class TabMain
     Private Sub btn_update_records_Click(sender As Object, e As EventArgs) Handles btn_update_records.Click
 
         'UPDATING ACCOUNTS IN REGISTER FORM
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
         Dim a As Integer
@@ -638,7 +645,8 @@ Public Class TabMain
 
     Private Sub calendar_picker_ValueChanged(sender As Object, e As EventArgs)
         'CALENDAR PICKER IN ADDING EVENTS
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
 
@@ -668,7 +676,8 @@ Public Class TabMain
 
     Private Sub cb_userlist_reg_TextChanged(sender As Object, e As EventArgs)
         'Showing TAB USERLIST'
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
 
@@ -714,7 +723,8 @@ Public Class TabMain
 
     Private Sub lb_showuser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lb_showuser.SelectedIndexChanged
         'Showing list of users in listbox
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
 
@@ -755,7 +765,8 @@ Public Class TabMain
     Public Sub load_table()
         'MAIN TABLE
         'SHOWING DATA FROM THE TABLE
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim bsource As New BindingSource
 
@@ -782,7 +793,8 @@ Public Class TabMain
 
     Public Sub load_table2()
         'LOADING TABLE2 IN INPUT EVENT TAB
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
 
         Dim bsource As New BindingSource
@@ -812,7 +824,8 @@ Public Class TabMain
     Private Sub load_schedule_Click(sender As Object, e As EventArgs) Handles load_schedule.Click
 
         'SHOWING DATA FROM THE TABLE
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -939,7 +952,8 @@ Public Class TabMain
     Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TP_Event.Enter
 
         'SHOWING DATA FROM THE TABLE
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -990,7 +1004,8 @@ Public Class TabMain
     'REMINDER CONTROL
 
     Private Sub TabPage1_Enter(sender As Object, e As EventArgs) Handles TP_Note.Enter
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1026,7 +1041,8 @@ Public Class TabMain
         'DataGridView1.DataSource = DV
 
         'SHOWING DATA FROM THE TABLE
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1054,7 +1070,8 @@ Public Class TabMain
     End Sub
 
     Private Sub cb_filterschool_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filterschool.SelectedIndexChanged
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1240,7 +1257,8 @@ Public Class TabMain
     End Sub
 
     Private Sub cb_filtersearchlocation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filtersearchlocation.SelectedIndexChanged
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1295,7 +1313,8 @@ Public Class TabMain
     End Sub
 
     Private Sub cb_filtersearchlocation_TextChanged(sender As Object, e As EventArgs) Handles cb_filtersearchlocation.TextChanged
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1327,7 +1346,8 @@ Public Class TabMain
 
 
     Private Sub cb_filterschool_TextChanged(sender As Object, e As EventArgs) Handles cb_filterschool.TextChanged
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -1418,7 +1438,8 @@ Public Class TabMain
 
     Public Sub load_kpi()
         Try
-            MysqlConn = ConnectToDatabase()
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
 
 
             cb_kpi.Items.Clear()
@@ -1453,7 +1474,8 @@ Public Class TabMain
 
     Public Sub load_orgANDschool()
         Try
-            MysqlConn = ConnectToDatabase()
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
 
 
             cb_eventschool.Items.Clear()
@@ -1489,7 +1511,8 @@ Public Class TabMain
 
     Public Sub load_locs()
         Try
-            MysqlConn = ConnectToDatabase()
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
 
 
             tb_location.Items.Clear()

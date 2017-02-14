@@ -31,11 +31,12 @@ Partial Class DBSettings
         Me.mb_savesettings = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.tb_setusername = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.tb_setpassword = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setusername = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setport = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setDB = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tb_setserver = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.db_lblratingforms = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -123,47 +124,19 @@ Partial Class DBSettings
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'tb_setserver
+        'tb_setpassword
         '
         '
         '
         '
-        Me.tb_setserver.Border.Class = "TextBoxBorder"
-        Me.tb_setserver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setserver.Location = New System.Drawing.Point(107, 31)
-        Me.tb_setserver.Name = "tb_setserver"
-        Me.tb_setserver.PreventEnterBeep = True
-        Me.tb_setserver.Size = New System.Drawing.Size(228, 24)
-        Me.tb_setserver.TabIndex = 23
-        Me.tb_setserver.WatermarkText = "localhost"
-        '
-        'tb_setDB
-        '
-        '
-        '
-        '
-        Me.tb_setDB.Border.Class = "TextBoxBorder"
-        Me.tb_setDB.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setDB.Location = New System.Drawing.Point(107, 70)
-        Me.tb_setDB.Name = "tb_setDB"
-        Me.tb_setDB.PreventEnterBeep = True
-        Me.tb_setDB.Size = New System.Drawing.Size(228, 24)
-        Me.tb_setDB.TabIndex = 24
-        Me.tb_setDB.WatermarkText = "saoinfo"
-        '
-        'tb_setport
-        '
-        '
-        '
-        '
-        Me.tb_setport.Border.Class = "TextBoxBorder"
-        Me.tb_setport.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setport.Location = New System.Drawing.Point(107, 107)
-        Me.tb_setport.Name = "tb_setport"
-        Me.tb_setport.PreventEnterBeep = True
-        Me.tb_setport.Size = New System.Drawing.Size(228, 24)
-        Me.tb_setport.TabIndex = 25
-        Me.tb_setport.WatermarkText = "3306"
+        Me.tb_setpassword.Border.Class = "TextBoxBorder"
+        Me.tb_setpassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
+        Me.tb_setpassword.Name = "tb_setpassword"
+        Me.tb_setpassword.PreventEnterBeep = True
+        Me.tb_setpassword.Size = New System.Drawing.Size(228, 24)
+        Me.tb_setpassword.TabIndex = 27
+        Me.tb_setpassword.WatermarkText = "dbpassword"
         '
         'tb_setusername
         '
@@ -179,25 +152,63 @@ Partial Class DBSettings
         Me.tb_setusername.TabIndex = 26
         Me.tb_setusername.WatermarkText = "dbusername"
         '
-        'tb_setpassword
+        'tb_setport
         '
         '
         '
         '
-        Me.tb_setpassword.Border.Class = "TextBoxBorder"
-        Me.tb_setpassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
-        Me.tb_setpassword.Name = "tb_setpassword"
-        Me.tb_setpassword.PreventEnterBeep = True
-        Me.tb_setpassword.Size = New System.Drawing.Size(228, 24)
-        Me.tb_setpassword.TabIndex = 27
-        Me.tb_setpassword.WatermarkText = "dbpassword"
+        Me.tb_setport.Border.Class = "TextBoxBorder"
+        Me.tb_setport.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setport.Location = New System.Drawing.Point(107, 107)
+        Me.tb_setport.Name = "tb_setport"
+        Me.tb_setport.PreventEnterBeep = True
+        Me.tb_setport.Size = New System.Drawing.Size(228, 24)
+        Me.tb_setport.TabIndex = 25
+        Me.tb_setport.WatermarkText = "3306"
+        '
+        'tb_setDB
+        '
+        '
+        '
+        '
+        Me.tb_setDB.Border.Class = "TextBoxBorder"
+        Me.tb_setDB.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setDB.Location = New System.Drawing.Point(107, 70)
+        Me.tb_setDB.Name = "tb_setDB"
+        Me.tb_setDB.PreventEnterBeep = True
+        Me.tb_setDB.Size = New System.Drawing.Size(228, 24)
+        Me.tb_setDB.TabIndex = 24
+        Me.tb_setDB.WatermarkText = "saoinfo"
+        '
+        'tb_setserver
+        '
+        '
+        '
+        '
+        Me.tb_setserver.Border.Class = "TextBoxBorder"
+        Me.tb_setserver.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.tb_setserver.Location = New System.Drawing.Point(107, 31)
+        Me.tb_setserver.Name = "tb_setserver"
+        Me.tb_setserver.PreventEnterBeep = True
+        Me.tb_setserver.Size = New System.Drawing.Size(228, 24)
+        Me.tb_setserver.TabIndex = 23
+        Me.tb_setserver.WatermarkText = "localhost"
+        '
+        'db_lblratingforms
+        '
+        Me.db_lblratingforms.AutoSize = True
+        Me.db_lblratingforms.Location = New System.Drawing.Point(260, 29)
+        Me.db_lblratingforms.Name = "db_lblratingforms"
+        Me.db_lblratingforms.Size = New System.Drawing.Size(76, 13)
+        Me.db_lblratingforms.TabIndex = 1
+        Me.db_lblratingforms.Text = "ceuratingforms"
         '
         'DBSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(389, 368)
+        Me.Controls.Add(Me.db_lblratingforms)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -208,6 +219,7 @@ Partial Class DBSettings
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -224,4 +236,5 @@ Partial Class DBSettings
     Friend WithEvents tb_setport As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setDB As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents tb_setserver As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents db_lblratingforms As Label
 End Class

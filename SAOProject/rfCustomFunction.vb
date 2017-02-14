@@ -1,4 +1,4 @@
-﻿Module customFunction
+﻿Module rfCustomFunction
     <System.Runtime.CompilerServices.Extension()>
     Function RemoveAt(Of T)(ByVal arr As T(), ByVal index As Integer) As T()
         Dim uBound = arr.GetUpperBound(0)

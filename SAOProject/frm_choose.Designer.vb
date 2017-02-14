@@ -61,7 +61,7 @@ Partial Class frm_choose
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.ceu
+        Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.oie_14114115MwHcNs
         Me.PictureBox2.Location = New System.Drawing.Point(177, 14)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 100)

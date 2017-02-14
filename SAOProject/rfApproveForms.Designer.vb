@@ -88,7 +88,6 @@ Partial Class rfApproveForms
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabRF4 = New MetroFramework.Controls.MetroTabPage()
         Me.rf4Grid = New MetroFramework.Controls.MetroGrid()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.tilExit = New MetroFramework.Controls.MetroTile()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -759,17 +758,6 @@ Partial Class rfApproveForms
         Me.rf4Grid.Style = MetroFramework.MetroColorStyle.Pink
         Me.rf4Grid.TabIndex = 3
         '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel5.Location = New System.Drawing.Point(312, 83)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(172, 25)
-        Me.MetroLabel5.TabIndex = 44
-        Me.MetroLabel5.Text = "Student Affairs Office"
-        Me.MetroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'tilExit
         '
         Me.tilExit.ActiveControl = Nothing
@@ -815,7 +803,6 @@ Partial Class rfApproveForms
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tabVRF)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.PictureBox2)
         Me.Name = "rfApproveForms"
         Me.Text = "Student Affairs Office Rating Forms"
@@ -837,7 +824,6 @@ Partial Class rfApproveForms
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -888,6 +874,5 @@ Partial Class rfApproveForms
     Friend WithEvents tabRF4 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents rf4Grid As MetroFramework.Controls.MetroGrid
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents PictureBox2 As PictureBox
 End Class

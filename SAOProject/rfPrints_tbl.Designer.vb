@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("rfPrint_tbl"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("rfPrints_tbl"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class rfPrint_tbl
+Partial Public Class rfPrints_tbl
     Inherits Global.System.Data.DataSet
     
     Private tableallrf As allrfDataTable
@@ -143,7 +143,7 @@ Partial Public Class rfPrint_tbl
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As rfPrint_tbl = CType(MyBase.Clone,rfPrint_tbl)
+        Dim cln As rfPrints_tbl = CType(MyBase.Clone,rfPrints_tbl)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -223,9 +223,9 @@ Partial Public Class rfPrint_tbl
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "rfPrint_tbl"
+        Me.DataSetName = "rfPrints_tbl"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/rfPrint_tbl.xsd"
+        Me.Namespace = "http://tempuri.org/rfPrints_tbl.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableallrf = New allrfDataTable()
@@ -257,7 +257,7 @@ Partial Public Class rfPrint_tbl
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As rfPrint_tbl = New rfPrint_tbl()
+        Dim ds As rfPrints_tbl = New rfPrints_tbl()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -582,7 +582,7 @@ Partial Public Class rfPrint_tbl
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As rfPrint_tbl = New rfPrint_tbl()
+            Dim ds As rfPrints_tbl = New rfPrints_tbl()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -956,7 +956,7 @@ Partial Public Class rfPrint_tbl
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As rfPrint_tbl = New rfPrint_tbl()
+            Dim ds As rfPrints_tbl = New rfPrints_tbl()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1400,7 +1400,7 @@ Partial Public Class rfPrint_tbl
     End Class
 End Class
 
-Namespace rfPrint_tblTableAdapters
+Namespace rfPrints_tblTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1762,7 +1762,7 @@ Namespace rfPrint_tblTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As rfPrint_tbl.allrfDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As rfPrints_tbl.allrfDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1775,9 +1775,9 @@ Namespace rfPrint_tblTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As rfPrint_tbl.allrfDataTable
+        Public Overloads Overridable Function GetData() As rfPrints_tbl.allrfDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As rfPrint_tbl.allrfDataTable = New rfPrint_tbl.allrfDataTable()
+            Dim dataTable As rfPrints_tbl.allrfDataTable = New rfPrints_tbl.allrfDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1785,14 +1785,14 @@ Namespace rfPrint_tblTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As rfPrint_tbl.allrfDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As rfPrints_tbl.allrfDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As rfPrint_tbl) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As rfPrints_tbl) As Integer
             Return Me.Adapter.Update(dataSet, "allrf")
         End Function
         
@@ -2495,7 +2495,7 @@ Namespace rfPrint_tblTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As rfPrint_tbl.studsumDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As rfPrints_tbl.studsumDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2508,9 +2508,9 @@ Namespace rfPrint_tblTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As rfPrint_tbl.studsumDataTable
+        Public Overloads Overridable Function GetData() As rfPrints_tbl.studsumDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As rfPrint_tbl.studsumDataTable = New rfPrint_tbl.studsumDataTable()
+            Dim dataTable As rfPrints_tbl.studsumDataTable = New rfPrints_tbl.studsumDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2518,14 +2518,14 @@ Namespace rfPrint_tblTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As rfPrint_tbl.studsumDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As rfPrints_tbl.studsumDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As rfPrint_tbl) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As rfPrints_tbl) As Integer
             Return Me.Adapter.Update(dataSet, "studsum")
         End Function
         
@@ -2966,7 +2966,7 @@ Namespace rfPrint_tblTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As rfPrint_tbl, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As rfPrints_tbl, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._allrfTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.allrf.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
@@ -2994,7 +2994,7 @@ Namespace rfPrint_tblTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As rfPrint_tbl, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As rfPrints_tbl, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._allrfTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.allrf.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
@@ -3020,7 +3020,7 @@ Namespace rfPrint_tblTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As rfPrint_tbl, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As rfPrints_tbl, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._studsumTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.studsum.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -3072,7 +3072,7 @@ Namespace rfPrint_tblTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As rfPrint_tbl) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As rfPrints_tbl) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

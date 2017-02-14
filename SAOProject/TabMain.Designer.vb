@@ -203,7 +203,7 @@ Partial Class TabMain
         Me.TabControl1.Location = New System.Drawing.Point(0, 24)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1237, 709)
+        Me.TabControl1.Size = New System.Drawing.Size(1275, 709)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 4
         '
@@ -225,7 +225,7 @@ Partial Class TabMain
         Me.TP_Home.Location = New System.Drawing.Point(4, 24)
         Me.TP_Home.Name = "TP_Home"
         Me.TP_Home.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP_Home.Size = New System.Drawing.Size(1229, 681)
+        Me.TP_Home.Size = New System.Drawing.Size(1267, 681)
         Me.TP_Home.TabIndex = 5
         Me.TP_Home.Text = "Home"
         '
@@ -233,7 +233,7 @@ Partial Class TabMain
         '
         Me.btn_home_useradding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_home_useradding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_home_useradding.Location = New System.Drawing.Point(912, 633)
+        Me.btn_home_useradding.Location = New System.Drawing.Point(950, 633)
         Me.btn_home_useradding.Name = "btn_home_useradding"
         Me.btn_home_useradding.Size = New System.Drawing.Size(98, 27)
         Me.btn_home_useradding.TabIndex = 8
@@ -244,7 +244,7 @@ Partial Class TabMain
         '
         Me.btn_home_eventadding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_home_eventadding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_home_eventadding.Location = New System.Drawing.Point(1016, 633)
+        Me.btn_home_eventadding.Location = New System.Drawing.Point(1054, 633)
         Me.btn_home_eventadding.Name = "btn_home_eventadding"
         Me.btn_home_eventadding.Size = New System.Drawing.Size(98, 27)
         Me.btn_home_eventadding.TabIndex = 7
@@ -255,7 +255,7 @@ Partial Class TabMain
         '
         Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox8.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox8.Location = New System.Drawing.Point(856, 6)
+        Me.PictureBox8.Location = New System.Drawing.Point(875, 6)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(100, 100)
         Me.PictureBox8.TabIndex = 36
@@ -291,7 +291,7 @@ Partial Class TabMain
         Me.btn_print.FlatAppearance.BorderSize = 2
         Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_print.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_print.Location = New System.Drawing.Point(1120, 633)
+        Me.btn_print.Location = New System.Drawing.Point(1158, 633)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(98, 27)
         Me.btn_print.TabIndex = 6
@@ -304,7 +304,7 @@ Partial Class TabMain
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
-        Me.Label25.Location = New System.Drawing.Point(476, 3)
+        Me.Label25.Location = New System.Drawing.Point(495, 3)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(374, 66)
         Me.Label25.TabIndex = 28
@@ -315,7 +315,7 @@ Partial Class TabMain
         Me.Label24.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label24.Location = New System.Drawing.Point(490, 661)
+        Me.Label24.Location = New System.Drawing.Point(509, 661)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(319, 15)
         Me.Label24.TabIndex = 27
@@ -332,7 +332,7 @@ Partial Class TabMain
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox6.Location = New System.Drawing.Point(303, 123)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(918, 507)
+        Me.GroupBox6.Size = New System.Drawing.Size(956, 507)
         Me.GroupBox6.TabIndex = 17
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Schedule"
@@ -383,7 +383,7 @@ Partial Class TabMain
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(912, 485)
+        Me.DataGridView1.Size = New System.Drawing.Size(950, 485)
         Me.DataGridView1.Style = MetroFramework.MetroColorStyle.Orange
         Me.DataGridView1.TabIndex = 0
         '
@@ -505,11 +505,10 @@ Partial Class TabMain
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(370, 6)
+        Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
+        Me.PictureBox1.Location = New System.Drawing.Point(389, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
@@ -1665,7 +1664,7 @@ Partial Class TabMain
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(1237, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1275, 24)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1731,7 +1730,7 @@ Partial Class TabMain
         Me.lbl_time.AutoSize = True
         Me.lbl_time.BackColor = System.Drawing.Color.LightPink
         Me.lbl_time.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_time.Location = New System.Drawing.Point(913, 5)
+        Me.lbl_time.Location = New System.Drawing.Point(951, 5)
         Me.lbl_time.Name = "lbl_time"
         Me.lbl_time.Size = New System.Drawing.Size(35, 15)
         Me.lbl_time.TabIndex = 6
@@ -1775,7 +1774,7 @@ Partial Class TabMain
         Me.lbl_showsem.AutoSize = True
         Me.lbl_showsem.BackColor = System.Drawing.Color.LightPink
         Me.lbl_showsem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_showsem.Location = New System.Drawing.Point(1151, 5)
+        Me.lbl_showsem.Location = New System.Drawing.Point(1189, 5)
         Me.lbl_showsem.Name = "lbl_showsem"
         Me.lbl_showsem.Size = New System.Drawing.Size(74, 15)
         Me.lbl_showsem.TabIndex = 37
@@ -1785,7 +1784,7 @@ Partial Class TabMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1237, 733)
+        Me.ClientSize = New System.Drawing.Size(1275, 733)
         Me.Controls.Add(Me.lbl_showsem)
         Me.Controls.Add(Me.welcomeadmin)
         Me.Controls.Add(Me.lbl_time)

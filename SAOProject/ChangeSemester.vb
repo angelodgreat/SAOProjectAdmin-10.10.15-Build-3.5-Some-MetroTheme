@@ -8,7 +8,8 @@ Public Class ChangeSemester
 
 
     Private Sub btn_createSCYS_Click(sender As Object, e As EventArgs) Handles btn_createSCYS.Click
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim bsource As New BindingSource
         Dim tablename As String = cb_selectyearndsem.Text
@@ -41,7 +42,8 @@ Public Class ChangeSemester
 
 
         'SHOWING DATA FROM THE TABLE
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim dbdataset As New DataTable
         Dim bsource As New BindingSource
@@ -69,7 +71,8 @@ Public Class ChangeSemester
     End Sub
 
     Private Sub btn_deleteSCYS_Click(sender As Object, e As EventArgs) Handles btn_deleteSCYS.Click
-        MysqlConn = ConnectToDatabase()
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
         Dim SDA As New MySqlDataAdapter
         Dim bsource As New BindingSource
         Dim tablename As String = cb_selectyearndsem.Text

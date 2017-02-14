@@ -1,5 +1,21 @@
 ﻿Imports MySql.Data.MySqlClient
 Module GlobalVariableodule
+
+    Public MysqlConn As MySqlConnection
+
+    Public test As String = "server='" & DBSettings.tb_setserver.Text & "'; port='" & DBSettings.tb_setport.Text & "'; database='" & DBSettings.tb_setDB.Text & "'; userid='" & DBSettings.tb_setusername.Text & "'; password='" & DBSettings.tb_setpassword.Text & "'"
+    Public connstring As String = test
+
+    Public query As String
+
+    Public Command As MySqlCommand
+    Public dbdataset As New DataTable
+    Public reader As MySqlDataReader
+
+    Public remozconnection As String = "server=" & DBSettings.tb_setserver.Text & "; port=" & DBSettings.tb_setport.Text & "; database=ceuratingforms; userid=" & DBSettings.tb_setusername.Text & "; password=" & DBSettings.tb_setpassword.Text & ""
+
+
+    'remoz codez
     Dim accountName As String
     Dim accountType As String
 
@@ -18,17 +34,11 @@ Module GlobalVariableodule
     Public Function GetAccess() As String
         Return accountType
     End Function
-    Public MysqlConn As MySqlConnection
-    'Public test As String = "server='" & DBSettings.tb_setserver.Text & "'; port='" & DBSettings.tb_setport.Text & "'; database='" & DBSettings.tb_setDB.Text & "'; userid='" & DBSettings.tb_setusername.Text & "'; password='" & DBSettings.tb_setpassword.Text & "'"
-    'Public connstring As String = test
-    ''Public connstring As String = "server=AngeloUmaliPC;userid=root;password=root;database=saoinfo"
-    Public query As String
+
     Public Function ConnectToDatabase() As MySqlConnection
-        Return New MySqlConnection("SERVER = '" & DBSettings.tb_setserver.Text & "'; PORT = '" & DBSettings.tb_setport.Text & "'; DATABASE = '" & DBSettings.tb_setDB.Text & "'; USERID = '" & DBSettings.tb_setusername.Text & "'; PASSWORD = '" & DBSettings.tb_setpassword.Text & "';")
+        Return New MySqlConnection(remozconnection)
     End Function
-    Public Command As MySqlCommand
-    Public dbdataset As New DataTable
-    Public reader As MySqlDataReader
+
     Public Function ExecuteQuery(ByVal query As String) As Boolean
         Try
             Dim conn As MySqlConnection = ConnectToDatabase()
@@ -94,4 +104,7 @@ Module GlobalVariableodule
 
         Return Nothing
     End Function
+
+
+
 End Module

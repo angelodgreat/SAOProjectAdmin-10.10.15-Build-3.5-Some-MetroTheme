@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="rfPrint_tbl" targetNamespace="http://tempuri.org/rfPrint_tbl.xsd" xmlns:mstns="http://tempuri.org/rfPrint_tbl.xsd" xmlns="http://tempuri.org/rfPrint_tbl.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="rfPrints_tbl" targetNamespace="http://tempuri.org/rfPrints_tbl.xsd" xmlns:mstns="http://tempuri.org/rfPrints_tbl.xsd" xmlns="http://tempuri.org/rfPrints_tbl.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -171,10 +171,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="rfPrint_tbl" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="rfPrint_tbl" msprop:Generator_UserDSName="rfPrint_tbl">
+  <xs:element name="rfPrints_tbl" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="rfPrints_tbl" msprop:Generator_UserDSName="rfPrints_tbl">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="allrf" msprop:Generator_TableClassName="allrfDataTable" msprop:Generator_TableVarName="tableallrf" msprop:Generator_RowChangedName="allrfRowChanged" msprop:Generator_TablePropName="allrf" msprop:Generator_RowDeletingName="allrfRowDeleting" msprop:Generator_RowChangingName="allrfRowChanging" msprop:Generator_RowEvHandlerName="allrfRowChangeEventHandler" msprop:Generator_RowDeletedName="allrfRowDeleted" msprop:Generator_RowClassName="allrfRow" msprop:Generator_UserTableName="allrf" msprop:Generator_RowEvArgName="allrfRowChangeEvent">
+        <xs:element name="allrf" msprop:Generator_TableClassName="allrfDataTable" msprop:Generator_TableVarName="tableallrf" msprop:Generator_TablePropName="allrf" msprop:Generator_RowDeletingName="allrfRowDeleting" msprop:Generator_RowChangingName="allrfRowChanging" msprop:Generator_RowEvHandlerName="allrfRowChangeEventHandler" msprop:Generator_RowDeletedName="allrfRowDeleted" msprop:Generator_UserTableName="allrf" msprop:Generator_RowChangedName="allrfRowChanged" msprop:Generator_RowEvArgName="allrfRowChangeEvent" msprop:Generator_RowClassName="allrfRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idallrf" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidallrf" msprop:Generator_ColumnPropNameInRow="idallrf" msprop:Generator_ColumnPropNameInTable="idallrfColumn" msprop:Generator_UserColumnName="idallrf" type="xs:int" />
@@ -192,7 +192,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="studsum" msprop:Generator_TableClassName="studsumDataTable" msprop:Generator_TableVarName="tablestudsum" msprop:Generator_RowChangedName="studsumRowChanged" msprop:Generator_TablePropName="studsum" msprop:Generator_RowDeletingName="studsumRowDeleting" msprop:Generator_RowChangingName="studsumRowChanging" msprop:Generator_RowEvHandlerName="studsumRowChangeEventHandler" msprop:Generator_RowDeletedName="studsumRowDeleted" msprop:Generator_RowClassName="studsumRow" msprop:Generator_UserTableName="studsum" msprop:Generator_RowEvArgName="studsumRowChangeEvent">
+        <xs:element name="studsum" msprop:Generator_TableClassName="studsumDataTable" msprop:Generator_TableVarName="tablestudsum" msprop:Generator_TablePropName="studsum" msprop:Generator_RowDeletingName="studsumRowDeleting" msprop:Generator_RowChangingName="studsumRowChanging" msprop:Generator_RowEvHandlerName="studsumRowChangeEventHandler" msprop:Generator_RowDeletedName="studsumRowDeleted" msprop:Generator_UserTableName="studsum" msprop:Generator_RowChangedName="studsumRowChanged" msprop:Generator_RowEvArgName="studsumRowChangeEvent" msprop:Generator_RowClassName="studsumRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StudentNo" msprop:Generator_ColumnVarNameInTable="columnStudentNo" msprop:Generator_ColumnPropNameInRow="StudentNo" msprop:Generator_ColumnPropNameInTable="StudentNoColumn" msprop:Generator_UserColumnName="StudentNo">

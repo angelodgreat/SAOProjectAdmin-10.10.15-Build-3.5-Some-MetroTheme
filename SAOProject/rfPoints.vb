@@ -42,14 +42,14 @@
     Private Sub Points_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtNum.Text = studNo
         txtName.Text = firstName & " " & middle & " " & surname
-        Dim query = "SELECT * FROM pointsinfo WHERE StudNo = '" & studNo & "'"
+        Dim query = "SELECT * FROM ceuratingforms.pointsinfo WHERE StudNo = '" & studNo & "'"
         If (count(query, 3)) <> 0 Then
             studentInfo = RetrieveQuery(query, 3)
             txtPoints.Text = studentInfo(0)(1).ToString()
             txtRemarks.Text = studentInfo(0)(2).ToString()
         Else
             Dim points As Integer = 0
-            query = "INSERT INTO pointsinfo VALUES ('" & studNo & "' , " & points & " , ' ' )"
+            query = "INSERT INTO ceuratingforms.pointsinfo VALUES ('" & studNo & "' , " & points & " , ' ' )"
             If ExecuteQuery(query) Then
                 txtPoints.Text = 0
                 txtRemarks.Text = String.Empty
@@ -58,12 +58,12 @@
             End If
         End If
 
-        If GetAccess() <> "Admin" Or "SuperAdmin" Then
+        If GetAccess() <> "Admin" Then
             txtPoints.Enabled = False
             txtRemarks.Enabled = False
             txtPoints.PasswordChar = "•"
             txtRemarks.PasswordChar = "•"
-            tilVForms.Visible = False
+            tilVForms.Enabled = False
             tilAdd.Location = New Point(165, 101)
             tilHome.Location = New Point(246, 101)
         Else

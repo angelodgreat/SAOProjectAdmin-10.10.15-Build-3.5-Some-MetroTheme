@@ -26,7 +26,6 @@ Partial Class rfPoints
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.txtNum = New MetroFramework.Controls.MetroTextBox()
@@ -42,6 +41,7 @@ Partial Class rfPoints
         Me.tilVForms = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.tilAdd = New MetroFramework.Controls.MetroTile()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,17 +61,6 @@ Partial Class rfPoints
         '
         Me.PrintDialog1.UseEXDialog = True
         '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel5.Location = New System.Drawing.Point(226, 107)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(172, 25)
-        Me.MetroLabel5.TabIndex = 42
-        Me.MetroLabel5.Text = "Student Affairs Office"
-        Me.MetroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
@@ -83,8 +72,9 @@ Partial Class rfPoints
         '
         'MetroLabel11
         '
+        Me.MetroLabel11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel11.Location = New System.Drawing.Point(183, 410)
+        Me.MetroLabel11.Location = New System.Drawing.Point(181, 402)
         Me.MetroLabel11.Name = "MetroLabel11"
         Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel11.TabIndex = 41
@@ -132,6 +122,7 @@ Partial Class rfPoints
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MetroPanel1.Controls.Add(Me.txtNum)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel6)
@@ -144,7 +135,7 @@ Partial Class rfPoints
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(181, 238)
+        Me.MetroPanel1.Location = New System.Drawing.Point(179, 230)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(264, 160)
         Me.MetroPanel1.TabIndex = 38
@@ -268,8 +259,9 @@ Partial Class rfPoints
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(449, 69)
+        Me.PictureBox2.Location = New System.Drawing.Point(531, 25)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -278,9 +270,10 @@ Partial Class rfPoints
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(101, 69)
+        Me.PictureBox1.Location = New System.Drawing.Point(38, 25)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(76, 75)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -290,7 +283,8 @@ Partial Class rfPoints
         'tilVForms
         '
         Me.tilVForms.ActiveControl = Nothing
-        Me.tilVForms.Location = New System.Drawing.Point(195, 157)
+        Me.tilVForms.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilVForms.Location = New System.Drawing.Point(195, 129)
         Me.tilVForms.Name = "tilVForms"
         Me.tilVForms.Size = New System.Drawing.Size(75, 75)
         Me.tilVForms.Style = MetroFramework.MetroColorStyle.Pink
@@ -304,8 +298,9 @@ Partial Class rfPoints
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
+        Me.tilHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tilHome.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.tilHome.Location = New System.Drawing.Point(357, 157)
+        Me.tilHome.Location = New System.Drawing.Point(357, 129)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(75, 75)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -319,7 +314,8 @@ Partial Class rfPoints
         'tilAdd
         '
         Me.tilAdd.ActiveControl = Nothing
-        Me.tilAdd.Location = New System.Drawing.Point(276, 157)
+        Me.tilAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilAdd.Location = New System.Drawing.Point(276, 129)
         Me.tilAdd.Name = "tilAdd"
         Me.tilAdd.Size = New System.Drawing.Size(75, 75)
         Me.tilAdd.Style = MetroFramework.MetroColorStyle.Pink
@@ -330,16 +326,28 @@ Partial Class rfPoints
         Me.tilAdd.UseSelectable = True
         Me.tilAdd.UseTileImage = True
         '
+        'Label25
+        '
+        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(140, 29)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
+        Me.Label25.TabIndex = 46
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
+        '
         'rfPoints
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(626, 498)
+        Me.ClientSize = New System.Drawing.Size(647, 448)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.tilVForms)
-        Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroLabel11)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.tilHome)
@@ -361,7 +369,6 @@ Partial Class rfPoints
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents tilVForms As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNum As MetroFramework.Controls.MetroTextBox
@@ -374,4 +381,5 @@ Partial Class rfPoints
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilHome As MetroFramework.Controls.MetroTile
     Friend WithEvents tilAdd As MetroFramework.Controls.MetroTile
+    Friend WithEvents Label25 As Label
 End Class

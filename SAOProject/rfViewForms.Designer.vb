@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class rfViewForms
-    Inherits System.Windows.Forms.Form
+    Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -75,19 +75,21 @@ Partial Class rfViewForms
         Me.rf7Position = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rf7TotalPoints = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.tilExit = New MetroFramework.Controls.MetroTile()
         Me.lblTotalPoints = New MetroFramework.Controls.MetroLabel()
         Me.tabRF4 = New MetroFramework.Controls.MetroTabPage()
         Me.tabVRF = New MetroFramework.Controls.MetroTabControl()
         Me.tabRF5 = New MetroFramework.Controls.MetroTabPage()
         Me.tabRF6 = New MetroFramework.Controls.MetroTabPage()
         Me.tabRF7 = New MetroFramework.Controls.MetroTabPage()
+        Me.lblrfstudno = New MetroFramework.Controls.MetroLabel()
+        Me.lblrfstudname = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.lblrfstudname = New MetroFramework.Controls.MetroLabel()
-        Me.lblrfstudno = New MetroFramework.Controls.MetroLabel()
+        Me.Label25 = New System.Windows.Forms.Label()
         CType(Me.rf4Grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabRF3.SuspendLayout()
         CType(Me.rf3Grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -476,7 +478,7 @@ Partial Class rfViewForms
         Me.tabRF1.HorizontalScrollbarSize = 10
         Me.tabRF1.Location = New System.Drawing.Point(4, 38)
         Me.tabRF1.Name = "tabRF1"
-        Me.tabRF1.Size = New System.Drawing.Size(703, 355)
+        Me.tabRF1.Size = New System.Drawing.Size(749, 355)
         Me.tabRF1.TabIndex = 0
         Me.tabRF1.Text = "Rating Form 1"
         Me.tabRF1.VerticalScrollbarBarColor = True
@@ -487,6 +489,8 @@ Partial Class rfViewForms
         '
         Me.rf1Grid.AllowUserToDeleteRows = False
         Me.rf1Grid.AllowUserToResizeRows = False
+        Me.rf1Grid.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rf1Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.rf1Grid.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.rf1Grid.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -527,7 +531,7 @@ Partial Class rfViewForms
         Me.rf1Grid.RowHeadersVisible = False
         Me.rf1Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.rf1Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.rf1Grid.Size = New System.Drawing.Size(703, 291)
+        Me.rf1Grid.Size = New System.Drawing.Size(749, 291)
         Me.rf1Grid.Style = MetroFramework.MetroColorStyle.Pink
         Me.rf1Grid.TabIndex = 2
         '
@@ -619,19 +623,37 @@ Partial Class rfViewForms
         '
         'MetroLabel3
         '
+        Me.MetroLabel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel3.Location = New System.Drawing.Point(273, 690)
+        Me.MetroLabel3.Location = New System.Drawing.Point(256, 690)
         Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(260, 20)
+        Me.MetroLabel3.Size = New System.Drawing.Size(298, 20)
         Me.MetroLabel3.TabIndex = 69
         Me.MetroLabel3.Text = "©BSIT3A 2016"
         Me.MetroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'tilExit
+        '
+        Me.tilExit.ActiveControl = Nothing
+        Me.tilExit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilExit.Location = New System.Drawing.Point(735, 6)
+        Me.tilExit.Name = "tilExit"
+        Me.tilExit.Size = New System.Drawing.Size(75, 75)
+        Me.tilExit.Style = MetroFramework.MetroColorStyle.Pink
+        Me.tilExit.TabIndex = 67
+        Me.tilExit.Text = "Close"
+        Me.tilExit.TileImage = Global.SAOProject.My.Resources.Resources.ic_close_white_48dp_1x1
+        Me.tilExit.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.tilExit.UseSelectable = True
+        Me.tilExit.UseTileImage = True
+        '
         'lblTotalPoints
         '
+        Me.lblTotalPoints.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalPoints.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblTotalPoints.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.lblTotalPoints.Location = New System.Drawing.Point(607, 611)
+        Me.lblTotalPoints.Location = New System.Drawing.Point(583, 611)
         Me.lblTotalPoints.Name = "lblTotalPoints"
         Me.lblTotalPoints.Size = New System.Drawing.Size(100, 31)
         Me.lblTotalPoints.TabIndex = 71
@@ -654,6 +676,7 @@ Partial Class rfViewForms
         '
         'tabVRF
         '
+        Me.tabVRF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabVRF.Controls.Add(Me.tabRF1)
         Me.tabVRF.Controls.Add(Me.tabRF2)
         Me.tabVRF.Controls.Add(Me.tabRF3)
@@ -661,10 +684,10 @@ Partial Class rfViewForms
         Me.tabVRF.Controls.Add(Me.tabRF5)
         Me.tabVRF.Controls.Add(Me.tabRF6)
         Me.tabVRF.Controls.Add(Me.tabRF7)
-        Me.tabVRF.Location = New System.Drawing.Point(48, 211)
+        Me.tabVRF.Location = New System.Drawing.Point(24, 211)
         Me.tabVRF.Name = "tabVRF"
         Me.tabVRF.SelectedIndex = 0
-        Me.tabVRF.Size = New System.Drawing.Size(711, 397)
+        Me.tabVRF.Size = New System.Drawing.Size(757, 397)
         Me.tabVRF.Style = MetroFramework.MetroColorStyle.Pink
         Me.tabVRF.TabIndex = 66
         Me.tabVRF.UseSelectable = True
@@ -714,11 +737,56 @@ Partial Class rfViewForms
         Me.tabRF7.VerticalScrollbarHighlightOnWheel = False
         Me.tabRF7.VerticalScrollbarSize = 10
         '
+        'lblrfstudno
+        '
+        Me.lblrfstudno.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblrfstudno.AutoSize = True
+        Me.lblrfstudno.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblrfstudno.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.lblrfstudno.Location = New System.Drawing.Point(191, 171)
+        Me.lblrfstudno.Name = "lblrfstudno"
+        Me.lblrfstudno.Size = New System.Drawing.Size(71, 25)
+        Me.lblrfstudno.TabIndex = 65
+        Me.lblrfstudno.Text = "studno"
+        '
+        'lblrfstudname
+        '
+        Me.lblrfstudname.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblrfstudname.AutoSize = True
+        Me.lblrfstudname.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblrfstudname.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.lblrfstudname.Location = New System.Drawing.Point(483, 171)
+        Me.lblrfstudname.Name = "lblrfstudname"
+        Me.lblrfstudname.Size = New System.Drawing.Size(96, 25)
+        Me.lblrfstudname.TabIndex = 64
+        Me.lblrfstudname.Text = "studname"
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel2.Location = New System.Drawing.Point(424, 171)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(123, 23)
+        Me.MetroLabel2.TabIndex = 63
+        Me.MetroLabel2.Text = "Name"
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel1.Location = New System.Drawing.Point(90, 171)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(123, 23)
+        Me.MetroLabel1.TabIndex = 62
+        Me.MetroLabel1.Text = "Student No."
+        '
         'MetroLabel6
         '
+        Me.MetroLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel6.AutoSize = True
         Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel6.Location = New System.Drawing.Point(448, 615)
+        Me.MetroLabel6.Location = New System.Drawing.Point(424, 615)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(153, 19)
         Me.MetroLabel6.TabIndex = 70
@@ -726,8 +794,9 @@ Partial Class rfViewForms
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(666, 26)
+        Me.PictureBox2.Location = New System.Drawing.Point(602, 25)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -736,62 +805,36 @@ Partial Class rfViewForms
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(78, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(119, 25)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(76, 75)
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 75)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 61
         Me.PictureBox1.TabStop = False
         '
-        'MetroLabel1
+        'Label25
         '
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(159, 142)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(123, 23)
-        Me.MetroLabel1.TabIndex = 62
-        Me.MetroLabel1.Text = "Student No."
-        '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(493, 142)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(58, 23)
-        Me.MetroLabel2.TabIndex = 63
-        Me.MetroLabel2.Text = "Name"
-        '
-        'lblrfstudname
-        '
-        Me.lblrfstudname.AutoSize = True
-        Me.lblrfstudname.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.lblrfstudname.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.lblrfstudname.Location = New System.Drawing.Point(548, 141)
-        Me.lblrfstudname.Name = "lblrfstudname"
-        Me.lblrfstudname.Size = New System.Drawing.Size(96, 25)
-        Me.lblrfstudname.TabIndex = 64
-        Me.lblrfstudname.Text = "studname"
-        '
-        'lblrfstudno
-        '
-        Me.lblrfstudno.AutoSize = True
-        Me.lblrfstudno.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.lblrfstudno.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.lblrfstudno.Location = New System.Drawing.Point(260, 142)
-        Me.lblrfstudno.Name = "lblrfstudno"
-        Me.lblrfstudno.Size = New System.Drawing.Size(71, 25)
-        Me.lblrfstudno.TabIndex = 65
-        Me.lblrfstudno.Text = "studno"
+        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(212, 30)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
+        Me.Label25.TabIndex = 72
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
         '
         'rfViewForms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(807, 749)
+        Me.ClientSize = New System.Drawing.Size(812, 731)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.tilExit)
         Me.Controls.Add(Me.lblTotalPoints)
         Me.Controls.Add(Me.tabVRF)
         Me.Controls.Add(Me.lblrfstudno)
@@ -802,7 +845,8 @@ Partial Class rfViewForms
         Me.Controls.Add(Me.MetroLabel6)
         Me.MaximizeBox = False
         Me.Name = "rfViewForms"
-        Me.Text = "Student Affairs Office Rating Forms"
+        Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         CType(Me.rf4Grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabRF3.ResumeLayout(False)
         CType(Me.rf3Grid, System.ComponentModel.ISupportInitialize).EndInit()
@@ -857,17 +901,19 @@ Partial Class rfViewForms
     Friend WithEvents rf7Position As DataGridViewTextBoxColumn
     Friend WithEvents rf7TotalPoints As DataGridViewTextBoxColumn
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents tilExit As MetroFramework.Controls.MetroTile
     Friend WithEvents lblTotalPoints As MetroFramework.Controls.MetroLabel
     Friend WithEvents tabRF4 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents tabVRF As MetroFramework.Controls.MetroTabControl
     Friend WithEvents tabRF5 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents tabRF6 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents tabRF7 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblrfstudname As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblrfstudno As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblrfstudname As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Label25 As Label
 End Class

@@ -24,28 +24,18 @@ Partial Class rfIndivPrint
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.rfPrint_tbl = New SAOProject.rfPrint_tbl()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.tilBack = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.cmb_studentNames = New MetroFramework.Controls.MetroComboBox()
-        Me.allrfTableAdapter = New SAOProject.rfPrint_tblTableAdapters.allrfTableAdapter()
+        Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
+        Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.allrfTableAdapter = New SAOProject.rfPrints_tblTableAdapters.allrfTableAdapter()
+        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.allrfBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rfPrint_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'allrfBindingSource
-        '
-        Me.allrfBindingSource.DataMember = "allrf"
-        Me.allrfBindingSource.DataSource = Me.rfPrint_tbl
-        '
-        'rfPrint_tbl
-        '
-        Me.rfPrint_tbl.DataSetName = "rfPrint_tbl"
-        Me.rfPrint_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MetroLabel1
         '
@@ -93,7 +83,7 @@ Partial Class rfIndivPrint
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.allrfBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report3.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(35, 76)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(681, 332)
@@ -120,6 +110,16 @@ Partial Class rfIndivPrint
         Me.cmb_studentNames.UseSelectable = True
         Me.cmb_studentNames.UseStyleColors = True
         '
+        'rfPrints_tbl
+        '
+        Me.rfPrints_tbl.DataSetName = "rfPrints_tbl"
+        Me.rfPrints_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'allrfBindingSource
+        '
+        Me.allrfBindingSource.DataMember = "allrf"
+        Me.allrfBindingSource.DataSource = Me.rfPrints_tbl
+        '
         'allrfTableAdapter
         '
         Me.allrfTableAdapter.ClearBeforeFill = True
@@ -137,8 +137,8 @@ Partial Class rfIndivPrint
         Me.Controls.Add(Me.cmb_studentNames)
         Me.Name = "rfIndivPrint"
         Me.Style = MetroFramework.MetroColorStyle.Pink
+        CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.allrfBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rfPrint_tbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -151,6 +151,6 @@ Partial Class rfIndivPrint
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cmb_studentNames As MetroFramework.Controls.MetroComboBox
     Friend WithEvents allrfBindingSource As BindingSource
-    Friend WithEvents rfPrint_tbl As rfPrint_tbl
-    Friend WithEvents allrfTableAdapter As rfPrint_tblTableAdapters.allrfTableAdapter
+    Friend WithEvents rfPrints_tbl As rfPrints_tbl
+    Friend WithEvents allrfTableAdapter As rfPrints_tblTableAdapters.allrfTableAdapter
 End Class

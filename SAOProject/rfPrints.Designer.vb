@@ -35,17 +35,18 @@ Partial Class rfPrints
         '
         'MetroLabel1
         '
-        Me.MetroLabel1.Location = New System.Drawing.Point(248, 314)
+        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel1.Location = New System.Drawing.Point(250, 289)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel1.TabIndex = 33
-        Me.MetroLabel1.Text = "© Remos, Mahealani Joy G"
+        Me.MetroLabel1.Text = "©BSIT3A 2016"
         Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tilAll
         '
         Me.tilAll.ActiveControl = Nothing
-        Me.tilAll.Location = New System.Drawing.Point(441, 133)
+        Me.tilAll.Location = New System.Drawing.Point(441, 118)
         Me.tilAll.Name = "tilAll"
         Me.tilAll.Size = New System.Drawing.Size(110, 110)
         Me.tilAll.Style = MetroFramework.MetroColorStyle.Pink
@@ -59,7 +60,7 @@ Partial Class rfPrints
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
-        Me.tilHome.Location = New System.Drawing.Point(209, 133)
+        Me.tilHome.Location = New System.Drawing.Point(209, 118)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -73,7 +74,7 @@ Partial Class rfPrints
         'tilStudents
         '
         Me.tilStudents.ActiveControl = Nothing
-        Me.tilStudents.Location = New System.Drawing.Point(325, 133)
+        Me.tilStudents.Location = New System.Drawing.Point(325, 118)
         Me.tilStudents.Name = "tilStudents"
         Me.tilStudents.Size = New System.Drawing.Size(110, 110)
         Me.tilStudents.Style = MetroFramework.MetroColorStyle.Pink
@@ -87,7 +88,7 @@ Partial Class rfPrints
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(615, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(583, 4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -97,7 +98,7 @@ Partial Class rfPrints
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(69, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(99, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -110,10 +111,10 @@ Partial Class rfPrints
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
-        Me.Label25.Location = New System.Drawing.Point(195, 9)
+        Me.Label25.Location = New System.Drawing.Point(193, 9)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(374, 66)
-        Me.Label25.TabIndex = 41
+        Me.Label25.TabIndex = 34
         Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
         '
         'rfPrints
@@ -121,7 +122,7 @@ Partial Class rfPrints
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(760, 346)
+        Me.ClientSize = New System.Drawing.Size(760, 318)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tilHome)

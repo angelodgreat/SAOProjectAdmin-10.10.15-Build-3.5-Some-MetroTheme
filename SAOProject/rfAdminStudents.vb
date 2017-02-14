@@ -1,5 +1,4 @@
-﻿Imports System.Collections.Generic
-Public Class rfAdminStudents
+﻿Public Class rfAdminStudents
     Dim studentList As New ArrayList()
     Dim currentStudent As Integer
     Dim hahaha As String
@@ -10,7 +9,7 @@ Public Class rfAdminStudents
             comYear.Items.Add(year.ToString())
         Next
 
-        Dim query As String = "SELECT StudentNo FROM studinfo"
+        Dim query As String = "SELECT StudentNo FROM ceuratingforms.studinfo"
 
 
         Dim studentNums As ArrayList = RetrieveQuery(query, 1)
@@ -18,7 +17,7 @@ Public Class rfAdminStudents
             txtSearch.AutoCompleteCustomSource.Add(studentNum(0).ToString)
         Next
 
-        Dim query1 = "SELECT LName, FName, MiddleIni FROM studinfo"
+        Dim query1 = "SELECT LName, FName, MiddleIni FROM ceuratingforms.studinfo"
 
         Dim studentNames As ArrayList = RetrieveQuery(query1, 3)
         For Each studentName As ArrayList In studentNames
@@ -85,7 +84,7 @@ Public Class rfAdminStudents
                 Next
             End If
 
-            Dim query = "SELECT * FROM studinfo WHERE StudentNo = '" & txtSearch.Text & "' OR LName = '" & search(0) & "' AND FName = '" & search(1) & "' AND MiddleIni = '" & search(2) & "' "
+            Dim query = "SELECT * FROM ceuratingforms.studinfo WHERE StudentNo = '" & txtSearch.Text & "' OR LName = '" & search(0) & "' AND FName = '" & search(1) & "' AND MiddleIni = '" & search(2) & "' "
 
             If count(query, 7) <> 0 Then
                 studentList = RetrieveQuery(query, 7)
@@ -108,9 +107,9 @@ Public Class rfAdminStudents
         If MsgBox("Are you sure you want to delete this student?", MsgBoxStyle.YesNo, "") = MsgBoxResult.Yes Then
             studentList.RemoveAt(currentStudent)
             Dim num As String = txtNum.Text
-            Dim query = "DELETE FROM studinfo WHERE StudentNo = '" & num & "'"
+            Dim query = "DELETE FROM ceuratingforms.studinfo WHERE StudentNo = '" & num & "'"
             If ExecuteQuery(query) Then
-                query = "DELETE FROM pointsinfo WHERE StudNo = '" & num & "'"
+                query = "DELETE FROM ceuratingforms.pointsinfo WHERE StudNo = '" & num & "'"
                 If Not ExecuteQuery(query) Then
                     MsgBox("Points not removed from database.")
                 End If
@@ -200,7 +199,7 @@ Public Class rfAdminStudents
             Next
         End If
 
-        Dim query = "SELECT * FROM studinfo WHERE StudentNo = '" & txtSearch.Text & "' OR LName = '" & search(0) & "' AND FName = '" & search(1) & "' AND MiddleIni = '" & search(2) & "' "
+        Dim query = "SELECT * FROM ceuratingforms.studinfo WHERE StudentNo = '" & txtSearch.Text & "' OR LName = '" & search(0) & "' AND FName = '" & search(1) & "' AND MiddleIni = '" & search(2) & "' "
 
         If count(query, 7) <> 0 Then
             studentList = RetrieveQuery(query, 7)
@@ -240,7 +239,7 @@ Public Class rfAdminStudents
             Dim course As String = comCourse.SelectedItem.ToString()
             Dim yr As String = comYear.SelectedItem.ToString()
 
-            Dim query = "UPDATE studinfo SET StudentNo ='" & num & "', LName = '" & surname & "' , FName = '" & firstName & "' , MiddleIni = '" & mid & "' , College_School = '" & college & "' , Course = '" & course & "' , YearGrad = '" & yr & "' WHERE StudentNo ='" & hahaha & "'"
+            Dim query = "UPDATE ceuratingforms.studinfo SET StudentNo ='" & num & "', LName = '" & surname & "' , FName = '" & firstName & "' , MiddleIni = '" & mid & "' , College_School = '" & college & "' , Course = '" & course & "' , YearGrad = '" & yr & "' WHERE StudentNo ='" & hahaha & "'"
 
             If ExecuteQuery(query) Then
                 MsgBox("Changes have been saved!")

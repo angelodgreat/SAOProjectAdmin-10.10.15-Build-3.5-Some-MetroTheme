@@ -95,7 +95,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\dlls\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>..\..\SAOProject\dlls\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\dlls\MetroFramework.dll</HintPath>
@@ -170,7 +170,6 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customFunction.vb" />
     <Compile Include="rfAddStudent.Designer.vb">
       <DependentUpon>rfAddStudent.vb</DependentUpon>
     </Compile>
@@ -204,7 +203,7 @@
     <Compile Include="frm_choose.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatabaseProcedures.vb" />
+    <Compile Include="GlobalVariableodule.vb" />
     <Compile Include="GuestOnly.Designer.vb">
       <DependentUpon>GuestOnly.vb</DependentUpon>
     </Compile>
@@ -262,6 +261,7 @@
     <Compile Include="rfApproveForms.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="rfCustomFunction.vb" />
     <Compile Include="rfIndivPrint.Designer.vb">
       <DependentUpon>rfIndivPrint.vb</DependentUpon>
     </Compile>
@@ -280,10 +280,10 @@
     <Compile Include="rfPrints.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rfPrint_tbl.Designer.vb">
+    <Compile Include="rfPrints_tbl.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+      <DependentUpon>rfPrints_tbl.xsd</DependentUpon>
     </Compile>
     <Compile Include="rfRatingForms.Designer.vb">
       <DependentUpon>rfRatingForms.vb</DependentUpon>
@@ -423,16 +423,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="rfPrint_tbl.xsc">
-      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+    <None Include="rfPrints_tbl.xsc">
+      <DependentUpon>rfPrints_tbl.xsd</DependentUpon>
     </None>
-    <None Include="rfPrint_tbl.xsd">
+    <None Include="rfPrints_tbl.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rfPrint_tbl.Designer.vb</LastGenOutput>
+      <LastGenOutput>rfPrints_tbl.Designer.vb</LastGenOutput>
     </None>
-    <None Include="rfPrint_tbl.xss">
-      <DependentUpon>rfPrint_tbl.xsd</DependentUpon>
+    <None Include="rfPrints_tbl.xss">
+      <DependentUpon>rfPrints_tbl.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

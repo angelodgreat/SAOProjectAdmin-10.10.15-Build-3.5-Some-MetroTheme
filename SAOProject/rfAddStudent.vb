@@ -42,11 +42,11 @@
             Dim course As String = comCourse.SelectedItem.ToString()
             Dim yr As String = comYear.SelectedItem.ToString()
 
-            Dim test As String = "SELECT StudentNo FROM studinfo WHERE StudentNo = '" & num & "'"
+            Dim test As String = "SELECT StudentNo FROM ceuratingforms.studinfo WHERE StudentNo = '" & num & "'"
             If count(test, 1) <> 0 Then
                 tipError.Show("Student number already registered!", txtNum)
             Else
-                Dim query As String = "INSERT INTO studinfo VALUES( '" & num & "' , '" & surname & "' , '" & firstName & "' , '" & mid & "' , '" & college & "' , '" & course & "' , '" & yr & "')"
+                Dim query As String = "INSERT INTO ceuratingforms.studinfo VALUES( '" & num & "' , '" & surname & "' , '" & firstName & "' , '" & mid & "' , '" & college & "' , '" & course & "' , '" & yr & "')"
                 If ExecuteQuery(query) Then
                     MsgBox("Student added!")
                     Clear()
@@ -134,4 +134,6 @@
         Next
         txtNum.Select()
     End Sub
+
+
 End Class
