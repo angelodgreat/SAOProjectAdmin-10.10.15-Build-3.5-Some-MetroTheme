@@ -11,7 +11,8 @@ Public Class GuestOnly
 
     Private Sub GuestOnly_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1_guest.Enabled = True
-
+        load_locs()
+        load_orgANDschool()
 
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -167,7 +168,7 @@ Public Class GuestOnly
 
     Private Sub Timer1_guest_Tick(sender As Object, e As EventArgs) Handles Timer1_guest.Tick
         lbl_time.Text = Date.Now.ToString("MMMM dd yyyy     hh:mm:ss tt")
-        lbl_showsem.Text = My.Settings.schoolyear
+
     End Sub
 
     Private Sub load_schedule_Click(sender As Object, e As EventArgs) Handles load_schedule.Click
@@ -196,20 +197,7 @@ Public Class GuestOnly
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Question)
-
-
-        If a = vbYes Then
-            ChangeSemester.Show()
-            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
-        Else
-
-            Exit Sub
-        End If
-    End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_filterlocation.SelectedIndexChanged
         MysqlConn = New MySqlConnection
@@ -303,5 +291,77 @@ Public Class GuestOnly
         DataGridView1.DataSource = DV
 
 
+    End Sub
+
+    Public Sub load_orgANDschool()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            cb_filterschool.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT school FROM tbl_organizations_school ORDER BY school ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            cb_filterschool.Items.Clear()
+
+
+            While reader.Read
+
+                cb_filterschool.Items.Add(reader.GetString("school"))
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+
+    End Sub
+
+    Public Sub load_locs()
+        Try
+            MysqlConn = New MySqlConnection
+            MysqlConn.ConnectionString = connstring
+
+
+            cb_filterlocation.Items.Clear()
+
+
+            If MysqlConn.State = ConnectionState.Open Then
+                MysqlConn.Close()
+            End If
+
+            MysqlConn.Open()
+            query = "SELECT DISTINCT Location FROM tbl_locations ORDER BY Location ASC"
+            Command = New MySqlCommand(query, MysqlConn)
+            reader = Command.ExecuteReader
+
+
+            cb_filterlocation.Items.Clear()
+
+
+            While reader.Read
+                cb_filterlocation.Items.Add(reader.GetString("Location"))
+            End While
+            MysqlConn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
     End Sub
 End Class

@@ -51,9 +51,6 @@ Partial Class GuestOnly
         Me.welcomeguest = New System.Windows.Forms.Label()
         Me.lbl_time = New System.Windows.Forms.Label()
         Me.Timer1_guest = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.lbl_showsem = New System.Windows.Forms.Label()
         Me.GroupBox6.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +58,6 @@ Partial Class GuestOnly
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox6
@@ -216,10 +212,9 @@ Partial Class GuestOnly
         'cb_filterlocation
         '
         Me.cb_filterlocation.AutoCompleteCustomSource.AddRange(New String() {"CARMEN DE LUNA (CDL)", "Multimedia Instructional Room (MIR)", "LIBRADA AVELINO HALL (LAH)", "Chapel/Adoration Chapel", "Executive Meeting Room (EMR)", "LAH Seminar Room #1", "LAH Seminar Room #2", "LAH Seminar Room #3", "GENEROSA DE LEON SCIENCE CENTER (GDLSC)", "Bulwagang Maestra Osang (BMO)", "SOFIA DE VEYRA HALL (SDVH)", "SDV Conference Room (SDVCR)", "SDV Lanai", "FELISA FRANCISCO HALL (FFH)", "Assembly Hall (3rd Flr)", "MARIA VILLACERAN HALL (MVH)", "LA Auditorium", "MVH Lanai", "DIONISIO C. TIONGCO (DCT)", "Student Activity Center (Ground flr)", "Student Activity Center (Second flr)", "PILAR HIDALGO LIM HALL (PHL)", "PHL Lanai", "TECHNOLOGY CENTER", "TechCenter Gym", "TechCenter Lanai with Lights", "FGH DENTRISTRY", "FGH Lanai", "INFORMATION SCIENCE CENTER", "Friends Cafe", "ISC Mezzanine #1", "ISC Mezzanine #2", "DentScience Lanai", "GYM (Classroom)", "North Quadrangle", "South Quadrangle"})
-        Me.cb_filterlocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_filterlocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cb_filterlocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_filterlocation.FormattingEnabled = True
-        Me.cb_filterlocation.Items.AddRange(New Object() {"CARMEN DE LUNA (CDL)", "Multimedia Instructional Room (MIR)", "LIBRADA AVELINO HALL (LAH)", "Chapel/Adoration Chapel", "Executive Meeting Room (EMR)", "LAH Seminar Room #1", "LAH Seminar Room #2", "LAH Seminar Room #3", "GENEROSA DE LEON SCIENCE CENTER (GDLSC)", "Bulwagang Maestra Osang (BMO)", "SOFIA DE VEYRA HALL (SDVH)", "SDV Conference Room (SDVCR)", "SDV Lanai", "FELISA FRANCISCO HALL (FFH)", "Assembly Hall (3rd Flr)", "MARIA VILLACERAN HALL (MVH)", "LA Auditorium", "MVH Lanai", "DIONISIO C. TIONGCO (DCT)", "Student Activity Center (Ground flr)", "Student Activity Center (Second flr)", "PILAR HIDALGO LIM HALL (PHL)", "PHL Lanai", "TECHNOLOGY CENTER", "TechCenter Gym", "TechCenter Lanai with Lights", "FGH DENTRISTRY", "FGH Lanai", "INFORMATION SCIENCE CENTER", "Friends Cafe", "ISC Mezzanine #1", "ISC Mezzanine #2", "DentScience Lanai", "GYM (Classroom)", "North Quadrangle", "South Quadrangle"})
         Me.cb_filterlocation.Location = New System.Drawing.Point(17, 37)
         Me.cb_filterlocation.Name = "cb_filterlocation"
         Me.cb_filterlocation.Size = New System.Drawing.Size(289, 23)
@@ -238,12 +233,11 @@ Partial Class GuestOnly
         'cb_filterschool
         '
         Me.cb_filterschool.AutoCompleteCustomSource.AddRange(New String() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other"})
-        Me.cb_filterschool.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_filterschool.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cb_filterschool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_filterschool.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cb_filterschool.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.cb_filterschool.FormattingEnabled = True
-        Me.cb_filterschool.Items.AddRange(New Object() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other"})
         Me.cb_filterschool.Location = New System.Drawing.Point(17, 196)
         Me.cb_filterschool.Name = "cb_filterschool"
         Me.cb_filterschool.Size = New System.Drawing.Size(289, 23)
@@ -359,46 +353,12 @@ Partial Class GuestOnly
         'Timer1_guest
         '
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.LightBlue
-        Me.GroupBox1.Controls.Add(Me.lbl_showsem)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(1173, 36)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(103, 90)
-        Me.GroupBox1.TabIndex = 46
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "School Year"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Location = New System.Drawing.Point(6, 59)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 25)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Change"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'lbl_showsem
-        '
-        Me.lbl_showsem.AutoSize = True
-        Me.lbl_showsem.Location = New System.Drawing.Point(15, 29)
-        Me.lbl_showsem.Name = "lbl_showsem"
-        Me.lbl_showsem.Size = New System.Drawing.Size(71, 15)
-        Me.lbl_showsem.TabIndex = 7
-        Me.lbl_showsem.Text = "School Year"
-        '
         'GuestOnly
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(1288, 690)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_time)
         Me.Controls.Add(Me.welcomeguest)
         Me.Controls.Add(Me.load_schedule)
@@ -426,8 +386,6 @@ Partial Class GuestOnly
         Me.GroupBox2.PerformLayout()
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -455,9 +413,6 @@ Partial Class GuestOnly
     Friend WithEvents lbl_time As Label
     Friend WithEvents Timer1_guest As Timer
     Friend WithEvents Label37 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents cb_filterlocation As ComboBox
-    Friend WithEvents lbl_showsem As Label
 End Class

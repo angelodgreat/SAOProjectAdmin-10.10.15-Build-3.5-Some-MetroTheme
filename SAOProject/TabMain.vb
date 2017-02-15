@@ -1497,6 +1497,7 @@ Public Class TabMain
             While reader.Read
                 cb_eventschool.Items.Add(reader.GetString("school"))
                 cb_filterschool.Items.Add(reader.GetString("school"))
+                reg_cb_college.Items.Add(reader.GetString("school"))
             End While
             MysqlConn.Close()
 

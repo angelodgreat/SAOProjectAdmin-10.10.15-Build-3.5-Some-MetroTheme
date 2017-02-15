@@ -66,7 +66,7 @@ Partial Class Notes
         Me.btn_clear_reminder.Location = New System.Drawing.Point(336, 340)
         Me.btn_clear_reminder.Name = "btn_clear_reminder"
         Me.btn_clear_reminder.Size = New System.Drawing.Size(74, 34)
-        Me.btn_clear_reminder.TabIndex = 7
+        Me.btn_clear_reminder.TabIndex = 5
         Me.btn_clear_reminder.Text = "Clear"
         Me.btn_clear_reminder.UseVisualStyleBackColor = True
         '
