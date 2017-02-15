@@ -72,4 +72,9 @@
             Enabled = False
         End If
     End Sub
+
+    Private Sub tilHome_Click(sender As Object, e As EventArgs) Handles tilHome.Click
+        frm_choose.Show()
+        Hide()
+    End Sub
 End Class

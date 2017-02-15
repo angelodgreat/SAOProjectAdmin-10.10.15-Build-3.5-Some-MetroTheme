@@ -112,7 +112,7 @@ Public Class rfUniColPrint
         adapter.SelectCommand = New MySqlCommand(query, mysqlcon)
         adapter.Fill(ds.Tables(1))
         ReportViewer2.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-        ReportViewer2.LocalReport.ReportPath = "\Report3.rdlc"
+        ReportViewer2.LocalReport.ReportPath = System.Environment.CurrentDirectory & "\Report2.rdlc"
         ReportViewer2.LocalReport.DataSources.Clear()
         ReportViewer2.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(1)))
         ReportViewer2.DocumentMapCollapsed = True

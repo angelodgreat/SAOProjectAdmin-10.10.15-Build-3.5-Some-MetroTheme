@@ -279,7 +279,7 @@ Public Class rfIndivPrint
             MsgBox(ex.Message)
         End Try
 
-        Dim par1 As New ReportParameter("studId", studID)
+        Dim par1 As New ReportParameter("studID", studID)
         Dim par2 As New ReportParameter("studName", selectedNamee)
         Dim mysqlcon As MySqlConnection = ConnectToDatabase()
         query = "SELECT * FROM ceuratingforms.allrf;"
