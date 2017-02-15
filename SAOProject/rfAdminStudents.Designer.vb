@@ -63,7 +63,7 @@ Partial Class rfAdminStudents
         'tilAdd
         '
         Me.tilAdd.ActiveControl = Nothing
-        Me.tilAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilAdd.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilAdd.Location = New System.Drawing.Point(437, 140)
         Me.tilAdd.Name = "tilAdd"
         Me.tilAdd.Size = New System.Drawing.Size(75, 75)
@@ -84,7 +84,7 @@ Partial Class rfAdminStudents
         '
         'MetroLabel11
         '
-        Me.MetroLabel11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel11.Location = New System.Drawing.Point(256, 716)
         Me.MetroLabel11.Name = "MetroLabel11"
@@ -410,7 +410,7 @@ Partial Class rfAdminStudents
         '
         'MetroPanel1
         '
-        Me.MetroPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MetroPanel1.Controls.Add(Me.txtSearch)
         Me.MetroPanel1.Controls.Add(Me.btnSearch)
@@ -447,7 +447,7 @@ Partial Class rfAdminStudents
         '
         'MetroPanel2
         '
-        Me.MetroPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MetroPanel2.Controls.Add(Me.btnCancel)
         Me.MetroPanel2.Controls.Add(Me.btnSave)
@@ -481,7 +481,7 @@ Partial Class rfAdminStudents
         '
         'PictureBox2
         '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox2.Location = New System.Drawing.Point(609, 24)
         Me.PictureBox2.Name = "PictureBox2"
@@ -492,7 +492,7 @@ Partial Class rfAdminStudents
         '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(82, 24)
         Me.PictureBox1.Name = "PictureBox1"
@@ -504,7 +504,7 @@ Partial Class rfAdminStudents
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
-        Me.tilHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilHome.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilHome.Location = New System.Drawing.Point(518, 140)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(75, 75)
@@ -519,7 +519,7 @@ Partial Class rfAdminStudents
         '
         'Label25
         '
-        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
@@ -544,6 +544,7 @@ Partial Class rfAdminStudents
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Name = "rfAdminStudents"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Student Affairs Office Rating Forms"
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()

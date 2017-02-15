@@ -43,7 +43,7 @@ Partial Class rfAdminHome
         '
         'lnkNotif
         '
-        Me.lnkNotif.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lnkNotif.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lnkNotif.Location = New System.Drawing.Point(218, 192)
         Me.lnkNotif.Name = "lnkNotif"
         Me.lnkNotif.Size = New System.Drawing.Size(357, 23)
@@ -54,7 +54,7 @@ Partial Class rfAdminHome
         '
         'MetroPanel1
         '
-        Me.MetroPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroPanel1.BackColor = System.Drawing.Color.LightPink
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MetroPanel1.Controls.Add(Me.lblUsername)
@@ -93,7 +93,7 @@ Partial Class rfAdminHome
         '
         'MetroLabel1
         '
-        Me.MetroLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel1.Location = New System.Drawing.Point(257, 411)
         Me.MetroLabel1.Name = "MetroLabel1"
@@ -104,7 +104,7 @@ Partial Class rfAdminHome
         '
         'MetroLabel2
         '
-        Me.MetroLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel2.Location = New System.Drawing.Point(305, 55)
@@ -128,7 +128,7 @@ Partial Class rfAdminHome
         'tilList
         '
         Me.tilList.ActiveControl = Nothing
-        Me.tilList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilList.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilList.Location = New System.Drawing.Point(334, 227)
         Me.tilList.Name = "tilList"
         Me.tilList.Size = New System.Drawing.Size(110, 110)
@@ -144,7 +144,7 @@ Partial Class rfAdminHome
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
-        Me.tilHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilHome.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilHome.Location = New System.Drawing.Point(450, 227)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
@@ -160,7 +160,7 @@ Partial Class rfAdminHome
         'tilStudents
         '
         Me.tilStudents.ActiveControl = Nothing
-        Me.tilStudents.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilStudents.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilStudents.Location = New System.Drawing.Point(218, 227)
         Me.tilStudents.Name = "tilStudents"
         Me.tilStudents.Size = New System.Drawing.Size(110, 110)
@@ -175,7 +175,6 @@ Partial Class rfAdminHome
         '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(134, 12)
         Me.PictureBox1.Name = "PictureBox1"
@@ -203,6 +202,7 @@ Partial Class rfAdminHome
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Name = "rfAdminHome"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Student Affairs Office Rating Forms"
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()

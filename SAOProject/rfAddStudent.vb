@@ -2,13 +2,7 @@
 
     Dim previousForm As Form
 
-    Private Sub FrmAdHome_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
-        If MsgBox("Are you sure you want to exit?", MsgBoxStyle.YesNo, "") = MsgBoxResult.Yes Then
-            End
-        Else
-            e.Cancel = True
-        End If
-    End Sub
+
 
     Public Sub Init(ByVal form As Form)
         previousForm = form
@@ -135,5 +129,7 @@
         txtNum.Select()
     End Sub
 
-
+    Private Sub rfAddStudent_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Hide()
+    End Sub
 End Class

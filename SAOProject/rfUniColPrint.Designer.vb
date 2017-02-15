@@ -23,7 +23,7 @@ Partial Class rfUniColPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
         Me.ReportViewer2 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -56,19 +56,23 @@ Partial Class rfUniColPrint
         '
         'ReportViewer2
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.studsumBindingSource
-        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        ReportDataSource3.Name = "DataSet1"
+        ReportDataSource3.Value = Me.studsumBindingSource
+        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource3)
         Me.ReportViewer2.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
-        Me.ReportViewer2.Location = New System.Drawing.Point(322, 78)
+        Me.ReportViewer2.Location = New System.Drawing.Point(339, 112)
         Me.ReportViewer2.Name = "ReportViewer2"
-        Me.ReportViewer2.Size = New System.Drawing.Size(769, 458)
+        Me.ReportViewer2.Size = New System.Drawing.Size(769, 471)
         Me.ReportViewer2.TabIndex = 42
         '
         'tilBack
         '
         Me.tilBack.ActiveControl = Nothing
-        Me.tilBack.Location = New System.Drawing.Point(935, 542)
+        Me.tilBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tilBack.Location = New System.Drawing.Point(952, 588)
         Me.tilBack.Name = "tilBack"
         Me.tilBack.Size = New System.Drawing.Size(75, 75)
         Me.tilBack.Style = MetroFramework.MetroColorStyle.Pink
@@ -82,8 +86,9 @@ Partial Class rfUniColPrint
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
+        Me.tilHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tilHome.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.tilHome.Location = New System.Drawing.Point(1016, 542)
+        Me.tilHome.Location = New System.Drawing.Point(1033, 589)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(75, 75)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -96,9 +101,10 @@ Partial Class rfUniColPrint
         '
         'LScmbYG
         '
+        Me.LScmbYG.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LScmbYG.FormattingEnabled = True
         Me.LScmbYG.ItemHeight = 23
-        Me.LScmbYG.Location = New System.Drawing.Point(907, 43)
+        Me.LScmbYG.Location = New System.Drawing.Point(914, 43)
         Me.LScmbYG.Name = "LScmbYG"
         Me.LScmbYG.Size = New System.Drawing.Size(155, 29)
         Me.LScmbYG.TabIndex = 57
@@ -106,9 +112,10 @@ Partial Class rfUniColPrint
         '
         'MetroLabel4
         '
+        Me.MetroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel4.Location = New System.Drawing.Point(777, 46)
+        Me.MetroLabel4.Location = New System.Drawing.Point(784, 52)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(124, 19)
         Me.MetroLabel4.TabIndex = 56
@@ -116,10 +123,11 @@ Partial Class rfUniColPrint
         '
         'LScmbFilter
         '
+        Me.LScmbFilter.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LScmbFilter.FormattingEnabled = True
         Me.LScmbFilter.ItemHeight = 23
         Me.LScmbFilter.Items.AddRange(New Object() {"University-Wide", "College/School-Wide"})
-        Me.LScmbFilter.Location = New System.Drawing.Point(378, 43)
+        Me.LScmbFilter.Location = New System.Drawing.Point(432, 42)
         Me.LScmbFilter.Name = "LScmbFilter"
         Me.LScmbFilter.Size = New System.Drawing.Size(267, 29)
         Me.LScmbFilter.TabIndex = 55
@@ -127,9 +135,10 @@ Partial Class rfUniColPrint
         '
         'MetroLabel1
         '
+        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel1.Location = New System.Drawing.Point(322, 46)
+        Me.MetroLabel1.Location = New System.Drawing.Point(387, 53)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(39, 19)
         Me.MetroLabel1.TabIndex = 54
@@ -137,10 +146,11 @@ Partial Class rfUniColPrint
         '
         'lstStudcmCS
         '
+        Me.lstStudcmCS.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lstStudcmCS.FormattingEnabled = True
         Me.lstStudcmCS.ItemHeight = 23
         Me.lstStudcmCS.Items.AddRange(New Object() {"School of Accountancy and Management", "School of Dentistry", "School of Education, Liberal Arts, Music, and Social Work", "College of Medical Technology", "College of Nursing", "College of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Nutrition and Hospitality Management"})
-        Me.lstStudcmCS.Location = New System.Drawing.Point(427, 77)
+        Me.lstStudcmCS.Location = New System.Drawing.Point(432, 77)
         Me.lstStudcmCS.Name = "lstStudcmCS"
         Me.lstStudcmCS.Size = New System.Drawing.Size(499, 29)
         Me.lstStudcmCS.TabIndex = 59
@@ -149,9 +159,10 @@ Partial Class rfUniColPrint
         '
         'MetroLabel5
         '
+        Me.MetroLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel5.AutoSize = True
         Me.MetroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel5.Location = New System.Drawing.Point(322, 82)
+        Me.MetroLabel5.Location = New System.Drawing.Point(327, 82)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(99, 19)
         Me.MetroLabel5.TabIndex = 58
@@ -160,6 +171,7 @@ Partial Class rfUniColPrint
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.GroupBox1.Controls.Add(Me.MetroLabel2)
         Me.GroupBox1.Location = New System.Drawing.Point(36, 144)
         Me.GroupBox1.Name = "GroupBox1"
@@ -180,9 +192,10 @@ Partial Class rfUniColPrint
         '
         'MetroLabel6
         '
+        Me.MetroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel6.Location = New System.Drawing.Point(430, 647)
+        Me.MetroLabel6.Location = New System.Drawing.Point(439, 662)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel6.TabIndex = 61
@@ -197,7 +210,7 @@ Partial Class rfUniColPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1121, 673)
+        Me.ClientSize = New System.Drawing.Size(1131, 686)
         Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstStudcmCS)

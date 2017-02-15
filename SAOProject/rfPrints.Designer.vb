@@ -35,6 +35,7 @@ Partial Class rfPrints
         '
         'MetroLabel1
         '
+        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel1.Location = New System.Drawing.Point(250, 289)
         Me.MetroLabel1.Name = "MetroLabel1"
@@ -46,6 +47,7 @@ Partial Class rfPrints
         'tilAll
         '
         Me.tilAll.ActiveControl = Nothing
+        Me.tilAll.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilAll.Location = New System.Drawing.Point(441, 118)
         Me.tilAll.Name = "tilAll"
         Me.tilAll.Size = New System.Drawing.Size(110, 110)
@@ -60,6 +62,7 @@ Partial Class rfPrints
         'tilHome
         '
         Me.tilHome.ActiveControl = Nothing
+        Me.tilHome.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilHome.Location = New System.Drawing.Point(209, 118)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
@@ -74,6 +77,7 @@ Partial Class rfPrints
         'tilStudents
         '
         Me.tilStudents.ActiveControl = Nothing
+        Me.tilStudents.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tilStudents.Location = New System.Drawing.Point(325, 118)
         Me.tilStudents.Name = "tilStudents"
         Me.tilStudents.Size = New System.Drawing.Size(110, 110)
@@ -87,6 +91,7 @@ Partial Class rfPrints
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
         Me.PictureBox2.Location = New System.Drawing.Point(583, 4)
         Me.PictureBox2.Name = "PictureBox2"
@@ -97,6 +102,7 @@ Partial Class rfPrints
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
         Me.PictureBox1.Location = New System.Drawing.Point(99, 4)
         Me.PictureBox1.Name = "PictureBox1"

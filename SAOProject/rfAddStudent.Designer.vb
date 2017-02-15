@@ -382,6 +382,7 @@ Partial Class rfAddStudent
         Me.Name = "rfAddStudent"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
+        Me.TopMost = True
         Me.MetroPanel2.ResumeLayout(False)
         Me.MetroPanel2.PerformLayout()
         Me.MetroPanel1.ResumeLayout(False)
