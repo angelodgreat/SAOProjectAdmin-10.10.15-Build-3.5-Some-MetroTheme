@@ -4500,7 +4500,7 @@ Partial Class rfRatingForms
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfRatingForms"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Student Affairs Office Rating Forms"
+        Me.Text = "CEU-SAO Rating Forms Management System"
         Me.MetroPanel8.ResumeLayout(False)
         Me.MetroPanel8.PerformLayout()
         Me.rf7Panel7.ResumeLayout(False)

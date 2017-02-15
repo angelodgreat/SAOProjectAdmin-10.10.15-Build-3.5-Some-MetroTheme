@@ -33,11 +33,11 @@ Partial Class frm_choose
         '
         'btn_consoli
         '
-        Me.btn_consoli.Location = New System.Drawing.Point(73, 146)
+        Me.btn_consoli.Location = New System.Drawing.Point(73, 157)
         Me.btn_consoli.Name = "btn_consoli"
         Me.btn_consoli.Size = New System.Drawing.Size(165, 39)
         Me.btn_consoli.TabIndex = 0
-        Me.btn_consoli.Text = "Consolidated Calendar"
+        Me.btn_consoli.Text = "CEU-SAO  Student Records " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management System"
         Me.btn_consoli.UseSelectable = True
         '
         'btn_rating
@@ -46,7 +46,7 @@ Partial Class frm_choose
         Me.btn_rating.Name = "btn_rating"
         Me.btn_rating.Size = New System.Drawing.Size(165, 39)
         Me.btn_rating.TabIndex = 1
-        Me.btn_rating.Text = "Rating Forrm"
+        Me.btn_rating.Text = "CEU-SAO Rating Forms " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management System"
         Me.btn_rating.UseSelectable = True
         '
         'PictureBox1

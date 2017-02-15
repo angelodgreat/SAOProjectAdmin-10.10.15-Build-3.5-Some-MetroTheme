@@ -545,7 +545,7 @@ Partial Class rfAdminStudents
         Me.Controls.Add(Me.MetroPanel2)
         Me.Name = "rfAdminStudents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Student Affairs Office Rating Forms"
+        Me.Text = "CEU-SAO Rating Forms Management System"
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         Me.MetroPanel2.ResumeLayout(False)

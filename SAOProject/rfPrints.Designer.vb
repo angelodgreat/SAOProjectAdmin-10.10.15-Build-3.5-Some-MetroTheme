@@ -137,7 +137,7 @@ Partial Class rfPrints
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "rfPrints"
-        Me.Text = "Student Affairs Office Rating Forms"
+        Me.Text = "CEU-SAO Rating Forms Management System"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

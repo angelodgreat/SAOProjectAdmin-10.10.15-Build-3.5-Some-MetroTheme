@@ -203,7 +203,7 @@ Partial Class rfAdminHome
         Me.Controls.Add(Me.MetroLabel2)
         Me.Name = "rfAdminHome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Student Affairs Office Rating Forms"
+        Me.Text = "CEU-SAO Rating Forms Management System"
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

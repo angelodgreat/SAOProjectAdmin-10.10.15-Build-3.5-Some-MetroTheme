@@ -47,7 +47,7 @@ Partial Class Login
         '
         Me.label_status.AutoSize = True
         Me.label_status.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label_status.Location = New System.Drawing.Point(455, 326)
+        Me.label_status.Location = New System.Drawing.Point(407, 365)
         Me.label_status.Name = "label_status"
         Me.label_status.Size = New System.Drawing.Size(42, 15)
         Me.label_status.TabIndex = 7
@@ -62,7 +62,7 @@ Partial Class Login
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(251, 106)
+        Me.GroupBox1.Location = New System.Drawing.Point(221, 156)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(228, 185)
         Me.GroupBox1.TabIndex = 9
@@ -143,7 +143,7 @@ Partial Class Login
         Me.lbl_time_login.AutoSize = True
         Me.lbl_time_login.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lbl_time_login.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.lbl_time_login.Location = New System.Drawing.Point(25, 326)
+        Me.lbl_time_login.Location = New System.Drawing.Point(2, 376)
         Me.lbl_time_login.Name = "lbl_time_login"
         Me.lbl_time_login.Size = New System.Drawing.Size(34, 15)
         Me.lbl_time_login.TabIndex = 10
@@ -155,7 +155,7 @@ Partial Class Login
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 106)
+        Me.PictureBox1.Location = New System.Drawing.Point(23, 156)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(187, 185)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -167,17 +167,18 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Location = New System.Drawing.Point(23, 60)
+        Me.Label1.Location = New System.Drawing.Point(78, 48)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(478, 25)
+        Me.Label1.Size = New System.Drawing.Size(326, 100)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Welcome to CEU-SAO Consolidated Calendar System" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label1.Text = "CEU Student Organization Record " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          and " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Rating Forms Ma" &
+    "nagement System " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "          for Student Affairs Office"
         '
         'ml_minimize
         '
         Me.ml_minimize.Image = CType(resources.GetObject("ml_minimize.Image"), System.Drawing.Image)
         Me.ml_minimize.ImageSize = 32
-        Me.ml_minimize.Location = New System.Drawing.Point(438, 6)
+        Me.ml_minimize.Location = New System.Drawing.Point(363, 6)
         Me.ml_minimize.Name = "ml_minimize"
         Me.ml_minimize.Size = New System.Drawing.Size(41, 39)
         Me.ml_minimize.TabIndex = 90
@@ -187,7 +188,7 @@ Partial Class Login
         '
         Me.ml_exit.Image = CType(resources.GetObject("ml_exit.Image"), System.Drawing.Image)
         Me.ml_exit.ImageSize = 32
-        Me.ml_exit.Location = New System.Drawing.Point(481, 6)
+        Me.ml_exit.Location = New System.Drawing.Point(408, 6)
         Me.ml_exit.Name = "ml_exit"
         Me.ml_exit.Size = New System.Drawing.Size(41, 39)
         Me.ml_exit.TabIndex = 89
@@ -212,7 +213,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(520, 353)
+        Me.ClientSize = New System.Drawing.Size(466, 400)
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroLink1)
         Me.Controls.Add(Me.ml_minimize)

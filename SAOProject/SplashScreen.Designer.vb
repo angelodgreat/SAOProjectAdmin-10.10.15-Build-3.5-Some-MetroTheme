@@ -40,20 +40,21 @@ Partial Class SplashScreen
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(3, 13)
+        Me.Label1.Location = New System.Drawing.Point(36, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(405, 30)
+        Me.Label1.Size = New System.Drawing.Size(355, 90)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Consolidated Calendar and Rating Form"
+        Me.Label1.Text = "CEU Student Organization Record " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          and " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Rating Forms Ma" &
+    "nagement System"
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(194, 63)
+        Me.GroupBox1.Location = New System.Drawing.Point(189, 126)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(197, 211)
+        Me.GroupBox1.Size = New System.Drawing.Size(197, 160)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Developers"
@@ -75,7 +76,7 @@ Partial Class SplashScreen
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(72, 323)
+        Me.Label3.Location = New System.Drawing.Point(70, 369)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(282, 25)
         Me.Label3.TabIndex = 6
@@ -84,7 +85,7 @@ Partial Class SplashScreen
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(23, 102)
+        Me.PictureBox1.Location = New System.Drawing.Point(29, 126)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(160, 160)
         Me.PictureBox1.TabIndex = 9
@@ -92,7 +93,7 @@ Partial Class SplashScreen
         '
         'prgb
         '
-        Me.prgb.Location = New System.Drawing.Point(90, 297)
+        Me.prgb.Location = New System.Drawing.Point(88, 343)
         Me.prgb.Name = "prgb"
         Me.prgb.Size = New System.Drawing.Size(252, 23)
         Me.prgb.Style = MetroFramework.MetroColorStyle.Green
@@ -105,7 +106,7 @@ Partial Class SplashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(410, 358)
+        Me.ClientSize = New System.Drawing.Size(418, 409)
         Me.ControlBox = False
         Me.Controls.Add(Me.prgb)
         Me.Controls.Add(Me.Label1)
