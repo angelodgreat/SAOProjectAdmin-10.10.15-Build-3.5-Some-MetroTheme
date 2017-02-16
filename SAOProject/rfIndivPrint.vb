@@ -41,6 +41,8 @@ Public Class rfIndivPrint
         Dim fname As String = ""
         Dim studID As String = ""
         Dim query As String = ""
+        Dim totalPoint As String = ""
+        Dim award As String = ""
         Dim ctr, ctr2 As Integer
         Dim actTitle, point, weight, incPoints, totPoints As New ArrayList
         While ctr < str.Length
@@ -62,11 +64,13 @@ Public Class rfIndivPrint
             conn.Open()
             Dim cmd As MySqlCommand = New MySqlCommand()
             cmd.Connection = conn
-            cmd.CommandText = "SELECT * FROM ceuratingforms.studinfo where LName ='" & lname & "' and FName = '" & fname & "'"
+            cmd.CommandText = "SELECT * FROM ceuratingforms.studsum where LName ='" & lname & "' and FName = '" & fname & "'"
             cmd.ExecuteNonQuery()
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             If reader.Read Then
                 studID = reader.GetString(0)
+                totalPoint = reader.GetString(7)
+                award = reader.GetString(8)
             End If
             reader.Close()
             conn.Close()
@@ -281,6 +285,8 @@ Public Class rfIndivPrint
 
         Dim par1 As New ReportParameter("studID", studID)
         Dim par2 As New ReportParameter("studName", selectedNamee)
+        Dim par3 As New ReportParameter("StudTP", totalPoint)
+        Dim par4 As New ReportParameter("studAward", award)
         Dim mysqlcon As MySqlConnection = ConnectToDatabase()
         query = "SELECT * FROM ceuratingforms.allrf;"
         Dim adapter As New MySqlDataAdapter
@@ -293,6 +299,8 @@ Public Class rfIndivPrint
         ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ds.Tables(0)))
         ReportViewer1.LocalReport.SetParameters(par1)
         ReportViewer1.LocalReport.SetParameters(par2)
+        ReportViewer1.LocalReport.SetParameters(par3)
+        ReportViewer1.LocalReport.SetParameters(par4)
         ReportViewer1.DocumentMapCollapsed = True
         Me.ReportViewer1.RefreshReport()
 

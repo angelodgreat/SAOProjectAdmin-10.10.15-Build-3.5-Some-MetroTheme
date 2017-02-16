@@ -23,7 +23,7 @@ Partial Class rfUniColPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
         Me.ReportViewer2 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -59,9 +59,9 @@ Partial Class rfUniColPrint
         Me.ReportViewer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.studsumBindingSource
-        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource3)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.studsumBindingSource
+        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer2.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
         Me.ReportViewer2.Location = New System.Drawing.Point(339, 112)
         Me.ReportViewer2.Name = "ReportViewer2"
@@ -194,7 +194,7 @@ Partial Class rfUniColPrint
         '
         Me.MetroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel6.Location = New System.Drawing.Point(439, 662)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(260, 20)

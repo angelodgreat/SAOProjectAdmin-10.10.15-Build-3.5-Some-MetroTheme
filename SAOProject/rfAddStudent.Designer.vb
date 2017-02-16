@@ -51,11 +51,12 @@ Partial Class rfAddStudent
         'MetroLabel9
         '
         Me.MetroLabel9.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel9.Location = New System.Drawing.Point(213, 253)
+        Me.MetroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel9.Location = New System.Drawing.Point(213, 261)
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel9.TabIndex = 28
-        Me.MetroLabel9.Text = "©BSIT3A 2016"
+        Me.MetroLabel9.Text = "©Remos, Mahealani Joy G."
         Me.MetroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnCancel

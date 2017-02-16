@@ -81,11 +81,13 @@ Public Class Login
                     attempt = 0
                     If reader.GetString("usertype") = "Admin" Then
                         usertype = "Admin"
+
                         Me.Hide()
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
-
+                        SetAccess(usertype)
+                        SetAccount(tb_username.Text)
                         frm_choose.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
@@ -110,7 +112,8 @@ Public Class Login
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Super Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
-
+                        SetAccess(usertype)
+                        SetAccount(tb_username.Text)
                         frm_choose.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
@@ -140,7 +143,8 @@ Public Class Login
 
 
 
-
+                        SetAccess(usertype)
+                        SetAccount(tb_username.Text)
                         tb_password.Text = ""
                         tb_username.Text = ""
 

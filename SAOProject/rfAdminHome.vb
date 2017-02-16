@@ -33,10 +33,6 @@
 
     End Sub
 
-    Private Sub tmrDay_Tick(sender As Object, e As EventArgs) Handles tmrDay.Tick
-        lblTime.Text = Date.Now.ToString("hh:mm:ss tt")
-    End Sub
-
     'private sub tillogout_click(sender as object, e as eventargs)
     '    select case msgbox("are you sure you want to log out?", msgboxstyle.yesno, "")
     '        case msgboxresult.yes
@@ -76,5 +72,9 @@
     Private Sub tilHome_Click(sender As Object, e As EventArgs) Handles tilHome.Click
         frm_choose.Show()
         Hide()
+    End Sub
+
+    Private Sub tmrDay_Tick(sender As Object, e As EventArgs) Handles tmrDay.Tick
+        lblTime.Text = Date.Now.ToString("hh:mm:ss tt")
     End Sub
 End Class

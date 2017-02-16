@@ -29,13 +29,13 @@ Partial Class rfAdminHome
         Me.lblUsername = New MetroFramework.Controls.MetroLabel()
         Me.lblTime = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tilList = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.tilStudents = New MetroFramework.Controls.MetroTile()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tmrDay = New System.Windows.Forms.Timer(Me.components)
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,7 +44,7 @@ Partial Class rfAdminHome
         'lnkNotif
         '
         Me.lnkNotif.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lnkNotif.Location = New System.Drawing.Point(218, 192)
+        Me.lnkNotif.Location = New System.Drawing.Point(218, 179)
         Me.lnkNotif.Name = "lnkNotif"
         Me.lnkNotif.Size = New System.Drawing.Size(357, 23)
         Me.lnkNotif.Style = MetroFramework.MetroColorStyle.Pink
@@ -95,30 +95,19 @@ Partial Class rfAdminHome
         '
         Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel1.Location = New System.Drawing.Point(257, 411)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel1.TabIndex = 33
-        Me.MetroLabel1.Text = "©BSIT3A 2016"
+        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
         Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel2.Location = New System.Drawing.Point(305, 55)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(172, 25)
-        Me.MetroLabel2.TabIndex = 31
-        Me.MetroLabel2.Text = "Student Affairs Office"
-        Me.MetroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox2
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(551, 12)
+        Me.PictureBox2.Location = New System.Drawing.Point(584, 12)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -176,7 +165,7 @@ Partial Class rfAdminHome
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(134, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(103, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -185,6 +174,19 @@ Partial Class rfAdminHome
         '
         'tmrDay
         '
+        Me.tmrDay.Enabled = True
+        '
+        'Label25
+        '
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(198, 23)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
+        Me.Label25.TabIndex = 48
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
         '
         'rfAdminHome
         '
@@ -192,6 +194,7 @@ Partial Class rfAdminHome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(757, 451)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lnkNotif)
         Me.Controls.Add(Me.tilList)
@@ -200,7 +203,6 @@ Partial Class rfAdminHome
         Me.Controls.Add(Me.tilStudents)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.MetroLabel2)
         Me.Name = "rfAdminHome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CEU-SAO Rating Forms Management System"
@@ -223,6 +225,6 @@ Partial Class rfAdminHome
     Friend WithEvents tilStudents As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tmrDay As Timer
+    Friend WithEvents Label25 As Label
 End Class

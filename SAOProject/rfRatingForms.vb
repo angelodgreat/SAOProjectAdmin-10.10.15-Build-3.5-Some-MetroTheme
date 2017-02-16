@@ -1986,8 +1986,9 @@
     End Sub
 
     Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
+        If tabForms.SelectedIndex = 4 Then
+            txtTotal.Text = Val(txtTotal.Text) + Val(rf5txtWeight.Text)
+        End If
         txtTotal.Text = Val(txtPoints.Text) * Val(txtWeight.Text)
     End Sub
-
-
 End Class

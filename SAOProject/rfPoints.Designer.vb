@@ -74,11 +74,12 @@ Partial Class rfPoints
         '
         Me.MetroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel11.Location = New System.Drawing.Point(181, 402)
         Me.MetroLabel11.Name = "MetroLabel11"
         Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel11.TabIndex = 41
-        Me.MetroLabel11.Text = "©BSIT3A 2016"
+        Me.MetroLabel11.Text = "©Remos, Mahealani Joy G."
         Me.MetroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtNum

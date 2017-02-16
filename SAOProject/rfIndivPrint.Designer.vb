@@ -23,7 +23,7 @@ Partial Class rfIndivPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
@@ -51,11 +51,12 @@ Partial Class rfIndivPrint
         '
         Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel1.Location = New System.Drawing.Point(245, 502)
+        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel1.Location = New System.Drawing.Point(245, 528)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel1.TabIndex = 54
-        Me.MetroLabel1.Text = "©BSIT3A 2016"
+        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
         Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tilBack
@@ -96,9 +97,9 @@ Partial Class rfIndivPrint
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ReportViewer1.DocumentMapWidth = 27
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.allrfBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.allrfBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report3.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(35, 76)
         Me.ReportViewer1.Name = "ReportViewer1"

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class rfApproveForms
-    Inherits System.Windows.Forms.Form
+    Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -43,6 +43,7 @@ Partial Class rfApproveForms
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfApproveForms))
         Me.rf4StudentNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabRF5 = New MetroFramework.Controls.MetroTabPage()
@@ -91,6 +92,7 @@ Partial Class rfApproveForms
         Me.tilExit = New MetroFramework.Controls.MetroTile()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.tabRF5.SuspendLayout()
         CType(Me.rf5Grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabRF6.SuspendLayout()
@@ -406,11 +408,12 @@ Partial Class rfApproveForms
         '
         Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel1.Location = New System.Drawing.Point(288, 701)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel1.TabIndex = 50
-        Me.MetroLabel1.Text = "©BSIT3A 2016"
+        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
         Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rf4ID
@@ -623,7 +626,7 @@ Partial Class rfApproveForms
         Me.tabRF3.Name = "tabRF3"
         Me.tabRF3.Size = New System.Drawing.Size(798, 414)
         Me.tabRF3.TabIndex = 2
-        Me.tabRF3.Text = "Rating Form3"
+        Me.tabRF3.Text = "Rating Form 3"
         Me.tabRF3.VerticalScrollbarBarColor = True
         Me.tabRF3.VerticalScrollbarHighlightOnWheel = False
         Me.tabRF3.VerticalScrollbarSize = 10
@@ -782,7 +785,7 @@ Partial Class rfApproveForms
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(145, 50)
+        Me.PictureBox1.Location = New System.Drawing.Point(135, 21)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(76, 75)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -793,28 +796,42 @@ Partial Class rfApproveForms
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(574, 50)
+        Me.PictureBox2.Location = New System.Drawing.Point(597, 19)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 43
         Me.PictureBox2.TabStop = False
         '
+        'Label25
+        '
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(218, 29)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
+        Me.Label25.TabIndex = 51
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
+        '
         'rfApproveForms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(808, 740)
+        Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.btnApprove)
         Me.Controls.Add(Me.tilExit)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tabVRF)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "rfApproveForms"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CEU-SAO Rating Forms Management System"
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.tabRF5.ResumeLayout(False)
         CType(Me.rf5Grid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabRF6.ResumeLayout(False)
@@ -833,6 +850,7 @@ Partial Class rfApproveForms
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -884,4 +902,5 @@ Partial Class rfApproveForms
     Friend WithEvents rf4Grid As MetroFramework.Controls.MetroGrid
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label25 As Label
 End Class
