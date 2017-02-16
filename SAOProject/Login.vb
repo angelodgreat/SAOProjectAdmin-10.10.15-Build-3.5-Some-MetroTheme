@@ -5,7 +5,7 @@ Public Class Login
     Dim mysqlconn As MySqlConnection
     Dim Command As MySqlCommand
     Dim a As Boolean
-
+    Public usertype As String
 
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -80,7 +80,7 @@ Public Class Login
                 If count = 1 Then
                     attempt = 0
                     If reader.GetString("usertype") = "Admin" Then
-
+                        usertype = "Admin"
                         Me.Hide()
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -105,7 +105,7 @@ Public Class Login
 
 
                     ElseIf reader.GetString("usertype") = "SuperAdmin" Then
-
+                        usertype = "SuperAdmin"
                         Me.Hide()
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -132,8 +132,9 @@ Public Class Login
 
 
                         GuestOnly.welcomeguest.Text = "Welcome Guest, " & reader.GetString("fname") + " " + reader.GetString("lname")
-                        '  TabMain.Show()
-                        GuestOnly.Show()
+                        usertype = "Guest"
+
+                        frm_choose.Show()
                         ChangeSemester.btn_createSCYS.Visible = False
                         ChangeSemester.btn_deleteSCYS.Visible = False
 
@@ -205,8 +206,10 @@ Public Class Login
     End Sub
 
     Private Sub mbtn_bypass_Click(sender As Object, e As EventArgs) Handles mbtn_bypass.Click
+        usertype = "Admin"
+        Hide()
         frm_choose.Show()
-        Me.Hide()
+
 
     End Sub
 End Class

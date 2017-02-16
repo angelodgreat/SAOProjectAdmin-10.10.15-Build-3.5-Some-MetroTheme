@@ -1,11 +1,28 @@
 ﻿Imports MetroFramework
 
 Public Class frm_choose
+    Public logintype As String
 
 
     Private Sub btn_consoli_Click(sender As Object, e As EventArgs) Handles btn_consoli.Click
-        TabMain.Show()
-        Hide()
+        logintype = Login.usertype
+
+        Try
+            If logintype = "Admin" Then
+                Hide()
+                TabMain.Show()
+            ElseIf logintype = "SuperAdmin" Then
+                Hide()
+                TabMain.Show()
+            Else
+                Hide()
+                GuestOnly.Show()
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub btn_rating_Click(sender As Object, e As EventArgs) Handles btn_rating.Click
