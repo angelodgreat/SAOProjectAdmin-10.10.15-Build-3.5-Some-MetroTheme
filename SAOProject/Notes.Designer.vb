@@ -147,9 +147,9 @@ Partial Class Notes
         Me.Label29.ForeColor = System.Drawing.Color.DimGray
         Me.Label29.Location = New System.Drawing.Point(141, 30)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(374, 99)
+        Me.Label29.Size = New System.Drawing.Size(374, 66)
         Me.Label29.TabIndex = 51
-        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        Mendiola, Manila"
+        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'PictureBox9
         '
