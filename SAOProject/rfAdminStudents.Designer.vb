@@ -87,7 +87,7 @@ Partial Class rfAdminStudents
         Me.MetroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel11.Location = New System.Drawing.Point(256, 716)
+        Me.MetroLabel11.Location = New System.Drawing.Point(256, 712)
         Me.MetroLabel11.Name = "MetroLabel11"
         Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
         Me.MetroLabel11.TabIndex = 45
@@ -535,7 +535,7 @@ Partial Class rfAdminStudents
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(773, 745)
+        Me.ClientSize = New System.Drawing.Size(773, 741)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tilAdd)

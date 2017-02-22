@@ -51,6 +51,8 @@ Partial Class GuestOnly
         Me.welcomeguest = New System.Windows.Forms.Label()
         Me.lbl_time = New System.Windows.Forms.Label()
         Me.Timer1_guest = New System.Windows.Forms.Timer(Me.components)
+        Me.RatingFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox6.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,7 +173,7 @@ Partial Class GuestOnly
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RatingFormToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -179,7 +181,7 @@ Partial Class GuestOnly
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LogoutToolStripMenuItem.Text = "Log-out"
         '
         'AboutToolStripMenuItem
@@ -353,6 +355,18 @@ Partial Class GuestOnly
         'Timer1_guest
         '
         '
+        'RatingFormToolStripMenuItem
+        '
+        Me.RatingFormToolStripMenuItem.Name = "RatingFormToolStripMenuItem"
+        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RatingFormToolStripMenuItem.Text = "Rating Form"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
         'GuestOnly
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -415,4 +429,6 @@ Partial Class GuestOnly
     Friend WithEvents Label37 As Label
     Friend WithEvents DataGridView1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents cb_filterlocation As ComboBox
+    Friend WithEvents RatingFormToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class

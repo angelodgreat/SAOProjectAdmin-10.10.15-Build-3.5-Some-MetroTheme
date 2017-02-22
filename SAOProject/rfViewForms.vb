@@ -8,7 +8,7 @@
         tabVRF.SelectedIndex = -1
         tabVRF.SelectedIndex = 0
 
-        Dim query = "SELECT TotalPoints from ceuratingform.studsum WHERE StudentNo = '" & DirectCast(previousForm, rfPoints).GetNum & "'"
+        Dim query = "SELECT TotalPoints from ceuratingforms.studsum WHERE StudentNo = '" & DirectCast(previousForm, rfPoints).GetNum & "'"
         Dim ct = count(query, 1)
         If ct <> 0 Then
             Dim totl = RetrieveQuery(query, 1)

@@ -364,4 +364,13 @@ Public Class GuestOnly
 
         End Try
     End Sub
+
+    Private Sub RatingFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RatingFormToolStripMenuItem.Click
+        rfAdminHome.Show()
+        Hide()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
 End Class
