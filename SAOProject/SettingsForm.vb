@@ -17,6 +17,11 @@ Public Class SettingsForm
         load_location()
         load_kpi()
         auto_generate_id()
+
+        mb_functionchoice.Items.Add("KPI")
+        mb_functionchoice.Items.Add("Location")
+        mb_functionchoice.Items.Add("School and Organization")
+
     End Sub
     Public Sub auto_generate_id()
         identifier_rankpi = Now.ToString("mmddyyy" + "-")
@@ -124,21 +129,9 @@ Public Class SettingsForm
     End Sub
 
 
-    Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
-        Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If a = vbYes Then
-            ChangeSemester.Show()
-            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
-        Else
-
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs) Handles mbtn_saveorganization.Click
+    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -201,7 +194,7 @@ Public Class SettingsForm
 
     End Sub
 
-    Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs) Handles mbtn_updateorganizations.Click
+    Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -242,7 +235,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_delete_Click(sender As Object, e As EventArgs) Handles mbtn_delete.Click
+    Private Sub mbtn_delete_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -281,11 +274,11 @@ Public Class SettingsForm
             load_organizations()
         End Try
     End Sub
-    Private Sub mbtn_clearorg_Click(sender As Object, e As EventArgs) Handles mbtn_clearorg.Click
+    Private Sub mbtn_clearorg_Click(sender As Object, e As EventArgs)
         tb_organization.Clear()
         auto_generate_id()
     End Sub
-    Private Sub mg_organizations_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_organizations.CellClick
+    Private Sub mg_organizations_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_organizations.Rows(e.RowIndex)
@@ -296,7 +289,7 @@ Public Class SettingsForm
     End Sub
 
 
-    Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs) Handles mbtn_locationsave.Click
+    Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -352,7 +345,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_updatelocations_Click(sender As Object, e As EventArgs) Handles mbtn_updatelocations.Click
+    Private Sub mbtn_updatelocations_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -394,7 +387,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_deletelocations_Click(sender As Object, e As EventArgs) Handles mbtn_deletelocations.Click
+    Private Sub mbtn_deletelocations_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -434,12 +427,12 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_clearloc_Click(sender As Object, e As EventArgs) Handles mbtn_clearloc.Click
+    Private Sub mbtn_clearloc_Click(sender As Object, e As EventArgs)
         auto_generate_id()
         tb_location.Clear()
     End Sub
 
-    Private Sub mg_locations_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_locations.CellClick
+    Private Sub mg_locations_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_locations.Rows(e.RowIndex)
@@ -449,7 +442,7 @@ Public Class SettingsForm
         End If
     End Sub
 
-    Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs) Handles mbtn_savekpi.Click
+    Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -505,7 +498,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs) Handles mbtn_updatekpi.Click
+    Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -547,7 +540,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs) Handles mbtn_deletekpi.Click
+    Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -587,12 +580,12 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_clearkpi_Click(sender As Object, e As EventArgs) Handles mbtn_clearkpi.Click
+    Private Sub mbtn_clearkpi_Click(sender As Object, e As EventArgs)
         auto_generate_id()
         tb_kpi.Clear()
     End Sub
 
-    Private Sub mg_kpi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_kpi.CellClick
+    Private Sub mg_kpi_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_kpi.Rows(e.RowIndex)
@@ -606,21 +599,39 @@ Public Class SettingsForm
         Hide()
     End Sub
 
-    Private Sub mt_showkpi_Click(sender As Object, e As EventArgs) Handles mt_showkpi.Click
-        grp_kpi.Show()
-        grp_loc.Hide()
-        grp_org.Hide()
+
+    Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
+        Dim a As Integer
+
+        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If a = vbYes Then
+            ChangeSemester.Show()
+            ChangeSemester.cb_selectyearndsem.Text = My.Settings.schoolyear
+        Else
+
+            Exit Sub
+        End If
     End Sub
 
-    Private Sub mt_showloc_Click(sender As Object, e As EventArgs) Handles mt_showloc.Click
-        grp_loc.Show()
-        grp_kpi.Hide()
-        grp_org.Hide()
+    Private Sub mb_functionchoice_SelectedIndexChanged(sender As Object, e As EventArgs) Handles mb_functionchoice.SelectedIndexChanged
+        If mb_functionchoice.SelectedItem = "KPI" Then
+            grp_kpi.Show()
+            grp_loc.Hide()
+            grp_org.Hide()
+
+        ElseIf mb_functionchoice.SelectedItem = "Location" Then
+            grp_loc.Show()
+            grp_kpi.Hide()
+            grp_org.Hide()
+        ElseIf mb_functionchoice.SelectedItem = "School and Organization" Then
+            grp_org.Show()
+            grp_loc.Hide()
+            grp_kpi.Hide()
+
+        End If
+
     End Sub
 
-    Private Sub mt_showorg_Click(sender As Object, e As EventArgs) Handles mt_showorg.Click
-        grp_org.Show()
-        grp_loc.Hide()
-        grp_kpi.Hide()
-    End Sub
+
 End Class

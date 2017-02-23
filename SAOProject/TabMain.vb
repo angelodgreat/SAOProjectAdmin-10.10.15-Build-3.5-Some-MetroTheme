@@ -1500,102 +1500,232 @@ Public Class TabMain
 
 
     Private Sub srmsBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles srmsBackupToolStripMenuItem.Click
-        Dim file As String
-        sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
-        If sfd.ShowDialog = DialogResult.OK Then
-            file = sfd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ > """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        End If
+        Dim savedb_dialog As New SaveFileDialog
+            savedb_dialog.Filter = "mySQL Database|*.sql"
+            savedb_dialog.Title = "Choose a Location to Save"
+            Dim mysql_SAVE As New MySqlBackup(Command)
+            mysql_SAVE.ExportInfo.AddCreateDatabase = True
+        'mysql_SAVE.ExportInfo.EnableEncryption = True
+        'mysql_SAVE.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
-        'Process.Start("C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe", " -u root -p root saoinfo -r ""C:\Users\Angelo Umali\Desktop\backup.sql""")
+        If savedb_dialog.ShowDialog() = DialogResult.OK Then
+                Try
+                    MysqlConn.ConnectionString = connstring
+                    Dim mysql_LOAD As New MySqlBackup(Command)
+                    mysql_LOAD.Command.Connection = MysqlConn
+                MysqlConn.Open()
+
+
+
+                mysql_SAVE.ExportToFile(savedb_dialog.FileName.ToString)
+                    MysqlConn.Close()
+                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
+            Catch ex As MySqlException
+                    If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
+                        MessageBox.Show(4, " The database probably went offline.")
+
+                        Return
+                    Else
+                        MessageBox.Show(4, ex.Message)
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(4, ex.Message)
+                End Try
+            End If
+
+            'Dim file As String
+        'sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        'sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
+        'If sfd.ShowDialog = DialogResult.OK Then
+        '    file = sfd.FileName
+        '    Dim myProcess As New Process()
+        '    myProcess.StartInfo.FileName = "cmd.exe"
+        '    myProcess.StartInfo.UseShellExecute = False
+        '    myProcess.StartInfo.WorkingDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments & "/saodb/bin")
+        '    myProcess.StartInfo.RedirectStandardInput = True
+        '    myProcess.StartInfo.RedirectStandardOutput = True
+        '    myProcess.Start()
+        '    Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+        '    Dim mystreamreader As StreamReader = myProcess.StandardOutput
+        '    myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ > """ + file + """ ")
+        '    myStreamWriter.Close()
+        '    myProcess.WaitForExit()
+        '    myProcess.Close()
+        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'End If
+
     End Sub
 
     Private Sub srmsRestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles srmsRestoreToolStripMenuItem.Click
-        Dim file As String
-        opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        If opd.ShowDialog = DialogResult.OK Then
-            file = opd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ < """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Dim loaddb_dialog As New OpenFileDialog()
+        loaddb_dialog.Filter = "mySQL Database|*.sql"
+            loaddb_dialog.Title = "Select a File"
+
+        If loaddb_dialog.ShowDialog() = DialogResult.OK Then
+
+            Try
+                MysqlConn.ConnectionString = connstring
+                Dim mysql_LOAD As New MySqlBackup(Command)
+                mysql_LOAD.Command.Connection = MysqlConn
+                MysqlConn.Open()
+                'mysql_LOAD.ImportInfo.EnableEncryption = True
+                'mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
+
+                mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
+                MysqlConn.Close()
+                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As MySqlException
+                If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
+                    MessageBox.Show(4, " The database probably went offline.")
+
+                    Return
+                Else
+                    MessageBox.Show(4, ex.Message)
+                End If
+
+            End Try
 
         End If
+
+        'Dim file As String
+        'opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        'If opd.ShowDialog = DialogResult.OK Then
+        '    file = opd.FileName
+        '    Dim myProcess As New Process()
+        '    myProcess.StartInfo.FileName = "cmd.exe"
+        '    myProcess.StartInfo.UseShellExecute = False
+        '    myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+        '    myProcess.StartInfo.RedirectStandardInput = True
+        '    myProcess.StartInfo.RedirectStandardOutput = True
+        '    myProcess.Start()
+        '    Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+        '    Dim mystreamreader As StreamReader = myProcess.StandardOutput
+        '    myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ < """ + file + """ ")
+        '    myStreamWriter.Close()
+        '    myProcess.WaitForExit()
+        '    myProcess.Close()
+        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'End If
     End Sub
 
     Private Sub rfmsBackupToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles rfmsBackupToolStripMenuItem1.Click
-        Dim file As String
-        Dim remozdb As String = "ceuratingforms"
-        sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
-        If sfd.ShowDialog = DialogResult.OK Then
-            file = sfd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ > """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim savedb_dialog As New SaveFileDialog
+        savedb_dialog.Filter = "mySQL Database|*.sql"
+        savedb_dialog.Title = "Choose a Location to Save"
+        Dim mysql_SAVE As New MySqlBackup(Command)
+        mysql_SAVE.ExportInfo.AddCreateDatabase = True
+        'mysql_SAVE.ExportInfo.EnableEncryption = True
+        'mysql_SAVE.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
+        If savedb_dialog.ShowDialog() = DialogResult.OK Then
+            Try
+                MysqlConn.ConnectionString = remozconnection
+                Dim mysql_LOAD As New MySqlBackup(Command)
+                mysql_LOAD.Command.Connection = MysqlConn
+                MysqlConn.Open()
+                mysql_SAVE.ExportToFile(savedb_dialog.FileName.ToString)
+                MysqlConn.Close()
+                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
+            Catch ex As MySqlException
+                If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
+                    MessageBox.Show(4, " The database probably went offline.")
+
+                    Return
+                Else
+                    MessageBox.Show(4, ex.Message)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(4, ex.Message)
+            End Try
         End If
+
+        'Dim file As String
+        'Dim remozdb As String = "ceuratingforms"
+        'sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        'sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
+        'If sfd.ShowDialog = DialogResult.OK Then
+        '    file = sfd.FileName
+        '    Dim myProcess As New Process()
+        '    myProcess.StartInfo.FileName = "cmd.exe"
+        '    myProcess.StartInfo.UseShellExecute = False
+        '    myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+        '    myProcess.StartInfo.RedirectStandardInput = True
+        '    myProcess.StartInfo.RedirectStandardOutput = True
+        '    myProcess.Start()
+        '    Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+        '    Dim mystreamreader As StreamReader = myProcess.StandardOutput
+        '    myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ > """ + file + """ ")
+        '    myStreamWriter.Close()
+        '    myProcess.WaitForExit()
+        '    myProcess.Close()
+        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'End If
 
         'Process.Start("C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe", " -u root -p root saoinfo -r ""C:\Users\Angelo Umali\Desktop\backup.sql""")
     End Sub
 
     Private Sub rfmsRestoreToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles rfmsRestoreToolStripMenuItem1.Click
-        Dim file As String
-        Dim remozdb As String = "ceuratingforms"
-        opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        If opd.ShowDialog = DialogResult.OK Then
-            file = opd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ < """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim loaddb_dialog As New OpenFileDialog()
+        loaddb_dialog.Filter = "mySQL Database|*.sql"
+        loaddb_dialog.Title = "Select a File"
+
+        If loaddb_dialog.ShowDialog() = DialogResult.OK Then
+
+            Try
+                MysqlConn.ConnectionString = remozconnection
+                Dim mysql_LOAD As New MySqlBackup(Command)
+                mysql_LOAD.Command.Connection = MysqlConn
+                MysqlConn.Open()
+                'mysql_LOAD.ImportInfo.EnableEncryption = True
+                'mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
+
+                mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
+                MysqlConn.Close()
+                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As MySqlException
+                If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
+                    MessageBox.Show(4, " The database probably went offline.")
+
+                    Return
+                Else
+                    MessageBox.Show(4, ex.Message)
+                End If
+
+
+
+            End Try
 
         End If
+
+        'Dim file As String
+        'Dim remozdb As String = "ceuratingforms"
+        'opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        'If opd.ShowDialog = DialogResult.OK Then
+        '    file = opd.FileName
+        '    Dim myProcess As New Process()
+        '    myProcess.StartInfo.FileName = "cmd.exe"
+        '    myProcess.StartInfo.UseShellExecute = False
+        '    myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+        '    myProcess.StartInfo.RedirectStandardInput = True
+        '    myProcess.StartInfo.RedirectStandardOutput = True
+        '    myProcess.Start()
+        '    Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+        '    Dim mystreamreader As StreamReader = myProcess.StandardOutput
+        '    myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ < """ + file + """ ")
+        '    myStreamWriter.Close()
+        '    myProcess.WaitForExit()
+        '    myProcess.Close()
+        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'End If
     End Sub
 End Class
