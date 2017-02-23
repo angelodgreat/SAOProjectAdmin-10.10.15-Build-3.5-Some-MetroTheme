@@ -71,16 +71,16 @@ Partial Class SettingsForm
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.rfPointSettings = New System.Windows.Forms.GroupBox()
         Me.rfsBtnCancel = New MetroFramework.Controls.MetroButton()
-        Me.rfsBtnEditSave = New MetroFramework.Controls.MetroButton()
-        Me.rfstxtminBronze = New MetroFramework.Controls.MetroTextBox()
-        Me.rfstxtminSilver = New MetroFramework.Controls.MetroTextBox()
-        Me.rfstxtminGold = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.rfsBtnSave = New MetroFramework.Controls.MetroButton()
+        Me.rfsBtnEditSave = New MetroFramework.Controls.MetroButton()
         Me.tipErrors = New MetroFramework.Components.MetroToolTip()
+        Me.rfstxtminGold = New MetroFramework.Controls.MetroTextBox()
+        Me.rfstxtminSilver = New MetroFramework.Controls.MetroTextBox()
+        Me.rfstxtminBronze = New MetroFramework.Controls.MetroTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.grp_mainsettings.SuspendLayout()
@@ -589,10 +589,10 @@ Partial Class SettingsForm
         '
         'rfPointSettings
         '
-        Me.rfPointSettings.Controls.Add(Me.rfsBtnCancel)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminBronze)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminSilver)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminGold)
+        Me.rfPointSettings.Controls.Add(Me.rfsBtnCancel)
         Me.rfPointSettings.Controls.Add(Me.MetroLabel8)
         Me.rfPointSettings.Controls.Add(Me.MetroLabel7)
         Me.rfPointSettings.Controls.Add(Me.MetroLabel6)
@@ -614,108 +614,6 @@ Partial Class SettingsForm
         Me.rfsBtnCancel.TabIndex = 8
         Me.rfsBtnCancel.Text = "&Cancel"
         Me.rfsBtnCancel.UseSelectable = True
-        '
-        'rfsBtnEditSave
-        '
-        Me.rfsBtnEditSave.Location = New System.Drawing.Point(455, 256)
-        Me.rfsBtnEditSave.Name = "rfsBtnEditSave"
-        Me.rfsBtnEditSave.Size = New System.Drawing.Size(75, 23)
-        Me.rfsBtnEditSave.TabIndex = 7
-        Me.rfsBtnEditSave.Text = "&Edit"
-        Me.rfsBtnEditSave.UseSelectable = True
-        '
-        'rfstxtminBronze
-        '
-        '
-        '
-        '
-        Me.rfstxtminBronze.CustomButton.Image = Nothing
-        Me.rfstxtminBronze.CustomButton.Location = New System.Drawing.Point(110, 1)
-        Me.rfstxtminBronze.CustomButton.Name = ""
-        Me.rfstxtminBronze.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.rfstxtminBronze.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.rfstxtminBronze.CustomButton.TabIndex = 1
-        Me.rfstxtminBronze.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.rfstxtminBronze.CustomButton.UseSelectable = True
-        Me.rfstxtminBronze.CustomButton.Visible = False
-        Me.rfstxtminBronze.Enabled = False
-        Me.rfstxtminBronze.Lines = New String(-1) {}
-        Me.rfstxtminBronze.Location = New System.Drawing.Point(116, 177)
-        Me.rfstxtminBronze.MaxLength = 32767
-        Me.rfstxtminBronze.Name = "rfstxtminBronze"
-        Me.rfstxtminBronze.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.rfstxtminBronze.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.rfstxtminBronze.SelectedText = ""
-        Me.rfstxtminBronze.SelectionLength = 0
-        Me.rfstxtminBronze.SelectionStart = 0
-        Me.rfstxtminBronze.ShortcutsEnabled = True
-        Me.rfstxtminBronze.Size = New System.Drawing.Size(132, 23)
-        Me.rfstxtminBronze.TabIndex = 6
-        Me.rfstxtminBronze.UseSelectable = True
-        Me.rfstxtminBronze.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.rfstxtminBronze.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'rfstxtminSilver
-        '
-        '
-        '
-        '
-        Me.rfstxtminSilver.CustomButton.Image = Nothing
-        Me.rfstxtminSilver.CustomButton.Location = New System.Drawing.Point(110, 1)
-        Me.rfstxtminSilver.CustomButton.Name = ""
-        Me.rfstxtminSilver.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.rfstxtminSilver.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.rfstxtminSilver.CustomButton.TabIndex = 1
-        Me.rfstxtminSilver.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.rfstxtminSilver.CustomButton.UseSelectable = True
-        Me.rfstxtminSilver.CustomButton.Visible = False
-        Me.rfstxtminSilver.Enabled = False
-        Me.rfstxtminSilver.Lines = New String(-1) {}
-        Me.rfstxtminSilver.Location = New System.Drawing.Point(116, 124)
-        Me.rfstxtminSilver.MaxLength = 32767
-        Me.rfstxtminSilver.Name = "rfstxtminSilver"
-        Me.rfstxtminSilver.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.rfstxtminSilver.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.rfstxtminSilver.SelectedText = ""
-        Me.rfstxtminSilver.SelectionLength = 0
-        Me.rfstxtminSilver.SelectionStart = 0
-        Me.rfstxtminSilver.ShortcutsEnabled = True
-        Me.rfstxtminSilver.Size = New System.Drawing.Size(132, 23)
-        Me.rfstxtminSilver.TabIndex = 5
-        Me.rfstxtminSilver.UseSelectable = True
-        Me.rfstxtminSilver.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.rfstxtminSilver.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'rfstxtminGold
-        '
-        '
-        '
-        '
-        Me.rfstxtminGold.CustomButton.Image = Nothing
-        Me.rfstxtminGold.CustomButton.Location = New System.Drawing.Point(110, 1)
-        Me.rfstxtminGold.CustomButton.Name = ""
-        Me.rfstxtminGold.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.rfstxtminGold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.rfstxtminGold.CustomButton.TabIndex = 1
-        Me.rfstxtminGold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.rfstxtminGold.CustomButton.UseSelectable = True
-        Me.rfstxtminGold.CustomButton.Visible = False
-        Me.rfstxtminGold.Enabled = False
-        Me.rfstxtminGold.Lines = New String(-1) {}
-        Me.rfstxtminGold.Location = New System.Drawing.Point(116, 73)
-        Me.rfstxtminGold.MaxLength = 32767
-        Me.rfstxtminGold.Name = "rfstxtminGold"
-        Me.rfstxtminGold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.rfstxtminGold.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.rfstxtminGold.SelectedText = ""
-        Me.rfstxtminGold.SelectionLength = 0
-        Me.rfstxtminGold.SelectionStart = 0
-        Me.rfstxtminGold.ShortcutsEnabled = True
-        Me.rfstxtminGold.Size = New System.Drawing.Size(132, 23)
-        Me.rfstxtminGold.TabIndex = 4
-        Me.rfstxtminGold.UseSelectable = True
-        Me.rfstxtminGold.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.rfstxtminGold.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel8
         '
@@ -768,11 +666,110 @@ Partial Class SettingsForm
         Me.rfsBtnSave.Text = "Save"
         Me.rfsBtnSave.UseSelectable = True
         '
+        'rfsBtnEditSave
+        '
+        Me.rfsBtnEditSave.Location = New System.Drawing.Point(455, 256)
+        Me.rfsBtnEditSave.Name = "rfsBtnEditSave"
+        Me.rfsBtnEditSave.Size = New System.Drawing.Size(75, 23)
+        Me.rfsBtnEditSave.TabIndex = 7
+        Me.rfsBtnEditSave.Text = "&Edit"
+        Me.rfsBtnEditSave.UseSelectable = True
+        '
         'tipErrors
         '
         Me.tipErrors.Style = MetroFramework.MetroColorStyle.Blue
         Me.tipErrors.StyleManager = Nothing
         Me.tipErrors.Theme = MetroFramework.MetroThemeStyle.Light
+        '
+        'rfstxtminGold
+        '
+        '
+        '
+        '
+        Me.rfstxtminGold.CustomButton.Image = Nothing
+        Me.rfstxtminGold.CustomButton.Location = New System.Drawing.Point(173, 1)
+        Me.rfstxtminGold.CustomButton.Name = ""
+        Me.rfstxtminGold.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.rfstxtminGold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.rfstxtminGold.CustomButton.TabIndex = 1
+        Me.rfstxtminGold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.rfstxtminGold.CustomButton.UseSelectable = True
+        Me.rfstxtminGold.CustomButton.Visible = False
+        Me.rfstxtminGold.Lines = New String(-1) {}
+        Me.rfstxtminGold.Location = New System.Drawing.Point(130, 76)
+        Me.rfstxtminGold.MaxLength = 32767
+        Me.rfstxtminGold.Name = "rfstxtminGold"
+        Me.rfstxtminGold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.rfstxtminGold.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.rfstxtminGold.SelectedText = ""
+        Me.rfstxtminGold.SelectionLength = 0
+        Me.rfstxtminGold.SelectionStart = 0
+        Me.rfstxtminGold.ShortcutsEnabled = True
+        Me.rfstxtminGold.Size = New System.Drawing.Size(195, 23)
+        Me.rfstxtminGold.TabIndex = 10
+        Me.rfstxtminGold.UseSelectable = True
+        Me.rfstxtminGold.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.rfstxtminGold.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'rfstxtminSilver
+        '
+        '
+        '
+        '
+        Me.rfstxtminSilver.CustomButton.Image = Nothing
+        Me.rfstxtminSilver.CustomButton.Location = New System.Drawing.Point(173, 1)
+        Me.rfstxtminSilver.CustomButton.Name = ""
+        Me.rfstxtminSilver.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.rfstxtminSilver.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.rfstxtminSilver.CustomButton.TabIndex = 1
+        Me.rfstxtminSilver.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.rfstxtminSilver.CustomButton.UseSelectable = True
+        Me.rfstxtminSilver.CustomButton.Visible = False
+        Me.rfstxtminSilver.Lines = New String(-1) {}
+        Me.rfstxtminSilver.Location = New System.Drawing.Point(130, 124)
+        Me.rfstxtminSilver.MaxLength = 32767
+        Me.rfstxtminSilver.Name = "rfstxtminSilver"
+        Me.rfstxtminSilver.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.rfstxtminSilver.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.rfstxtminSilver.SelectedText = ""
+        Me.rfstxtminSilver.SelectionLength = 0
+        Me.rfstxtminSilver.SelectionStart = 0
+        Me.rfstxtminSilver.ShortcutsEnabled = True
+        Me.rfstxtminSilver.Size = New System.Drawing.Size(195, 23)
+        Me.rfstxtminSilver.TabIndex = 11
+        Me.rfstxtminSilver.UseSelectable = True
+        Me.rfstxtminSilver.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.rfstxtminSilver.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'rfstxtminBronze
+        '
+        '
+        '
+        '
+        Me.rfstxtminBronze.CustomButton.Image = Nothing
+        Me.rfstxtminBronze.CustomButton.Location = New System.Drawing.Point(173, 1)
+        Me.rfstxtminBronze.CustomButton.Name = ""
+        Me.rfstxtminBronze.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.rfstxtminBronze.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.rfstxtminBronze.CustomButton.TabIndex = 1
+        Me.rfstxtminBronze.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.rfstxtminBronze.CustomButton.UseSelectable = True
+        Me.rfstxtminBronze.CustomButton.Visible = False
+        Me.rfstxtminBronze.Lines = New String(-1) {}
+        Me.rfstxtminBronze.Location = New System.Drawing.Point(130, 177)
+        Me.rfstxtminBronze.MaxLength = 32767
+        Me.rfstxtminBronze.Name = "rfstxtminBronze"
+        Me.rfstxtminBronze.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.rfstxtminBronze.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.rfstxtminBronze.SelectedText = ""
+        Me.rfstxtminBronze.SelectionLength = 0
+        Me.rfstxtminBronze.SelectionStart = 0
+        Me.rfstxtminBronze.ShortcutsEnabled = True
+        Me.rfstxtminBronze.Size = New System.Drawing.Size(195, 23)
+        Me.rfstxtminBronze.TabIndex = 12
+        Me.rfstxtminBronze.UseSelectable = True
+        Me.rfstxtminBronze.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.rfstxtminBronze.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'SettingsForm
         '
@@ -853,13 +850,13 @@ Partial Class SettingsForm
     Friend WithEvents rfPointSettings As GroupBox
     Friend WithEvents rfsBtnCancel As MetroFramework.Controls.MetroButton
     Friend WithEvents rfsBtnEditSave As MetroFramework.Controls.MetroButton
-    Friend WithEvents rfstxtminBronze As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents rfstxtminSilver As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents rfstxtminGold As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tipErrors As MetroFramework.Components.MetroToolTip
     Friend WithEvents rfsBtnSave As MetroFramework.Controls.MetroButton
+    Friend WithEvents rfstxtminBronze As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents rfstxtminSilver As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents rfstxtminGold As MetroFramework.Controls.MetroTextBox
 End Class
