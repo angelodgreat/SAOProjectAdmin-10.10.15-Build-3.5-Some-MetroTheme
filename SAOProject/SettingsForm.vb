@@ -10,13 +10,12 @@ Public Class SettingsForm
     Public identifier_ranloc As String
     Public random As System.Random = New System.Random
 
-
-
     Private Sub SettingsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_organizations()
         load_location()
         load_kpi()
         auto_generate_id()
+        loadpoints()
 
         mb_functionchoice.Items.Add("KPI")
         mb_functionchoice.Items.Add("Location")
@@ -128,9 +127,6 @@ Public Class SettingsForm
         End Try
     End Sub
 
-
-
-
     Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs)
         Try
             MysqlConn = New MySqlConnection
@@ -141,11 +137,11 @@ Public Class SettingsForm
             End If
 
             If (tb_organization.Text = "") Then
-                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please fill the fields", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -164,7 +160,7 @@ Public Class SettingsForm
                     End While
 
                     If count >= 1 Then
-                        MetroMessageBox.Show(Me, "The School/Organization " & tb_organization.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "The School/Organization " & tb_organization.Text & " is already registered.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                     Else
                         MysqlConn.Close()
@@ -175,7 +171,7 @@ Public Class SettingsForm
                         Command.Parameters.AddWithValue("orgid", ran_org.Text)
                         reader = Command.ExecuteReader
 
-                        MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Successfully Saved!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 End If
@@ -204,10 +200,10 @@ Public Class SettingsForm
             End If
 
             If (tb_organization.Text = "") Then
-                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please fill the fields", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -219,7 +215,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("orgid", ran_org.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Updated!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Updated!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
             End If
@@ -246,10 +242,10 @@ Public Class SettingsForm
 
 
             If (tb_organization.Text = "") Then
-                MetroMessageBox.Show(Me, "Please choose from the table.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please choose from the table.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -261,7 +257,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("orgid", ran_org.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Deleted!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Deleted!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         Catch ex As MySqlException
@@ -298,7 +294,7 @@ Public Class SettingsForm
                 MysqlConn.Close()
             End If
 
-            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If (question = DialogResult.Yes) Then
 
@@ -318,7 +314,7 @@ Public Class SettingsForm
                 End While
 
                 If count >= 1 Then
-                    MetroMessageBox.Show(Me, "The Location " & tb_location.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MetroMessageBox.Show(Me, "The Location " & tb_location.Text & " is already registered.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                 Else
 
@@ -330,7 +326,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("loc_id", ran_loc.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Saved!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 End If
 
@@ -356,10 +352,10 @@ Public Class SettingsForm
 
 
             If (tb_location.Text = "") Then
-                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please fill the fields", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -371,7 +367,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("loc_id", ran_loc.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Updated!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Updated!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
             End If
@@ -398,10 +394,10 @@ Public Class SettingsForm
 
 
             If (tb_location.Text = "") Then
-                MetroMessageBox.Show(Me, "Please choose from the table.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please choose from the table.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -413,7 +409,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("loc_id", ran_loc.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Deleted!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Deleted!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         Catch ex As MySqlException
@@ -451,7 +447,7 @@ Public Class SettingsForm
                 MysqlConn.Close()
             End If
 
-            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If (question = DialogResult.Yes) Then
 
@@ -471,7 +467,7 @@ Public Class SettingsForm
                 End While
 
                 If count >= 1 Then
-                    MetroMessageBox.Show(Me, "The KPI " & tb_kpi.Text & " is already registered.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MetroMessageBox.Show(Me, "The KPI " & tb_kpi.Text & " is already registered.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                 Else
 
@@ -483,7 +479,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Saved!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Saved!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 End If
 
@@ -509,10 +505,10 @@ Public Class SettingsForm
 
 
             If (tb_kpi.Text = "") Then
-                MetroMessageBox.Show(Me, "Please fill the fields", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please fill the fields", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to update this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -524,7 +520,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Updated!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Updated!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
             End If
@@ -551,10 +547,10 @@ Public Class SettingsForm
 
 
             If (tb_kpi.Text = "") Then
-                MetroMessageBox.Show(Me, "Please choose from the table.", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "Please choose from the table.", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
 
-                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                question = MetroMessageBox.Show(Me, "Are you sure you want to delete this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If (question = DialogResult.Yes) Then
 
@@ -566,7 +562,7 @@ Public Class SettingsForm
                     Command.Parameters.AddWithValue("kpi_id", ran_kpi.Text)
                     reader = Command.ExecuteReader
 
-                    MetroMessageBox.Show(Me, "Successfully Deleted!", "Students Affairs Office Consolidated Calendar ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Successfully Deleted!", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         Catch ex As MySqlException
@@ -603,7 +599,7 @@ Public Class SettingsForm
     Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to change the School Year?", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             ChangeSemester.Show()
@@ -632,6 +628,65 @@ Public Class SettingsForm
         End If
 
     End Sub
+    Private Sub loadpoints()
+        rfstxtminGold.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
+        rfstxtminSilver.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver';"
+        rfstxtminBronze.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze';"
+    End Sub
+
+    Private Sub rfsBtnEdit_Click(sender As Object, e As EventArgs) Handles rfsBtnEditSave.Click
+        rfstxtminGold.Enabled = True
+        rfstxtminSilver.Enabled = True
+        rfstxtminBronze.Enabled = True
+        rfsBtnEditSave.Visible = False
+        rfsBtnSave.Visible = True
+        rfsBtnEditSave.Visible = False
+    End Sub
+
+    Private Sub rfsBtnSave_Click(sender As Object, e As EventArgs) Handles rfsBtnSave.Click
+        rfstxtminBronze.Enabled = False
+        rfstxtminGold.Enabled = False
+        rfstxtminSilver.Enabled = False
+        rfsBtnEditSave.Visible = True
+        rfsBtnSave.Visible = False
 
 
+        If String.IsNullOrEmpty(rfstxtminGold.Text) Then
+            tipErrors.Show("Please enter the minimum point.", rfstxtminGold)
+            rfstxtminGold.Select()
+        ElseIf String.IsNullOrEmpty(rfstxtminSilver.Text) Then
+            tipErrors.Show("Please enter the minimum point.", rfstxtminSilver)
+            rfstxtminSilver.Select()
+        ElseIf String.IsNullOrEmpty(rfstxtminSilver.Text) Then
+            tipErrors.Show("Please enter the minimum point.", rfstxtminBronze)
+            rfstxtminBronze.Select()
+        Else
+            Dim goldp As Integer = Val(rfstxtminGold.Text)
+            Dim silp As Integer = Val(rfstxtminSilver.Text)
+            Dim brop As Integer = Val(rfstxtminBronze.Text)
+
+            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & goldp & "' WHERE award = 'Gold'; "
+            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & silp & "' WHERE award = 'Silver'; "
+            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & brop & "' WHERE award = 'Bronze'; "
+
+            question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If question = vbYes Then
+                query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & goldp & "' WHERE award = 'Gold'; "
+                ExecuteQuery(query)
+                query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & silp & "' WHERE award = 'Silver'; "
+                ExecuteQuery(query)
+                query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & brop & "' WHERE award = 'Bronze'; "
+                ExecuteQuery(query)
+                MetroMessageBox.Show(Me, "Changes were saved successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK)
+
+            Else
+                MetroMessageBox.Show(Me, "Changes were not saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End If
+        End If
+    End Sub
+
+    Private Sub rfsBtnCancel_Click(sender As Object, e As EventArgs) Handles rfsBtnCancel.Click
+        loadpoints()
+    End Sub
 End Class

@@ -363,7 +363,7 @@ Partial Class rfRatingForms
         Me.rf6comPosition.FormattingEnabled = True
         Me.rf6comPosition.ItemHeight = 23
         Me.rf6comPosition.Items.AddRange(New Object() {"President/Editor-in-Cheif/Chairman", "Vice-President/Managing Editor/University Vice Chairman", "Secretary/Circulation Manager", "Treasurer/Literary, Features Editor/University COMELEC Representative", "P.R.O/College Chairman/Staff", "Auditor", "School/College COMELEC Representative"})
-        Me.rf6comPosition.Location = New System.Drawing.Point(235, 324)
+        Me.rf6comPosition.Location = New System.Drawing.Point(227, 324)
         Me.rf6comPosition.Name = "rf6comPosition"
         Me.rf6comPosition.Size = New System.Drawing.Size(188, 29)
         Me.rf6comPosition.TabIndex = 109
@@ -373,7 +373,7 @@ Partial Class rfRatingForms
         '
         Me.MetroLabel69.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel69.AutoSize = True
-        Me.MetroLabel69.Location = New System.Drawing.Point(28, 324)
+        Me.MetroLabel69.Location = New System.Drawing.Point(20, 324)
         Me.MetroLabel69.Name = "MetroLabel69"
         Me.MetroLabel69.Size = New System.Drawing.Size(125, 19)
         Me.MetroLabel69.TabIndex = 108
@@ -385,7 +385,7 @@ Partial Class rfRatingForms
         Me.rf6comPubOrg.FormattingEnabled = True
         Me.rf6comPubOrg.ItemHeight = 23
         Me.rf6comPubOrg.Items.AddRange(New Object() {"Recognized/University/Organization/Publication", "On-Permit Status/School/College/Organization/Publication", "Appointed"})
-        Me.rf6comPubOrg.Location = New System.Drawing.Point(430, 289)
+        Me.rf6comPubOrg.Location = New System.Drawing.Point(422, 289)
         Me.rf6comPubOrg.Name = "rf6comPubOrg"
         Me.rf6comPubOrg.Size = New System.Drawing.Size(188, 29)
         Me.rf6comPubOrg.TabIndex = 107
@@ -398,7 +398,7 @@ Partial Class rfRatingForms
         Me.rf6comLvlOf.FormattingEnabled = True
         Me.rf6comLvlOf.ItemHeight = 23
         Me.rf6comLvlOf.Items.AddRange(New Object() {"Council Officers", "Year Level/Section", "Organization/Publication"})
-        Me.rf6comLvlOf.Location = New System.Drawing.Point(236, 289)
+        Me.rf6comLvlOf.Location = New System.Drawing.Point(228, 289)
         Me.rf6comLvlOf.Name = "rf6comLvlOf"
         Me.rf6comLvlOf.Size = New System.Drawing.Size(188, 29)
         Me.rf6comLvlOf.TabIndex = 105
@@ -408,7 +408,7 @@ Partial Class rfRatingForms
         '
         Me.MetroLabel67.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel67.AutoSize = True
-        Me.MetroLabel67.Location = New System.Drawing.Point(28, 295)
+        Me.MetroLabel67.Location = New System.Drawing.Point(20, 295)
         Me.MetroLabel67.Name = "MetroLabel67"
         Me.MetroLabel67.Size = New System.Drawing.Size(93, 19)
         Me.MetroLabel67.TabIndex = 104
@@ -419,7 +419,7 @@ Partial Class rfRatingForms
         Me.MetroLabel54.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel54.AutoSize = True
         Me.MetroLabel54.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel54.Location = New System.Drawing.Point(677, 16)
+        Me.MetroLabel54.Location = New System.Drawing.Point(669, 16)
         Me.MetroLabel54.Name = "MetroLabel54"
         Me.MetroLabel54.Size = New System.Drawing.Size(68, 19)
         Me.MetroLabel54.TabIndex = 67
@@ -430,7 +430,7 @@ Partial Class rfRatingForms
         Me.MetroLabel55.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel55.AutoSize = True
         Me.MetroLabel55.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel55.Location = New System.Drawing.Point(607, 16)
+        Me.MetroLabel55.Location = New System.Drawing.Point(599, 16)
         Me.MetroLabel55.Name = "MetroLabel55"
         Me.MetroLabel55.Size = New System.Drawing.Size(67, 19)
         Me.MetroLabel55.TabIndex = 66
@@ -441,7 +441,7 @@ Partial Class rfRatingForms
         Me.MetroLabel57.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel57.AutoSize = True
         Me.MetroLabel57.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel57.Location = New System.Drawing.Point(382, 16)
+        Me.MetroLabel57.Location = New System.Drawing.Point(374, 16)
         Me.MetroLabel57.Name = "MetroLabel57"
         Me.MetroLabel57.Size = New System.Drawing.Size(89, 19)
         Me.MetroLabel57.TabIndex = 64
@@ -532,7 +532,7 @@ Partial Class rfRatingForms
         Me.MetroLabel56.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel56.AutoSize = True
         Me.MetroLabel56.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel56.Location = New System.Drawing.Point(477, 16)
+        Me.MetroLabel56.Location = New System.Drawing.Point(469, 16)
         Me.MetroLabel56.Name = "MetroLabel56"
         Me.MetroLabel56.Size = New System.Drawing.Size(124, 19)
         Me.MetroLabel56.TabIndex = 65
@@ -552,7 +552,7 @@ Partial Class rfRatingForms
         Me.MetroLabel58.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel58.AutoSize = True
         Me.MetroLabel58.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel58.Location = New System.Drawing.Point(217, 16)
+        Me.MetroLabel58.Location = New System.Drawing.Point(209, 16)
         Me.MetroLabel58.Name = "MetroLabel58"
         Me.MetroLabel58.Size = New System.Drawing.Size(159, 19)
         Me.MetroLabel58.TabIndex = 63
@@ -590,7 +590,7 @@ Partial Class rfRatingForms
         Me.MetroPanel8.HorizontalScrollbarBarColor = True
         Me.MetroPanel8.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel8.HorizontalScrollbarSize = 10
-        Me.MetroPanel8.Location = New System.Drawing.Point(248, 384)
+        Me.MetroPanel8.Location = New System.Drawing.Point(240, 384)
         Me.MetroPanel8.Name = "MetroPanel8"
         Me.MetroPanel8.Size = New System.Drawing.Size(317, 75)
         Me.MetroPanel8.TabIndex = 141
@@ -765,7 +765,7 @@ Partial Class rfRatingForms
         '
         Me.MetroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(54, 322)
+        Me.MetroLabel7.Location = New System.Drawing.Point(46, 322)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(97, 19)
         Me.MetroLabel7.TabIndex = 140
@@ -787,7 +787,7 @@ Partial Class rfRatingForms
         Me.rf7txtIP.CustomButton.UseSelectable = True
         Me.rf7txtIP.CustomButton.Visible = False
         Me.rf7txtIP.Lines = New String(-1) {}
-        Me.rf7txtIP.Location = New System.Drawing.Point(236, 322)
+        Me.rf7txtIP.Location = New System.Drawing.Point(228, 322)
         Me.rf7txtIP.MaxLength = 32767
         Me.rf7txtIP.Name = "rf7txtIP"
         Me.rf7txtIP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -808,7 +808,7 @@ Partial Class rfRatingForms
         Me.rf7comPosition.FormattingEnabled = True
         Me.rf7comPosition.ItemHeight = 23
         Me.rf7comPosition.Items.AddRange(New Object() {"President", "1st Vice-President", "2nd Vice-President", "Secretary", "Asst. Secretary", "Treasurer", "Asst. Treasurer", "Auditor", "Asst. Auditor", "P.R.O", "Asst. P.R.O"})
-        Me.rf7comPosition.Location = New System.Drawing.Point(236, 287)
+        Me.rf7comPosition.Location = New System.Drawing.Point(228, 287)
         Me.rf7comPosition.Name = "rf7comPosition"
         Me.rf7comPosition.Size = New System.Drawing.Size(188, 29)
         Me.rf7comPosition.TabIndex = 138
@@ -826,7 +826,7 @@ Partial Class rfRatingForms
         Me.rf7Panel7.HorizontalScrollbarBarColor = True
         Me.rf7Panel7.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel7.HorizontalScrollbarSize = 10
-        Me.rf7Panel7.Location = New System.Drawing.Point(54, 252)
+        Me.rf7Panel7.Location = New System.Drawing.Point(46, 252)
         Me.rf7Panel7.Name = "rf7Panel7"
         Me.rf7Panel7.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel7.TabIndex = 135
@@ -879,7 +879,7 @@ Partial Class rfRatingForms
         Me.tabRF7.HorizontalScrollbarSize = 10
         Me.tabRF7.Location = New System.Drawing.Point(4, 38)
         Me.tabRF7.Name = "tabRF7"
-        Me.tabRF7.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF7.Size = New System.Drawing.Size(785, 449)
         Me.tabRF7.TabIndex = 6
         Me.tabRF7.Text = "Rating Form 7"
         Me.tabRF7.VerticalScrollbar = True
@@ -891,7 +891,7 @@ Partial Class rfRatingForms
         '
         Me.MetroLabel89.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel89.AutoSize = True
-        Me.MetroLabel89.Location = New System.Drawing.Point(54, 291)
+        Me.MetroLabel89.Location = New System.Drawing.Point(46, 291)
         Me.MetroLabel89.Name = "MetroLabel89"
         Me.MetroLabel89.Size = New System.Drawing.Size(125, 19)
         Me.MetroLabel89.TabIndex = 137
@@ -909,7 +909,7 @@ Partial Class rfRatingForms
         Me.rf7Panel6.HorizontalScrollbarBarColor = True
         Me.rf7Panel6.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel6.HorizontalScrollbarSize = 10
-        Me.rf7Panel6.Location = New System.Drawing.Point(54, 205)
+        Me.rf7Panel6.Location = New System.Drawing.Point(46, 205)
         Me.rf7Panel6.Name = "rf7Panel6"
         Me.rf7Panel6.Size = New System.Drawing.Size(717, 41)
         Me.rf7Panel6.TabIndex = 134
@@ -988,7 +988,7 @@ Partial Class rfRatingForms
         Me.rf7Panel5.HorizontalScrollbarBarColor = True
         Me.rf7Panel5.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel5.HorizontalScrollbarSize = 10
-        Me.rf7Panel5.Location = New System.Drawing.Point(54, 172)
+        Me.rf7Panel5.Location = New System.Drawing.Point(46, 172)
         Me.rf7Panel5.Name = "rf7Panel5"
         Me.rf7Panel5.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel5.TabIndex = 133
@@ -1067,7 +1067,7 @@ Partial Class rfRatingForms
         Me.rf7Panel4.HorizontalScrollbarBarColor = True
         Me.rf7Panel4.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel4.HorizontalScrollbarSize = 10
-        Me.rf7Panel4.Location = New System.Drawing.Point(54, 139)
+        Me.rf7Panel4.Location = New System.Drawing.Point(46, 139)
         Me.rf7Panel4.Name = "rf7Panel4"
         Me.rf7Panel4.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel4.TabIndex = 132
@@ -1146,7 +1146,7 @@ Partial Class rfRatingForms
         Me.rf7Panel3.HorizontalScrollbarBarColor = True
         Me.rf7Panel3.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel3.HorizontalScrollbarSize = 10
-        Me.rf7Panel3.Location = New System.Drawing.Point(54, 106)
+        Me.rf7Panel3.Location = New System.Drawing.Point(46, 106)
         Me.rf7Panel3.Name = "rf7Panel3"
         Me.rf7Panel3.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel3.TabIndex = 131
@@ -1225,7 +1225,7 @@ Partial Class rfRatingForms
         Me.rf7Panel2.HorizontalScrollbarBarColor = True
         Me.rf7Panel2.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel2.HorizontalScrollbarSize = 10
-        Me.rf7Panel2.Location = New System.Drawing.Point(54, 73)
+        Me.rf7Panel2.Location = New System.Drawing.Point(46, 73)
         Me.rf7Panel2.Name = "rf7Panel2"
         Me.rf7Panel2.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel2.TabIndex = 130
@@ -1304,7 +1304,7 @@ Partial Class rfRatingForms
         Me.rf7Panel1.HorizontalScrollbarBarColor = True
         Me.rf7Panel1.HorizontalScrollbarHighlightOnWheel = False
         Me.rf7Panel1.HorizontalScrollbarSize = 10
-        Me.rf7Panel1.Location = New System.Drawing.Point(54, 40)
+        Me.rf7Panel1.Location = New System.Drawing.Point(46, 40)
         Me.rf7Panel1.Name = "rf7Panel1"
         Me.rf7Panel1.Size = New System.Drawing.Size(717, 27)
         Me.rf7Panel1.TabIndex = 129
@@ -1376,7 +1376,7 @@ Partial Class rfRatingForms
         Me.MetroLabel82.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel82.AutoSize = True
         Me.MetroLabel82.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel82.Location = New System.Drawing.Point(706, 18)
+        Me.MetroLabel82.Location = New System.Drawing.Point(689, 18)
         Me.MetroLabel82.Name = "MetroLabel82"
         Me.MetroLabel82.Size = New System.Drawing.Size(68, 19)
         Me.MetroLabel82.TabIndex = 128
@@ -1387,7 +1387,7 @@ Partial Class rfRatingForms
         Me.MetroLabel83.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel83.AutoSize = True
         Me.MetroLabel83.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel83.Location = New System.Drawing.Point(633, 18)
+        Me.MetroLabel83.Location = New System.Drawing.Point(625, 18)
         Me.MetroLabel83.Name = "MetroLabel83"
         Me.MetroLabel83.Size = New System.Drawing.Size(67, 19)
         Me.MetroLabel83.TabIndex = 127
@@ -1398,7 +1398,7 @@ Partial Class rfRatingForms
         Me.MetroLabel84.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel84.AutoSize = True
         Me.MetroLabel84.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel84.Location = New System.Drawing.Point(503, 18)
+        Me.MetroLabel84.Location = New System.Drawing.Point(495, 18)
         Me.MetroLabel84.Name = "MetroLabel84"
         Me.MetroLabel84.Size = New System.Drawing.Size(124, 19)
         Me.MetroLabel84.TabIndex = 126
@@ -1409,7 +1409,7 @@ Partial Class rfRatingForms
         Me.MetroLabel85.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel85.AutoSize = True
         Me.MetroLabel85.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel85.Location = New System.Drawing.Point(408, 18)
+        Me.MetroLabel85.Location = New System.Drawing.Point(400, 18)
         Me.MetroLabel85.Name = "MetroLabel85"
         Me.MetroLabel85.Size = New System.Drawing.Size(89, 19)
         Me.MetroLabel85.TabIndex = 125
@@ -1420,7 +1420,7 @@ Partial Class rfRatingForms
         Me.MetroLabel86.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.MetroLabel86.AutoSize = True
         Me.MetroLabel86.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel86.Location = New System.Drawing.Point(243, 18)
+        Me.MetroLabel86.Location = New System.Drawing.Point(235, 18)
         Me.MetroLabel86.Name = "MetroLabel86"
         Me.MetroLabel86.Size = New System.Drawing.Size(159, 19)
         Me.MetroLabel86.TabIndex = 124
@@ -1432,7 +1432,7 @@ Partial Class rfRatingForms
         Me.MetroLabel87.AutoSize = True
         Me.MetroLabel87.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel87.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel87.Location = New System.Drawing.Point(36, 14)
+        Me.MetroLabel87.Location = New System.Drawing.Point(28, 14)
         Me.MetroLabel87.Name = "MetroLabel87"
         Me.MetroLabel87.Size = New System.Drawing.Size(175, 25)
         Me.MetroLabel87.TabIndex = 123
@@ -1505,7 +1505,7 @@ Partial Class rfRatingForms
         Me.MetroLabel66.AutoSize = True
         Me.MetroLabel66.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel66.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel66.Location = New System.Drawing.Point(10, 12)
+        Me.MetroLabel66.Location = New System.Drawing.Point(2, 12)
         Me.MetroLabel66.Name = "MetroLabel66"
         Me.MetroLabel66.Size = New System.Drawing.Size(175, 25)
         Me.MetroLabel66.TabIndex = 55
@@ -1621,7 +1621,7 @@ Partial Class rfRatingForms
         Me.rf6Panel5.HorizontalScrollbarBarColor = True
         Me.rf6Panel5.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel5.HorizontalScrollbarSize = 10
-        Me.rf6Panel5.Location = New System.Drawing.Point(28, 170)
+        Me.rf6Panel5.Location = New System.Drawing.Point(20, 170)
         Me.rf6Panel5.Name = "rf6Panel5"
         Me.rf6Panel5.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel5.TabIndex = 114
@@ -1701,7 +1701,7 @@ Partial Class rfRatingForms
         Me.rf6Panel4.HorizontalScrollbarBarColor = True
         Me.rf6Panel4.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel4.HorizontalScrollbarSize = 10
-        Me.rf6Panel4.Location = New System.Drawing.Point(28, 137)
+        Me.rf6Panel4.Location = New System.Drawing.Point(20, 137)
         Me.rf6Panel4.Name = "rf6Panel4"
         Me.rf6Panel4.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel4.TabIndex = 113
@@ -1780,7 +1780,7 @@ Partial Class rfRatingForms
         Me.rf6Panel1.HorizontalScrollbarBarColor = True
         Me.rf6Panel1.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel1.HorizontalScrollbarSize = 10
-        Me.rf6Panel1.Location = New System.Drawing.Point(28, 38)
+        Me.rf6Panel1.Location = New System.Drawing.Point(20, 38)
         Me.rf6Panel1.Name = "rf6Panel1"
         Me.rf6Panel1.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel1.TabIndex = 110
@@ -1810,7 +1810,7 @@ Partial Class rfRatingForms
         Me.rf6Panel2.HorizontalScrollbarBarColor = True
         Me.rf6Panel2.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel2.HorizontalScrollbarSize = 10
-        Me.rf6Panel2.Location = New System.Drawing.Point(28, 71)
+        Me.rf6Panel2.Location = New System.Drawing.Point(20, 71)
         Me.rf6Panel2.Name = "rf6Panel2"
         Me.rf6Panel2.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel2.TabIndex = 111
@@ -1840,7 +1840,7 @@ Partial Class rfRatingForms
         Me.rf6Panel3.HorizontalScrollbarBarColor = True
         Me.rf6Panel3.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel3.HorizontalScrollbarSize = 10
-        Me.rf6Panel3.Location = New System.Drawing.Point(28, 104)
+        Me.rf6Panel3.Location = New System.Drawing.Point(20, 104)
         Me.rf6Panel3.Name = "rf6Panel3"
         Me.rf6Panel3.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel3.TabIndex = 112
@@ -2153,7 +2153,7 @@ Partial Class rfRatingForms
         Me.tabRF3.HorizontalScrollbarSize = 10
         Me.tabRF3.Location = New System.Drawing.Point(4, 38)
         Me.tabRF3.Name = "tabRF3"
-        Me.tabRF3.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF3.Size = New System.Drawing.Size(785, 449)
         Me.tabRF3.TabIndex = 2
         Me.tabRF3.Text = "Rating Form 3"
         Me.tabRF3.VerticalScrollbar = True
@@ -2460,7 +2460,7 @@ Partial Class rfRatingForms
         Me.tabRF4.HorizontalScrollbarSize = 10
         Me.tabRF4.Location = New System.Drawing.Point(4, 38)
         Me.tabRF4.Name = "tabRF4"
-        Me.tabRF4.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF4.Size = New System.Drawing.Size(785, 449)
         Me.tabRF4.TabIndex = 3
         Me.tabRF4.Text = "Rating Form 4"
         Me.tabRF4.VerticalScrollbar = True
@@ -2775,7 +2775,7 @@ Partial Class rfRatingForms
         Me.tabRF5.HorizontalScrollbarSize = 10
         Me.tabRF5.Location = New System.Drawing.Point(4, 38)
         Me.tabRF5.Name = "tabRF5"
-        Me.tabRF5.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF5.Size = New System.Drawing.Size(785, 449)
         Me.tabRF5.TabIndex = 4
         Me.tabRF5.Text = "Rating Form 5"
         Me.tabRF5.VerticalScrollbar = True
@@ -3574,7 +3574,7 @@ Partial Class rfRatingForms
         Me.rf6Panel6.HorizontalScrollbarBarColor = True
         Me.rf6Panel6.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel6.HorizontalScrollbarSize = 10
-        Me.rf6Panel6.Location = New System.Drawing.Point(28, 203)
+        Me.rf6Panel6.Location = New System.Drawing.Point(20, 203)
         Me.rf6Panel6.Name = "rf6Panel6"
         Me.rf6Panel6.Size = New System.Drawing.Size(717, 41)
         Me.rf6Panel6.TabIndex = 115
@@ -3747,7 +3747,7 @@ Partial Class rfRatingForms
         Me.tabRF2.HorizontalScrollbarSize = 10
         Me.tabRF2.Location = New System.Drawing.Point(4, 38)
         Me.tabRF2.Name = "tabRF2"
-        Me.tabRF2.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF2.Size = New System.Drawing.Size(785, 449)
         Me.tabRF2.TabIndex = 1
         Me.tabRF2.Text = "Rating Form 2"
         Me.tabRF2.VerticalScrollbar = True
@@ -4186,7 +4186,7 @@ Partial Class rfRatingForms
         Me.tabRF6.HorizontalScrollbarSize = 10
         Me.tabRF6.Location = New System.Drawing.Point(4, 38)
         Me.tabRF6.Name = "tabRF6"
-        Me.tabRF6.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF6.Size = New System.Drawing.Size(785, 449)
         Me.tabRF6.TabIndex = 5
         Me.tabRF6.Text = "Rating Form 6"
         Me.tabRF6.VerticalScrollbar = True
@@ -4207,7 +4207,7 @@ Partial Class rfRatingForms
         Me.MetroPanel7.HorizontalScrollbarBarColor = True
         Me.MetroPanel7.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel7.HorizontalScrollbarSize = 10
-        Me.MetroPanel7.Location = New System.Drawing.Point(224, 385)
+        Me.MetroPanel7.Location = New System.Drawing.Point(216, 385)
         Me.MetroPanel7.Name = "MetroPanel7"
         Me.MetroPanel7.Size = New System.Drawing.Size(317, 75)
         Me.MetroPanel7.TabIndex = 117
@@ -4350,7 +4350,7 @@ Partial Class rfRatingForms
         Me.rf6Panel7.HorizontalScrollbarBarColor = True
         Me.rf6Panel7.HorizontalScrollbarHighlightOnWheel = False
         Me.rf6Panel7.HorizontalScrollbarSize = 10
-        Me.rf6Panel7.Location = New System.Drawing.Point(28, 250)
+        Me.rf6Panel7.Location = New System.Drawing.Point(20, 250)
         Me.rf6Panel7.Name = "rf6Panel7"
         Me.rf6Panel7.Size = New System.Drawing.Size(717, 27)
         Me.rf6Panel7.TabIndex = 116

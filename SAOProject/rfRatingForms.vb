@@ -1428,11 +1428,11 @@
 
     Public Function GetRemarks(ByVal points As Integer) As String
         Dim remarks As String = String.Empty
-        If points >= 6000 Then
+        If points >= Val(SettingsForm.rfstxtminGold.Text) Then
             remarks = "Gold"
-        ElseIf points >= 4000 Then
+        ElseIf points >= Val(SettingsForm.rfstxtminSilver.Text) Then
             remarks = "Silver"
-        ElseIf points >= 2000 Then
+        ElseIf points >= Val(SettingsForm.rfstxtminBronze.Text) Then
             remarks = "Bronze"
         ElseIf points >= 0 Then
             remarks = String.Empty

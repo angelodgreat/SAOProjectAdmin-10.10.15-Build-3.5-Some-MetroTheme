@@ -44,7 +44,7 @@ Partial Class rfAdminHome
         'lnkNotif
         '
         Me.lnkNotif.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lnkNotif.Location = New System.Drawing.Point(218, 179)
+        Me.lnkNotif.Location = New System.Drawing.Point(200, 179)
         Me.lnkNotif.Name = "lnkNotif"
         Me.lnkNotif.Size = New System.Drawing.Size(357, 23)
         Me.lnkNotif.Style = MetroFramework.MetroColorStyle.Pink
@@ -62,7 +62,7 @@ Partial Class rfAdminHome
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(218, 122)
+        Me.MetroPanel1.Location = New System.Drawing.Point(200, 122)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(357, 31)
         Me.MetroPanel1.Style = MetroFramework.MetroColorStyle.Pink
@@ -101,7 +101,7 @@ Partial Class rfAdminHome
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
-        Me.Label25.Location = New System.Drawing.Point(198, 23)
+        Me.Label25.Location = New System.Drawing.Point(194, 23)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(374, 66)
         Me.Label25.TabIndex = 48
@@ -111,7 +111,7 @@ Partial Class rfAdminHome
         '
         Me.tillogout.ActiveControl = Nothing
         Me.tillogout.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tillogout.Location = New System.Drawing.Point(381, 243)
+        Me.tillogout.Location = New System.Drawing.Point(497, 243)
         Me.tillogout.Name = "tillogout"
         Me.tillogout.Size = New System.Drawing.Size(110, 110)
         Me.tillogout.Style = MetroFramework.MetroColorStyle.Pink
@@ -127,7 +127,7 @@ Partial Class rfAdminHome
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox2.Location = New System.Drawing.Point(584, 12)
+        Me.PictureBox2.Location = New System.Drawing.Point(580, 12)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -154,14 +154,14 @@ Partial Class rfAdminHome
         '
         Me.tilHome.ActiveControl = Nothing
         Me.tilHome.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tilHome.Location = New System.Drawing.Point(497, 243)
+        Me.tilHome.Location = New System.Drawing.Point(381, 243)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
         Me.tilHome.TabIndex = 35
-        Me.tilHome.Text = "Back"
+        Me.tilHome.Text = "Main Menu"
         Me.tilHome.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.tilHome.TileImage = Global.SAOProject.My.Resources.Resources.ic_arrow_back_white_48dp_1x
+        Me.tilHome.TileImage = Global.SAOProject.My.Resources.Resources.ic_view_list_white_48dp_1x
         Me.tilHome.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.tilHome.UseSelectable = True
         Me.tilHome.UseTileImage = True
@@ -185,7 +185,7 @@ Partial Class rfAdminHome
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(103, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(99, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(77, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
