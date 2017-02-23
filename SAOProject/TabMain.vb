@@ -1506,8 +1506,8 @@ Public Class TabMain
             savedb_dialog.Title = "Choose a Location to Save"
             Dim mysql_SAVE As New MySqlBackup(Command)
             mysql_SAVE.ExportInfo.AddCreateDatabase = True
-        'mysql_SAVE.ExportInfo.EnableEncryption = True
-        'mysql_SAVE.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
+        mysql_SAVE.ExportInfo.EnableEncryption = True
+        mysql_SAVE.ExportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
         If savedb_dialog.ShowDialog() = DialogResult.OK Then
                 Try
@@ -1525,15 +1525,15 @@ Public Class TabMain
                 'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
             Catch ex As MySqlException
                     If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
-                        MessageBox.Show(4, " The database probably went offline.")
+                    MessageBox.Show(Me, " The database probably went offline.")
 
-                        Return
+                    Return
                     Else
-                        MessageBox.Show(4, ex.Message)
-                    End If
+                    MessageBox.Show(Me, ex.Message)
+                End If
                 Catch ex As Exception
-                    MessageBox.Show(4, ex.Message)
-                End Try
+                MessageBox.Show(Me, ex.Message)
+            End Try
             End If
 
             'Dim file As String
@@ -1573,19 +1573,19 @@ Public Class TabMain
                 Dim mysql_LOAD As New MySqlBackup(Command)
                 mysql_LOAD.Command.Connection = MysqlConn
                 MysqlConn.Open()
-                'mysql_LOAD.ImportInfo.EnableEncryption = True
-                'mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
+                mysql_LOAD.ImportInfo.EnableEncryption = True
+                mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
                 mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
                 MysqlConn.Close()
                 MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As MySqlException
                 If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
-                    MessageBox.Show(4, " The database probably went offline.")
+                    MessageBox.Show(Me, " The database probably went offline.")
 
                     Return
                 Else
-                    MessageBox.Show(4, ex.Message)
+                    MessageBox.Show(Me, ex.Message)
                 End If
 
             End Try
@@ -1620,8 +1620,8 @@ Public Class TabMain
         savedb_dialog.Title = "Choose a Location to Save"
         Dim mysql_SAVE As New MySqlBackup(Command)
         mysql_SAVE.ExportInfo.AddCreateDatabase = True
-        'mysql_SAVE.ExportInfo.EnableEncryption = True
-        'mysql_SAVE.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
+        mysql_SAVE.ExportInfo.EnableEncryption = True
+        mysql_SAVE.ExportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
         If savedb_dialog.ShowDialog() = DialogResult.OK Then
             Try
@@ -1636,14 +1636,14 @@ Public Class TabMain
                 'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
             Catch ex As MySqlException
                 If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
-                    MessageBox.Show(4, " The database probably went offline.")
+                    MessageBox.Show(Me, " The database probably went offline.")
 
                     Return
                 Else
-                    MessageBox.Show(4, ex.Message)
+                    MessageBox.Show(Me, ex.Message)
                 End If
             Catch ex As Exception
-                MessageBox.Show(4, ex.Message)
+                MessageBox.Show(Me, ex.Message)
             End Try
         End If
 
@@ -1685,19 +1685,18 @@ Public Class TabMain
                 Dim mysql_LOAD As New MySqlBackup(Command)
                 mysql_LOAD.Command.Connection = MysqlConn
                 MysqlConn.Open()
-                'mysql_LOAD.ImportInfo.EnableEncryption = True
-                'mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
-
+                mysql_LOAD.ImportInfo.EnableEncryption = True
+                mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
                 mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
                 MysqlConn.Close()
                 MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As MySqlException
                 If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
-                    MessageBox.Show(4, " The database probably went offline.")
+                    MessageBox.Show(Me, " The database probably went offline.")
 
                     Return
                 Else
-                    MessageBox.Show(4, ex.Message)
+                    MessageBox.Show(Me, ex.Message)
                 End If
 
 

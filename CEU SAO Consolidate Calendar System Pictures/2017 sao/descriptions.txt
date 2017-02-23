@@ -1,0 +1,14 @@
+1 - startup splashscreen
+2 - database connection settings
+3 - login form
+4 - menu form choose between 2 systems
+5 - main form and main page. use to search for recorded events
+6 - notes page 
+7 - note - adding notes or reminders
+8 - events page - adding/deleting/updating events
+9 - accounts page - adding/deleting/updating accounts
+10 - about form
+11 - settings for location/kpi/schoolorg and changing of school year
+12 - school year changing
+13 - guest form
+14 - showing of database backup and restore functions
