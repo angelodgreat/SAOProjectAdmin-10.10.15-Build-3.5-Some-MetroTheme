@@ -38,7 +38,7 @@ Partial Class ChangeSemester
         Me.GroupBox1.Controls.Add(Me.btn_createSCYS)
         Me.GroupBox1.Controls.Add(Me.cb_selectyearndsem)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(62, 74)
+        Me.GroupBox1.Location = New System.Drawing.Point(54, 74)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(279, 110)
         Me.GroupBox1.TabIndex = 43

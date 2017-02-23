@@ -75,7 +75,7 @@ Public Class rfUniColPrint
                 ActiveForm.Size = New Size(1121, 673)
                 tilHome.Location = New Point(1016, 546)
                 tilBack.Location = New Point(935, 546)
-                MetroLabel6.Location = New Point(427, 643)
+
 
                 updateReport()
                 Dim year As String = LScmbYG.SelectedItem.ToString()
@@ -98,7 +98,7 @@ Public Class rfUniColPrint
                 tilHome.Location = New Point(1016, 581)
                 tilBack.Location = New Point(935, 581)
                 ActiveForm.Size = New Size(1121, 731)
-                MetroLabel6.Location = New Point(426, 697)
+
         End Select
     End Sub
 

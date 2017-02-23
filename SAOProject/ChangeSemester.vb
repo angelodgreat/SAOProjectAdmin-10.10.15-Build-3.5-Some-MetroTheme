@@ -25,7 +25,7 @@ Public Class ChangeSemester
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
 
-            MetroMessageBox.Show(Me, "School Year successfully created", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, "School Year successfully created", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             MysqlConn.Close()
         Catch ex As Exception
@@ -38,7 +38,7 @@ Public Class ChangeSemester
 
     Private Sub btn_loadSCYS_Click(sender As Object, e As EventArgs) Handles btn_loadSCYS.Click
         My.Settings.schoolyear = cb_selectyearndsem.Text
-        MetroMessageBox.Show(Me, "School Year successfully loaded", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MetroMessageBox.Show(Me, "School Year successfully loaded", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
         'SHOWING DATA FROM THE TABLE
@@ -80,7 +80,7 @@ Public Class ChangeSemester
 
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to delete this School Year?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to delete this School Year?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If a = vbYes Then
             Command = New MySqlCommand
@@ -93,7 +93,7 @@ Public Class ChangeSemester
                 Command = New MySqlCommand(query, MysqlConn)
                 reader = Command.ExecuteReader
 
-                MetroMessageBox.Show(Me, "School Year successfully deleted.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "School Year successfully deleted.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                 MysqlConn.Close()

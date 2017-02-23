@@ -106,29 +106,29 @@ Public Class TabMain
 
             End While
 
-            'MetroMessageBox.Show(Me, "", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'MetroMessageBox.Show(Me, "", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
             If count = 1 Then
-                MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
 
             Else
                 If tb_location.Text = "-" Or tb_location.Text = "" Or tb_input_event.Text = "" Or tb_eventid.Text = "" Or cb_eventschool.Text = "-" Or cb_eventschool.Text = "" Or cb_kpi.Text = "-" Or cb_kpi.Text = "" Or cb_noa.Text = "-" Or cb_noa.Text = "" Then
 
-                    MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MysqlConn.Close()
 
-                    mysqlconn.Open()
+                    MysqlConn.Open()
 
                     query = "insert into `saoevent" & My.Settings.schoolyear & "` (Date,location,events,TimeFrom,TimeTo,eventid,school,kpi,noa,remarks) values ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "','" & tb_location.Text & "','" & tb_input_event.Text & "','" & Format(CDate(time_picker_from.Text), "hh:mm") & "','" & Format(CDate(time_picker_to.Text), "hh:mm") & "','" & tb_eventid.Text & "','" & cb_eventschool.Text & "','" & cb_kpi.Text & "','" & cb_noa.Text & "','" & cb_remarks.Text & "')"
-                    Command = New MySqlCommand(query, mysqlconn)
+                    Command = New MySqlCommand(query, MysqlConn)
                     reader = Command.ExecuteReader
 
                     ' load_table2()
-                    MetroMessageBox.Show(Me, "Event Submitted", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Event Submitted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     MysqlConn.Close()
 
                 End If
@@ -142,7 +142,7 @@ Public Class TabMain
             MessageBox.Show(ex.Message)
 
         Finally
-            mysqlconn.Dispose()
+            MysqlConn.Dispose()
 
         End Try
 
@@ -196,10 +196,10 @@ Public Class TabMain
 
         If tb_location.Text = "-" Or tb_location.Text = "" Or tb_input_event.Text = "" Or tb_eventid.Text = "" Or cb_eventschool.Text = "-" Or cb_eventschool.Text = "" Or cb_kpi.Text = "-" Or cb_kpi.Text = "" Or cb_noa.Text = "-" Or cb_noa.Text = "" Then
 
-            MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this selected date?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update this selected date?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
                 Dim reader As MySqlDataReader
                 Dim SDA As New MySqlDataAdapter
@@ -227,12 +227,12 @@ Public Class TabMain
 
                     If count = 1 Then
 
-                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
                     Else
                         If tb_location.Text = "" Or tb_input_event.Text = "" Or tb_eventid.Text = "" Or cb_eventschool.Text = "-" Or cb_kpi.Text = "-" Or cb_noa.Text = "-" Then
-                            MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             MysqlConn.Close()
 
@@ -243,7 +243,7 @@ Public Class TabMain
 
                             Command = New MySqlCommand(query, MysqlConn)
                             reader = Command.ExecuteReader
-                            MetroMessageBox.Show(Me, "Event Updated", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Event Updated", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             MysqlConn.Close()
 
                         End If
@@ -307,10 +307,10 @@ Public Class TabMain
 
 
         If tb_eventid.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected date.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected date.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete the selected date?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete the selected date?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
 
 
@@ -336,7 +336,7 @@ Public Class TabMain
                     cb_noa.Text = "-"
                     cb_remarks.Text = ""
 
-                    MetroMessageBox.Show(Me, "Event Deleted.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Event Deleted.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     MysqlConn.Close()
 
 
@@ -437,13 +437,13 @@ Public Class TabMain
 
             If count = 1 Then
 
-                MetroMessageBox.Show(Me, "The account " & reg_id.Text & " already exist." & "The username " & reg_username.Text & " already exist. ", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "The account " & reg_id.Text & " already exist." & "The username " & reg_username.Text & " already exist. ", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
             Else
                 If ((reg_id.Text = "") Or (reg_cb_college.Text = "-") Or reg_cb_college.Text = "" Or (reg_fname.Text = "") Or (reg_lname.Text = "") Or (reg_username.Text = "") Or (reg_password.Text = "") Or (reg_Retype_password.Text = "") Or (reg_cb_usertype.Text = "-")) Then
 
-                    MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                 Else
@@ -455,14 +455,14 @@ Public Class TabMain
                     Dim tempuser As String
 
                     If reg_password.Text <> reg_Retype_password.Text Then
-                        MetroMessageBox.Show(Me, "Password do not match", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "Password do not match", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Else
                         reader = Command.ExecuteReader
 
                         tempuser = lb_showuser.Text
                         lb_showuser.Items.Add(tempuser)
 
-                        MetroMessageBox.Show(Me, "Account Registered!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Account Registered!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         MysqlConn.Close()
 
@@ -493,11 +493,11 @@ Public Class TabMain
 
 
         If reg_id.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected user.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected user.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If a = vbYes Then
                 Command = New MySqlCommand
@@ -522,7 +522,7 @@ Public Class TabMain
                     reg_username.Text = ""
                     reg_password.Text = ""
                     reg_Retype_password.Text = ""
-                    MetroMessageBox.Show(Me, "Account Deleted!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Account Deleted!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
 
@@ -575,9 +575,9 @@ Public Class TabMain
         Dim a As Integer
 
         If reg_id.Text = "" And reg_username.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected user.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected user.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this account?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update this account?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
                 Try
                     MysqlConn.Open()
@@ -597,7 +597,7 @@ Public Class TabMain
 
 
                         If ((reg_id.Text = "") Or (reg_cb_college.Text = "-") Or reg_cb_college.Text = "" Or (reg_fname.Text = "") Or (reg_lname.Text = "") Or (reg_username.Text = "") Or (reg_password.Text = "") Or (reg_Retype_password.Text = "") Or (reg_cb_usertype.Text = "-")) Then
-                            MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                         Else
@@ -612,10 +612,10 @@ Public Class TabMain
 
 
                             If reg_password.Text <> reg_Retype_password.Text Then
-                                MetroMessageBox.Show(Me, "Password do not match", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                MetroMessageBox.Show(Me, "Password do not match", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                             Else
                                 reader = Command.ExecuteReader
-                                MetroMessageBox.Show(Me, "Account Updated!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MetroMessageBox.Show(Me, "Account Updated!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 reg_password.Text = ""
                                 reg_Retype_password.Text = ""
 
@@ -799,22 +799,22 @@ Public Class TabMain
 
         Dim bsource As New BindingSource
         Try
-            mysqlconn.Open()
+            MysqlConn.Open()
             Dim query As String
             query = "select eventid as 'EventID' , date as 'Date',TimeFrom as'From' ,TimeTo as 'To' , location as 'Location' , events as 'Events',school as 'School/Organization',kpi as'KPI',noa as'Nature of Activity',remarks as 'Remarks' from `saoevent" & My.Settings.schoolyear & "` order by eventid desc"
-            Command = New MySqlCommand(query, mysqlconn)
+            Command = New MySqlCommand(query, MysqlConn)
             SDA.SelectCommand = Command
             SDA.Fill(dbdataset)
             bsource.DataSource = dbdataset
             DataGridView2.DataSource = bsource
             SDA.Update(dbdataset)
 
-            mysqlconn.Close()
+            MysqlConn.Close()
 
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         Finally
-            mysqlconn.Dispose()
+            MysqlConn.Dispose()
         End Try
     End Sub
 
@@ -858,7 +858,7 @@ Public Class TabMain
     Private Sub TabMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         'FOR CLOSING CONFIRMATION OF CLOSING THE APP
         Dim dialog As DialogResult
-        dialog = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        dialog = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If dialog = DialogResult.No Then
             e.Cancel = True
@@ -900,7 +900,7 @@ Public Class TabMain
         'EXIT CONTROL
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Application.ExitThread()
@@ -915,7 +915,7 @@ Public Class TabMain
         'LOGOUT CONTROL
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Me.Dispose()
@@ -1138,7 +1138,7 @@ Public Class TabMain
 
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to add an event?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to add an event?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             TabControl1.SelectedTab = TP_Event
@@ -1152,7 +1152,7 @@ Public Class TabMain
     Private Sub btn_useradding_Click(sender As Object, e As EventArgs) Handles btn_home_useradding.Click
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to add a user?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to add a user?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             TabControl1.SelectedTab = TP_User
@@ -1164,7 +1164,7 @@ Public Class TabMain
     Private Sub DataGridView3_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentDoubleClick
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             Notes.Show()
@@ -1194,7 +1194,7 @@ Public Class TabMain
 
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change this selected event?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to change this selected event?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             TabControl1.SelectedTab = TP_Event
@@ -1379,59 +1379,6 @@ Public Class TabMain
     End Sub
 
 
-
-    Private Sub BackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupToolStripMenuItem.Click
-        Dim file As String
-        sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
-        If sfd.ShowDialog = DialogResult.OK Then
-            file = sfd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = "C:\Program Files\MySQL\MySQL Server 5.7\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ > """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        End If
-
-        'Process.Start("C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe", " -u root -p root saoinfo -r ""C:\Users\Angelo Umali\Desktop\backup.sql""")
-
-    End Sub
-
-
-    Private Sub RestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestoreToolStripMenuItem.Click
-        Dim file As String
-        opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
-        If opd.ShowDialog = DialogResult.OK Then
-            file = opd.FileName
-            Dim myProcess As New Process()
-            myProcess.StartInfo.FileName = "cmd.exe"
-            myProcess.StartInfo.UseShellExecute = False
-            myProcess.StartInfo.WorkingDirectory = "C:\Program Files\MySQL\MySQL Server 5.7\bin"
-            myProcess.StartInfo.RedirectStandardInput = True
-            myProcess.StartInfo.RedirectStandardOutput = True
-            myProcess.Start()
-            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
-            Dim mystreamreader As StreamReader = myProcess.StandardOutput
-            myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ < """ + file + """ ")
-            myStreamWriter.Close()
-            myProcess.WaitForExit()
-            myProcess.Close()
-            MetroMessageBox.Show(Me, "Database Restored successfully!", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        End If
-
-    End Sub
-
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
         SettingsForm.Show()
     End Sub
@@ -1549,5 +1496,106 @@ Public Class TabMain
     Private Sub RatingFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RatingFormToolStripMenuItem.Click
         rfAdminHome.Show()
         Hide()
+    End Sub
+
+
+    Private Sub srmsBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles srmsBackupToolStripMenuItem.Click
+        Dim file As String
+        sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
+        If sfd.ShowDialog = DialogResult.OK Then
+            file = sfd.FileName
+            Dim myProcess As New Process()
+            myProcess.StartInfo.FileName = "cmd.exe"
+            myProcess.StartInfo.UseShellExecute = False
+            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+            myProcess.StartInfo.RedirectStandardInput = True
+            myProcess.StartInfo.RedirectStandardOutput = True
+            myProcess.Start()
+            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+            Dim mystreamreader As StreamReader = myProcess.StandardOutput
+            myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ > """ + file + """ ")
+            myStreamWriter.Close()
+            myProcess.WaitForExit()
+            myProcess.Close()
+            MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+
+        'Process.Start("C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe", " -u root -p root saoinfo -r ""C:\Users\Angelo Umali\Desktop\backup.sql""")
+    End Sub
+
+    Private Sub srmsRestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles srmsRestoreToolStripMenuItem.Click
+        Dim file As String
+        opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        If opd.ShowDialog = DialogResult.OK Then
+            file = opd.FileName
+            Dim myProcess As New Process()
+            myProcess.StartInfo.FileName = "cmd.exe"
+            myProcess.StartInfo.UseShellExecute = False
+            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+            myProcess.StartInfo.RedirectStandardInput = True
+            myProcess.StartInfo.RedirectStandardOutput = True
+            myProcess.Start()
+            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+            Dim mystreamreader As StreamReader = myProcess.StandardOutput
+            myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & My.Settings.Database & """ < """ + file + """ ")
+            myStreamWriter.Close()
+            myProcess.WaitForExit()
+            myProcess.Close()
+            MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+    End Sub
+
+    Private Sub rfmsBackupToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles rfmsBackupToolStripMenuItem1.Click
+        Dim file As String
+        Dim remozdb As String = "ceuratingforms"
+        sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
+        If sfd.ShowDialog = DialogResult.OK Then
+            file = sfd.FileName
+            Dim myProcess As New Process()
+            myProcess.StartInfo.FileName = "cmd.exe"
+            myProcess.StartInfo.UseShellExecute = False
+            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+            myProcess.StartInfo.RedirectStandardInput = True
+            myProcess.StartInfo.RedirectStandardOutput = True
+            myProcess.Start()
+            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+            Dim mystreamreader As StreamReader = myProcess.StandardOutput
+            myStreamWriter.WriteLine("mysqldump -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ > """ + file + """ ")
+            myStreamWriter.Close()
+            myProcess.WaitForExit()
+            myProcess.Close()
+            MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+
+        'Process.Start("C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe", " -u root -p root saoinfo -r ""C:\Users\Angelo Umali\Desktop\backup.sql""")
+    End Sub
+
+    Private Sub rfmsRestoreToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles rfmsRestoreToolStripMenuItem1.Click
+        Dim file As String
+        Dim remozdb As String = "ceuratingforms"
+        opd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
+        If opd.ShowDialog = DialogResult.OK Then
+            file = opd.FileName
+            Dim myProcess As New Process()
+            myProcess.StartInfo.FileName = "cmd.exe"
+            myProcess.StartInfo.UseShellExecute = False
+            myProcess.StartInfo.WorkingDirectory = Environment.CurrentDirectory = Environment.GetEnvironmentVariable("userprofile") & "\Documents\saodb\bin"
+            myProcess.StartInfo.RedirectStandardInput = True
+            myProcess.StartInfo.RedirectStandardOutput = True
+            myProcess.Start()
+            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+            Dim mystreamreader As StreamReader = myProcess.StandardOutput
+            myStreamWriter.WriteLine("mysql -u " & My.Settings.SUsername & " --password=" & My.Settings.SPassword & " -h " & My.Settings.Server & " """ & remozdb & """ < """ + file + """ ")
+            myStreamWriter.Close()
+            myProcess.WaitForExit()
+            myProcess.Close()
+            MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
     End Sub
 End Class

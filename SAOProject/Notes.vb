@@ -27,13 +27,13 @@ Public Class Notes
 
         If tb_reminder.Text = "" Or rtb_reminder.Text = "" Then
 
-            MetroMessageBox.Show(Me, "No Selected Note.", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No Selected Note.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
         Else
 
 
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this note?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this note?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If a = vbYes Then
                 Dim reader As MySqlDataReader
@@ -51,7 +51,7 @@ Public Class Notes
 
                     rtb_reminder.Text = ""
                     dtp_reminder.Text = ""
-                    MetroMessageBox.Show(Me, "Note Deleted", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Note Deleted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     MysqlConn.Close()
 
@@ -95,10 +95,10 @@ Public Class Notes
 
 
         If tb_reminder.Text = "" Or rtb_reminder.Text = "" Then
-            MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this note?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update this note?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If a = vbYes Then
                 Dim reader As MySqlDataReader
@@ -129,7 +129,7 @@ Public Class Notes
 
                     Else
                         If tb_reminder.Text = "" Or rtb_reminder.Text = "" Or dtp_reminder.Text = "" Then
-                            MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                         Else
                             MysqlConn.Close()
@@ -141,7 +141,7 @@ Public Class Notes
 
                             Command = New MySqlCommand(query, MysqlConn)
                             reader = Command.ExecuteReader
-                            MetroMessageBox.Show(Me, "Note Updated", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Note Updated", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                             MysqlConn.Close()
 
@@ -211,7 +211,7 @@ Public Class Notes
 
             Else
                 If tb_reminder.Text = "" Or rtb_reminder.Text = "" Or dtp_reminder.Text = "" Then
-                    MetroMessageBox.Show(Me, "Please fill all fields", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                 Else
                     MysqlConn.Close()
@@ -221,7 +221,7 @@ Public Class Notes
                     query = "insert into saoinfo.saoreminder (saonotenumber,saoreminderdate,saonote) values ('" & tb_reminder.Text & "' , '" & Format(CDate(dtp_reminder.Value), "yyyy-MM-dd") & "' ,'" & rtb_reminder.Text & "')"
                     Command = New MySqlCommand(query, MysqlConn)
                     reader = Command.ExecuteReader
-                    MetroMessageBox.Show(Me, "Note Submitted", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Note Submitted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     MysqlConn.Close()
                 End If

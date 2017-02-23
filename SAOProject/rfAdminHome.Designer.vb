@@ -28,14 +28,14 @@ Partial Class rfAdminHome
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.lblUsername = New MetroFramework.Controls.MetroLabel()
         Me.lblTime = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.tmrDay = New System.Windows.Forms.Timer(Me.components)
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.tillogout = New MetroFramework.Controls.MetroTile()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tilList = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.tilStudents = New MetroFramework.Controls.MetroTile()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.tmrDay = New System.Windows.Forms.Timer(Me.components)
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,17 +91,37 @@ Partial Class rfAdminHome
         Me.lblTime.Text = "Time"
         Me.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'MetroLabel1
+        'tmrDay
         '
-        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(257, 411)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel1.TabIndex = 33
-        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.tmrDay.Enabled = True
+        '
+        'Label25
+        '
+        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(198, 23)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(374, 66)
+        Me.Label25.TabIndex = 48
+        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
+        '
+        'tillogout
+        '
+        Me.tillogout.ActiveControl = Nothing
+        Me.tillogout.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.tillogout.Location = New System.Drawing.Point(381, 243)
+        Me.tillogout.Name = "tillogout"
+        Me.tillogout.Size = New System.Drawing.Size(110, 110)
+        Me.tillogout.Style = MetroFramework.MetroColorStyle.Pink
+        Me.tillogout.TabIndex = 49
+        Me.tillogout.Text = "Log-out"
+        Me.tillogout.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tillogout.TileImage = Global.SAOProject.My.Resources.Resources.ic_exit_to_app_white_48dp_1x
+        Me.tillogout.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.tillogout.UseSelectable = True
+        Me.tillogout.UseTileImage = True
         '
         'PictureBox2
         '
@@ -118,7 +138,7 @@ Partial Class rfAdminHome
         '
         Me.tilList.ActiveControl = Nothing
         Me.tilList.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tilList.Location = New System.Drawing.Point(334, 227)
+        Me.tilList.Location = New System.Drawing.Point(265, 243)
         Me.tilList.Name = "tilList"
         Me.tilList.Size = New System.Drawing.Size(110, 110)
         Me.tilList.Style = MetroFramework.MetroColorStyle.Pink
@@ -134,7 +154,7 @@ Partial Class rfAdminHome
         '
         Me.tilHome.ActiveControl = Nothing
         Me.tilHome.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tilHome.Location = New System.Drawing.Point(450, 227)
+        Me.tilHome.Location = New System.Drawing.Point(497, 243)
         Me.tilHome.Name = "tilHome"
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
@@ -150,7 +170,7 @@ Partial Class rfAdminHome
         '
         Me.tilStudents.ActiveControl = Nothing
         Me.tilStudents.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tilStudents.Location = New System.Drawing.Point(218, 227)
+        Me.tilStudents.Location = New System.Drawing.Point(149, 243)
         Me.tilStudents.Name = "tilStudents"
         Me.tilStudents.Size = New System.Drawing.Size(110, 110)
         Me.tilStudents.Style = MetroFramework.MetroColorStyle.Pink
@@ -172,28 +192,13 @@ Partial Class rfAdminHome
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
         '
-        'tmrDay
-        '
-        Me.tmrDay.Enabled = True
-        '
-        'Label25
-        '
-        Me.Label25.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.Color.DimGray
-        Me.Label25.Location = New System.Drawing.Point(198, 23)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(374, 66)
-        Me.Label25.TabIndex = 48
-        Me.Label25.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office"
-        '
         'rfAdminHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(757, 451)
+        Me.Controls.Add(Me.tillogout)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lnkNotif)
@@ -201,8 +206,8 @@ Partial Class rfAdminHome
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.tilStudents)
-        Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfAdminHome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CEU-SAO Rating Forms Management System"
@@ -223,8 +228,8 @@ Partial Class rfAdminHome
     Friend WithEvents lblTime As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilHome As MetroFramework.Controls.MetroTile
     Friend WithEvents tilStudents As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tmrDay As Timer
     Friend WithEvents Label25 As Label
+    Friend WithEvents tillogout As MetroFramework.Controls.MetroTile
 End Class

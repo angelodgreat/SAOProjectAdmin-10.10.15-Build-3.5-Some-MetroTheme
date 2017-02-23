@@ -66,7 +66,6 @@ Partial Class rfApproveForms
         Me.rf7TotalPoints = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnApprove = New MetroFramework.Controls.MetroButton()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.rf4ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabVRF = New MetroFramework.Controls.MetroTabControl()
         Me.tabRF1 = New MetroFramework.Controls.MetroTabPage()
@@ -403,18 +402,6 @@ Partial Class rfApproveForms
         Me.DataGridViewTextBoxColumn5.HeaderText = "Title of Activity"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(288, 701)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel1.TabIndex = 50
-        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rf4ID
         '
@@ -823,7 +810,6 @@ Partial Class rfApproveForms
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.btnApprove)
         Me.Controls.Add(Me.tilExit)
-        Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tabVRF)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
@@ -877,7 +863,6 @@ Partial Class rfApproveForms
     Friend WithEvents btnApprove As MetroFramework.Controls.MetroButton
     Friend WithEvents tilExit As MetroFramework.Controls.MetroTile
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents rf4ID As DataGridViewTextBoxColumn
     Friend WithEvents tabVRF As MetroFramework.Controls.MetroTabControl
     Friend WithEvents tabRF1 As MetroFramework.Controls.MetroTabPage

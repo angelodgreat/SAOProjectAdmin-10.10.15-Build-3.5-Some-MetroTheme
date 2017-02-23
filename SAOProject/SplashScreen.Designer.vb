@@ -40,7 +40,7 @@ Partial Class SplashScreen
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(36, 9)
+        Me.Label1.Location = New System.Drawing.Point(33, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(355, 90)
@@ -52,7 +52,7 @@ Partial Class SplashScreen
         '
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(189, 126)
+        Me.GroupBox1.Location = New System.Drawing.Point(191, 126)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(197, 160)
         Me.GroupBox1.TabIndex = 8
@@ -67,25 +67,26 @@ Partial Class SplashScreen
         Me.Label2.Location = New System.Drawing.Point(7, 28)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(172, 80)
+        Me.Label2.Size = New System.Drawing.Size(174, 128)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Umali, Christian Angelo R." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Remos, Mahealani Joy G." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Haidee M. Valin"
+        Me.Label2.Text = "Project Manager: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Haidee M. Valin" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Programmers:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Umali, Christian Angelo R." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "R" &
+    "emos, Mahealani Joy G.  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(70, 369)
+        Me.Label3.Location = New System.Drawing.Point(72, 369)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(282, 25)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "All Rights Reserved 2015-2017"
+        Me.Label3.Text = "All Rights Reserved 2017-2018"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SAOProject.My.Resources.Resources.ceu
-        Me.PictureBox1.Location = New System.Drawing.Point(29, 126)
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 126)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(160, 160)
         Me.PictureBox1.TabIndex = 9
@@ -93,7 +94,7 @@ Partial Class SplashScreen
         '
         'prgb
         '
-        Me.prgb.Location = New System.Drawing.Point(88, 343)
+        Me.prgb.Location = New System.Drawing.Point(90, 343)
         Me.prgb.Name = "prgb"
         Me.prgb.Size = New System.Drawing.Size(252, 23)
         Me.prgb.Style = MetroFramework.MetroColorStyle.Green

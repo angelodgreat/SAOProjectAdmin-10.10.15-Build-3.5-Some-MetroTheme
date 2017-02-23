@@ -22,7 +22,7 @@ Partial Class rfAddStudent
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfAddStudent))
         Me.btnCancel = New MetroFramework.Controls.MetroButton()
         Me.btnReset = New MetroFramework.Controls.MetroButton()
         Me.btnAdd = New MetroFramework.Controls.MetroButton()
@@ -47,17 +47,6 @@ Partial Class rfAddStudent
         Me.MetroPanel2.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MetroLabel9
-        '
-        Me.MetroLabel9.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel9.Location = New System.Drawing.Point(213, 261)
-        Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel9.TabIndex = 28
-        Me.MetroLabel9.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnCancel
         '
@@ -372,13 +361,13 @@ Partial Class rfAddStudent
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(689, 287)
-        Me.Controls.Add(Me.MetroLabel9)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.MetroLabel7)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.MetroPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "rfAddStudent"
         Me.Resizable = False
@@ -392,8 +381,6 @@ Partial Class rfAddStudent
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnCancel As MetroFramework.Controls.MetroButton
     Friend WithEvents btnReset As MetroFramework.Controls.MetroButton
     Friend WithEvents btnAdd As MetroFramework.Controls.MetroButton

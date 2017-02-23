@@ -159,7 +159,6 @@ Partial Class rfRatingForms
         Me.txtWeight = New MetroFramework.Controls.MetroTextBox()
         Me.txtTotal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.lblrfstudno = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel96 = New MetroFramework.Controls.MetroLabel()
         Me.lblrfstudname = New MetroFramework.Controls.MetroLabel()
@@ -2050,18 +2049,6 @@ Partial Class rfRatingForms
         Me.MetroLabel20.Size = New System.Drawing.Size(134, 19)
         Me.MetroLabel20.TabIndex = 8
         Me.MetroLabel20.Text = "Total Weighted Points"
-        '
-        'MetroLabel4
-        '
-        Me.MetroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel4.Location = New System.Drawing.Point(300, 739)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel4.TabIndex = 67
-        Me.MetroLabel4.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblrfstudno
         '
@@ -4041,7 +4028,7 @@ Partial Class rfRatingForms
         Me.tabRF1.HorizontalScrollbarSize = 10
         Me.tabRF1.Location = New System.Drawing.Point(4, 38)
         Me.tabRF1.Name = "tabRF1"
-        Me.tabRF1.Size = New System.Drawing.Size(785, 473)
+        Me.tabRF1.Size = New System.Drawing.Size(785, 449)
         Me.tabRF1.Style = MetroFramework.MetroColorStyle.Pink
         Me.tabRF1.TabIndex = 0
         Me.tabRF1.Text = "Rating Form 1"
@@ -4164,7 +4151,7 @@ Partial Class rfRatingForms
         Me.tabForms.Location = New System.Drawing.Point(19, 124)
         Me.tabForms.Name = "tabForms"
         Me.tabForms.SelectedIndex = 0
-        Me.tabForms.Size = New System.Drawing.Size(793, 515)
+        Me.tabForms.Size = New System.Drawing.Size(793, 491)
         Me.tabForms.Style = MetroFramework.MetroColorStyle.Pink
         Me.tabForms.TabIndex = 54
         Me.tabForms.UseSelectable = True
@@ -4482,10 +4469,9 @@ Partial Class rfRatingForms
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
-        Me.ClientSize = New System.Drawing.Size(855, 765)
+        Me.ClientSize = New System.Drawing.Size(855, 741)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.MetroPanel3)
-        Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.tilSaveAll)
         Me.Controls.Add(Me.lblrfstudno)
         Me.Controls.Add(Me.MetroLabel96)
@@ -4718,7 +4704,6 @@ Partial Class rfRatingForms
     Friend WithEvents txtWeight As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilSaveAll As MetroFramework.Controls.MetroTile
     Friend WithEvents lblrfstudno As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel96 As MetroFramework.Controls.MetroLabel

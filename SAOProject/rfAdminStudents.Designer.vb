@@ -25,7 +25,6 @@ Partial Class rfAdminStudents
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfAdminStudents))
         Me.tilAdd = New MetroFramework.Controls.MetroTile()
         Me.tipError = New MetroFramework.Components.MetroToolTip()
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.btnCancel = New MetroFramework.Controls.MetroButton()
         Me.btnSave = New MetroFramework.Controls.MetroButton()
         Me.btnPoints = New MetroFramework.Controls.MetroButton()
@@ -81,18 +80,6 @@ Partial Class rfAdminStudents
         Me.tipError.Style = MetroFramework.MetroColorStyle.Blue
         Me.tipError.StyleManager = Nothing
         Me.tipError.Theme = MetroFramework.MetroThemeStyle.Light
-        '
-        'MetroLabel11
-        '
-        Me.MetroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel11.Location = New System.Drawing.Point(256, 712)
-        Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel11.TabIndex = 45
-        Me.MetroLabel11.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnCancel
         '
@@ -540,10 +527,10 @@ Partial Class rfAdminStudents
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tilAdd)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.MetroLabel11)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfAdminStudents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CEU-SAO Rating Forms Management System"
@@ -562,7 +549,6 @@ Partial Class rfAdminStudents
     Friend WithEvents tilAdd As MetroFramework.Controls.MetroTile
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tipError As MetroFramework.Components.MetroToolTip
-    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilHome As MetroFramework.Controls.MetroTile
     Friend WithEvents btnCancel As MetroFramework.Controls.MetroButton
     Friend WithEvents btnSave As MetroFramework.Controls.MetroButton

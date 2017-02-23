@@ -23,7 +23,8 @@ Partial Class rfUniColPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfUniColPrint))
         Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
         Me.ReportViewer2 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -37,7 +38,6 @@ Partial Class rfUniColPrint
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.studsumTableAdapter = New SAOProject.rfPrints_tblTableAdapters.studsumTableAdapter()
         CType(Me.studsumBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rfPrints_tbl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,9 +59,9 @@ Partial Class rfUniColPrint
         Me.ReportViewer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.studsumBindingSource
-        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "DataSet1"
+        ReportDataSource2.Value = Me.studsumBindingSource
+        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer2.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
         Me.ReportViewer2.Location = New System.Drawing.Point(339, 112)
         Me.ReportViewer2.Name = "ReportViewer2"
@@ -190,18 +190,6 @@ Partial Class rfUniColPrint
     "e/School Filter: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please select a Year of Graduation " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "first before choosing " &
     "a College/School." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'MetroLabel6
-        '
-        Me.MetroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel6.Location = New System.Drawing.Point(439, 662)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel6.TabIndex = 61
-        Me.MetroLabel6.Text = "© Remos, Mahealani Joy G"
-        Me.MetroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'studsumTableAdapter
         '
         Me.studsumTableAdapter.ClearBeforeFill = True
@@ -211,7 +199,6 @@ Partial Class rfUniColPrint
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1131, 686)
-        Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstStudcmCS)
         Me.Controls.Add(Me.MetroLabel5)
@@ -222,6 +209,7 @@ Partial Class rfUniColPrint
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.ReportViewer2)
         Me.Controls.Add(Me.tilBack)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfUniColPrint"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
@@ -243,7 +231,6 @@ Partial Class rfUniColPrint
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents studsumBindingSource As BindingSource
     Friend WithEvents rfPrints_tbl As rfPrints_tbl
     Friend WithEvents studsumTableAdapter As rfPrints_tblTableAdapters.studsumTableAdapter

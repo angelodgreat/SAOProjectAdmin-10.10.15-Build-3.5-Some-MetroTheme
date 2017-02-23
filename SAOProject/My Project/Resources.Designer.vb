@@ -163,6 +163,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property ic_exit_to_app_white_48dp_1x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_exit_to_app_white_48dp_1x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property ic_file_multiple() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ic_file_multiple", resourceCulture)

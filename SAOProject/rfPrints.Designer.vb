@@ -22,7 +22,7 @@ Partial Class rfPrints
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfPrints))
         Me.tilAll = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.tilStudents = New MetroFramework.Controls.MetroTile()
@@ -32,18 +32,6 @@ Partial Class rfPrints
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(250, 289)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel1.TabIndex = 33
-        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tilAll
         '
@@ -131,13 +119,14 @@ Partial Class rfPrints
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(760, 318)
         Me.Controls.Add(Me.Label25)
-        Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.tilAll)
         Me.Controls.Add(Me.tilStudents)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfPrints"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CEU-SAO Rating Forms Management System"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -145,8 +134,6 @@ Partial Class rfPrints
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilHome As MetroFramework.Controls.MetroTile
     Friend WithEvents tilAll As MetroFramework.Controls.MetroTile
     Friend WithEvents tilStudents As MetroFramework.Controls.MetroTile

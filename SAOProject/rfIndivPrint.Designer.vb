@@ -23,10 +23,10 @@ Partial Class rfIndivPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfIndivPrint))
         Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.tilBack = New MetroFramework.Controls.MetroTile()
         Me.tilHome = New MetroFramework.Controls.MetroTile()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -46,18 +46,6 @@ Partial Class rfIndivPrint
         '
         Me.rfPrints_tbl.DataSetName = "rfPrints_tbl"
         Me.rfPrints_tbl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(245, 528)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel1.TabIndex = 54
-        Me.MetroLabel1.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tilBack
         '
@@ -97,9 +85,9 @@ Partial Class rfIndivPrint
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ReportViewer1.DocumentMapWidth = 27
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.allrfBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "DataSet1"
+        ReportDataSource2.Value = Me.allrfBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report3.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(35, 76)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -138,12 +126,12 @@ Partial Class rfIndivPrint
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(750, 556)
-        Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.tilBack)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.MetroLabel8)
         Me.Controls.Add(Me.cmb_studentNames)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfIndivPrint"
         Me.Style = MetroFramework.MetroColorStyle.Pink
         CType(Me.allrfBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -152,8 +140,6 @@ Partial Class rfIndivPrint
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilBack As MetroFramework.Controls.MetroTile
     Friend WithEvents tilHome As MetroFramework.Controls.MetroTile
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer

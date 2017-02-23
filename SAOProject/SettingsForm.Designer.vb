@@ -31,6 +31,7 @@ Partial Class SettingsForm
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SettingsForm))
         Me.mt_schoolyear = New MetroFramework.Controls.MetroTile()
         Me.grp_loc = New System.Windows.Forms.GroupBox()
         Me.mbtn_clearloc = New MetroFramework.Controls.MetroButton()
@@ -81,7 +82,7 @@ Partial Class SettingsForm
         'mt_schoolyear
         '
         Me.mt_schoolyear.ActiveControl = Nothing
-        Me.mt_schoolyear.Location = New System.Drawing.Point(41, 31)
+        Me.mt_schoolyear.Location = New System.Drawing.Point(36, 31)
         Me.mt_schoolyear.Name = "mt_schoolyear"
         Me.mt_schoolyear.Size = New System.Drawing.Size(93, 94)
         Me.mt_schoolyear.TabIndex = 0
@@ -507,7 +508,7 @@ Partial Class SettingsForm
         Me.grp_mainsettings.Controls.Add(Me.grp_kpi)
         Me.grp_mainsettings.Controls.Add(Me.grp_org)
         Me.grp_mainsettings.Controls.Add(Me.grp_loc)
-        Me.grp_mainsettings.Location = New System.Drawing.Point(23, 131)
+        Me.grp_mainsettings.Location = New System.Drawing.Point(18, 131)
         Me.grp_mainsettings.Name = "grp_mainsettings"
         Me.grp_mainsettings.Size = New System.Drawing.Size(639, 260)
         Me.grp_mainsettings.TabIndex = 6
@@ -517,7 +518,7 @@ Partial Class SettingsForm
         'mt_showorg
         '
         Me.mt_showorg.ActiveControl = Nothing
-        Me.mt_showorg.Location = New System.Drawing.Point(140, 31)
+        Me.mt_showorg.Location = New System.Drawing.Point(135, 31)
         Me.mt_showorg.Name = "mt_showorg"
         Me.mt_showorg.Size = New System.Drawing.Size(113, 94)
         Me.mt_showorg.TabIndex = 7
@@ -527,7 +528,7 @@ Partial Class SettingsForm
         'mt_showloc
         '
         Me.mt_showloc.ActiveControl = Nothing
-        Me.mt_showloc.Location = New System.Drawing.Point(259, 31)
+        Me.mt_showloc.Location = New System.Drawing.Point(254, 31)
         Me.mt_showloc.Name = "mt_showloc"
         Me.mt_showloc.Size = New System.Drawing.Size(93, 94)
         Me.mt_showloc.TabIndex = 8
@@ -537,7 +538,7 @@ Partial Class SettingsForm
         'mt_showkpi
         '
         Me.mt_showkpi.ActiveControl = Nothing
-        Me.mt_showkpi.Location = New System.Drawing.Point(358, 31)
+        Me.mt_showkpi.Location = New System.Drawing.Point(353, 31)
         Me.mt_showkpi.Name = "mt_showkpi"
         Me.mt_showkpi.Size = New System.Drawing.Size(93, 94)
         Me.mt_showkpi.TabIndex = 9
@@ -557,6 +558,7 @@ Partial Class SettingsForm
         Me.Controls.Add(Me.ran_loc)
         Me.Controls.Add(Me.ran_org)
         Me.Controls.Add(Me.mt_schoolyear)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SettingsForm"

@@ -1,4 +1,5 @@
-﻿Public Class rfAdminHome
+﻿Imports MetroFramework
+Public Class rfAdminHome
     Dim notifs As Integer
 
     Private Sub FrmAdHome_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
@@ -76,5 +77,17 @@
 
     Private Sub tmrDay_Tick(sender As Object, e As EventArgs) Handles tmrDay.Tick
         lblTime.Text = Date.Now.ToString("hh:mm:ss tt")
+    End Sub
+
+    Private Sub tillogout_Click(sender As Object, e As EventArgs) Handles tillogout.Click
+        Dim a As Integer
+
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+
+        If a = vbYes Then
+            Me.Dispose()
+            Login.Show()
+        Else
+        End If
     End Sub
 End Class

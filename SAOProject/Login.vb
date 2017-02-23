@@ -83,7 +83,7 @@ Public Class Login
                         usertype = "Admin"
 
                         Me.Hide()
-                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
                         SetAccess(usertype)
@@ -109,7 +109,7 @@ Public Class Login
                     ElseIf reader.GetString("usertype") = "SuperAdmin" Then
                         usertype = "SuperAdmin"
                         Me.Hide()
-                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Super Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
                         SetAccess(usertype)
@@ -131,7 +131,7 @@ Public Class Login
                     Else
 
                         Me.Hide()
-                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                         GuestOnly.welcomeguest.Text = "Welcome Guest, " & reader.GetString("fname") + " " + reader.GetString("lname")
@@ -157,7 +157,7 @@ Public Class Login
 
                 Else
                     attempt = attempt + 1
-                    MetroMessageBox.Show(Me, "The username/password does not exist", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    MetroMessageBox.Show(Me, "The username/password does not exist", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Stop)
 
                     tb_password.Text = ""
                     tb_username.Text = ""
@@ -193,7 +193,7 @@ Public Class Login
         'EXIT CONTROL
         Dim a As Integer
         Me.TopMost = False
-        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Application.ExitThread()

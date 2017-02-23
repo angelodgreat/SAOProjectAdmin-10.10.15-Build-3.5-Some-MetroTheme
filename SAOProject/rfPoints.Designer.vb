@@ -27,7 +27,6 @@ Partial Class rfPoints
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.txtNum = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
@@ -69,18 +68,6 @@ Partial Class rfPoints
         Me.MetroLabel3.Size = New System.Drawing.Size(47, 19)
         Me.MetroLabel3.TabIndex = 4
         Me.MetroLabel3.Text = "Award"
-        '
-        'MetroLabel11
-        '
-        Me.MetroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.MetroLabel11.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel11.Location = New System.Drawing.Point(181, 402)
-        Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(260, 20)
-        Me.MetroLabel11.TabIndex = 41
-        Me.MetroLabel11.Text = "©Remos, Mahealani Joy G."
-        Me.MetroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtNum
         '
@@ -349,10 +336,10 @@ Partial Class rfPoints
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.tilVForms)
-        Me.Controls.Add(Me.MetroLabel11)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.tilAdd)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rfPoints"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CEU-SAO Rating Forms Management System"
@@ -372,7 +359,6 @@ Partial Class rfPoints
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents tilVForms As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNum As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
