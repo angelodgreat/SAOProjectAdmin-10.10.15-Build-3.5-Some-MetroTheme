@@ -82,7 +82,7 @@ Public Class rfAdminHome
     Private Sub tillogout_Click(sender As Object, e As EventArgs) Handles tillogout.Click
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "Student Affairs Office Consolidated Calendar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Me.Dispose()

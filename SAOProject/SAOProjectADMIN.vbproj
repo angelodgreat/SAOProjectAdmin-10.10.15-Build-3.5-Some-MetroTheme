@@ -148,9 +148,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Telerik.WinControls, Version=2016.2.503.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.UI, Version=2016.2.503.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2016.2.503.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -498,6 +495,7 @@
     <Content Include="Resources\ic_refresh_white_48dp_1x.png" />
     <Content Include="Resources\ic_save_white_48dp_1x.png" />
     <Content Include="Resources\ic_school_white_48dp_1x.png" />
+    <None Include="Resources\ic_view_list_white_48dp_1x.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="packages.config" />
