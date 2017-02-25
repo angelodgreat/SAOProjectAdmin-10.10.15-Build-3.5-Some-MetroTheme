@@ -63,7 +63,7 @@ Module GlobalVariableodule
 
     End Function
 
-    Public Function count(ByVal query As String, ByVal nCol As Integer) As Integer
+    Public Function Count(ByVal query As String, ByVal nCol As Integer) As Integer
         Dim list As ArrayList = RetrieveQuery(query, nCol)
         Return list.Count
     End Function

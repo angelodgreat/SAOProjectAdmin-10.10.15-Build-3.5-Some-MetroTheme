@@ -686,15 +686,61 @@ Public Class SettingsForm
             If question = vbYes Then
                 query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & goldp & "' WHERE award = 'Gold'; "
                 ExecuteQuery(query)
+
                 query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & silp & "' WHERE award = 'Silver'; "
                 ExecuteQuery(query)
+
                 query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & brop & "' WHERE award = 'Bronze'; "
                 ExecuteQuery(query)
+
                 MetroMessageBox.Show(Me, "Changes were saved successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK)
 
+                UpdatePointsInfo()
             Else
                 MetroMessageBox.Show(Me, "Changes were not saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
+            End If
+
+        End If
+    End Sub
+
+    Private Sub UpdatePointsInfo()
+        query = "SELECT award,minPoint FROM ceuratingforms.points_ranges"
+
+        If Count(query, 2) <> 0 Then
+            Dim minPoints As ArrayList = RetrieveQuery(query, 2)
+            Dim batchQuery As ArrayList = New ArrayList
+
+            query = "SELECT StudNo, TotalPoints FROM ceuratingforms.pointsinfo"
+
+            If Count(query, 2) Then
+                Dim allPoints As ArrayList = RetrieveQuery(query, 2)
+
+                For Each points As ArrayList In allPoints
+                    Dim studNo As String = points(0).ToString
+                    Dim point As Integer = Integer.Parse(points(1).ToString)
+                    Dim remarks As String = String.Empty
+
+                    Dim minGold = minPoints(0)(1)
+                    Dim minSilver = minPoints(1)(1)
+                    Dim minBronze = minPoints(2)(1)
+
+                    If point >= minGold Then
+                        remarks = minPoints(0)(0)
+                    ElseIf point >= minSilver Then
+                        remarks = minPoints(1)(0)
+                    ElseIf point >= minBronze Then
+                        remarks = minPoints(2)(0)
+                    End If
+
+                    batchQuery.Add("UPDATE pointsinfo SET remarks = '" & remarks & "' WHERE StudNo = '" & studNo & "'")
+                Next
+            End If
+
+            If batchQuery.Count() > 0 Then
+                For Each query In batchQuery
+                    ExecuteQuery(query)
+                Next
             End If
         End If
     End Sub

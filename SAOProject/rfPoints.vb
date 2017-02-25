@@ -43,7 +43,7 @@
         txtNum.Text = studNo
         txtName.Text = firstName & " " & middle & " " & surname
         Dim query = "SELECT * FROM ceuratingforms.pointsinfo WHERE StudNo = '" & studNo & "'"
-        If (count(query, 3)) <> 0 Then
+        If (Count(query, 3)) <> 0 Then
             studentInfo = RetrieveQuery(query, 3)
             txtPoints.Text = studentInfo(0)(1).ToString()
             txtRemarks.Text = studentInfo(0)(2).ToString()

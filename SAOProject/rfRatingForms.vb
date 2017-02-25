@@ -1427,42 +1427,65 @@
     End Sub
 
     Public Function GetRemarks(ByVal points As Integer) As String
-        Dim ct As Integer
-        Dim gold As Integer
-        Dim sil As Integer
-        Dim bro As Integer
-        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
-        ct = count(query, 1)
-        If ct <> 0 Then
-            Dim ggeld = RetrieveQuery(query, 1)
-            gold = ggeld(0)(0).ToString
-        End If
-        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver'; "
-        ct = count(query, 1)
-        If ct <> 0 Then
-            Dim gsil = RetrieveQuery(query, 1)
-            sil = gsil(0)(0).ToString
-        End If
-        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze'; "
-        ct = count(query, 1)
-        If ct <> 0 Then
-            Dim gbro = RetrieveQuery(query, 1)
-            bro = gbro(0)(0).ToString
-        End If
-        MsgBox(gold + sil + bro)
-        Dim remarks As String = String.Empty
-        If points >= gold Then
-            remarks = "Gold"
-        ElseIf points >= sil Then
-            remarks = "Silver"
+        'Dim ct As Integer
+        'Dim gold As Integer
+        'Dim sil As Integer
+        'Dim bro As Integer
+        'query = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
+        'ct = count(query, 1)
+        'If ct <> 0 Then
+        '    Dim ggeld = RetrieveQuery(query, 1)
+        '    gold = ggeld(0)(0).ToString
+        'End If
+        'query = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver'; "
+        'ct = count(query, 1)
+        'If ct <> 0 Then
+        '    Dim gsil = RetrieveQuery(query, 1)
+        '    sil = gsil(0)(0).ToString
+        'End If
+        'query = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze'; "
+        'ct = count(query, 1)
+        'If ct <> 0 Then
+        '    Dim gbro = RetrieveQuery(query, 1)
+        '    bro = gbro(0)(0).ToString
+        'End If
+        'MsgBox(gold + sil + bro)
+        'Dim remarks As String = String.Empty
+        'If points >= gold Then
+        '    remarks = "Gold"
+        'ElseIf points >= sil Then
+        '    remarks = "Silver"
 
-        ElseIf points >= bro Then
-            remarks = "Bronze"
-        ElseIf points >= 0 Then
-            remarks = String.Empty
-        Else
-            MsgBox("Error")
+        'ElseIf points >= bro Then
+        '    remarks = "Bronze"
+        'ElseIf points >= 0 Then
+        '    remarks = String.Empty
+        'Else
+        '    MsgBox("Error")
+        'End If
+        'Return remarks
+
+        Dim remarks As String = String.Empty
+        query = "SELECT * FROM points_ranges"
+
+        If (Count(query, 2) <> 0) Then
+            Dim result As ArrayList = RetrieveQuery(query, 2)
+
+            Dim minGold As Integer = Integer.Parse(result(0)(1).ToString())
+            Dim minSilver As Integer = Integer.Parse(result(1)(1).ToString())
+            Dim minBronze As Integer = Integer.Parse(result(2)(1).ToString())
+
+            If points >= minGold Then
+                remarks = result(0)(0).ToString()
+            ElseIf points >= minSilver Then
+                remarks = result(1)(0).ToString()
+            ElseIf points >= minBronze Then
+                remarks = result(2)(0).ToString()
+            Else
+                MsgBox("Error")
+            End If
         End If
+
         Return remarks
     End Function
 
