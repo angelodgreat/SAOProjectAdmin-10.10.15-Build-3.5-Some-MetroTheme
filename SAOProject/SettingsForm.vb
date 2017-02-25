@@ -629,9 +629,26 @@ Public Class SettingsForm
 
     End Sub
     Private Sub loadpoints()
-        rfstxtminGold.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
-        rfstxtminSilver.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver';"
-        rfstxtminBronze.Text = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze';"
+        Dim ct As Integer
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim geld = RetrieveQuery(query, 1)
+            rfstxtminGold.Text = geld(0)(0).ToString
+        End If
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim sil = RetrieveQuery(query, 1)
+            rfstxtminSilver.Text = sil(0)(0).ToString
+        End If
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim bro = RetrieveQuery(query, 1)
+            rfstxtminBronze.Text = bro(0)(0).ToString
+        End If
+
     End Sub
 
     Private Sub rfsBtnEdit_Click(sender As Object, e As EventArgs) Handles rfsBtnEditSave.Click
@@ -665,10 +682,6 @@ Public Class SettingsForm
             Dim silp As Integer = Val(rfstxtminSilver.Text)
             Dim brop As Integer = Val(rfstxtminBronze.Text)
 
-            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & goldp & "' WHERE award = 'Gold'; "
-            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & silp & "' WHERE award = 'Silver'; "
-            query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & brop & "' WHERE award = 'Bronze'; "
-
             question = MetroMessageBox.Show(Me, "Are you sure you want to save this?", "CEU Student Organization Record and Rating Forms Management System ", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If question = vbYes Then
                 query = "UPDATE ceuratingforms.points_ranges SET minPoint = '" & goldp & "' WHERE award = 'Gold'; "
@@ -688,5 +701,10 @@ Public Class SettingsForm
 
     Private Sub rfsBtnCancel_Click(sender As Object, e As EventArgs) Handles rfsBtnCancel.Click
         loadpoints()
+        rfstxtminGold.Enabled = False
+        rfstxtminSilver.Enabled = False
+        rfstxtminBronze.Enabled = False
+        rfsBtnEditSave.Visible = True
+        rfsBtnSave.Visible = False
     End Sub
 End Class

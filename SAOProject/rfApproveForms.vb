@@ -30,14 +30,14 @@
         Select Case tabVRF.SelectedIndex
             Case 0
                 query = "UPDATE ceuratingforms.ratingform1 SET appr = 1 WHERE appr = 0"
-                query = "Select StudNo, totalPoints from ceuratingforms.ratingform1 WHERE appr = 0"
+                query = "Select StudentNo, totalPoints from ceuratingforms.ratingform1 WHERE appr = 0"
                 Dim results = RetrieveQuery(query, 2)
                 For Each result As ArrayList In results
                     Dim poist As Integer
                     Dim stud As String
                     stud = result(0).ToString
                     poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo WHERE StudNo = '" & stud & "'"
                     Dim studpoint = RetrieveQuery(query1, 1)
                     Dim total = Integer.Parse(studpoint(0)(0)).ToString()
                     Dim tol As Integer = poist + total

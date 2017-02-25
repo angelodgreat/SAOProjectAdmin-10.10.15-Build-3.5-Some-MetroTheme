@@ -1427,12 +1427,36 @@
     End Sub
 
     Public Function GetRemarks(ByVal points As Integer) As String
+        Dim ct As Integer
+        Dim gold As Integer
+        Dim sil As Integer
+        Dim bro As Integer
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Gold'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim ggeld = RetrieveQuery(query, 1)
+            gold = ggeld(0)(0).ToString
+        End If
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Silver'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim gsil = RetrieveQuery(query, 1)
+            sil = gsil(0)(0).ToString
+        End If
+        query = "Select minPoint from ceuratingforms.points_ranges where award = 'Bronze'; "
+        ct = count(query, 1)
+        If ct <> 0 Then
+            Dim gbro = RetrieveQuery(query, 1)
+            bro = gbro(0)(0).ToString
+        End If
+        MsgBox(gold + sil + bro)
         Dim remarks As String = String.Empty
-        If points >= Val(SettingsForm.rfstxtminGold.Text) Then
+        If points >= gold Then
             remarks = "Gold"
-        ElseIf points >= Val(SettingsForm.rfstxtminSilver.Text) Then
+        ElseIf points >= sil Then
             remarks = "Silver"
-        ElseIf points >= Val(SettingsForm.rfstxtminBronze.Text) Then
+
+        ElseIf points >= bro Then
             remarks = "Bronze"
         ElseIf points >= 0 Then
             remarks = String.Empty
@@ -1520,50 +1544,56 @@
                 ElseIf rf2comExt.SelectedIndex = -1 Then
                     tipError.Show("Please select extent of involvement.", rf2comExt)
                     rf2comExt.Select()
+
                 ElseIf rf2comActStat.SelectedIndex = -1 Then
                     tipError.Show("Please select activity status.", rf2comActStat)
                     rf2comActStat.Select()
-                ElseIf rf2comSup.SelectedIndex = -1 Then
-                    tipError.Show("Please select supervision.", rf2comSup)
-                    rf2comSup.Select()
+                ElseIf rf2comActStat.SelectedIndex = 1 Then
+                    If rf2comSup.SelectedIndex = -1 Then
+                        tipError.Show("Please select supervision.", rf2comSup)
+                        rf2comSup.Select()
+                    End If
                 ElseIf rf2comPosition.SelectedIndex = -1 Then
                     tipError.Show("Please select position/role.", rf2comPosition)
                     rf2comPosition.Select()
                 Else
+                    Dim act2 As String
                     Dim title = rf2txtTitle.Text
                     Dim level = rf2comExt.SelectedItem.ToString
                     Dim act = rf2comActStat.SelectedItem.ToString
-                    Dim act2 = rf2comSup.SelectedItem.ToString
+                    If rf2comSup.SelectedIndex Then
+                        act2 = rf2comSup.SelectedItem.ToString
+                    End If
                     Dim pos = rf2comPosition.SelectedItem.ToString
                     Dim rf2point = Val(rf2txtPoints.Text)
                     Dim rf2weight = Val(rf2txtWeight.Text)
-                    Dim rf2total = Val(rf2txtTWP.Text)
-                    Dim answer As MsgBoxResult
-                    If GetAccess() <> "Admin" Then
-                        answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
-                    End If
-                    If GetAccess() = "Admin" Or answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "") Then
-                        Dim query As String = "INSERT INTO ceuratingforms.ratingform2 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf2point & ", " & rf2weight & ", " & rf2total & " , " & approve & ")"
+                        Dim rf2total = Val(rf2txtTWP.Text)
+                        Dim answer As MsgBoxResult
+                        If GetAccess() <> "Admin" Then
+                            answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
+                        End If
+                        If GetAccess() = "Admin" Or answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "") Then
+                            Dim query As String = "INSERT INTO ceuratingforms.ratingform2 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & title & "', '" & level & "', '" & act & "','" & act2 & "' ,'" & pos & "'," & rf2point & ", " & rf2weight & ", " & rf2total & " , " & approve & ")"
 
-                        If ExecuteQuery(query) Then
-                            If approve = 1 Then
-                                Dim totalPoints As Integer = previousForm.GetPoints() + rf2total
-                                Dim remarks = GetRemarks(totalPoints)
+                            If ExecuteQuery(query) Then
+                                If approve = 1 Then
+                                    Dim totalPoints As Integer = previousForm.GetPoints() + rf2total
+                                    Dim remarks = GetRemarks(totalPoints)
 
-                                MsgBox("Form Added!")
-                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
-                                If ExecuteQuery(query) Then
-                                    MsgBox("Points Added!")
-                                    Reset(tabForms.SelectedIndex)
-                                    previousForm.SetPoints(totalPoints)
-                                    previousForm.setRemarks(remarks)
+                                    MsgBox("Form Added!")
+                                    query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                    If ExecuteQuery(query) Then
+                                        MsgBox("Points Added!")
+                                        Reset(tabForms.SelectedIndex)
+                                        previousForm.SetPoints(totalPoints)
+                                        previousForm.setRemarks(remarks)
+                                    End If
+
                                 End If
-
                             End If
                         End If
                     End If
-                End If
-            Case 2 'Rating Form 3
+                    Case 2 'Rating Form 3
                 If String.IsNullOrEmpty(rf3txtTitle.Text) Then
                     tipError.Show("Please enter title of activity.", rf3txtTitle)
                     rf3txtTitle.Select()
@@ -1573,17 +1603,26 @@
                 ElseIf rf3comActStat.SelectedIndex = -1 Then
                     tipError.Show("Please select activity status.", rf3comActStat)
                     rf3comActStat.Select()
-                ElseIf rf3comPrize.SelectedIndex = -1 Then
-                    tipError.Show("Please select place.", rf3comPrize)
-                    rf3comPrize.Select()
+                ElseIf rf3comActStat.SelectedIndex = 1 Then
+                    If rf3comPrize.SelectedIndex = -1 Then
+                        tipError.Show("Please select place.", rf3comPrize)
+                        rf3comPrize.Select()
+                    End If
                 ElseIf rf3comLvlAct.SelectedIndex = -1 Then
                     tipError.Show("Please select level of activity.", rf3comLvlAct)
                     rf3comLvlAct.Select()
+                ElseIf String.IsNullOrEmpty(rf3txtPoints.Text) Then
+                    tipError.Show("Please enter points.", rf3txtPoints)
+                    rf3txtPoints.Select()
                 Else
+                    Dim act2 As String
                     Dim title = rf3txtTitle.Text
                     Dim level = rf3comNatAct.SelectedItem.ToString
                     Dim act = rf3comActStat.SelectedItem.ToString
-                    Dim act2 = rf3comPrize.SelectedItem.ToString
+                    If rf3comPrize.SelectedIndex Then
+                        act2 = rf3comPrize.SelectedItem.ToString
+                    End If
+
                     Dim pos = rf3comLvlAct.SelectedItem.ToString
                     Dim rf3point = Val(rf3txtPoints.Text)
                     Dim rf3weight = Val(rf3txtWeight.Text)
@@ -1623,17 +1662,22 @@
                 ElseIf rf4comAct.SelectedIndex = -1 Then
                     tipError.Show("Please select activity status.", rf4comAct)
                     rf4comAct.Select()
-                ElseIf rf4comAward.SelectedIndex = -1 Then
-                    tipError.Show("Please select place.", rf4comAward)
-                    rf4comAward.Select()
+                ElseIf rf4comAct.SelectedIndex = 1 Then
+                    If rf4comAward.SelectedIndex = -1 Then
+                        tipError.Show("Please select place.", rf4comAward)
+                        rf4comAward.Select()
+                    End If
                 ElseIf rf4comLvlAct.SelectedIndex = -1 Then
                     tipError.Show("Please select level of activity.", rf4comLvlAct)
                     rf4comLvlAct.Select()
                 Else
+                    Dim act2 As String
                     Dim title = rf4txtTitle.Text
                     Dim level = rf4comNatAct.SelectedItem.ToString
                     Dim act = rf4comAct.SelectedItem.ToString
-                    Dim act2 = rf4comAward.SelectedItem.ToString
+                    If rf4comAward.SelectedIndex Then
+                        act2 = rf4comAward.SelectedItem.ToString
+                    End If
                     Dim pos = rf4comLvlAct.SelectedItem.ToString
                     Dim rf4point = Val(rf4txtPoints.Text)
                     Dim rf4weight = Val(rf4txtWeight.Text)
@@ -1840,21 +1884,26 @@
                 ElseIf rf6comLvlOf.SelectedIndex = -1 Then
                     tipError.Show("Please select level of office.", rf6comLvlOf)
                     rf6comLvlOf.Select()
+                ElseIf rf6comLvlOf.SelectedIndex = 2 Then
+                    If rf6comPubOrg.SelectedIndex = -1 Then
+                        tipError.Show("Please select publication/organization.", rf6comPubOrg)
+                        rf6comPubOrg.Select()
+                    End If
                 ElseIf rf6comPosition.SelectedIndex = -1 Then
                     tipError.Show("Please select position.", rf6comPosition)
                     rf6comPosition.Select()
-                ElseIf rf6comPubOrg.SelectedIndex = -1 Then
-                    tipError.Show("Please select publication/organization.", rf6comPubOrg)
-                    rf6comPubOrg.Select()
                 Else
+                    Dim org As String
                     Dim pos = rf6comPosition.SelectedItem.ToString
-                    Dim org = rf6comPubOrg.SelectedItem.ToString
+                    If rf6comPubOrg.SelectedIndex Then
+                        org = rf6comPubOrg.SelectedItem.ToString
+                    End If
                     Dim lvl = rf6comLvlOf.SelectedItem.ToString
                     Dim rf6point = Val(rf6txtPoints.Text)
                     Dim rf6weight = Val(rf6txtWeight.Text)
                     Dim rf6total = Val(rf6txtTWP.Text)
                     Dim answer As MsgBoxResult
-                    If GetAccess() <> "Adminr" Then
+                    If GetAccess() <> "Admin" Then
                         answer = MsgBox("Are you sure to submit this form?", MsgBoxStyle.YesNo, "")
                     End If
                     If GetAccess() = "Admin" Or answer = MsgBoxResult.Yes Then
@@ -1969,10 +2018,19 @@
                         Dim query As String = "INSERT INTO ceuratingforms.ratingform7 VALUES(DEFAULT,'" & previousForm.GetNum() & "' , '" & panel1 & "', '" & panel2 & "','" & panel3 & "' ,'" & panel4 & "','" & panel5 & "', '" & panel6 & "', '" & panel7 & "','" & pos & "'," & rf7point & "," & rf7weight & ", " & inc & ", " & rf7total & ", " & approve & ")"
                         If ExecuteQuery(query) Then
                             If approve = 1 Then
+                                Dim totalPoints As Integer = previousForm.GetPoints() + rf7total
+                                Dim remarks = GetRemarks(totalPoints)
                                 MsgBox("Form Added!")
+                                query = "UPDATE ceuratingforms.pointsinfo SET TotalPoints = " & totalPoints & " , Remarks = '" & remarks & "' WHERE StudNo = '" & previousForm.GetNum() & "'"
+                                If ExecuteQuery(query) Then
+                                    MsgBox("Points Added!")
+
+                                    previousForm.SetPoints(totalPoints)
+                                    previousForm.setRemarks(remarks)
+                                End If
                             End If
-                            Reset(tabForms.SelectedIndex)
                         End If
+                        Reset(tabForms.SelectedIndex)
                     End If
                 End If
         End Select
@@ -1986,9 +2044,6 @@
     End Sub
 
     Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
-        If tabForms.SelectedIndex = 4 Then
-            txtTotal.Text = Val(txtTotal.Text) + Val(rf5txtWeight.Text)
-        End If
-        txtTotal.Text = Val(txtPoints.Text) * Val(txtWeight.Text)
+        txtTotal.Text = Val(txtPoints.Text) * (Val(txtWeight.Text) + Val(rf5txtTWP.Text))
     End Sub
 End Class

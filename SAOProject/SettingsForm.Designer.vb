@@ -70,6 +70,9 @@ Partial Class SettingsForm
         Me.mt_schoolyear = New MetroFramework.Controls.MetroTile()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.rfPointSettings = New System.Windows.Forms.GroupBox()
+        Me.rfstxtminBronze = New MetroFramework.Controls.MetroTextBox()
+        Me.rfstxtminSilver = New MetroFramework.Controls.MetroTextBox()
+        Me.rfstxtminGold = New MetroFramework.Controls.MetroTextBox()
         Me.rfsBtnCancel = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
@@ -78,9 +81,10 @@ Partial Class SettingsForm
         Me.rfsBtnSave = New MetroFramework.Controls.MetroButton()
         Me.rfsBtnEditSave = New MetroFramework.Controls.MetroButton()
         Me.tipErrors = New MetroFramework.Components.MetroToolTip()
-        Me.rfstxtminGold = New MetroFramework.Controls.MetroTextBox()
-        Me.rfstxtminSilver = New MetroFramework.Controls.MetroTextBox()
-        Me.rfstxtminBronze = New MetroFramework.Controls.MetroTextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.grp_mainsettings.SuspendLayout()
@@ -95,6 +99,8 @@ Partial Class SettingsForm
         CType(Me.mg_locations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.rfPointSettings.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ran_org
@@ -589,6 +595,8 @@ Partial Class SettingsForm
         '
         'rfPointSettings
         '
+        Me.rfPointSettings.Controls.Add(Me.GroupBox2)
+        Me.rfPointSettings.Controls.Add(Me.GroupBox1)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminBronze)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminSilver)
         Me.rfPointSettings.Controls.Add(Me.rfstxtminGold)
@@ -597,149 +605,14 @@ Partial Class SettingsForm
         Me.rfPointSettings.Controls.Add(Me.MetroLabel7)
         Me.rfPointSettings.Controls.Add(Me.MetroLabel6)
         Me.rfPointSettings.Controls.Add(Me.MetroLabel5)
-        Me.rfPointSettings.Controls.Add(Me.rfsBtnSave)
         Me.rfPointSettings.Controls.Add(Me.rfsBtnEditSave)
+        Me.rfPointSettings.Controls.Add(Me.rfsBtnSave)
         Me.rfPointSettings.Location = New System.Drawing.Point(3, 49)
         Me.rfPointSettings.Name = "rfPointSettings"
         Me.rfPointSettings.Size = New System.Drawing.Size(672, 290)
         Me.rfPointSettings.TabIndex = 0
         Me.rfPointSettings.TabStop = False
         Me.rfPointSettings.Text = "&Points Settings"
-        '
-        'rfsBtnCancel
-        '
-        Me.rfsBtnCancel.Location = New System.Drawing.Point(538, 256)
-        Me.rfsBtnCancel.Name = "rfsBtnCancel"
-        Me.rfsBtnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.rfsBtnCancel.TabIndex = 8
-        Me.rfsBtnCancel.Text = "&Cancel"
-        Me.rfsBtnCancel.UseSelectable = True
-        '
-        'MetroLabel8
-        '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel8.Location = New System.Drawing.Point(23, 175)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(72, 25)
-        Me.MetroLabel8.TabIndex = 3
-        Me.MetroLabel8.Text = "Bronze"
-        '
-        'MetroLabel7
-        '
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel7.Location = New System.Drawing.Point(23, 122)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(59, 25)
-        Me.MetroLabel7.TabIndex = 2
-        Me.MetroLabel7.Text = "Silver"
-        '
-        'MetroLabel6
-        '
-        Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel6.Location = New System.Drawing.Point(23, 74)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(52, 25)
-        Me.MetroLabel6.TabIndex = 1
-        Me.MetroLabel6.Text = "Gold"
-        '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(23, 36)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(55, 19)
-        Me.MetroLabel5.TabIndex = 0
-        Me.MetroLabel5.Text = "Awards:"
-        '
-        'rfsBtnSave
-        '
-        Me.rfsBtnSave.Location = New System.Drawing.Point(455, 256)
-        Me.rfsBtnSave.Name = "rfsBtnSave"
-        Me.rfsBtnSave.Size = New System.Drawing.Size(75, 23)
-        Me.rfsBtnSave.TabIndex = 9
-        Me.rfsBtnSave.Text = "Save"
-        Me.rfsBtnSave.UseSelectable = True
-        '
-        'rfsBtnEditSave
-        '
-        Me.rfsBtnEditSave.Location = New System.Drawing.Point(455, 256)
-        Me.rfsBtnEditSave.Name = "rfsBtnEditSave"
-        Me.rfsBtnEditSave.Size = New System.Drawing.Size(75, 23)
-        Me.rfsBtnEditSave.TabIndex = 7
-        Me.rfsBtnEditSave.Text = "&Edit"
-        Me.rfsBtnEditSave.UseSelectable = True
-        '
-        'tipErrors
-        '
-        Me.tipErrors.Style = MetroFramework.MetroColorStyle.Blue
-        Me.tipErrors.StyleManager = Nothing
-        Me.tipErrors.Theme = MetroFramework.MetroThemeStyle.Light
-        '
-        'rfstxtminGold
-        '
-        '
-        '
-        '
-        Me.rfstxtminGold.CustomButton.Image = Nothing
-        Me.rfstxtminGold.CustomButton.Location = New System.Drawing.Point(173, 1)
-        Me.rfstxtminGold.CustomButton.Name = ""
-        Me.rfstxtminGold.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.rfstxtminGold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.rfstxtminGold.CustomButton.TabIndex = 1
-        Me.rfstxtminGold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.rfstxtminGold.CustomButton.UseSelectable = True
-        Me.rfstxtminGold.CustomButton.Visible = False
-        Me.rfstxtminGold.Lines = New String(-1) {}
-        Me.rfstxtminGold.Location = New System.Drawing.Point(130, 76)
-        Me.rfstxtminGold.MaxLength = 32767
-        Me.rfstxtminGold.Name = "rfstxtminGold"
-        Me.rfstxtminGold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.rfstxtminGold.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.rfstxtminGold.SelectedText = ""
-        Me.rfstxtminGold.SelectionLength = 0
-        Me.rfstxtminGold.SelectionStart = 0
-        Me.rfstxtminGold.ShortcutsEnabled = True
-        Me.rfstxtminGold.Size = New System.Drawing.Size(195, 23)
-        Me.rfstxtminGold.TabIndex = 10
-        Me.rfstxtminGold.UseSelectable = True
-        Me.rfstxtminGold.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.rfstxtminGold.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'rfstxtminSilver
-        '
-        '
-        '
-        '
-        Me.rfstxtminSilver.CustomButton.Image = Nothing
-        Me.rfstxtminSilver.CustomButton.Location = New System.Drawing.Point(173, 1)
-        Me.rfstxtminSilver.CustomButton.Name = ""
-        Me.rfstxtminSilver.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.rfstxtminSilver.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.rfstxtminSilver.CustomButton.TabIndex = 1
-        Me.rfstxtminSilver.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.rfstxtminSilver.CustomButton.UseSelectable = True
-        Me.rfstxtminSilver.CustomButton.Visible = False
-        Me.rfstxtminSilver.Lines = New String(-1) {}
-        Me.rfstxtminSilver.Location = New System.Drawing.Point(130, 124)
-        Me.rfstxtminSilver.MaxLength = 32767
-        Me.rfstxtminSilver.Name = "rfstxtminSilver"
-        Me.rfstxtminSilver.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.rfstxtminSilver.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.rfstxtminSilver.SelectedText = ""
-        Me.rfstxtminSilver.SelectionLength = 0
-        Me.rfstxtminSilver.SelectionStart = 0
-        Me.rfstxtminSilver.ShortcutsEnabled = True
-        Me.rfstxtminSilver.Size = New System.Drawing.Size(195, 23)
-        Me.rfstxtminSilver.TabIndex = 11
-        Me.rfstxtminSilver.UseSelectable = True
-        Me.rfstxtminSilver.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.rfstxtminSilver.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'rfstxtminBronze
         '
@@ -755,8 +628,9 @@ Partial Class SettingsForm
         Me.rfstxtminBronze.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.rfstxtminBronze.CustomButton.UseSelectable = True
         Me.rfstxtminBronze.CustomButton.Visible = False
+        Me.rfstxtminBronze.Enabled = False
         Me.rfstxtminBronze.Lines = New String(-1) {}
-        Me.rfstxtminBronze.Location = New System.Drawing.Point(130, 177)
+        Me.rfstxtminBronze.Location = New System.Drawing.Point(296, 178)
         Me.rfstxtminBronze.MaxLength = 32767
         Me.rfstxtminBronze.Name = "rfstxtminBronze"
         Me.rfstxtminBronze.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -770,6 +644,181 @@ Partial Class SettingsForm
         Me.rfstxtminBronze.UseSelectable = True
         Me.rfstxtminBronze.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.rfstxtminBronze.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'rfstxtminSilver
+        '
+        '
+        '
+        '
+        Me.rfstxtminSilver.CustomButton.Image = Nothing
+        Me.rfstxtminSilver.CustomButton.Location = New System.Drawing.Point(173, 1)
+        Me.rfstxtminSilver.CustomButton.Name = ""
+        Me.rfstxtminSilver.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.rfstxtminSilver.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.rfstxtminSilver.CustomButton.TabIndex = 1
+        Me.rfstxtminSilver.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.rfstxtminSilver.CustomButton.UseSelectable = True
+        Me.rfstxtminSilver.CustomButton.Visible = False
+        Me.rfstxtminSilver.Enabled = False
+        Me.rfstxtminSilver.Lines = New String(-1) {}
+        Me.rfstxtminSilver.Location = New System.Drawing.Point(296, 132)
+        Me.rfstxtminSilver.MaxLength = 32767
+        Me.rfstxtminSilver.Name = "rfstxtminSilver"
+        Me.rfstxtminSilver.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.rfstxtminSilver.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.rfstxtminSilver.SelectedText = ""
+        Me.rfstxtminSilver.SelectionLength = 0
+        Me.rfstxtminSilver.SelectionStart = 0
+        Me.rfstxtminSilver.ShortcutsEnabled = True
+        Me.rfstxtminSilver.Size = New System.Drawing.Size(195, 23)
+        Me.rfstxtminSilver.TabIndex = 11
+        Me.rfstxtminSilver.UseSelectable = True
+        Me.rfstxtminSilver.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.rfstxtminSilver.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'rfstxtminGold
+        '
+        '
+        '
+        '
+        Me.rfstxtminGold.CustomButton.Image = Nothing
+        Me.rfstxtminGold.CustomButton.Location = New System.Drawing.Point(173, 1)
+        Me.rfstxtminGold.CustomButton.Name = ""
+        Me.rfstxtminGold.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.rfstxtminGold.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.rfstxtminGold.CustomButton.TabIndex = 1
+        Me.rfstxtminGold.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.rfstxtminGold.CustomButton.UseSelectable = True
+        Me.rfstxtminGold.CustomButton.Visible = False
+        Me.rfstxtminGold.Enabled = False
+        Me.rfstxtminGold.Lines = New String(-1) {}
+        Me.rfstxtminGold.Location = New System.Drawing.Point(296, 88)
+        Me.rfstxtminGold.MaxLength = 32767
+        Me.rfstxtminGold.Name = "rfstxtminGold"
+        Me.rfstxtminGold.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.rfstxtminGold.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.rfstxtminGold.SelectedText = ""
+        Me.rfstxtminGold.SelectionLength = 0
+        Me.rfstxtminGold.SelectionStart = 0
+        Me.rfstxtminGold.ShortcutsEnabled = True
+        Me.rfstxtminGold.Size = New System.Drawing.Size(195, 23)
+        Me.rfstxtminGold.TabIndex = 10
+        Me.rfstxtminGold.UseSelectable = True
+        Me.rfstxtminGold.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.rfstxtminGold.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'rfsBtnCancel
+        '
+        Me.rfsBtnCancel.Location = New System.Drawing.Point(582, 250)
+        Me.rfsBtnCancel.Name = "rfsBtnCancel"
+        Me.rfsBtnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.rfsBtnCancel.TabIndex = 8
+        Me.rfsBtnCancel.Text = "&Cancel"
+        Me.rfsBtnCancel.UseSelectable = True
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel8.Location = New System.Drawing.Point(189, 176)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(72, 25)
+        Me.MetroLabel8.TabIndex = 3
+        Me.MetroLabel8.Text = "Bronze"
+        '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel7.Location = New System.Drawing.Point(189, 134)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(59, 25)
+        Me.MetroLabel7.TabIndex = 2
+        Me.MetroLabel7.Text = "Silver"
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel6.Location = New System.Drawing.Point(189, 86)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(52, 25)
+        Me.MetroLabel6.TabIndex = 1
+        Me.MetroLabel6.Text = "Gold"
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.Location = New System.Drawing.Point(189, 48)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(55, 19)
+        Me.MetroLabel5.TabIndex = 0
+        Me.MetroLabel5.Text = "Awards:"
+        '
+        'rfsBtnSave
+        '
+        Me.rfsBtnSave.Location = New System.Drawing.Point(499, 250)
+        Me.rfsBtnSave.Name = "rfsBtnSave"
+        Me.rfsBtnSave.Size = New System.Drawing.Size(75, 23)
+        Me.rfsBtnSave.TabIndex = 9
+        Me.rfsBtnSave.Text = "Save"
+        Me.rfsBtnSave.UseSelectable = True
+        '
+        'rfsBtnEditSave
+        '
+        Me.rfsBtnEditSave.Location = New System.Drawing.Point(499, 250)
+        Me.rfsBtnEditSave.Name = "rfsBtnEditSave"
+        Me.rfsBtnEditSave.Size = New System.Drawing.Size(75, 23)
+        Me.rfsBtnEditSave.TabIndex = 7
+        Me.rfsBtnEditSave.Text = "&Edit"
+        Me.rfsBtnEditSave.UseSelectable = True
+        '
+        'tipErrors
+        '
+        Me.tipErrors.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tipErrors.StyleManager = Nothing
+        Me.tipErrors.Theme = MetroFramework.MetroThemeStyle.Light
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.MetroLabel9)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 48)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(165, 78)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Information"
+        '
+        'MetroLabel9
+        '
+        Me.MetroLabel9.AutoSize = True
+        Me.MetroLabel9.Location = New System.Drawing.Point(7, 20)
+        Me.MetroLabel9.Name = "MetroLabel9"
+        Me.MetroLabel9.Size = New System.Drawing.Size(153, 38)
+        Me.MetroLabel9.TabIndex = 0
+        Me.MetroLabel9.Text = "The minimum points per" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "award is set here."
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.MetroLabel10)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 132)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(165, 78)
+        Me.GroupBox2.TabIndex = 14
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Help"
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.Location = New System.Drawing.Point(7, 20)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(134, 38)
+        Me.MetroLabel10.TabIndex = 0
+        Me.MetroLabel10.Text = "Click ""Edit"" to change" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the minimum points."
         '
         'SettingsForm
         '
@@ -806,6 +855,10 @@ Partial Class SettingsForm
         Me.TabPage2.ResumeLayout(False)
         Me.rfPointSettings.ResumeLayout(False)
         Me.rfPointSettings.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -859,4 +912,8 @@ Partial Class SettingsForm
     Friend WithEvents rfstxtminBronze As MetroFramework.Controls.MetroTextBox
     Friend WithEvents rfstxtminSilver As MetroFramework.Controls.MetroTextBox
     Friend WithEvents rfstxtminGold As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
 End Class
