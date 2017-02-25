@@ -70,6 +70,10 @@ Partial Class SettingsForm
         Me.mt_schoolyear = New MetroFramework.Controls.MetroTile()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.rfPointSettings = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.rfstxtminBronze = New MetroFramework.Controls.MetroTextBox()
         Me.rfstxtminSilver = New MetroFramework.Controls.MetroTextBox()
         Me.rfstxtminGold = New MetroFramework.Controls.MetroTextBox()
@@ -78,13 +82,9 @@ Partial Class SettingsForm
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.rfsBtnSave = New MetroFramework.Controls.MetroButton()
         Me.rfsBtnEditSave = New MetroFramework.Controls.MetroButton()
+        Me.rfsBtnSave = New MetroFramework.Controls.MetroButton()
         Me.tipErrors = New MetroFramework.Components.MetroToolTip()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.grp_mainsettings.SuspendLayout()
@@ -99,8 +99,8 @@ Partial Class SettingsForm
         CType(Me.mg_locations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.rfPointSettings.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ran_org
@@ -614,6 +614,44 @@ Partial Class SettingsForm
         Me.rfPointSettings.TabStop = False
         Me.rfPointSettings.Text = "&Points Settings"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.MetroLabel10)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 132)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(165, 78)
+        Me.GroupBox2.TabIndex = 14
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Help"
+        '
+        'MetroLabel10
+        '
+        Me.MetroLabel10.AutoSize = True
+        Me.MetroLabel10.Location = New System.Drawing.Point(7, 20)
+        Me.MetroLabel10.Name = "MetroLabel10"
+        Me.MetroLabel10.Size = New System.Drawing.Size(134, 38)
+        Me.MetroLabel10.TabIndex = 0
+        Me.MetroLabel10.Text = "Click ""Edit"" to change" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the minimum points."
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.MetroLabel9)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 48)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(165, 78)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Information"
+        '
+        'MetroLabel9
+        '
+        Me.MetroLabel9.AutoSize = True
+        Me.MetroLabel9.Location = New System.Drawing.Point(7, 20)
+        Me.MetroLabel9.Name = "MetroLabel9"
+        Me.MetroLabel9.Size = New System.Drawing.Size(153, 38)
+        Me.MetroLabel9.TabIndex = 0
+        Me.MetroLabel9.Text = "The minimum points per" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "award is set here."
+        '
         'rfstxtminBronze
         '
         '
@@ -758,15 +796,6 @@ Partial Class SettingsForm
         Me.MetroLabel5.TabIndex = 0
         Me.MetroLabel5.Text = "Awards:"
         '
-        'rfsBtnSave
-        '
-        Me.rfsBtnSave.Location = New System.Drawing.Point(499, 250)
-        Me.rfsBtnSave.Name = "rfsBtnSave"
-        Me.rfsBtnSave.Size = New System.Drawing.Size(75, 23)
-        Me.rfsBtnSave.TabIndex = 9
-        Me.rfsBtnSave.Text = "Save"
-        Me.rfsBtnSave.UseSelectable = True
-        '
         'rfsBtnEditSave
         '
         Me.rfsBtnEditSave.Location = New System.Drawing.Point(499, 250)
@@ -776,49 +805,20 @@ Partial Class SettingsForm
         Me.rfsBtnEditSave.Text = "&Edit"
         Me.rfsBtnEditSave.UseSelectable = True
         '
+        'rfsBtnSave
+        '
+        Me.rfsBtnSave.Location = New System.Drawing.Point(499, 250)
+        Me.rfsBtnSave.Name = "rfsBtnSave"
+        Me.rfsBtnSave.Size = New System.Drawing.Size(75, 23)
+        Me.rfsBtnSave.TabIndex = 9
+        Me.rfsBtnSave.Text = "Save"
+        Me.rfsBtnSave.UseSelectable = True
+        '
         'tipErrors
         '
         Me.tipErrors.Style = MetroFramework.MetroColorStyle.Blue
         Me.tipErrors.StyleManager = Nothing
         Me.tipErrors.Theme = MetroFramework.MetroThemeStyle.Light
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.MetroLabel9)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 48)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(165, 78)
-        Me.GroupBox1.TabIndex = 13
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Information"
-        '
-        'MetroLabel9
-        '
-        Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(7, 20)
-        Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(153, 38)
-        Me.MetroLabel9.TabIndex = 0
-        Me.MetroLabel9.Text = "The minimum points per" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "award is set here."
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.MetroLabel10)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 132)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(165, 78)
-        Me.GroupBox2.TabIndex = 14
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Help"
-        '
-        'MetroLabel10
-        '
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(7, 20)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(134, 38)
-        Me.MetroLabel10.TabIndex = 0
-        Me.MetroLabel10.Text = "Click ""Edit"" to change" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the minimum points."
         '
         'SettingsForm
         '
@@ -834,6 +834,7 @@ Partial Class SettingsForm
         Me.MinimizeBox = False
         Me.Name = "SettingsForm"
         Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.Text = " "
         Me.TopMost = True
         Me.TabControl1.ResumeLayout(False)
@@ -855,10 +856,10 @@ Partial Class SettingsForm
         Me.TabPage2.ResumeLayout(False)
         Me.rfPointSettings.ResumeLayout(False)
         Me.rfPointSettings.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

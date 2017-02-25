@@ -227,7 +227,7 @@ Partial Class Login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Login"
-        Me.Style = MetroFramework.MetroColorStyle.Orange
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.Theme = MetroFramework.MetroThemeStyle.[Default]
         Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)

@@ -84,6 +84,7 @@ Partial Class frm_choose
         Me.MinimizeBox = False
         Me.Name = "frm_choose"
         Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.TopMost = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

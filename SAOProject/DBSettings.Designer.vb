@@ -203,6 +203,7 @@ Partial Class DBSettings
         Me.MaximizeBox = False
         Me.Name = "DBSettings"
         Me.Resizable = False
+        Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.Text = "&Database Settings"
         Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
