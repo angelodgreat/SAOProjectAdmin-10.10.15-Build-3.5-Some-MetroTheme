@@ -127,7 +127,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_saveorganization_Click(sender As Object, e As EventArgs) Handles mbtn_saveorganization.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -190,7 +190,7 @@ Public Class SettingsForm
 
     End Sub
 
-    Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_updateorganizations_Click(sender As Object, e As EventArgs) Handles mbtn_updateorganizations.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -231,7 +231,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_delete_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_delete_Click(sender As Object, e As EventArgs) Handles mbtn_delete.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -270,11 +270,11 @@ Public Class SettingsForm
             load_organizations()
         End Try
     End Sub
-    Private Sub mbtn_clearorg_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_clearorg_Click(sender As Object, e As EventArgs) Handles mbtn_clearorg.Click
         tb_organization.Clear()
         auto_generate_id()
     End Sub
-    Private Sub mg_organizations_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub mg_organizations_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_organizations.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_organizations.Rows(e.RowIndex)
@@ -285,7 +285,7 @@ Public Class SettingsForm
     End Sub
 
 
-    Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_locationsave_Click(sender As Object, e As EventArgs) Handles mbtn_locationsave.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -341,7 +341,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_updatelocations_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_updatelocations_Click(sender As Object, e As EventArgs) Handles mbtn_updatelocations.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -383,7 +383,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_deletelocations_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_deletelocations_Click(sender As Object, e As EventArgs) Handles mbtn_deletelocations.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -423,12 +423,12 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_clearloc_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_clearloc_Click(sender As Object, e As EventArgs) Handles mbtn_clearloc.Click
         auto_generate_id()
         tb_location.Clear()
     End Sub
 
-    Private Sub mg_locations_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub mg_locations_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_locations.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_locations.Rows(e.RowIndex)
@@ -438,7 +438,7 @@ Public Class SettingsForm
         End If
     End Sub
 
-    Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_savekpi_Click(sender As Object, e As EventArgs) Handles mbtn_savekpi.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -494,7 +494,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_updatekpi_Click(sender As Object, e As EventArgs) Handles mbtn_updatekpi.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -536,7 +536,7 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_deletekpi_Click(sender As Object, e As EventArgs) Handles mbtn_deletekpi.Click
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
@@ -576,12 +576,12 @@ Public Class SettingsForm
         End Try
     End Sub
 
-    Private Sub mbtn_clearkpi_Click(sender As Object, e As EventArgs)
+    Private Sub mbtn_clearkpi_Click(sender As Object, e As EventArgs) Handles mbtn_clearkpi.Click
         auto_generate_id()
         tb_kpi.Clear()
     End Sub
 
-    Private Sub mg_kpi_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub mg_kpi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles mg_kpi.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.mg_kpi.Rows(e.RowIndex)
@@ -753,4 +753,6 @@ Public Class SettingsForm
         rfsBtnEditSave.Visible = True
         rfsBtnSave.Visible = False
     End Sub
+
+
 End Class

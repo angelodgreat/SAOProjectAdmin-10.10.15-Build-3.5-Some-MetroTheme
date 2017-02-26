@@ -23,13 +23,17 @@ Public Class TabMain
         btn_update.Visible = False
         GroupBoxEvent.Visible = False
 
-        event_datetimepicker.Text = ""
-        tb_location.Text = "-"
+        event_datetimepicker.Value = Date.Now
         tb_input_event.Text = ""
-        cb_noa.Text = "-"
-        cb_kpi.Text = "-"
-        cb_eventschool.Text = "-"
-        cb_remarks.Text = ""
+
+        time_picker_from.SelectedIndex = -1
+        time_picker_to.SelectedIndex = -1
+        tb_location.SelectedIndex = -1
+        cb_noa.SelectedIndex = -1
+        cb_kpi.SelectedIndex = -1
+        cb_eventschool.SelectedIndex = -1
+        cb_remarks.SelectedIndex = -1
+
 
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
@@ -384,13 +388,16 @@ Public Class TabMain
 
 
         'RESETTING FIELDS IN CALENDAR EVENT
-        event_datetimepicker.Text = ""
-        tb_location.Text = "-"
+        event_datetimepicker.Value = Date.Now
         tb_input_event.Text = ""
-        cb_noa.Text = "-"
-        cb_kpi.Text = "-"
-        cb_eventschool.Text = "-"
-        cb_remarks.Text = ""
+
+        time_picker_from.SelectedIndex = -1
+        time_picker_to.SelectedIndex = -1
+        tb_location.SelectedIndex = -1
+        cb_noa.SelectedIndex = -1
+        cb_kpi.SelectedIndex = -1
+        cb_eventschool.SelectedIndex = -1
+        cb_remarks.SelectedIndex = -1
 
 
         Try

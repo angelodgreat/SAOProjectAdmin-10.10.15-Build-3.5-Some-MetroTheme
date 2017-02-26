@@ -256,7 +256,7 @@ Public Class Notes
         Try
             MysqlConn.Open()
 
-            query = "Select MAX(saonotenumber) from saoreminder"
+            query = "Select count(saonotenumber) from saoreminder"
             Dim reader As MySqlDataReader
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
