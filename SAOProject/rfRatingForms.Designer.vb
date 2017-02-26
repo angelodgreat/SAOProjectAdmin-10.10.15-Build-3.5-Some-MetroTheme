@@ -153,10 +153,6 @@ Partial Class rfRatingForms
         Me.MetroLabel63 = New MetroFramework.Controls.MetroLabel()
         Me.rf6rbA4 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
-        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
-        Me.txtPoints = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
-        Me.txtWeight = New MetroFramework.Controls.MetroTextBox()
         Me.txtTotal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.lblrfstudno = New MetroFramework.Controls.MetroLabel()
@@ -1910,10 +1906,6 @@ Partial Class rfRatingForms
         'MetroPanel3
         '
         Me.MetroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.MetroPanel3.Controls.Add(Me.MetroLabel18)
-        Me.MetroPanel3.Controls.Add(Me.txtPoints)
-        Me.MetroPanel3.Controls.Add(Me.MetroLabel19)
-        Me.MetroPanel3.Controls.Add(Me.txtWeight)
         Me.MetroPanel3.Controls.Add(Me.txtTotal)
         Me.MetroPanel3.Controls.Add(Me.MetroLabel20)
         Me.MetroPanel3.HorizontalScrollbarBarColor = True
@@ -1926,88 +1918,6 @@ Partial Class rfRatingForms
         Me.MetroPanel3.VerticalScrollbarBarColor = True
         Me.MetroPanel3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel3.VerticalScrollbarSize = 10
-        '
-        'MetroLabel18
-        '
-        Me.MetroLabel18.AutoSize = True
-        Me.MetroLabel18.Location = New System.Drawing.Point(12, 11)
-        Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(43, 19)
-        Me.MetroLabel18.TabIndex = 6
-        Me.MetroLabel18.Text = "Points"
-        '
-        'txtPoints
-        '
-        '
-        '
-        '
-        Me.txtPoints.CustomButton.Image = Nothing
-        Me.txtPoints.CustomButton.Location = New System.Drawing.Point(68, 1)
-        Me.txtPoints.CustomButton.Name = ""
-        Me.txtPoints.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtPoints.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtPoints.CustomButton.TabIndex = 1
-        Me.txtPoints.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtPoints.CustomButton.UseSelectable = True
-        Me.txtPoints.CustomButton.Visible = False
-        Me.txtPoints.Lines = New String(-1) {}
-        Me.txtPoints.Location = New System.Drawing.Point(61, 11)
-        Me.txtPoints.MaxLength = 32767
-        Me.txtPoints.Name = "txtPoints"
-        Me.txtPoints.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPoints.ReadOnly = True
-        Me.txtPoints.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtPoints.SelectedText = ""
-        Me.txtPoints.SelectionLength = 0
-        Me.txtPoints.SelectionStart = 0
-        Me.txtPoints.ShortcutsEnabled = True
-        Me.txtPoints.Size = New System.Drawing.Size(90, 23)
-        Me.txtPoints.Style = MetroFramework.MetroColorStyle.Pink
-        Me.txtPoints.TabIndex = 15
-        Me.txtPoints.UseSelectable = True
-        Me.txtPoints.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtPoints.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'MetroLabel19
-        '
-        Me.MetroLabel19.AutoSize = True
-        Me.MetroLabel19.Location = New System.Drawing.Point(157, 11)
-        Me.MetroLabel19.Name = "MetroLabel19"
-        Me.MetroLabel19.Size = New System.Drawing.Size(50, 19)
-        Me.MetroLabel19.TabIndex = 7
-        Me.MetroLabel19.Text = "Weight"
-        '
-        'txtWeight
-        '
-        '
-        '
-        '
-        Me.txtWeight.CustomButton.Image = Nothing
-        Me.txtWeight.CustomButton.Location = New System.Drawing.Point(68, 1)
-        Me.txtWeight.CustomButton.Name = ""
-        Me.txtWeight.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtWeight.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtWeight.CustomButton.TabIndex = 1
-        Me.txtWeight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtWeight.CustomButton.UseSelectable = True
-        Me.txtWeight.CustomButton.Visible = False
-        Me.txtWeight.Lines = New String(-1) {}
-        Me.txtWeight.Location = New System.Drawing.Point(213, 11)
-        Me.txtWeight.MaxLength = 32767
-        Me.txtWeight.Name = "txtWeight"
-        Me.txtWeight.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtWeight.ReadOnly = True
-        Me.txtWeight.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtWeight.SelectedText = ""
-        Me.txtWeight.SelectionLength = 0
-        Me.txtWeight.SelectionStart = 0
-        Me.txtWeight.ShortcutsEnabled = True
-        Me.txtWeight.Size = New System.Drawing.Size(90, 23)
-        Me.txtWeight.Style = MetroFramework.MetroColorStyle.Pink
-        Me.txtWeight.TabIndex = 12
-        Me.txtWeight.UseSelectable = True
-        Me.txtWeight.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtWeight.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txtTotal
         '
@@ -2024,7 +1934,7 @@ Partial Class rfRatingForms
         Me.txtTotal.CustomButton.UseSelectable = True
         Me.txtTotal.CustomButton.Visible = False
         Me.txtTotal.Lines = New String(-1) {}
-        Me.txtTotal.Location = New System.Drawing.Point(181, 41)
+        Me.txtTotal.Location = New System.Drawing.Point(181, 26)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -2044,7 +1954,7 @@ Partial Class rfRatingForms
         'MetroLabel20
         '
         Me.MetroLabel20.AutoSize = True
-        Me.MetroLabel20.Location = New System.Drawing.Point(43, 41)
+        Me.MetroLabel20.Location = New System.Drawing.Point(43, 26)
         Me.MetroLabel20.Name = "MetroLabel20"
         Me.MetroLabel20.Size = New System.Drawing.Size(134, 19)
         Me.MetroLabel20.TabIndex = 8
@@ -4150,7 +4060,7 @@ Partial Class rfRatingForms
         Me.tabForms.Controls.Add(Me.tabRF7)
         Me.tabForms.Location = New System.Drawing.Point(19, 124)
         Me.tabForms.Name = "tabForms"
-        Me.tabForms.SelectedIndex = 0
+        Me.tabForms.SelectedIndex = 1
         Me.tabForms.Size = New System.Drawing.Size(793, 516)
         Me.tabForms.Style = MetroFramework.MetroColorStyle.Pink
         Me.tabForms.TabIndex = 54
@@ -4698,10 +4608,6 @@ Partial Class rfRatingForms
     Friend WithEvents MetroLabel63 As MetroFramework.Controls.MetroLabel
     Friend WithEvents rf6rbA4 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents MetroPanel3 As MetroFramework.Controls.MetroPanel
-    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtPoints As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtWeight As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
     Friend WithEvents tilSaveAll As MetroFramework.Controls.MetroTile

@@ -100,9 +100,6 @@
         Dim point As Integer = Val(rf1txtPoints.Text)
         Dim weight As Integer = Val(rf1txtWeight.Text)
         rf1txtTWP.Text = point * weight
-        txtPoints.Text = point
-        txtWeight.Text = weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf1txtTWP.Text)
     End Sub
 
     Private Sub rf1comLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rf1comLevel.SelectedIndexChanged
@@ -189,9 +186,6 @@
         Dim points As Integer = Val(rf2txtPoints.Text)
         Dim weight As Integer = Val(rf2txtWeight.Text)
         rf2txtTWP.Text = points * weight
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtWeight.Text = Val(txtWeight.Text) + weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf2txtTWP.Text)
     End Sub
 
     Private Sub rf2comExt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rf2comExt.SelectedIndexChanged
@@ -294,9 +288,6 @@
         Dim points As Integer = Val(rf3txtPoints.Text)
         Dim weight As Integer = Val(rf3txtWeight.Text)
         rf3txtTWP.Text = points * weight
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtWeight.Text = Val(txtWeight.Text) + weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf3txtTWP.Text)
     End Sub
 
     Private Sub rf3comActStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rf3comActStat.SelectedIndexChanged
@@ -411,9 +402,6 @@
         Dim points As Integer = Val(rf4txtPoints.Text)
         Dim weight As Integer = Val(rf4txtWeight.Text)
         rf4txtTWP.Text = points * weight
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtWeight.Text = Val(txtWeight.Text) + weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf4txtTWP.Text)
     End Sub
 
     Private Sub rf4comLvlAct_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rf4comLvlAct.SelectedIndexChanged
@@ -537,8 +525,6 @@
         rf5txtPoints.Text = inpoints.ToString()
         Dim points As Integer = Val(rf5txtPoints.Text)
         rf5txtTWP.Text = points * 5
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf5txtTWP.Text)
     End Sub
 
     Private Sub rf5rbRO5_CheckedChanged(sender As Object, e As EventArgs) Handles rf5rbRO5.CheckedChanged
@@ -1027,9 +1013,6 @@
         Dim points As Integer = Val(rf6txtPoints.Text)
         Dim weight As Integer = Val(rf6txtWeight.Text)
         rf6txtTWP.Text = points * weight
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtWeight.Text = Val(txtWeight.Text) + weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf6txtTWP.Text)
 
     End Sub
 
@@ -1323,8 +1306,6 @@
     End Sub
 
     Private Sub Reset(ByVal index As Integer)
-        txtPoints.Text = String.Empty
-        txtWeight.Text = String.Empty
         txtTotal.Text = String.Empty
 
         Select Case index
@@ -1494,9 +1475,6 @@
         Dim weight As Integer = Val(rf7txtWeight.Text)
         Dim incen As Integer = Val(rf7txtIP.Text)
         rf7txtTWP.Text = points * weight + incen
-        txtPoints.Text = Val(txtPoints.Text) + points
-        txtWeight.Text = Val(txtWeight.Text) + weight
-        txtTotal.Text = Val(txtTotal.Text) + Val(rf7txtTWP.Text)
     End Sub
 
     Private Sub tilSaveAll_Click(sender As Object, e As EventArgs) Handles tilSaveAll.Click
@@ -2059,14 +2037,7 @@
         End Select
     End Sub
 
-    Private Sub txtPoints_TextChanged(sender As Object, e As EventArgs) Handles txtPoints.TextChanged
-        txtPoints.Text = Val(rf1txtPoints.Text) + Val(rf2txtPoints.Text) + Val(rf3txtPoints.Text) + Val(rf4txtPoints.Text) + Val(rf5txtPoints.Text) + Val(rf6txtPoints.Text) + Val(rf7txtPoints.Text)
-        If tabForms.SelectedIndex = 4 Then
-            txtTotal.Text = Val(txtTotal.Text) + Val(rf5txtWeight.Text)
-        End If
-    End Sub
-
     Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
-        txtTotal.Text = Val(txtPoints.Text) * (Val(txtWeight.Text) + Val(rf5txtTWP.Text))
+        txtTotal.Text = Val(rf1txtTWP.Text) + Val(rf2txtTWP.Text) + Val(rf3txtTWP.Text) + Val(rf4txtTWP.Text) + Val(rf5txtTWP.Text) + Val(rf6txtTWP.Text) + Val(rf7txtTWP.Text)
     End Sub
 End Class
