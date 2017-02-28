@@ -1452,7 +1452,7 @@
         'Return remarks
 
         Dim remarks As String = String.Empty
-        query = "SELECT awards, minPoint FROM ceuratingforms.points_ranges"
+        query = "SELECT award, minPoint FROM ceuratingforms.points_ranges"
 
         If (Count(query, 2) <> 0) Then
             Dim result As ArrayList = RetrieveQuery(query, 2)
@@ -1487,6 +1487,7 @@
 
         For index As Integer = 0 To 6
             Save(index)
+            Reset(index)
         Next
     End Sub
     Public Sub Save(ByVal index As Integer)
