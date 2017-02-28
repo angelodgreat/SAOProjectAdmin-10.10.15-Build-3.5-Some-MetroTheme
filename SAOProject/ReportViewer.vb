@@ -7,7 +7,7 @@ Public Class ReportViewer
 
     Private Sub ReportViewer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         printreport()
-
+        load_orgANDschool()
         Me.ReportViewer1.RefreshReport()
     End Sub
 
@@ -110,32 +110,24 @@ Public Class ReportViewer
         Me.ReportViewer1.RefreshReport()
     End Sub
 
-
     Public Sub load_orgANDschool()
         Try
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
 
-
-            cb_filterschool.Items.Clear()
-
-
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
             End If
+
+            cb_filterschool.Items.Clear()
 
             MysqlConn.Open()
             query = "SELECT DISTINCT school FROM tbl_organizations_school ORDER BY school ASC"
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
 
-
-            cb_filterschool.Items.Clear()
-
-
             While reader.Read
                 cb_filterschool.Items.Add(reader.GetString("school"))
-
             End While
             MysqlConn.Close()
 
@@ -147,4 +139,5 @@ Public Class ReportViewer
         End Try
 
     End Sub
+
 End Class

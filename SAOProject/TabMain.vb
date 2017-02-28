@@ -1395,21 +1395,16 @@ Public Class TabMain
             MysqlConn = New MySqlConnection
             MysqlConn.ConnectionString = connstring
 
-
-            cb_kpi.Items.Clear()
-
-
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
             End If
+
+            cb_kpi.Items.Clear()
 
             MysqlConn.Open()
             query = "SELECT DISTINCT KPI FROM tbl_kpi ORDER BY KPI ASC"
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
-
-
-            cb_kpi.Items.Clear()
 
 
             While reader.Read
@@ -1432,26 +1427,24 @@ Public Class TabMain
             MysqlConn.ConnectionString = connstring
 
 
-            cb_eventschool.Items.Clear()
-
-
             If MysqlConn.State = ConnectionState.Open Then
                 MysqlConn.Close()
             End If
+
+            cb_eventschool.Items.Clear()
+            cb_filterschool.Items.Clear()
+            reg_cb_college.Items.Clear()
 
             MysqlConn.Open()
             query = "SELECT DISTINCT school FROM tbl_organizations_school ORDER BY school ASC"
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
 
-
-            cb_eventschool.Items.Clear()
-
-
             While reader.Read
                 cb_eventschool.Items.Add(reader.GetString("school"))
                 cb_filterschool.Items.Add(reader.GetString("school"))
                 reg_cb_college.Items.Add(reader.GetString("school"))
+
             End While
             MysqlConn.Close()
 
@@ -1481,10 +1474,6 @@ Public Class TabMain
             query = "SELECT DISTINCT Location FROM tbl_locations ORDER BY Location ASC"
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
-
-
-            tb_location.Items.Clear()
-
 
             While reader.Read
                 tb_location.Items.Add(reader.GetString("Location"))

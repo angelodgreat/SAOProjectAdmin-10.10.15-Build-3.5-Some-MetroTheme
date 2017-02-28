@@ -81,7 +81,7 @@ Partial Class ReportViewer
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(174, 45)
+        Me.Label1.Location = New System.Drawing.Point(180, 39)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 15)
         Me.Label1.TabIndex = 3
@@ -93,7 +93,7 @@ Partial Class ReportViewer
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(596, 44)
+        Me.Label2.Location = New System.Drawing.Point(602, 38)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 15)
         Me.Label2.TabIndex = 7
@@ -105,7 +105,7 @@ Partial Class ReportViewer
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(101, 45)
+        Me.Label3.Location = New System.Drawing.Point(107, 39)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(67, 15)
         Me.Label3.TabIndex = 8
@@ -114,7 +114,7 @@ Partial Class ReportViewer
         'DateTimePicker1
         '
         Me.DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DateTimePicker1.Location = New System.Drawing.Point(639, 35)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(645, 29)
         Me.DateTimePicker1.MinimumSize = New System.Drawing.Size(0, 29)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(231, 29)
@@ -123,7 +123,7 @@ Partial Class ReportViewer
         'DateTimePicker2
         '
         Me.DateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DateTimePicker2.Location = New System.Drawing.Point(876, 34)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(882, 28)
         Me.DateTimePicker2.MinimumSize = New System.Drawing.Size(0, 29)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(228, 29)
@@ -132,7 +132,7 @@ Partial Class ReportViewer
         'MetroButton1
         '
         Me.MetroButton1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.MetroButton1.Location = New System.Drawing.Point(1110, 37)
+        Me.MetroButton1.Location = New System.Drawing.Point(1116, 31)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(98, 23)
         Me.MetroButton1.TabIndex = 5
@@ -143,10 +143,10 @@ Partial Class ReportViewer
         '
         Me.cb_filterschool.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cb_filterschool.AutoCompleteCustomSource.AddRange(New String() {"School of Accountancy and Management", "School of Dentistry", "School of Education—Liberal Arts—Music—Social Work", "School of Medical Technology", "School of Nursing", "School of Nutrition and Hospitality Management", "School of Optometry", "School of Pharmacy", "School of Science and Technology", "School of Graduate School", "School of Senior High School (Grades 11 & 12)", "Community Outreach Movement Proactive Student Services (COMPASS)", "Dramatic Guild (DG)", "English Guild", "Honors Society (HonSoc)", "International Students Association (ISA)", "Math Club", "Oratorical and Debate Society (ORADES)", "Photographers Club (Photo Club)", "Red Cross Youth (RCY)", "Science Club", "Student Catholic Action (SCA)", "Social Sciences Society (SSS)", "CEU Student Chapter of the American Society of Microbiology", "CEU Marketing Society (CEMARS)", "Junior Financial Executives (JFINEX)", "Junior Philippine Institute of Accountants (JPIA)", "Management Students Association (MASA)", "Dental Clinicians Club (DCC)", "Philippine Dental Students Association (PDSA)", "Association of Tourism Students (ATS)", "Association of Hotel & Restaurants Management Students (AHRMS)", "Philippine Association of Nutritionists (PAN-DELTA)", "Philippine Nursing Research Society (PNRS)", "Optometry Clinicians Club (OCC)", "Junior Philippine Pharmacists Association (JPPhA)", "CEU Psychology Society (Psych Soc)", "Junior Philippine Computer Society (JPCS)", "Philippine Society of Medical Technology Students (PHISMETS)", "CEU Communication Arts Society (CoMaSoc)", "Junior Social Work Association of the Philippines (JSWAP) ", "Other"})
-        Me.cb_filterschool.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cb_filterschool.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cb_filterschool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_filterschool.FormattingEnabled = True
-        Me.cb_filterschool.Location = New System.Drawing.Point(308, 37)
+        Me.cb_filterschool.Location = New System.Drawing.Point(314, 31)
         Me.cb_filterschool.Name = "cb_filterschool"
         Me.cb_filterschool.Size = New System.Drawing.Size(282, 22)
         Me.cb_filterschool.TabIndex = 2
@@ -154,7 +154,7 @@ Partial Class ReportViewer
         'btn_refresh
         '
         Me.btn_refresh.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btn_refresh.Location = New System.Drawing.Point(20, 39)
+        Me.btn_refresh.Location = New System.Drawing.Point(26, 33)
         Me.btn_refresh.Name = "btn_refresh"
         Me.btn_refresh.Size = New System.Drawing.Size(75, 23)
         Me.btn_refresh.TabIndex = 1
