@@ -74,7 +74,7 @@ Public Class rfAdminHome
     End Sub
 
     Private Sub tilHome_Click(sender As Object, e As EventArgs) Handles tilHome.Click
-        frm_choose.Show()
+        TabMain.Show()
         Hide()
     End Sub
 

@@ -86,8 +86,8 @@ Public Class Login
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
-                       
-                        frm_choose.Show()
+
+                        TabMain.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
 
@@ -114,7 +114,7 @@ Public Class Login
                         TabMain.welcomeadmin.Text = "Welcome Super Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
                         SetAccess(usertype)
                         SetAccount(reader.GetString("lname") + ", " + reader.GetString("fname"))
-                        frm_choose.Show()
+                        TabMain.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
 
@@ -214,7 +214,7 @@ Public Class Login
         SetAccess(usertype)
 
         Hide()
-        frm_choose.Show()
+        TabMain.Show()
 
 
     End Sub

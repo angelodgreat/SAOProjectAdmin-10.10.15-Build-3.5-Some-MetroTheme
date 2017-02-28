@@ -159,7 +159,7 @@ Partial Class rfAdminHome
         Me.tilHome.Size = New System.Drawing.Size(110, 110)
         Me.tilHome.Style = MetroFramework.MetroColorStyle.Pink
         Me.tilHome.TabIndex = 35
-        Me.tilHome.Text = "Main Menu"
+        Me.tilHome.Text = "Home"
         Me.tilHome.Theme = MetroFramework.MetroThemeStyle.Light
         Me.tilHome.TileImage = Global.SAOProject.My.Resources.Resources.ic_view_list_white_48dp_1x
         Me.tilHome.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter

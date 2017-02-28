@@ -7,7 +7,7 @@ Imports System.Text
 
 Public Class TabMain
 
-
+    Public logintype As String
     'CURRENT ERRORS FOR NOW THAT NEED FIXES . 
     ' - EVENT UPDATE ,  -Account Update
     'NEED TO BE FINISHED or deleted
@@ -22,6 +22,7 @@ Public Class TabMain
         event_date_load()
         load_kpi()
         load_locs()
+        load_user_typee()
         load_orgANDschool()
         btn_deletedata.Visible = False
         btn_update.Visible = False
@@ -47,7 +48,23 @@ Public Class TabMain
     End Sub
 
 
+    Public Sub load_user_typee()
+        logintype = Login.usertype
 
+        Try
+            If logintype = "Admin" Then
+                reg_cb_usertype.Items.Add("Guest")
+                reg_cb_usertype.Items.Add("-")
+
+            ElseIf logintype = "SuperAdmin" Then
+                reg_cb_usertype.Items.Add("Admin")
+                reg_cb_usertype.Items.Add("Guest")
+                reg_cb_usertype.Items.Add("-")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
     Public Sub count_id_event()
         Try
             MysqlConn.Open()
@@ -1069,33 +1086,6 @@ Public Class TabMain
 
 
     'END OF REMINDER CODES
-
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_home_eventadding.Click
-
-        Dim a As Integer
-
-        a = MetroMessageBox.Show(Me, "Are you sure you want to add an event?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If a = vbYes Then
-            TabControl1.SelectedTab = TP_Event
-        Else
-
-
-        End If
-
-    End Sub
-
-    Private Sub btn_useradding_Click(sender As Object, e As EventArgs) Handles btn_home_useradding.Click
-        Dim a As Integer
-
-        a = MetroMessageBox.Show(Me, "Are you sure you want to add a user?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If a = vbYes Then
-            TabControl1.SelectedTab = TP_User
-        Else
-        End If
-    End Sub
 
 
     Private Sub DataGridView3_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentDoubleClick

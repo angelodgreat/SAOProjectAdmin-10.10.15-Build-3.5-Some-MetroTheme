@@ -23,20 +23,29 @@ Partial Class TabMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TabMain))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TP_Note = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView3 = New MetroFramework.Controls.MetroGrid()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TP_Home = New System.Windows.Forms.TabPage()
-        Me.btn_home_useradding = New System.Windows.Forms.Button()
-        Me.btn_home_eventadding = New System.Windows.Forms.Button()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -55,17 +64,6 @@ Partial Class TabMain
         Me.filter_dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.load_schedule = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TP_Note = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView3 = New MetroFramework.Controls.MetroGrid()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TP_Event = New System.Windows.Forms.TabPage()
         Me.btn_showeventdetails = New System.Windows.Forms.Button()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
@@ -160,13 +158,6 @@ Partial Class TabMain
         Me.cb_userlist_reg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.lbl_showsem = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
-        Me.TP_Home.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox14.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP_Note.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
@@ -174,6 +165,13 @@ Partial Class TabMain
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP_Home.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox14.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP_Event.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox8.SuspendLayout()
@@ -207,11 +205,179 @@ Partial Class TabMain
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 4
         '
+        'TP_Note
+        '
+        Me.TP_Note.BackColor = System.Drawing.Color.LightPink
+        Me.TP_Note.Controls.Add(Me.Button2)
+        Me.TP_Note.Controls.Add(Me.GroupBox12)
+        Me.TP_Note.Controls.Add(Me.GroupBox11)
+        Me.TP_Note.Controls.Add(Me.GroupBox9)
+        Me.TP_Note.Controls.Add(Me.Label29)
+        Me.TP_Note.Controls.Add(Me.PictureBox9)
+        Me.TP_Note.Controls.Add(Me.PictureBox4)
+        Me.TP_Note.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TP_Note.Location = New System.Drawing.Point(4, 24)
+        Me.TP_Note.Name = "TP_Note"
+        Me.TP_Note.Padding = New System.Windows.Forms.Padding(3)
+        Me.TP_Note.Size = New System.Drawing.Size(1267, 681)
+        Me.TP_Note.TabIndex = 3
+        Me.TP_Note.Text = "Home"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.Location = New System.Drawing.Point(584, 402)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(97, 29)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Add Note"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.BackColor = System.Drawing.Color.LightBlue
+        Me.GroupBox12.Controls.Add(Me.Label34)
+        Me.GroupBox12.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox12.Location = New System.Drawing.Point(57, 306)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(508, 314)
+        Me.GroupBox12.TabIndex = 39
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "About Student Affairs Office"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label34.Location = New System.Drawing.Point(14, 44)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(356, 255)
+        Me.Label34.TabIndex = 0
+        Me.Label34.Text = resources.GetString("Label34.Text")
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.BackColor = System.Drawing.Color.LightBlue
+        Me.GroupBox11.Controls.Add(Me.Label33)
+        Me.GroupBox11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox11.Location = New System.Drawing.Point(57, 125)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(508, 175)
+        Me.GroupBox11.TabIndex = 38
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "About CEU"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label33.Location = New System.Drawing.Point(14, 30)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(416, 135)
+        Me.Label33.TabIndex = 79
+        Me.Label33.Text = resources.GetString("Label33.Text")
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox9.BackColor = System.Drawing.Color.LightBlue
+        Me.GroupBox9.Controls.Add(Me.DataGridView3)
+        Me.GroupBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox9.Location = New System.Drawing.Point(584, 125)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(626, 271)
+        Me.GroupBox9.TabIndex = 37
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Notes"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
+        Me.DataGridView3.AllowUserToResizeRows = False
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(89, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView3.EnableHeadersVisualStyles = False
+        Me.DataGridView3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.DataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.Location = New System.Drawing.Point(3, 19)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
+        Me.DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(89, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView3.RowHeadersVisible = False
+        Me.DataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView3.Size = New System.Drawing.Size(620, 249)
+        Me.DataGridView3.Style = MetroFramework.MetroColorStyle.Green
+        Me.DataGridView3.TabIndex = 0
+        '
+        'Label29
+        '
+        Me.Label29.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.DimGray
+        Me.Label29.Location = New System.Drawing.Point(493, 3)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(374, 66)
+        Me.Label29.TabIndex = 29
+        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox9.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
+        Me.PictureBox9.Location = New System.Drawing.Point(873, 6)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox9.TabIndex = 35
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox4.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
+        Me.PictureBox4.Location = New System.Drawing.Point(387, 6)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox4.TabIndex = 16
+        Me.PictureBox4.TabStop = False
+        '
         'TP_Home
         '
         Me.TP_Home.BackColor = System.Drawing.Color.LightPink
-        Me.TP_Home.Controls.Add(Me.btn_home_useradding)
-        Me.TP_Home.Controls.Add(Me.btn_home_eventadding)
         Me.TP_Home.Controls.Add(Me.PictureBox8)
         Me.TP_Home.Controls.Add(Me.GroupBox14)
         Me.TP_Home.Controls.Add(Me.btn_print)
@@ -227,28 +393,6 @@ Partial Class TabMain
         Me.TP_Home.Size = New System.Drawing.Size(1267, 681)
         Me.TP_Home.TabIndex = 5
         Me.TP_Home.Text = "Schedules"
-        '
-        'btn_home_useradding
-        '
-        Me.btn_home_useradding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_home_useradding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_home_useradding.Location = New System.Drawing.Point(948, 633)
-        Me.btn_home_useradding.Name = "btn_home_useradding"
-        Me.btn_home_useradding.Size = New System.Drawing.Size(98, 27)
-        Me.btn_home_useradding.TabIndex = 7
-        Me.btn_home_useradding.Text = "Add User"
-        Me.btn_home_useradding.UseVisualStyleBackColor = True
-        '
-        'btn_home_eventadding
-        '
-        Me.btn_home_eventadding.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_home_eventadding.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_home_eventadding.Location = New System.Drawing.Point(1052, 633)
-        Me.btn_home_eventadding.Name = "btn_home_eventadding"
-        Me.btn_home_eventadding.Size = New System.Drawing.Size(98, 27)
-        Me.btn_home_eventadding.TabIndex = 8
-        Me.btn_home_eventadding.Text = "Add Event"
-        Me.btn_home_eventadding.UseVisualStyleBackColor = True
         '
         'PictureBox8
         '
@@ -500,176 +644,6 @@ Partial Class TabMain
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
-        'TP_Note
-        '
-        Me.TP_Note.BackColor = System.Drawing.Color.LightPink
-        Me.TP_Note.Controls.Add(Me.Button2)
-        Me.TP_Note.Controls.Add(Me.GroupBox12)
-        Me.TP_Note.Controls.Add(Me.GroupBox11)
-        Me.TP_Note.Controls.Add(Me.GroupBox9)
-        Me.TP_Note.Controls.Add(Me.Label29)
-        Me.TP_Note.Controls.Add(Me.PictureBox9)
-        Me.TP_Note.Controls.Add(Me.PictureBox4)
-        Me.TP_Note.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TP_Note.Location = New System.Drawing.Point(4, 24)
-        Me.TP_Note.Name = "TP_Note"
-        Me.TP_Note.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP_Note.Size = New System.Drawing.Size(1267, 681)
-        Me.TP_Note.TabIndex = 3
-        Me.TP_Note.Text = "Home"
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.Location = New System.Drawing.Point(584, 402)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(97, 29)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Add Note"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'GroupBox12
-        '
-        Me.GroupBox12.BackColor = System.Drawing.Color.LightBlue
-        Me.GroupBox12.Controls.Add(Me.Label34)
-        Me.GroupBox12.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox12.Location = New System.Drawing.Point(57, 306)
-        Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(508, 314)
-        Me.GroupBox12.TabIndex = 39
-        Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "About Student Affairs Office"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label34.Location = New System.Drawing.Point(14, 44)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(356, 255)
-        Me.Label34.TabIndex = 0
-        Me.Label34.Text = resources.GetString("Label34.Text")
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.BackColor = System.Drawing.Color.LightBlue
-        Me.GroupBox11.Controls.Add(Me.Label33)
-        Me.GroupBox11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox11.Location = New System.Drawing.Point(57, 125)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(508, 175)
-        Me.GroupBox11.TabIndex = 38
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "About CEU"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label33.Location = New System.Drawing.Point(14, 30)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(416, 135)
-        Me.Label33.TabIndex = 79
-        Me.Label33.Text = resources.GetString("Label33.Text")
-        '
-        'GroupBox9
-        '
-        Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox9.BackColor = System.Drawing.Color.LightBlue
-        Me.GroupBox9.Controls.Add(Me.DataGridView3)
-        Me.GroupBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox9.Location = New System.Drawing.Point(584, 125)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(626, 271)
-        Me.GroupBox9.TabIndex = 37
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Notes"
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.AllowUserToResizeRows = False
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(89, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.EnableHeadersVisualStyles = False
-        Me.DataGridView3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.DataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.Location = New System.Drawing.Point(3, 19)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(89, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(104, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView3.RowHeadersVisible = False
-        Me.DataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(620, 249)
-        Me.DataGridView3.Style = MetroFramework.MetroColorStyle.Green
-        Me.DataGridView3.TabIndex = 0
-        '
-        'Label29
-        '
-        Me.Label29.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.DimGray
-        Me.Label29.Location = New System.Drawing.Point(493, 3)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(374, 66)
-        Me.Label29.TabIndex = 29
-        Me.Label29.Text = " Centro Escolar University " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Student Affairs Office" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox9.Image = Global.SAOProject.My.Resources.Resources.fff_CROP_RES_
-        Me.PictureBox9.Location = New System.Drawing.Point(873, 6)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox9.TabIndex = 35
-        Me.PictureBox9.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox4.Image = Global.SAOProject.My.Resources.Resources.oie_transparent
-        Me.PictureBox4.Location = New System.Drawing.Point(387, 6)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox4.TabIndex = 16
-        Me.PictureBox4.TabStop = False
-        '
         'TP_Event
         '
         Me.TP_Event.BackColor = System.Drawing.Color.LightPink
@@ -686,7 +660,7 @@ Partial Class TabMain
         Me.TP_Event.Padding = New System.Windows.Forms.Padding(3)
         Me.TP_Event.Size = New System.Drawing.Size(1267, 681)
         Me.TP_Event.TabIndex = 2
-        Me.TP_Event.Text = "Event"
+        Me.TP_Event.Text = "Reservation"
         '
         'btn_showeventdetails
         '
@@ -1634,7 +1608,7 @@ Partial Class TabMain
         '
         Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RatingFormToolStripMenuItem1, Me.StudentRecordsManagementSystemToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.DatabaseToolStripMenuItem.Text = "Database"
         '
         'RatingFormToolStripMenuItem1
@@ -1678,19 +1652,19 @@ Partial Class TabMain
         'RatingFormToolStripMenuItem
         '
         Me.RatingFormToolStripMenuItem.Name = "RatingFormToolStripMenuItem"
-        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.RatingFormToolStripMenuItem.Text = "Rating Form"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.LogoutToolStripMenuItem.Text = "Log-out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'AboutToolStripMenuItem
@@ -1780,16 +1754,6 @@ Partial Class TabMain
         Me.Text = "CEU-SAO  Student Records Management System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
-        Me.TP_Home.ResumeLayout(False)
-        Me.TP_Home.PerformLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox14.ResumeLayout(False)
-        Me.GroupBox14.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP_Note.ResumeLayout(False)
         Me.TP_Note.PerformLayout()
         Me.GroupBox12.ResumeLayout(False)
@@ -1800,6 +1764,16 @@ Partial Class TabMain
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP_Home.ResumeLayout(False)
+        Me.TP_Home.PerformLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox14.ResumeLayout(False)
+        Me.GroupBox14.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP_Event.ResumeLayout(False)
         Me.TP_Event.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1897,8 +1871,6 @@ Partial Class TabMain
     Friend WithEvents Label33 As Label
     Friend WithEvents GroupBox9 As GroupBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents btn_home_eventadding As Button
-    Friend WithEvents btn_home_useradding As Button
     Friend WithEvents welcomeadmin As Label
     Friend WithEvents cb_noa As ComboBox
     Friend WithEvents Label35 As Label
