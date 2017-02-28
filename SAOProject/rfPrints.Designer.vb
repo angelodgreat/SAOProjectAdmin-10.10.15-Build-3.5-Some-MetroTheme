@@ -118,6 +118,7 @@ Partial Class rfPrints
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightPink
         Me.ClientSize = New System.Drawing.Size(760, 318)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.tilAll)

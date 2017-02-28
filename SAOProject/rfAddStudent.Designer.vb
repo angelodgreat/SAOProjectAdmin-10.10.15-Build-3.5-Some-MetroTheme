@@ -361,6 +361,7 @@ Partial Class rfAddStudent
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(689, 287)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnAdd)
@@ -369,6 +370,7 @@ Partial Class rfAddStudent
         Me.Controls.Add(Me.MetroPanel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "rfAddStudent"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink

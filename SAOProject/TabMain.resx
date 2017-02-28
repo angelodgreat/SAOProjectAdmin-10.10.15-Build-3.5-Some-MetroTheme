@@ -117,19 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label37.Text" xml:space="preserve">
-    <value>1. If the event description is long
- youcan resize the columns.
-
-2. You can search the date according
-to your desire using the two 
-"Date Pickers" above.
-
-3. You can search the location in the
- location textbox above.
-
-4. You can also search by college</value>
-  </data>
   <data name="Label34.Text" xml:space="preserve">
     <value>To handle general student programs and concerns,
 
@@ -160,6 +147,19 @@ It was founded on June 3, 1907 by two women, Librada Avelino
 and Carmen de Luna, and was originally called 
 
 Centro Escolar de Señoritas. It became a university in 1933.</value>
+  </data>
+  <data name="Label37.Text" xml:space="preserve">
+    <value>1. If the event description is long
+ youcan resize the columns.
+
+2. You can search the date according
+to your desire using the two 
+"Date Pickers" above.
+
+3. You can search the location in the
+ location textbox above.
+
+4. You can also search by college</value>
   </data>
   <data name="Label17.Text" xml:space="preserve">
     <value>3. After you add/update/delete an event

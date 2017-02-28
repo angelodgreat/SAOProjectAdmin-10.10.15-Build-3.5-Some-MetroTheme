@@ -23,7 +23,7 @@ Partial Class rfUniColPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfUniColPrint))
         Me.studsumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
@@ -59,9 +59,9 @@ Partial Class rfUniColPrint
         Me.ReportViewer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.studsumBindingSource
-        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.studsumBindingSource
+        Me.ReportViewer2.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer2.LocalReport.ReportEmbeddedResource = "SAOProject.Report2.rdlc"
         Me.ReportViewer2.Location = New System.Drawing.Point(339, 112)
         Me.ReportViewer2.Name = "ReportViewer2"
@@ -199,6 +199,7 @@ Partial Class rfUniColPrint
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1131, 686)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lstStudcmCS)
         Me.Controls.Add(Me.MetroLabel5)

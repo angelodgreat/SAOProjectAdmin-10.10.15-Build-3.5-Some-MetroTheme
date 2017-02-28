@@ -9,12 +9,17 @@ Public Class frm_choose
 
         Try
             If logintype = "Admin" Then
+                TabMain.reg_cb_usertype.Items.Add("Guest")
+                TabMain.reg_cb_usertype.Items.Add("-")
                 Hide()
                 TabMain.Show()
             ElseIf logintype = "SuperAdmin" Then
+                TabMain.reg_cb_usertype.Items.Add("Admin")
+                TabMain.reg_cb_usertype.Items.Add("Guest")
+                TabMain.reg_cb_usertype.Items.Add("-")
                 Hide()
                 TabMain.Show()
-            Else
+            ElseIf logintype = "Guest" Then
                 Hide()
                 GuestOnly.Show()
             End If

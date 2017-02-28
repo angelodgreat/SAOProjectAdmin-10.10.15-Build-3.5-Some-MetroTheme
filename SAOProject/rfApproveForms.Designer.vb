@@ -807,6 +807,7 @@ Partial Class rfApproveForms
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(808, 740)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.btnApprove)
         Me.Controls.Add(Me.tilExit)

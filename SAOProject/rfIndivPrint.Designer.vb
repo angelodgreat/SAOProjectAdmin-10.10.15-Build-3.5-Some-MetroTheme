@@ -23,7 +23,7 @@ Partial Class rfIndivPrint
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rfIndivPrint))
         Me.allrfBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rfPrints_tbl = New SAOProject.rfPrints_tbl()
@@ -85,9 +85,9 @@ Partial Class rfIndivPrint
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ReportViewer1.DocumentMapWidth = 27
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.allrfBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.allrfBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SAOProject.Report3.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(35, 76)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -126,6 +126,7 @@ Partial Class rfIndivPrint
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(750, 556)
+        Me.ControlBox = False
         Me.Controls.Add(Me.tilBack)
         Me.Controls.Add(Me.tilHome)
         Me.Controls.Add(Me.ReportViewer1)

@@ -13,7 +13,6 @@ Public Class TabMain
     'NEED TO BE FINISHED or deleted
     ' - CALENDAR CONTROL 
 
-
     Dim Command As MySqlCommand
     Dim dbdataset As New DataTable
     Dim reader As MySqlDataReader
@@ -24,8 +23,6 @@ Public Class TabMain
         load_kpi()
         load_locs()
         load_orgANDschool()
-
-
         btn_deletedata.Visible = False
         btn_update.Visible = False
         GroupBoxEvent.Visible = False
@@ -48,6 +45,8 @@ Public Class TabMain
         Timer_TabMain.Enabled = True
 
     End Sub
+
+
 
     Public Sub count_id_event()
         Try
@@ -895,7 +894,7 @@ Public Class TabMain
 
         If a = vbYes Then
             Me.Dispose()
-            Login.Show()
+            login.Show()
         Else
         End If
     End Sub

@@ -86,8 +86,7 @@ Public Class Login
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         TabMain.welcomeadmin.Text = "Welcome Admin, " & reader.GetString("fname") + " " + reader.GetString("lname")
-                        SetAccess(usertype)
-                        SetAccount(reader.GetString("lname") + ", " + reader.GetString("fname"))
+                       
                         frm_choose.Show()
                         tb_password.Text = ""
                         tb_username.Text = ""
@@ -102,7 +101,8 @@ Public Class Login
                         TabMain.tb_location.Text = "-"
                         TabMain.GroupBoxEvent.Visible = False
 
-
+                        SetAccess(usertype)
+                        SetAccount(reader.GetString("lname") + ", " + reader.GetString("fname"))
                         TabMain.Panel_Accounts.Enabled = False
 
 
@@ -118,24 +118,24 @@ Public Class Login
                         tb_password.Text = ""
                         tb_username.Text = ""
 
-                        'Conditions
 
+
+                        'Conditions
                         TabMain.cb_eventschool.Text = "-"
                         TabMain.reg_cb_college.Text = "-"
-                        TabMain.reg_cb_usertype.Text = "-"
                         TabMain.cb_kpi.Text = "-"
                         TabMain.cb_noa.Text = "-"
                         TabMain.tb_location.Text = "-"
                         TabMain.GroupBoxEvent.Visible = False
 
-                    Else
-
+                    ElseIf reader.GetString("usertype") = "Guest" Then
+                        usertype = "Guest"
                         Me.Hide()
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                         GuestOnly.welcomeguest.Text = "Welcome Guest, " & reader.GetString("fname") + " " + reader.GetString("lname")
-                        usertype = "Guest"
+
 
                         frm_choose.Show()
                         ChangeSemester.btn_createSCYS.Visible = False
@@ -211,6 +211,8 @@ Public Class Login
 
     Private Sub mbtn_bypass_Click(sender As Object, e As EventArgs) Handles mbtn_bypass.Click
         usertype = "Admin"
+        SetAccess(usertype)
+
         Hide()
         frm_choose.Show()
 
