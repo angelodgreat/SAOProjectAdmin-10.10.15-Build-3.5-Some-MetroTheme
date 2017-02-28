@@ -1447,7 +1447,7 @@
         'Return remarks
 
         Dim remarks As String = String.Empty
-        query = "SELECT * FROM points_ranges"
+        query = "SELECT awards, minPoint FROM ceuratingforms.points_ranges"
 
         If (Count(query, 2) <> 0) Then
             Dim result As ArrayList = RetrieveQuery(query, 2)
@@ -1549,7 +1549,7 @@
                 ElseIf rf2comActStat.SelectedIndex = -1 Then
                     tipError.Show("Please select activity status.", rf2comActStat)
                     rf2comActStat.Select()
-                ElseIf rf2comActStat.SelectedIndex = 1 Then
+                ElseIf rf2comActStat.SelectedIndex = 0 Then
                     If rf2comSup.SelectedIndex = -1 Then
                         tipError.Show("Please select supervision.", rf2comSup)
                         rf2comSup.Select()
@@ -1562,9 +1562,14 @@
                     Dim title = rf2txtTitle.Text
                     Dim level = rf2comExt.SelectedItem.ToString
                     Dim act = rf2comActStat.SelectedItem.ToString
-                    If rf2comSup.SelectedIndex Then
-                        act2 = rf2comSup.SelectedItem.ToString
-                    End If
+                    Select Case rf2comSup.SelectedIndex
+                        Case 0
+                            act2 = rf2comSup.SelectedItem.ToString
+                        Case 1
+                            act2 = rf2comSup.SelectedItem.ToString
+                        Case Else
+                            act2 = ""
+                    End Select
                     Dim pos = rf2comPosition.SelectedItem.ToString
                     Dim rf2point = Val(rf2txtPoints.Text)
                     Dim rf2weight = Val(rf2txtWeight.Text)
@@ -1620,9 +1625,16 @@
                     Dim title = rf3txtTitle.Text
                     Dim level = rf3comNatAct.SelectedItem.ToString
                     Dim act = rf3comActStat.SelectedItem.ToString
-                    If rf3comPrize.SelectedIndex Then
-                        act2 = rf3comPrize.SelectedItem.ToString
-                    End If
+                    Select Case rf3comPrize.SelectedIndex
+                        Case 0
+                            act2 = rf3comPrize.SelectedItem.ToString
+                        Case 1
+                            act2 = rf3comPrize.SelectedItem.ToString
+                        Case 2
+                            act2 = rf3comPrize.SelectedItem.ToStrin
+                        Case Else
+                            act2 = ""
+                    End Select
 
                     Dim pos = rf3comLvlAct.SelectedItem.ToString
                     Dim rf3point = Val(rf3txtPoints.Text)
@@ -1676,9 +1688,17 @@
                     Dim title = rf4txtTitle.Text
                     Dim level = rf4comNatAct.SelectedItem.ToString
                     Dim act = rf4comAct.SelectedItem.ToString
-                    If rf4comAward.SelectedIndex Then
-                        act2 = rf4comAward.SelectedItem.ToString
-                    End If
+                    Select Case rf4comAward.SelectedIndex
+                        Case 0
+                            act2 = rf4comAward.SelectedItem.ToString
+                        Case 1
+                            act2 = rf4comAward.SelectedItem.ToString
+                        Case 2
+                            act2 = rf4comAward.SelectedItem.ToString
+                        Case Else
+                            act2 = ""
+                    End Select
+
                     Dim pos = rf4comLvlAct.SelectedItem.ToString
                     Dim rf4point = Val(rf4txtPoints.Text)
                     Dim rf4weight = Val(rf4txtWeight.Text)
@@ -1896,9 +1916,16 @@
                 Else
                     Dim org As String
                     Dim pos = rf6comPosition.SelectedItem.ToString
-                    If rf6comPubOrg.SelectedIndex Then
-                        org = rf6comPubOrg.SelectedItem.ToString
-                    End If
+                    Select Case rf6comPubOrg.SelectedIndex
+                        Case 0
+                            org = rf6comPubOrg.SelectedItem.ToString
+                        Case 1
+                            org = rf6comPubOrg.SelectedItem.ToString
+                        Case 2
+                            org = rf6comPubOrg.SelectedItem.ToString
+                        Case Else
+                            org = ""
+                    End Select
                     Dim lvl = rf6comLvlOf.SelectedItem.ToString
                     Dim rf6point = Val(rf6txtPoints.Text)
                     Dim rf6weight = Val(rf6txtWeight.Text)
