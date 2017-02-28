@@ -705,7 +705,7 @@ Public Class SettingsForm
     End Sub
 
     Private Sub UpdatePointsInfo()
-        query = "SELECT award,minPoint FROM ceuratingforms.points_ranges"
+        query = "SELECT award, minPoint FROM ceuratingforms.points_ranges"
 
         If Count(query, 2) <> 0 Then
             Dim minPoints As ArrayList = RetrieveQuery(query, 2)
