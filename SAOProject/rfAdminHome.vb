@@ -22,6 +22,9 @@ Public Class rfAdminHome
         notifs = count(query, 1) + count(query1, 1) + count(query2, 1) + count(query3, 1) + count(query4, 1) + count(query5, 1) + count(query6, 1)
         lnkNotif.Visible = True
         lnkNotif.Text = "You have " & notifs & " rating forms waiting for approval."
+        If notifs = 0 Then
+            lnkNotif.Visible = False
+        End If
     End Sub
 
     Private Sub frmAdHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
