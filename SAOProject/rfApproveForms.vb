@@ -25,131 +25,6 @@
 
     End Sub
 
-    Private Sub btnApprove_Click(sender As Object, e As EventArgs) Handles btnApprove.Click
-        Dim query As String
-        Select Case tabVRF.SelectedIndex
-            Case 0
-                query = "UPDATE ceuratingforms.ratingform1 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, totalPoints from ceuratingforms.ratingform1 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo WHERE StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 1
-                query = "UPDATE ceuratingforms.ratingform2 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, TWP from ceuratingforms.ratingform2 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 2
-                query = "UPDATE ceuratingforms.ratingform3 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, TWP from ceuratingforms.ratingform3 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 3
-                query = "UPDATE ceuratingforms.ratingform4 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, twp from ceuratingforms.ratingform4 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 4
-                query = "UPDATE ceuratingforms.ratingform5 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, twp from ceuratingforms.ratingform5 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 5
-                query = "UPDATE ceuratingforms.ratingform6 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, twp from ceuratingforms.ratingform6 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-            Case 6
-                query = "UPDATE ceuratingforms.ratingform7 SET appr = 1 WHERE appr = 0"
-                query = "Select StudentNo, twp from ceuratingforms.ratingform7 WHERE appr = 0"
-                Dim results = RetrieveQuery(query, 2)
-                For Each result As ArrayList In results
-                    Dim poist As Integer
-                    Dim stud As String
-                    stud = result(0).ToString
-                    poist = Integer.Parse(result(1)).ToString()
-                    Dim query1 = "Select ceuratingforms.TotalPoints from pointsinfo where StudNo = '" & stud & "'"
-                    Dim studpoint = RetrieveQuery(query1, 1)
-                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
-                    Dim tol As Integer = poist + total
-                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
-                    ExecuteQuery(query)
-                Next
-                ExecuteQuery(query)
-        End Select
-        DisplayContent()
-    End Sub
 
     Private Sub DisplayContent()
         Dim query As String
@@ -319,5 +194,131 @@
             DirectCast(previousForm, rfAdminHome).FetchNotifications()
         End If
 
+    End Sub
+
+    Private Sub btnApprove_Click(sender As Object, e As EventArgs) Handles btnApprove.Click
+        Dim query As String
+        Select Case tabVRF.SelectedIndex
+            Case 0
+                Dim query2 = "UPDATE ceuratingforms.ratingform1 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, totalPoints from ceuratingforms.ratingform1 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo WHERE StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 1
+                Dim query2 = "UPDATE ceuratingforms.ratingform2 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, TWP from ceuratingforms.ratingform2 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 2
+                Dim query2 = "UPDATE ceuratingforms.ratingform3 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, TWP from ceuratingforms.ratingform3 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 3
+                Dim query2 = "UPDATE ceuratingforms.ratingform4 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, twp from ceuratingforms.ratingform4 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 4
+                Dim query2 = "UPDATE ceuratingforms.ratingform5 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, twp from ceuratingforms.ratingform5 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 5
+                Dim query2 = "UPDATE ceuratingforms.ratingform6 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, twp from ceuratingforms.ratingform6 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+            Case 6
+                Dim query2 = "UPDATE ceuratingforms.ratingform7 SET appr = 1 WHERE appr = 0"
+                query = "Select StudentNo, twp from ceuratingforms.ratingform7 WHERE appr = 0"
+                Dim results = RetrieveQuery(query, 2)
+                For Each result As ArrayList In results
+                    Dim poist As Integer
+                    Dim stud As String
+                    stud = result(0).ToString
+                    poist = Integer.Parse(result(1)).ToString()
+                    Dim query1 = "Select TotalPoints from ceuratingforms.pointsinfo where StudNo = '" & stud & "'"
+                    Dim studpoint = RetrieveQuery(query1, 1)
+                    Dim total = Integer.Parse(studpoint(0)(0)).ToString()
+                    Dim tol As Integer = poist + total
+                    query = "UPDATE ceuratingforms.pointsinfo set TotalPoints = " & tol & " Where StudNo = '" & stud & "'"
+                    ExecuteQuery(query)
+                Next
+                ExecuteQuery(query2)
+        End Select
+        DisplayContent()
     End Sub
 End Class
