@@ -1,7 +1,7 @@
 ﻿Imports MetroFramework
 Public Class rfAdminHome
     Dim notifs As Integer
-
+    Public logintype As String
     Private Sub FrmAdHome_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Closing
         If MsgBox("Are you sure you want to exit?", MsgBoxStyle.YesNo, "") = MsgBoxResult.Yes Then
             End
@@ -74,8 +74,27 @@ Public Class rfAdminHome
     End Sub
 
     Private Sub tilHome_Click(sender As Object, e As EventArgs) Handles tilHome.Click
-        TabMain.Show()
-        Hide()
+
+
+        logintype = Login.usertype
+
+        Try
+            If logintype = "Admin" Then
+                TabMain.Show()
+                Hide()
+            ElseIf logintype = "SuperAdmin" Then
+                TabMain.Show()
+                Hide()
+            Else
+                GuestOnly.Show()
+                Hide()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
     End Sub
 
     Private Sub tmrDay_Tick(sender As Object, e As EventArgs) Handles tmrDay.Tick

@@ -137,7 +137,7 @@ Public Class Login
                         GuestOnly.welcomeguest.Text = "Welcome Guest, " & reader.GetString("fname") + " " + reader.GetString("lname")
 
 
-                        frm_choose.Show()
+                        GuestOnly.Show()
                         ChangeSemester.btn_createSCYS.Visible = False
                         ChangeSemester.btn_deleteSCYS.Visible = False
 

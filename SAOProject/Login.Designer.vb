@@ -77,6 +77,7 @@ Partial Class Login
         Me.mbtn_bypass.TabIndex = 12
         Me.mbtn_bypass.Text = "Bypass"
         Me.mbtn_bypass.UseSelectable = True
+        Me.mbtn_bypass.Visible = False
         '
         'tb_password
         '
