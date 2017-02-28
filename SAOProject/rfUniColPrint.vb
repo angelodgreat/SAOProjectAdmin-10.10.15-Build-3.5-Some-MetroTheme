@@ -95,8 +95,8 @@ Public Class rfUniColPrint
                 MetroLabel5.Visible = True
                 lstStudcmCS.Visible = True
                 ReportViewer2.Location = New Point(322, 117)
-                tilHome.Location = New Point(1016, 581)
-                tilBack.Location = New Point(935, 581)
+                tilHome.Location = New Point(1033, 589)
+                tilBack.Location = New Point(952, 588)
                 ActiveForm.Size = New Size(1121, 731)
 
         End Select

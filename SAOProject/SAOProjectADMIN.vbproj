@@ -327,12 +327,12 @@
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
-    <Content Include="Report2.rdlc">
+    <EmbeddedResource Include="Report2.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report3.rdlc">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report3.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="rfAddStudent.resx">
       <DependentUpon>rfAddStudent.vb</DependentUpon>
     </EmbeddedResource>

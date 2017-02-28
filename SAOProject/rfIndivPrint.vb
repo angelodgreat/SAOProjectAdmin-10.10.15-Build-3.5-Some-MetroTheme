@@ -3,6 +3,8 @@ Imports Microsoft.Reporting.WinForms
 Public Class rfIndivPrint
     Dim selectedNamee As String
     Private Sub rfIndivPrint_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'rfPrints_tbl.allrf' table. You can move, or remove it, as needed.
+        'Me.allrfTableAdapter.Fill(Me.rfPrints_tbl.allrf)
         Dim con As MySqlConnection = ConnectToDatabase()
         con.Open()
         'TODO: This line of code loads data into the 'rfPrint_tbl.allrf' table. You can move, or remove it, as needed.
@@ -37,6 +39,7 @@ Public Class rfIndivPrint
         selectedName(selectedNamee)
     End Sub
     Private Sub selectedName(ByVal str As String)
+
         Dim lname As String = ""
         Dim fname As String = ""
         Dim studID As String = ""
@@ -69,11 +72,24 @@ Public Class rfIndivPrint
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             If reader.Read Then
                 studID = reader.GetString(0)
-                totalPoint = reader.GetString(7)
-                award = reader.GetString(8)
             End If
             reader.Close()
             conn.Close()
+
+
+            conn.Open()
+            Dim com As MySqlCommand = New MySqlCommand()
+            com.Connection = conn
+            com.CommandText = "Select TotalPoints, Remarks from ceuratingforms.pointsinfo where StudNo = '" & studID & "'"
+            com.ExecuteNonQuery()
+            Dim readers As MySqlDataReader = com.ExecuteReader
+            If readers.Read Then
+                totalPoint = readers.GetString(0)
+                award = readers.GetString(1)
+            End If
+            readers.Close()
+            conn.Close()
+
 
             conn.Open()
             cmd.Connection = conn
