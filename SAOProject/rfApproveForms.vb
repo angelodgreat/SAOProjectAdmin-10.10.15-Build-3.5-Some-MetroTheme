@@ -20,7 +20,6 @@
             btnApprove.Visible = True
         End If
         tabVRF.SelectedIndex = -1
-        tabVRF.SelectedIndex = 0
 
 
     End Sub
@@ -216,6 +215,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 1 approved!")
+                rf1Grid.Rows.Clear()
             Case 1
                 Dim query2 = "UPDATE ceuratingforms.ratingform2 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, TWP from ceuratingforms.ratingform2 WHERE appr = 0"
@@ -233,6 +234,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 2 approved!")
+                rf2Grid.Rows.Clear()
             Case 2
                 Dim query2 = "UPDATE ceuratingforms.ratingform3 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, TWP from ceuratingforms.ratingform3 WHERE appr = 0"
@@ -250,6 +253,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 3 approved!")
+                rf3Grid.Rows.Clear()
             Case 3
                 Dim query2 = "UPDATE ceuratingforms.ratingform4 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, twp from ceuratingforms.ratingform4 WHERE appr = 0"
@@ -267,6 +272,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 4 approved!")
+                rf4Grid.Rows.Clear()
             Case 4
                 Dim query2 = "UPDATE ceuratingforms.ratingform5 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, twp from ceuratingforms.ratingform5 WHERE appr = 0"
@@ -284,6 +291,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 5 approved!")
+                rf5Grid.Rows.Clear()
             Case 5
                 Dim query2 = "UPDATE ceuratingforms.ratingform6 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, twp from ceuratingforms.ratingform6 WHERE appr = 0"
@@ -301,6 +310,8 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 6 approved!")
+                rf6Grid.Rows.Clear()
             Case 6
                 Dim query2 = "UPDATE ceuratingforms.ratingform7 SET appr = 1 WHERE appr = 0"
                 query = "Select StudentNo, twp from ceuratingforms.ratingform7 WHERE appr = 0"
@@ -318,7 +329,9 @@
                     ExecuteQuery(query)
                 Next
                 ExecuteQuery(query2)
+                MsgBox("All Pending Rating Form 7 approved!")
+                rf7Grid.Rows.Clear()
         End Select
-        DisplayContent()
+
     End Sub
 End Class
