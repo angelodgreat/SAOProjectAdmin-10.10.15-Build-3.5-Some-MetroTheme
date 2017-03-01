@@ -590,7 +590,6 @@ Partial Class SettingsForm
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(678, 389)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Rating Forms Settings"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'rfPointSettings
@@ -613,6 +612,7 @@ Partial Class SettingsForm
         Me.rfPointSettings.TabIndex = 0
         Me.rfPointSettings.TabStop = False
         Me.rfPointSettings.Text = "&Points Settings"
+        Me.rfPointSettings.Visible = False
         '
         'GroupBox2
         '
