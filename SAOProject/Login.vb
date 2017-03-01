@@ -9,7 +9,6 @@ Public Class Login
 
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         'Timer
         Timer_Login.Enabled = True
 
@@ -76,7 +75,6 @@ Public Class Login
                 End While
 
 
-
                 If count = 1 Then
                     attempt = 0
                     If reader.GetString("usertype") = "Admin" Then
@@ -92,18 +90,11 @@ Public Class Login
                         tb_username.Text = ""
 
                         'Conditions
-
-                        TabMain.cb_eventschool.Text = "-"
-                        TabMain.reg_cb_college.Text = "-"
-                        TabMain.reg_cb_usertype.Text = "-"
-                        TabMain.cb_kpi.Text = "-"
-                        TabMain.cb_noa.Text = "-"
-                        TabMain.tb_location.Text = "-"
                         TabMain.GroupBoxEvent.Visible = False
 
                         SetAccess(usertype)
                         SetAccount(reader.GetString("lname") + ", " + reader.GetString("fname"))
-                        TabMain.Panel_Accounts.Enabled = False
+                        'TabMain.Panel_Accounts.Enabled = False
 
 
                     ElseIf reader.GetString("usertype") = "SuperAdmin" Then
@@ -118,14 +109,7 @@ Public Class Login
                         tb_password.Text = ""
                         tb_username.Text = ""
 
-
-
                         'Conditions
-                        TabMain.cb_eventschool.Text = "-"
-                        TabMain.reg_cb_college.Text = "-"
-                        TabMain.cb_kpi.Text = "-"
-                        TabMain.cb_noa.Text = "-"
-                        TabMain.tb_location.Text = "-"
                         TabMain.GroupBoxEvent.Visible = False
 
                     ElseIf reader.GetString("usertype") = "Guest" Then
@@ -133,27 +117,18 @@ Public Class Login
                         Me.Hide()
                         MetroMessageBox.Show(Me, "Entering as " & reader.GetString("fname"), "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
                         GuestOnly.welcomeguest.Text = "Welcome Guest, " & reader.GetString("fname") + " " + reader.GetString("lname")
-
 
                         GuestOnly.Show()
                         ChangeSemester.btn_createSCYS.Visible = False
                         ChangeSemester.btn_deleteSCYS.Visible = False
-
-
 
                         SetAccess(usertype)
                         SetAccount(reader.GetString("lname") + ", " + reader.GetString("fname"))
                         tb_password.Text = ""
                         tb_username.Text = ""
 
-
-
                     End If
-
-
-
 
                 Else
                     attempt = attempt + 1
@@ -162,10 +137,7 @@ Public Class Login
                     tb_password.Text = ""
                     tb_username.Text = ""
 
-
-
                 End If
-
 
                 mysqlconn.Close()
 
@@ -212,7 +184,6 @@ Public Class Login
     Private Sub mbtn_bypass_Click(sender As Object, e As EventArgs) Handles mbtn_bypass.Click
         usertype = "Admin"
         SetAccess(usertype)
-
         Hide()
         TabMain.Show()
 

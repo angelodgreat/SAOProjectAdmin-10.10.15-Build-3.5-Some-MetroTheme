@@ -37,9 +37,6 @@ Public Class Notes
 
             If a = vbYes Then
                 Dim reader As MySqlDataReader
-                Dim SDA As New MySqlDataAdapter
-                Dim dbdataset As New DataTable
-                Dim bsource As New BindingSource
 
                 Try
                     MysqlConn.Open()
@@ -54,7 +51,7 @@ Public Class Notes
                     MetroMessageBox.Show(Me, "Note Deleted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     MysqlConn.Close()
-
+                    load_notes_to_home()
 
                 Catch ex As MySqlException
                     MessageBox.Show(ex.Message)
@@ -64,23 +61,7 @@ Public Class Notes
 
                 End Try
 
-                Try
-                    MysqlConn.Open()
-                    Dim query As String
-                    query = "select saonotenumber as 'Note#' , saoreminderdate as 'Date', saonote as 'Note' from saoinfo.saoreminder"
-                    Command = New MySqlCommand(query, MysqlConn)
-                    SDA.SelectCommand = Command
-                    SDA.Fill(dbdataset)
-                    bsource.DataSource = dbdataset
-                    TabMain.DataGridView3.DataSource = bsource
-                    SDA.Update(dbdataset)
-                    MysqlConn.Close()
 
-                Catch ex As MySqlException
-                    MessageBox.Show(ex.Message)
-                Finally
-                    MysqlConn.Dispose()
-                End Try
             End If
 
         End If
@@ -102,9 +83,6 @@ Public Class Notes
 
             If a = vbYes Then
                 Dim reader As MySqlDataReader
-                Dim SDA As New MySqlDataAdapter
-                Dim dbdataset As New DataTable
-                Dim bsource As New BindingSource
 
                 Try
                     MysqlConn.Open()
@@ -136,15 +114,16 @@ Public Class Notes
 
                             MysqlConn.Open()
 
-                            query = "update saoinfo.saoreminder set saoreminderdate='" & Format(CDate(dtp_reminder.Value), "yyyy-MM-dd") & "',saonote ='" & rtb_reminder.Text & "' , saonotenumber='" & tb_reminder.Text & "'
-            where saonotenumber='" & tb_reminder.Text & "'"
+                            query = "update saoinfo.saoreminder set saoreminderdate='" & Format(CDate(dtp_reminder.Value), "yyyy-MM-dd") & "',
+                            saonote ='" & rtb_reminder.Text & "'    where saonotenumber='" & tb_reminder.Text & "'"
+
 
                             Command = New MySqlCommand(query, MysqlConn)
                             reader = Command.ExecuteReader
-                            MetroMessageBox.Show(Me, "Note Updated", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Note Updated", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                             MysqlConn.Close()
-
+                            load_notes_to_home()
                         End If
 
 
@@ -159,24 +138,6 @@ Public Class Notes
                     MysqlConn.Dispose()
 
                 End Try
-
-                Try
-                    MysqlConn.Open()
-                    Dim query As String
-                    query = "select saonotenumber as 'Note#' , saoreminderdate as 'Date', saonote as 'Note' from saoinfo.saoreminder"
-                    Command = New MySqlCommand(query, MysqlConn)
-                    SDA.SelectCommand = Command
-                    SDA.Fill(dbdataset)
-                    bsource.DataSource = dbdataset
-                    TabMain.DataGridView3.DataSource = bsource
-                    SDA.Update(dbdataset)
-                    MysqlConn.Close()
-
-                Catch ex As MySqlException
-                    MessageBox.Show(ex.Message)
-                Finally
-                    MysqlConn.Dispose()
-                End Try
             Else
             End If
         End If
@@ -186,9 +147,7 @@ Public Class Notes
         'ADDING EVENTS IN CALENDAR EVENT
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString = connstring
-        Dim SDA As New MySqlDataAdapter
-        Dim dbdataset As New DataTable
-        Dim bsource As New BindingSource
+        tb_reminder.Clear()
 
         Try
             MysqlConn.Open()
@@ -210,7 +169,7 @@ Public Class Notes
                 MsgBox("The Note# " & tb_reminder.Text & " is already in used", MsgBoxStyle.Critical, "Note# Used")
 
             Else
-                If tb_reminder.Text = "" Or rtb_reminder.Text = "" Or dtp_reminder.Text = "" Then
+                If rtb_reminder.Text = "" Then
                     MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                 Else
@@ -218,12 +177,13 @@ Public Class Notes
 
                     MysqlConn.Open()
 
-                    query = "insert into saoinfo.saoreminder (saonotenumber,saoreminderdate,saonote) values ('" & tb_reminder.Text & "' , '" & Format(CDate(dtp_reminder.Value), "yyyy-MM-dd") & "' ,'" & rtb_reminder.Text & "')"
+                    query = "insert into saoinfo.saoreminder (saoreminderdate,saonote) values ('" & Format(CDate(dtp_reminder.Value), "yyyy-MM-dd") & "' ,'" & rtb_reminder.Text & "')"
                     Command = New MySqlCommand(query, MysqlConn)
                     reader = Command.ExecuteReader
                     MetroMessageBox.Show(Me, "Note Submitted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     MysqlConn.Close()
+                    load_notes_to_home()
                 End If
             End If
 
@@ -234,6 +194,25 @@ Public Class Notes
             MysqlConn.Dispose()
 
         End Try
+
+
+
+    End Sub
+
+    Private Sub Notes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString = connstring
+        Dim SDA As New MySqlDataAdapter
+        Dim dbdataset As New DataTable
+        Dim bsource As New BindingSource
+        count_id_event()
+
+    End Sub
+    Public Sub load_notes_to_home()
+        Dim SDA As New MySqlDataAdapter
+        Dim dbdataset As New DataTable
+        Dim bsource As New BindingSource
 
         Try
             MysqlConn.Open()
@@ -252,54 +231,24 @@ Public Class Notes
         Finally
             MysqlConn.Dispose()
         End Try
-
-        Try
-            MysqlConn.Open()
-
-            query = "Select count(saonotenumber) from saoreminder"
-            Dim reader As MySqlDataReader
-            Command = New MySqlCommand(query, MysqlConn)
-            reader = Command.ExecuteReader
-
-            If reader.Read = True Then
-                tb_reminder.Text = reader.Item(0) + 1
-
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            MysqlConn.Dispose()
-        End Try
-
     End Sub
 
-    Private Sub Notes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        MysqlConn = New MySqlConnection
-        MysqlConn.ConnectionString = connstring
-        Dim SDA As New MySqlDataAdapter
-        Dim dbdataset As New DataTable
-        Dim bsource As New BindingSource
-
-
+    Public Sub count_id_event()
         Try
             MysqlConn.Open()
-
-            query = "Select count(saonotenumber) from saoreminder"
+            query = "Select saonotenumber from saoreminder"
             Dim reader As MySqlDataReader
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
 
             If reader.Read = True Then
-                tb_reminder.Text = reader.Item(0) + 1
-
+                tb_reminder.Text = reader.Item(0)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
             MysqlConn.Dispose()
         End Try
-
     End Sub
 
     Private Sub Notes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

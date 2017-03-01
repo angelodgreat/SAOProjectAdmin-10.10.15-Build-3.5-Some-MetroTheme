@@ -98,14 +98,13 @@ Public Class TabMain
             query = "SELECT * from saoinfo.saouserinfo "
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
+            lb_showuser.Items.Clear()
+
             While reader.Read
                 Dim sID = reader.GetString("id")
                 lb_showuser.Items.Add(sID)
             End While
-
             MysqlConn.Close()
-
-
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
 
@@ -516,7 +515,8 @@ Public Class TabMain
                         MetroMessageBox.Show(Me, "Account Registered!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         MysqlConn.Close()
-
+                        get_userid()
+                        clearing_account_fields()
                     End If
                 End If
             End If
@@ -579,8 +579,8 @@ Public Class TabMain
 
 
                     MysqlConn.Close()
-
-
+                    get_userid()
+                    clearing_account_fields()
                 Catch ex As MySqlException
                     MessageBox.Show(ex.Message)
 
@@ -597,22 +597,26 @@ Public Class TabMain
         End If
     End Sub
 
-
-    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs) Handles btn_reset_records.Click
-        'RESETTING FIELDS IN REGISTER FORM
+    Public Sub clearing_account_fields()
         cb_userlist_reg.Text = ""
         reg_cb_usertype.Text = "-"
-        reg_cb_college.Text = "-"
-
+        reg_cb_college.SelectedIndex = -1
         reg_id.Text = ""
         reg_fname.Text = ""
         reg_mname.Text = ""
         reg_lname.Text = ""
         reg_username.Text = ""
-        reg_id.Enabled = True
-        reg_username.Enabled = True
         reg_password.Text = ""
         reg_Retype_password.Text = ""
+    End Sub
+
+    Private Sub btn_reset_records_Click(sender As Object, e As EventArgs) Handles btn_reset_records.Click
+        'RESETTING FIELDS IN REGISTER FORM
+        GroupBox3.Enabled = True
+        reg_username.Enabled = True
+        reg_id.Enabled = True
+        reg_username.Enabled = True
+        clearing_account_fields()
     End Sub
 
 
@@ -647,7 +651,7 @@ Public Class TabMain
 
 
 
-                        If ((reg_id.Text = "") Or (reg_cb_college.Text = "-") Or reg_cb_college.Text = "" Or (reg_fname.Text = "") Or (reg_lname.Text = "") Or (reg_username.Text = "") Or (reg_password.Text = "") Or (reg_Retype_password.Text = "") Or (reg_cb_usertype.Text = "-")) Then
+                        If (reg_password.Text = "") Or (reg_Retype_password.Text = "") Then
                             MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
@@ -656,21 +660,23 @@ Public Class TabMain
 
                             MysqlConn.Open()
 
-                            query = "update saoinfo.saouserinfo Set id='" & reg_id.Text & "',college='" & reg_cb_college.Text & "',FName='" & reg_fname.Text & "',MName='" & reg_mname.Text & "',LName='" & reg_lname.Text & "',UName='" & reg_username.Text & "',
-                             Password='" & reg_Retype_password.Text & "', usertype='" & reg_cb_usertype.Text & "'
-                              where id= '" & reg_id.Text & "' "
+                            query = "update saoinfo.saouserinfo Set  Password='" & reg_Retype_password.Text & "' where id= '" & reg_id.Text & "' "
+
+
                             Command = New MySqlCommand(query, MysqlConn)
 
 
                             If reg_password.Text <> reg_Retype_password.Text Then
-                                MetroMessageBox.Show(Me, "Password do not match", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                MetroMessageBox.Show(Me, "Password Do Not match", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                             Else
                                 reader = Command.ExecuteReader
-                                MetroMessageBox.Show(Me, "Account Updated!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MetroMessageBox.Show(Me, "Account Updated!", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 reg_password.Text = ""
                                 reg_Retype_password.Text = ""
 
                                 MysqlConn.Close()
+                                get_userid()
+                                clearing_account_fields()
                             End If
 
 
@@ -704,7 +710,7 @@ Public Class TabMain
         Try
             MysqlConn.Open()
             Dim query As String
-            query = "SELECT * from `saoevent" & My.Settings.schoolyear & "` where date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "'"
+            query = "Select * from `saoevent" & My.Settings.schoolyear & "` where Date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "'"
             Command = New MySqlCommand(query, MysqlConn)
             reader = Command.ExecuteReader
             While reader.Read
@@ -1085,10 +1091,7 @@ Public Class TabMain
     End Sub
 
 
-    'END OF REMINDER CODES
-
-
-    Private Sub DataGridView3_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentDoubleClick
+    Private Sub DataGridView3_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellDoubleClick
         Dim a As Integer
 
         a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -1111,7 +1114,8 @@ Public Class TabMain
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         GroupBoxEvent.Visible = True
         btn_deletedata.Visible = True
         btn_update.Visible = True
@@ -1645,4 +1649,11 @@ Public Class TabMain
 
         End If
     End Sub
+
+    Private Sub lb_showuser_Click(sender As Object, e As EventArgs) Handles lb_showuser.Click
+        GroupBox3.Enabled = False
+        reg_username.Enabled = False
+    End Sub
+
+
 End Class

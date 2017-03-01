@@ -1608,7 +1608,7 @@ Partial Class TabMain
         '
         Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RatingFormToolStripMenuItem1, Me.StudentRecordsManagementSystemToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DatabaseToolStripMenuItem.Text = "Database"
         '
         'RatingFormToolStripMenuItem1
@@ -1652,19 +1652,20 @@ Partial Class TabMain
         'RatingFormToolStripMenuItem
         '
         Me.RatingFormToolStripMenuItem.Name = "RatingFormToolStripMenuItem"
-        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.RatingFormToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.RatingFormToolStripMenuItem.Text = "Rating Form"
+        Me.RatingFormToolStripMenuItem.Visible = False
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LogoutToolStripMenuItem.Text = "Log-out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'AboutToolStripMenuItem

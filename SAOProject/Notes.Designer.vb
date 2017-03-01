@@ -48,6 +48,7 @@ Partial Class Notes
         Me.tb_reminder.Name = "tb_reminder"
         Me.tb_reminder.Size = New System.Drawing.Size(144, 23)
         Me.tb_reminder.TabIndex = 1
+        Me.tb_reminder.Visible = False
         '
         'Label35
         '
@@ -58,6 +59,7 @@ Partial Class Notes
         Me.Label35.Size = New System.Drawing.Size(45, 15)
         Me.Label35.TabIndex = 49
         Me.Label35.Text = "Note#:"
+        Me.Label35.Visible = False
         '
         'btn_clear_reminder
         '
