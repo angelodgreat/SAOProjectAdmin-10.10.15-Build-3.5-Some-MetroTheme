@@ -373,4 +373,8 @@ Public Class GuestOnly
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Application.Exit()
     End Sub
+
+    Private Sub btn_print_scheds_Click(sender As Object, e As EventArgs) Handles btn_print_scheds.Click
+        ReportViewer.Show()
+    End Sub
 End Class
