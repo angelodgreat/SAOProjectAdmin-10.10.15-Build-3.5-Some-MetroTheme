@@ -195,7 +195,6 @@ Partial Class Notes
         Me.Name = "Notes"
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
-        Me.TopMost = True
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

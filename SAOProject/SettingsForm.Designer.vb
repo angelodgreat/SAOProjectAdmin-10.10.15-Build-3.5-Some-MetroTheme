@@ -836,7 +836,6 @@ Partial Class SettingsForm
         Me.Resizable = False
         Me.Style = MetroFramework.MetroColorStyle.Pink
         Me.Text = " "
-        Me.TopMost = True
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
