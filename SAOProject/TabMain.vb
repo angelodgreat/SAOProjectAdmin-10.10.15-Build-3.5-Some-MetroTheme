@@ -154,7 +154,7 @@ Public Class TabMain
             mysqlconn.Open()
             Dim query As String
 
-            a = MetroMessageBox.Show(Me, "Are you sure you want to save this selected date?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to save this selected date?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
 
             If a = vbYes Then
@@ -163,54 +163,54 @@ Public Class TabMain
 
                 Dim elapsedTime As TimeSpan = DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_to.Text).Subtract(DateTime.Parse(DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_from.Text)))
 
-            If elapsedTime.CompareTo(TimeSpan.Zero) <= 0 Then
-                MessageBox.Show(Me, "The Starting Time can't be the same or later on the Ending Time.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                If elapsedTime.CompareTo(TimeSpan.Zero) <= 0 Then
+                    MessageBox.Show(Me, "The Starting Time can't be the same or later on the Ending Time.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
 
-            Else
-
-
-                ' Original code for detecting time conflict
-                ' query = "Select * from saoinfo.saoevent where  TimeFrom='" & Format(CDate(time_picker_from.Value), "hh:mm") & "' and TimeTo ='" & Format(CDate(time_picker_to.Value), "hh:mm") & "'and location='" & tb_location.Text & "'and date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "' "
-                ' Modified code for detecting time conflict
-
-                'TO BE EDITTED BECAUSE OF LOCATION PROBLEM
-
-                'query = "select * from saoinfo.saoevent where  ('" & Format(CDate(time_picker_from.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) OR (' " & Format(CDate(time_picker_to.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) and date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "' "
+                Else
 
 
+                    ' Original code for detecting time conflict
+                    ' query = "Select * from saoinfo.saoevent where  TimeFrom='" & Format(CDate(time_picker_from.Value), "hh:mm") & "' and TimeTo ='" & Format(CDate(time_picker_to.Value), "hh:mm") & "'and location='" & tb_location.Text & "'and date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "' "
+                    ' Modified code for detecting time conflict
 
-                'query = "Select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "hh:mm:01") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
-                '('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
+                    'TO BE EDITTED BECAUSE OF LOCATION PROBLEM
 
-                query = "SELECT * FROM `saoevent" & My.Settings.schoolyear & "` WHERE location=@locs AND ((((@a) BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo)) OR (@b BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo))) OR ((DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s') <= CONCAT(date,' ',TimeFrom)) AND (DATE_FORMAT(@b,'%Y-%m-%d %H:%i:%s') >= CONCAT(date,' ',TimeTo)) AND CONCAT(date,' ',TimeTo) >= DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s')))"
+                    'query = "select * from saoinfo.saoevent where  ('" & Format(CDate(time_picker_from.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) OR (' " & Format(CDate(time_picker_to.Value), "hh:mm") & " " & tb_location.Text & "' BETWEEN concat(' ',timefrom,location) AND concat(' ',timeto,location)) and date='" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "' "
 
 
-                Command = New MySqlCommand(query, MysqlConn)
-                Command.Parameters.AddWithValue("locs", tb_location.Text)
 
-                Command.Parameters.AddWithValue("@a", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "HH:mm:01"))
-                Command.Parameters.AddWithValue("@b", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "HH:mm"))
-                reader = Command.ExecuteReader
-                Dim count As Integer
+                    'query = "Select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "hh:mm:01") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
+                    '('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
 
-                count = 0
-                While reader.Read
-                    count += 1
+                    query = "SELECT * FROM `saoevent" & My.Settings.schoolyear & "` WHERE location=@locs AND ((((@a) BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo)) OR (@b BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo))) OR ((DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s') <= CONCAT(date,' ',TimeFrom)) AND (DATE_FORMAT(@b,'%Y-%m-%d %H:%i:%s') >= CONCAT(date,' ',TimeTo)) AND CONCAT(date,' ',TimeTo) >= DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s')))"
 
-                End While
 
-                    'MetroMessageBox.Show(Me, "", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Command = New MySqlCommand(query, MysqlConn)
+                    Command.Parameters.AddWithValue("locs", tb_location.Text)
+
+                    Command.Parameters.AddWithValue("@a", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "HH:mm:01"))
+                    Command.Parameters.AddWithValue("@b", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "HH:mm"))
+                    reader = Command.ExecuteReader
+                    Dim count As Integer
+
+                    count = 0
+                    While reader.Read
+                        count += 1
+
+                    End While
+
+                    'MetroMessageBox.Show(Me, "", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                     If count = 1 Then
-                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
 
                     Else
                         If tb_location.Text = "-" Or tb_location.Text = "" Or tb_input_event.Text = "" Or cb_eventschool.Text = "-" Or cb_eventschool.Text = "" Or cb_kpi.Text = "-" Or cb_kpi.Text = "" Or cb_noa.Text = "-" Or cb_noa.Text = "" Then
 
-                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             MysqlConn.Close()
 
@@ -221,7 +221,7 @@ Public Class TabMain
                             reader = Command.ExecuteReader
 
                             ' load_table2()
-                            MetroMessageBox.Show(Me, "Event Submitted", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Event Submitted", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                             event_datetimepicker.Value = Date.Now
                             tb_input_event.Text = ""
@@ -270,10 +270,10 @@ Public Class TabMain
 
         If tb_location.Text = "-" Or tb_location.Text = "" Or tb_input_event.Text = "" Or cb_eventschool.Text = "-" Or cb_eventschool.Text = "" Or cb_kpi.Text = "-" Or cb_kpi.Text = "" Or cb_noa.Text = "-" Or cb_noa.Text = "" Then
 
-            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this selected date?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update this selected date?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
 
             If a = vbYes Then
@@ -285,7 +285,7 @@ Public Class TabMain
                 Dim elapsedTime As TimeSpan = DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_to.Text).Subtract(DateTime.Parse(DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_from.Text)))
 
                 If elapsedTime.CompareTo(TimeSpan.Zero) <= 0 Then
-                    MessageBox.Show(Me, "The Starting Time can't be the same or later on the Ending Time.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    MessageBox.Show(Me, "The Starting Time can't be the same or later on the Ending Time.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
 
                 Else
 
@@ -310,12 +310,12 @@ Public Class TabMain
 
                         If count = 1 Then
 
-                            MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
                         Else
                             If tb_location.Text = "" Or tb_input_event.Text = "" Or tb_eventid.Text = "" Or cb_eventschool.Text = "-" Or cb_kpi.Text = "-" Or cb_noa.Text = "-" Then
-                                MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MysqlConn.Close()
 
@@ -327,7 +327,7 @@ Public Class TabMain
                                 Command = New MySqlCommand(query, MysqlConn)
                                 reader = Command.ExecuteReader
 
-                                MetroMessageBox.Show(Me, "Event Updated", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MetroMessageBox.Show(Me, "Event Updated", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 MysqlConn.Close()
                                 event_date_load()
                                 event_datetimepicker.Value = Date.Now
@@ -385,10 +385,10 @@ Public Class TabMain
 
 
         If tb_eventid.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected date.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected date.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete the selected date?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete the selected date?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
 
 
@@ -407,7 +407,7 @@ Public Class TabMain
                     reader = Command.ExecuteReader
 
 
-                    MetroMessageBox.Show(Me, "Event Deleted.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Event Deleted.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     MysqlConn.Close()
                     event_date_load()
                     count_id_event()
@@ -487,13 +487,13 @@ Public Class TabMain
 
             If count = 1 Then
 
-                MetroMessageBox.Show(Me, "The account " & reg_id.Text & " already exist." & "The username " & reg_username.Text & " already exist. ", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MetroMessageBox.Show(Me, "The account " & reg_id.Text & " already exist." & "The username " & reg_username.Text & " already exist. ", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
             Else
                 If ((reg_id.Text = "") Or (reg_cb_college.Text = "-") Or reg_cb_college.Text = "" Or (reg_fname.Text = "") Or (reg_lname.Text = "") Or (reg_username.Text = "") Or (reg_password.Text = "") Or (reg_Retype_password.Text = "") Or (reg_cb_usertype.Text = "-")) Then
 
-                    MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                 Else
@@ -505,14 +505,14 @@ Public Class TabMain
                     Dim tempuser As String
 
                     If reg_password.Text <> reg_Retype_password.Text Then
-                        MetroMessageBox.Show(Me, "Password do not match", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        MetroMessageBox.Show(Me, "Password do not match", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Else
                         reader = Command.ExecuteReader
 
                         tempuser = lb_showuser.Text
                         lb_showuser.Items.Add(tempuser)
 
-                        MetroMessageBox.Show(Me, "Account Registered!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MetroMessageBox.Show(Me, "Account Registered!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         MysqlConn.Close()
                         get_userid()
@@ -544,11 +544,11 @@ Public Class TabMain
 
 
         If reg_id.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected user.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected user.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
 
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to delete this account?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If a = vbYes Then
                 Command = New MySqlCommand
@@ -573,7 +573,7 @@ Public Class TabMain
                     reg_username.Text = ""
                     reg_password.Text = ""
                     reg_Retype_password.Text = ""
-                    MetroMessageBox.Show(Me, "Account Deleted!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MetroMessageBox.Show(Me, "Account Deleted!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
 
@@ -630,9 +630,9 @@ Public Class TabMain
         Dim a As Integer
 
         If reg_id.Text = "" And reg_username.Text = "" Then
-            MetroMessageBox.Show(Me, "No selected user.", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MetroMessageBox.Show(Me, "No selected user.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this account?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update this account?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
                 Try
                     MysqlConn.Open()
@@ -652,7 +652,7 @@ Public Class TabMain
 
 
                         If (reg_password.Text = "") Or (reg_Retype_password.Text = "") Then
-                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                         Else
@@ -667,10 +667,10 @@ Public Class TabMain
 
 
                             If reg_password.Text <> reg_Retype_password.Text Then
-                                MetroMessageBox.Show(Me, "Password Do Not match", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                MetroMessageBox.Show(Me, "Password Do Not match", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                             Else
                                 reader = Command.ExecuteReader
-                                MetroMessageBox.Show(Me, "Account Updated!", "CEU Student Organization Record And Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MetroMessageBox.Show(Me, "Account Updated!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 reg_password.Text = ""
                                 reg_Retype_password.Text = ""
 
@@ -856,7 +856,7 @@ Public Class TabMain
     Private Sub TabMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         'FOR CLOSING CONFIRMATION OF CLOSING THE APP
         Dim dialog As DialogResult
-        dialog = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        dialog = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If dialog = DialogResult.No Then
             e.Cancel = True
@@ -898,7 +898,7 @@ Public Class TabMain
         'EXIT CONTROL
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to exit?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Application.ExitThread()
@@ -913,11 +913,11 @@ Public Class TabMain
         'LOGOUT CONTROL
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If a = vbYes Then
             Me.Dispose()
-            login.Show()
+            Login.Show()
         Else
         End If
     End Sub
@@ -1094,7 +1094,7 @@ Public Class TabMain
     Private Sub DataGridView3_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellDoubleClick
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             Notes.Show()
@@ -1125,7 +1125,7 @@ Public Class TabMain
 
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to change this selected event?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to change this selected event?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             TabControl1.SelectedTab = TP_Event
@@ -1402,41 +1402,41 @@ Public Class TabMain
     Private Sub srmsBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles srmsBackupToolStripMenuItem.Click
 
         Dim savedb_dialog As New SaveFileDialog
-            savedb_dialog.Filter = "mySQL Database|*.sql"
-            savedb_dialog.Title = "Choose a Location to Save"
-            Dim mysql_SAVE As New MySqlBackup(Command)
-            mysql_SAVE.ExportInfo.AddCreateDatabase = True
+        savedb_dialog.Filter = "mySQL Database|*.sql"
+        savedb_dialog.Title = "Choose a Location to Save"
+        Dim mysql_SAVE As New MySqlBackup(Command)
+        mysql_SAVE.ExportInfo.AddCreateDatabase = True
         mysql_SAVE.ExportInfo.EnableEncryption = True
         mysql_SAVE.ExportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
 
         If savedb_dialog.ShowDialog() = DialogResult.OK Then
-                Try
-                    MysqlConn.ConnectionString = connstring
-                    Dim mysql_LOAD As New MySqlBackup(Command)
-                    mysql_LOAD.Command.Connection = MysqlConn
+            Try
+                MysqlConn.ConnectionString = connstring
+                Dim mysql_LOAD As New MySqlBackup(Command)
+                mysql_LOAD.Command.Connection = MysqlConn
                 MysqlConn.Open()
 
 
 
                 mysql_SAVE.ExportToFile(savedb_dialog.FileName.ToString)
-                    MysqlConn.Close()
-                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MysqlConn.Close()
+                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
             Catch ex As MySqlException
-                    If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
+                If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
                     MessageBox.Show(Me, " The database probably went offline.")
 
                     Return
-                    Else
+                Else
                     MessageBox.Show(Me, ex.Message)
                 End If
-                Catch ex As Exception
+            Catch ex As Exception
                 MessageBox.Show(Me, ex.Message)
             End Try
-            End If
+        End If
 
-            'Dim file As String
+        'Dim file As String
         'sfd.Filter = "SQL Dump File (*.sql)|*.sql|All files (*.*)|*.*"
         'sfd.FileName = "Database Backup " + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".sql"
         'If sfd.ShowDialog = DialogResult.OK Then
@@ -1454,7 +1454,7 @@ Public Class TabMain
         '    myStreamWriter.Close()
         '    myProcess.WaitForExit()
         '    myProcess.Close()
-        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         'End If
 
@@ -1464,7 +1464,7 @@ Public Class TabMain
 
         Dim loaddb_dialog As New OpenFileDialog()
         loaddb_dialog.Filter = "mySQL Database|*.sql"
-            loaddb_dialog.Title = "Select a File"
+        loaddb_dialog.Title = "Select a File"
 
         If loaddb_dialog.ShowDialog() = DialogResult.OK Then
 
@@ -1478,7 +1478,7 @@ Public Class TabMain
 
                 mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
                 MysqlConn.Close()
-                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As MySqlException
                 If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
                     MessageBox.Show(Me, " The database probably went offline.")
@@ -1509,7 +1509,7 @@ Public Class TabMain
         '    myStreamWriter.Close()
         '    myProcess.WaitForExit()
         '    myProcess.Close()
-        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         'End If
     End Sub
@@ -1531,7 +1531,7 @@ Public Class TabMain
                 MysqlConn.Open()
                 mysql_SAVE.ExportToFile(savedb_dialog.FileName.ToString)
                 MysqlConn.Close()
-                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "Database successfully saved!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 'RadMessageBox.Show("Error in Importing Database:" & Environment.NewLine & ex.Message, "TLTD Scheduling System", MessageBoxButtons.OK, RadMessageIcon.Error)
             Catch ex As MySqlException
@@ -1566,7 +1566,7 @@ Public Class TabMain
         '    myStreamWriter.Close()
         '    myProcess.WaitForExit()
         '    myProcess.Close()
-        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    MetroMessageBox.Show(Me, "Database Backup Created Successfully!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         'End If
 
@@ -1589,7 +1589,7 @@ Public Class TabMain
                 mysql_LOAD.ImportInfo.EncryptionPassword = "9Wy3Z3xTApDKUtPVN+TegRLTGR2mj8_M3*3ZJwSts83g9+pL?ZLEn?3xnuMR!2g"
                 mysql_LOAD.ImportFromFile(loaddb_dialog.FileName.ToString)
                 MysqlConn.Close()
-                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "Database successfully loaded!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As MySqlException
                 If (ex.Number = 0 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Or (ex.Number = 1042 And (ex.Message.Contains("Unable to connect to any of the specified MySQL hosts") Or ex.Message.Contains("Reading from the stream has failed"))) Then
                     MessageBox.Show(Me, " The database probably went offline.")
@@ -1623,7 +1623,7 @@ Public Class TabMain
         '    myStreamWriter.Close()
         '    myProcess.WaitForExit()
         '    myProcess.Close()
-        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    MetroMessageBox.Show(Me, "Database Restored successfully!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         'End If
     End Sub

@@ -22,7 +22,7 @@ Public Class DBSettings
 
     Private Sub mb_savesettings_Click(sender As Object, e As EventArgs) Handles mb_savesettings.Click
         savesettings()
-        MetroMessageBox.Show(Me, "Settings Saved!", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MetroMessageBox.Show(Me, "Settings Saved!", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click

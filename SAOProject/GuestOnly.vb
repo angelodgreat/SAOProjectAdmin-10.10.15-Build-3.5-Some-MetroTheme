@@ -43,7 +43,7 @@ Public Class GuestOnly
     Private Sub GuestOnly_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             Me.Dispose()
@@ -57,7 +57,7 @@ Public Class GuestOnly
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
         Dim a As Integer
 
-        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        a = MetroMessageBox.Show(Me, "Are you sure you want to Log-out?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
             Me.Dispose()
