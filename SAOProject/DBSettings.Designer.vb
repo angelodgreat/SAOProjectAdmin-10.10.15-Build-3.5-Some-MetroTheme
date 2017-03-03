@@ -132,6 +132,7 @@ Partial Class DBSettings
         Me.tb_setpassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tb_setpassword.Location = New System.Drawing.Point(107, 179)
         Me.tb_setpassword.Name = "tb_setpassword"
+        Me.tb_setpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tb_setpassword.PreventEnterBeep = True
         Me.tb_setpassword.Size = New System.Drawing.Size(228, 24)
         Me.tb_setpassword.TabIndex = 27
@@ -146,6 +147,7 @@ Partial Class DBSettings
         Me.tb_setusername.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tb_setusername.Location = New System.Drawing.Point(107, 145)
         Me.tb_setusername.Name = "tb_setusername"
+        Me.tb_setusername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tb_setusername.PreventEnterBeep = True
         Me.tb_setusername.Size = New System.Drawing.Size(228, 24)
         Me.tb_setusername.TabIndex = 26

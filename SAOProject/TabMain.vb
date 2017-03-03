@@ -18,6 +18,7 @@ Public Class TabMain
     Dim reader As MySqlDataReader
 
     Private Sub TabMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        event_datetimepicker.MinDate = Date.Now
         get_userid()
         event_date_load()
         load_kpi()
@@ -232,6 +233,7 @@ Public Class TabMain
                             cb_noa.SelectedIndex = -1
                             cb_kpi.SelectedIndex = -1
                             cb_eventschool.SelectedIndex = -1
+                            event_datetimepicker.MinDate = Date.Now
                             cb_remarks.SelectedIndex = -1
                             btn_deletedata.Visible = False
                             btn_update.Visible = False
@@ -338,6 +340,7 @@ Public Class TabMain
                                 tb_location.SelectedIndex = -1
                                 cb_noa.SelectedIndex = -1
                                 cb_kpi.SelectedIndex = -1
+                                event_datetimepicker.MinDate = Date.Now
                                 cb_eventschool.SelectedIndex = -1
                                 cb_remarks.SelectedIndex = -1
                                 count_id_event()
@@ -419,6 +422,7 @@ Public Class TabMain
                     tb_location.SelectedIndex = -1
                     cb_noa.SelectedIndex = -1
                     cb_kpi.SelectedIndex = -1
+                    event_datetimepicker.MinDate = Date.Now
                     cb_eventschool.SelectedIndex = -1
                     cb_remarks.SelectedIndex = -1
                 Catch ex As MySqlException
@@ -441,6 +445,7 @@ Public Class TabMain
 
 
     Private Sub btn_recordsreset_Click(sender As Object, e As EventArgs) Handles btn_recordsreset.Click
+        event_datetimepicker.MinDate = Date.Now
         btn_deletedata.Visible = False
         btn_update.Visible = False
         btn_submitrecords.Visible = True
@@ -632,7 +637,7 @@ Public Class TabMain
         If reg_id.Text = "" And reg_username.Text = "" Then
             MetroMessageBox.Show(Me, "No selected user.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            a = MetroMessageBox.Show(Me, "Are you sure you want to update this account?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            a = MetroMessageBox.Show(Me, "Are you sure you want to update the password for this account?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If a = vbYes Then
                 Try
                     MysqlConn.Open()
@@ -652,7 +657,7 @@ Public Class TabMain
 
 
                         If (reg_password.Text = "") Or (reg_Retype_password.Text = "") Then
-                            MetroMessageBox.Show(Me, "Please fill all fields", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MetroMessageBox.Show(Me, "Please fill the passwords", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                         Else
@@ -923,7 +928,7 @@ Public Class TabMain
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        About.Show()
+        About.ShowDialog()
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
@@ -1086,7 +1091,7 @@ Public Class TabMain
 
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        Notes.Show()
+        Notes.ShowDialog()
 
     End Sub
 
@@ -1097,7 +1102,7 @@ Public Class TabMain
         a = MetroMessageBox.Show(Me, "Are you sure you want to update the selected note?", "CEU Students Organization Scheduling Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If a = vbYes Then
-            Notes.Show()
+            Notes.ShowDialog()
 
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow
@@ -1288,7 +1293,7 @@ Public Class TabMain
 
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
-        SettingsForm.Show()
+        SettingsForm.ShowDialog()
     End Sub
 
     Public Sub load_kpi()
@@ -1627,6 +1632,8 @@ Public Class TabMain
 
     Private Sub DataGridView2_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
         ' SHOWING DATA FROM TABLE IN THE SPECIFIC TEXTBOX
+        event_datetimepicker.MinDate = "1/1/1753"
+
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = Me.DataGridView2.Rows(e.RowIndex)
