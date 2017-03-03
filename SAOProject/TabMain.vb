@@ -296,7 +296,7 @@ Public Class TabMain
                         'query = "select * from saoinfo.saoevent where  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & "  " & Format(CDate(time_picker_from.Value), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Value), "hh:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto))"
 
                         query = "select * from `saoevent" & My.Settings.schoolyear & "` where (location = '" & tb_location.Text & "') AND (('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "HH:mm:01") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)) OR
-                  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "HH:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto)))"
+                  ('" & Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "HH:mm") & "' BETWEEN concat(date,' ',timefrom) AND concat(date,' ',timeto))) AND eventid != '" & tb_eventid.Text & "'"
 
                         Command = New MySqlCommand(query, MysqlConn)
                         reader = Command.ExecuteReader
@@ -1156,9 +1156,6 @@ Public Class TabMain
 
     Private Sub btn_showeventdetails_Click(sender As Object, e As EventArgs) Handles btn_showeventdetails.Click
         GroupBoxEvent.Visible = True
-        btn_deletedata.Visible = False
-        btn_update.Visible = False
-
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
