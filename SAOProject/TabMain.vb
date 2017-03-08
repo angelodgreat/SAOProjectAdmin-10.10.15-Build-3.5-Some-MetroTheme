@@ -1659,5 +1659,49 @@ Public Class TabMain
         reg_username.Enabled = False
     End Sub
 
+    Private Sub tb_location_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tb_location.SelectedIndexChanged
+        Try
 
+
+            Dim elapsedTime As TimeSpan = DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_to.Text).Subtract(DateTime.Parse(DateTime.Parse(Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & time_picker_from.Text)))
+
+            If elapsedTime.CompareTo(TimeSpan.Zero) <= 0 Then
+                MessageBox.Show(Me, "The Starting Time can't be the same or later on the Ending Time.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+
+            Else
+                MysqlConn.Open()
+
+                query = "SELECT * FROM `saoevent" & My.Settings.schoolyear & "` WHERE location=@locs AND ((((@a) BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo)) OR (@b BETWEEN CONCAT(date,' ',TimeFrom) AND CONCAT(date,' ',TimeTo))) OR ((DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s') <= CONCAT(date,' ',TimeFrom)) AND (DATE_FORMAT(@b,'%Y-%m-%d %H:%i:%s') >= CONCAT(date,' ',TimeTo)) AND CONCAT(date,' ',TimeTo) >= DATE_FORMAT(@a,'%Y-%m-%d %H:%i:%s')))"
+
+
+                Command = New MySqlCommand(query, MysqlConn)
+                Command.Parameters.AddWithValue("locs", tb_location.Text)
+
+                Command.Parameters.AddWithValue("@a", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_from.Text), "HH:mm:01"))
+                Command.Parameters.AddWithValue("@b", Format(CDate(event_datetimepicker.Value), "yyyy-MM-dd") & " " & Format(CDate(time_picker_to.Text), "HH:mm"))
+                reader = Command.ExecuteReader
+                Dim count As Integer
+
+                count = 0
+                While reader.Read
+                    count += 1
+
+                End While
+
+                If count = 1 Then
+                    MetroMessageBox.Show(Me, "The time " & Format(CDate(time_picker_from.Text), "hh:mm") & " and " & "the location " & tb_location.Text & " is already occupied.", "CEU Students Organization Scheduling Management System", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                End If
+
+                MysqlConn.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+            MysqlConn.Dispose()
+        End Try
+
+
+    End Sub
 End Class
