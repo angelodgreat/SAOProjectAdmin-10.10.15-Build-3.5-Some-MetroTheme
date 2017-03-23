@@ -591,10 +591,6 @@ Public Class SettingsForm
         End If
     End Sub
 
-    Private Sub SettingsForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Hide()
-    End Sub
-
 
     Private Sub mt_schoolyear_Click(sender As Object, e As EventArgs) Handles mt_schoolyear.Click
         Dim a As Integer
@@ -754,5 +750,8 @@ Public Class SettingsForm
         rfsBtnSave.Visible = False
     End Sub
 
-
+    Private Sub SettingsForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Hide()
+        TabMain.Show()
+    End Sub
 End Class

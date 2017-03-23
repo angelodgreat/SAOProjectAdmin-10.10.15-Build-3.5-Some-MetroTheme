@@ -1341,7 +1341,8 @@ Public Class TabMain
 
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
-        SettingsForm.ShowDialog()
+        SettingsForm.Show()
+        Me.Hide()
     End Sub
 
     Public Sub load_kpi()
@@ -1445,7 +1446,7 @@ Public Class TabMain
 
     Private Sub RatingFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RatingFormToolStripMenuItem.Click
         rfAdminHome.Show()
-        Hide()
+        Me.Hide()
     End Sub
 
 
