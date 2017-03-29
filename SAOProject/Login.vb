@@ -56,11 +56,9 @@ Public Class Login
         mysqlconn.ConnectionString = connstring
         Command = New MySqlCommand
         Dim reader As MySqlDataReader
-        Dim attempt As Integer
 
-        If attempt < 3 Then
 
-            Try
+        Try
                 mysqlconn.Open()
                 Dim query As String
                 query = "SELECT * FROM saoinfo.saouserinfo where UName='" & tb_username.Text & "' and Password='" & tb_password.Text & "' or id='" & tb_username.Text & "' "
@@ -76,8 +74,8 @@ Public Class Login
 
 
                 If count = 1 Then
-                    attempt = 0
-                    If reader.GetString("usertype") = "Admin" Then
+
+                If reader.GetString("usertype") = "Admin" Then
                         usertype = "Admin"
 
                         Me.Hide()
@@ -131,7 +129,7 @@ Public Class Login
                     End If
 
                 Else
-                    attempt = attempt + 1
+
                     MetroMessageBox.Show(Me, "The username/password does not exist", "CEU Student Organization Record and Rating Forms Management System", MessageBoxButtons.OK, MessageBoxIcon.Stop)
 
                     tb_password.Text = ""
@@ -149,12 +147,9 @@ Public Class Login
 
             End Try
 
-            If attempt = 3 Then
-                Me.Dispose()
-                MsgBox("Maximum Log-in attempts reached.", MsgBoxStyle.Critical, "Intruder")
-            End If
 
-        End If
+
+
     End Sub
 
     Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
